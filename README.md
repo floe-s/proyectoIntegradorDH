@@ -1,6 +1,20 @@
 # proyectoIntegradorDH
 ¡Bienvenidos a nuestro proyecto integrador!
-Somo el Grupo 6 de la comisión 39 del curso intensivo de Programación Web FullStack en Digital House.
+Somo el Grupo 6 de la comisión 39 del curso intensivo de Programación Web FullStack en Digital House. 
+
+Listado del grupo:
+- Andrade Bahamon, Camilo
+- Argañaraz, Mauro
+- Barrera Peña, Kevin Andres
+- Schettini, Florencia Esmeralda
+- Vivas, Nicolas Alfredo
+
+Listado de 5 páginas referentes en las que se basa el proyecto:
+- https://www.soficontreras.com/academia-sc
+- https://www.ef.com.ar/
+- https://www.capacitarte.org/
+- http://www.idiomas.filo.uba.ar/index.php/en
+- https://cui.edu.ar/
 
 En este proyecto vamos a desarrollar el sitio web "Te lo explico en idiomas" una plataforma educativa que va a contar con diferentes cursos de idiomas (español, inglés, portugués, por ejemplo) para diferentes niveles. Es un espacio en el que cada usuario va a poder adquirir un curso con todos los materiales multimedia necesarios para poder aprender determinado idioma.
 
