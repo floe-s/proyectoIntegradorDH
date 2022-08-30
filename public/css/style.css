@@ -1,13 +1,14 @@
 body {
-  background: lightgray;
-  font-family: Georgia, serif;
+  background: ghostwhite;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 h1 {
-  color: brown;
+  color: black;
+  font-size: xx-large;
 }
 h2 {
-  color: black;
+  color: grey;
 }
 
 #portada {
