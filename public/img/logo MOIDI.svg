@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Created with Vectornator (http://vectornator.io/) -->
+<svg height="100%" stroke-miterlimit="10" style="fill-rule:nonzero;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;" version="1.1" viewBox="0 0 792 612" width="100%" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<defs>
+<clipPath id="TextBounds">
+<rect height="113.419" transform="matrix(1 -0 -0 1 -0.269762 -236.28)" width="790.496" x="0.269762" y="236.28"/>
+</clipPath>
+</defs>
+<g id="Capa-1">
+<text clip-path="url(#TextBounds)" fill="#000000" font-family="AndaleMono" font-size="100.146" opacity="1" stroke="none" text-anchor="middle" transform="matrix(1 0 0 1 0.269762 236.28)" x="0" y="0">
+<tspan textLength="716.074" x="397.748" y="91">MOIDI HOUSE</tspan>
+</text>
+</g>
+</svg>
