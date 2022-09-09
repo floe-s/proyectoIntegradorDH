@@ -7,7 +7,7 @@ body {
 }
 
 .logo {
-    background-image: url(/public/img/logo\ MOIDI.svg);
+    background-image: url(/img/logo-moidi.svg);
     background-size: cover;
     height: 61px;
     width: 90px;
@@ -36,6 +36,12 @@ body {
     display: flex;
     align-items: center;
 }
+
+.navbar-left a {
+    text-decoration: none;
+    color: black;
+}
+
 .registrarse{
     background-color: rgb(255, 180, 180);
     color: rgb(218, 0, 0);
