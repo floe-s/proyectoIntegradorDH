@@ -34,8 +34,7 @@ app.get('/contacto.html', (req, res) => {
   res.sendFile(path.resolve(__dirname, './views/contacto.html'));
 });
 
-app.get('/login.html', (req, res)=>{
+app.get('/login', (req, res)=>{
   res.sendFile(path.resolve(__dirname, './views/login.html'));
 });
 
-console.log("suscripcion")
