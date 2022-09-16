@@ -6,6 +6,7 @@
     margin: 0px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     background-image: url(../img/background.jpg);
+    background-size: cover;
   }
 
 .logo {
@@ -158,3 +159,60 @@ footer{
 }
 
 
+/*diseño adaptativo */
+
+
+@media (max-width: 1600px){
+    .form-login{
+        width: 30vw;
+    }
+}
+
+@media (max-width: 1200px){
+    .form-login{
+        width: 40vw;
+    }
+}
+
+@media (max-width: 950px){
+    .form-login{
+        width: 45vw;
+    }
+}
+
+
+
+@media (max-width: 760px){
+    .form-login{
+        width: 60vw;
+    }
+}
+
+@media (max-width: 580px){
+    .form-login{
+        width: 70vw;
+        height: 600px;
+    }
+}
+
+@media (max-width: 480px){
+    .form-login{
+        width: 80vw;
+        height: 650px;
+    }
+    main{
+        height: 700px;
+    }
+}
+
+
+@media (max-width: 378px){
+    .form-login{
+        width: 95vw;
+        height: 500px;
+    }
+
+    main{
+        height: 600px;
+    }
+}
