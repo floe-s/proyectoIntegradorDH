@@ -5,7 +5,7 @@
   body {
     margin: 0px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    background-image: url(../img/fondoLogin2.png);
+    background-image: url(../img/background.jpg);
   }
 
 .logo {
@@ -20,7 +20,8 @@
     padding: 20px;
     font-size: 12px;
     margin-left: 20px;
-    margin-right: 20px;
+    margin-right: 0px;
+    background-color: #ffffff;
 }
 
 .navbar-left div{
