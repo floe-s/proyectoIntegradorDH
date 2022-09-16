@@ -14,27 +14,32 @@ app.get('/', (req, res) => {
   res.sendFile(path.resolve(__dirname, './views/index.html'));
 });
 
-app.get('/cursos.html', (req, res) => {
+app.get('/cursos', (req, res) => {
   res.sendFile(path.resolve(__dirname, './views/cursos.html'));
 });
 
-app.get('/descargables.html', (req, res) => {
+app.get('/descargables', (req, res) => {
   res.sendFile(path.resolve(__dirname, './views/descargables.html'));
 });
 
-app.get('/traductor.html', (req, res) => {
+app.get('/traductor', (req, res) => {
   res.sendFile(path.resolve(__dirname, './views/traductor.html'));
 });
 
-app.get('/suscripciones.html', (req, res) => {
+app.get('/suscripciones', (req, res) => {
   res.sendFile(path.resolve(__dirname, './views/suscripciones.html'));
 });
 
-app.get('/contacto.html', (req, res) => {
+app.get('/contacto', (req, res) => {
   res.sendFile(path.resolve(__dirname, './views/contacto.html'));
+});
+
+app.get('/registro', (req, res)=>{
+  res.sendFile(path.resolve(__dirname, './views/registro.html'));
 });
 
 app.get('/login', (req, res)=>{
   res.sendFile(path.resolve(__dirname, './views/login.html'));
 });
+
 

@@ -1,12 +1,12 @@
-
-body {
-    margin: 0px;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-
-}
 *{
     box-sizing: border-box;
-}
+  }
+  
+  body {
+    margin: 0px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-image: url(../img/fondoLogin2.png);
+  }
 
 .logo {
     background-image: url(/img/logo-moidi.svg);
@@ -51,18 +51,26 @@ body {
     border-radius: 5px;
     padding: 5px 20px 5px 20px;
 }
+
+.registrarse a {
+    text-decoration: none;
+    color: white;
+}
+
 .inises {
     background-color: rgb(255, 105, 105);
+    color: white;
     border: 1px solid transparent;
     border-radius: 5px;
     padding: 5px 20px 5px 20px;
     
 }
-.inises a{
+
+.inises a {
     text-decoration: none;
     color: white;
 }
-
+  
 .buscar {
     border: 1px solid black;
     
@@ -70,12 +78,13 @@ body {
     border-radius: 20px;
     padding: 5px 20px 5px 20px;
 }
+
 main{
     display: flex;
     justify-content: center;
     width: 100%;
     height: 800px;
-    background-image: url(../img/fondoLogin2.png);
+    /* background-image: url(../img/fondoLogin2.png); */
     background-size: cover;
 
 }
@@ -108,14 +117,11 @@ main{
     
 }
 
-
-
 #titulo{
     margin-left: 16%;
     text-align: left;
     text-shadow: 2px 1px rgba(0, 0, 0, 0.726);
 }
-
 
 #boton-enviar{
     background-color: #a74b61;
