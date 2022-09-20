@@ -4,15 +4,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="//db.onlinewebfonts.com/c/d7e8a95865396cddca89b00080d2cba6?family=SoDo+Sans+SemiBold" rel="stylesheet" type="text/css"/>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" rel="stylesheet"/>
   <link rel="stylesheet" href="/css/style.css">
+  <script src="https://kit.fontawesome.com/a4e61d7a9e.js"></script>
   <title>MOIDI HOUSE</title>
 </head>
-<body>
+<body class="body">
   <header class="navbar">
+    <a href="/"><svg class="logo" href="/img/logo-moidi.svg"></svg></a>
     <div class="navbar-left">
-      <a href="/"><svg class="logo" href="/img/logo-moidi.svg"></svg></a>
       <div class="cursos"><a href="cursos">Cursos</a></div>
       <div class="descargables"><a href="descargables">Descargables</a></div>
       <div class="traductor"><a href="traductor">Traductor</a></div>
@@ -21,20 +22,110 @@
       <div class="idioma">Idioma</div>
     </div>
     <div class="navbar-right">
-      <input type="search" class="buscar" placeholder="Buscar"><button><i class="fa-solid fa-magnifying-glass"></i></button></input>
+      <input type="search" class="buscar" placeholder="Buscar"><button><i class="fa-solid fa-magnifying-glass"></i></button>
       <div class="registrarse"><a href="/registro">Registrarse</a></div>
       <div class="inises"><a href="/login">Iniciar sesion</a></div>
     </div>
   </header>
-      
-  <main>
-    <div class="main-content">
-      <h1>Home</h1>
-    </div>
-  </main>
+  
+  <main class="main">
+    <div class="main-content"></div>
 
-  <footer class="region-prefooter"></footer>
-  <footer class="region-footer"></footer>
+    <section class="home-details">
+      <div class="home-details-text">
+        <h1 class="home-title">MOIDI HOUSE</h1>
+        <h3 class="home-text">El mejor lugar para aprender un nuevo idioma</h3>
+        <button class="home-button">¡Vamos!</button>
+      </div>
+      <img class="home-img" src="/img/idioma4.jpg" alt="Imagen del Home">
+    </section>
+
+    <section class="section-courses-now">
+      <h2 class="courses-title">Cursos Destacados</h2>
+      <div class="courses-cards"> <!-- class="col-lg-3 col-md-4 col-sm-6 col-xs-12" -->
+        <div class="card" class="now"><a href="cursos">
+          <img class="card-img" src="/img/paises/alemania-bandera.webp" alt="Bandera Alemania">
+          <div class="card-body">
+            <h4 class="card-title">Curso de Alemán</h4>
+            <!-- <p class="card-text"></p> -->
+          </div></a>
+        </div>
+        <div class="card" class="now"><a href="cursos">
+          <img class="card-img" src="/img/paises/espana-bandera.webp" alt="Bandera España">
+          <div class="card-body">
+            <h4 class="card-title">Curso de Español</h4>
+            <!-- <p class="card-text"></p> -->
+          </div></a>
+        </div>
+        <div class="card" class="now"><a href="cursos">
+      <img class="card-img" src="/img/paises/inglaterra-bandera.jpg" alt="Bandera Inglaterra">
+      <div class="card-body">
+        <h4 class="card-title">Curso de Inglés</h4>
+        <!-- <p class="card-text"></p> -->
+      </div></a>
+    </div>
+    <div class="card" class="now"><a href="cursos">
+      <img class="card-img" src="/img/paises/brasil-bandera.webp" alt="Bandera Brasil">
+      <div class="card-body">
+        <h4 class="card-title">Curso de Portugúes</h4>
+        <!-- <p class="card-text"></p> -->
+      </div></a>
+    </div>
+  </div>
+</section>
+
+<section class="section-courses-next">
+  <h2 class="courses-title">Próximos Cursos</h2>
+  <div class="courses-cards"> <!-- class="col-lg-3 col-md-4 col-sm-6 col-xs-12" -->
+    <div class="card" class="next">
+      <img class="card-img" src="/img/paises/corea-bandera.webp" alt="Bandera Corea">
+      <div class="card-body">
+        <h4 class="card-title">Curso de Coreano</h4>
+        <!-- <p class="card-text"></p> -->
+      </div>
+    </div>
+    <div class="card" class="next">
+      <img class="card-img" src="/img/paises/francia-bandera.webp" alt="Bandera Francia">
+      <div class="card-body">
+        <h4 class="card-title">Curso de Francés</h4>
+        <!-- <p class="card-text"></p> -->
+      </div>
+    </div>
+    <div class="card" class="next">
+      <img class="card-img" src="/img/paises/italia-bandera.webp" alt="Bandera Italia">
+      <div class="card-body">
+        <h4 class="card-title">Curso de Italiano</h4>
+        <!-- <p class="card-text"></p> -->
+      </div>
+    </div>
+    <div class="card" class="next">
+      <img class="card-img" src="/img/paises/japon-bandera.webp" alt="Bandera Japon">
+      <div class="card-body">
+        <h4 class="card-title">Curso de Japonés</h4>
+        <!-- <p class="card-text"></p> -->
+      </div>
+    </div>
+  </div>
+</section>
+
+
+</main>
+
+  <footer class="footer-container">
+    <div class="whatsapp-icon">
+      <a href="#"><i class="fa-brands fa-whatsapp"></i></a> 
+    </div>
+    <div class="footer-content">
+      <p>Copyright © 2022 Moidi Team6. Todos los derechos reservados.</p>
+      <ul class="list-unstyled d-flex justify-content-center">
+        <li class="ms-3"><a href="#"><i class="fa-brands fa-square-facebook"></i></a></li>
+        <li class="ms-3"><a href="#"><i class="fa-brands fa-square-instagram"></i></a></li>
+        <li class="ms-3"><a href="#"><i class="fa-brands fa-square-twitter"></i></a></li>
+        <li class="ms-3"><a href="#"><i class="fa-brands fa-square-youtube"></i></a></li>
+        <li class="ms-3"><a href="#"><i class="fa-brands fa-linkedin"></i></a></li>
+      </ul>
+    </div>
+  </footer>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
