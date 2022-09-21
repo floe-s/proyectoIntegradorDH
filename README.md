@@ -1,6 +1,6 @@
 # proyectoIntegradorDH
 ¡Bienvenidos a nuestro proyecto integrador!
-Somo el Grupo 6 de la comisión 39 del curso intensivo de Programación Web FullStack en Digital House. 
+Somos el Grupo 6 de la comisión 39 del curso intensivo de Programación Web FullStack en Digital House. 
 
 Listado del grupo:
 - Andrade Bahamon, Camilo
