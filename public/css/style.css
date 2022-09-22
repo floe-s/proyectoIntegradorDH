@@ -7,8 +7,6 @@
 .body {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     background-image: url(../img/background.jpg);
-    /* background-size: contain; */
-    /* background-attachment: fixed; */
 }
 
 .logo {
@@ -47,7 +45,7 @@
     text-decoration: none;
     color: #000;
 }
-.navbar-right{
+.navbar-right {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
@@ -91,10 +89,30 @@
     border-radius: 20px;
     padding: 5px;
 }
+/* .shop-cart-icon {
+    position:relative;
+} */
 
+.shop-cart-icon i {
+    /* position: relative; */
+    right: 3px;
+    font-size: 20px;
+    padding: 5px;
+    border: #000 2px solid;
+    border-radius: 50px;
+}
+
+.shop-cart-icon a {
+    text-decoration: none;
+    color: #000;
+    /* position: fixed; */
+    /* z-index: 100; */
+}
+/* 
 .main-content {
     text-align: center;
-}
+    position: relative;
+} */
 
 .home-details {
     display: flex;
@@ -162,21 +180,36 @@
 
 .whatsapp-icon {
     font-size: 70px;
-    padding: 0 30px 40px;   
+    padding: 0 30px 40px;
 }
 
+/* .anchor-wsp-icon {
+    position: fixed;
+    width: 200px;
+    z-index: 1000;
+} */
 /* No me sale hacer el icono con posición fixed
     .whatsapp-icon i {
     position: fixed;
-    z-index: 1000;
+    
+} */
+
+.footer-container {
+    position: relative;
+}
+
+/* .whatsapp-icon {
+    position: relative;
 } */
 
 .whatsapp-icon a {
     text-decoration: none;
     color: #000;
+    z-index: 100;
+    /* position: fixed; */
 }
 
-.footer-container {
+.whatsapp-icon i {
     position: relative;
 }
 

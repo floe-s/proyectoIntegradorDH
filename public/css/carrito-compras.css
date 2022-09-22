@@ -94,7 +94,7 @@
   text-align: center;
 }
 
-.home-details {
+/* .home-details {
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
@@ -167,7 +167,7 @@
 .whatsapp-icon a {
   text-decoration: none;
   color: #000;  
-}
+} */
 
 .footer-container {
   position: relative;
@@ -278,4 +278,3 @@ margin: 0 5px;
   margin: 5px 150px;
 }
 }
-
