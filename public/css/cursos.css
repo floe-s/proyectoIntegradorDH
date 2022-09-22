@@ -7,6 +7,8 @@
 .body {
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   background-image: url(../img/background.jpg);
+  
+  
   /* background-size: contain; */
   /* background-attachment: fixed; */
 }
@@ -176,7 +178,9 @@
 
 .footer-container {
   position: relative;
-  min-height: 100vh;
+  display: flex;
+  height: 100px;
+  margin: auto;
 }
 
 .footer-content {
@@ -281,4 +285,172 @@ margin: 0 5px;
 .home-button {
   margin: 5px 150px;
 }
+}
+
+
+
+/*-------------Css de cursos parte main ----------------*/
+
+.principal{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: space-between;
+  height: 100%;
+  
+}
+
+.cabecera{
+  height: 50%;
+  margin-left: 20%;
+  margin-top: 100px;
+}
+.cabecera > h1{
+  font-weight: 900;
+  font-size: 50px;
+}
+
+.cursos-info{
+  background-color: #ffffff;
+  border: solid 3px #a74b61;
+  display: flex;
+  width: 65%;
+  height: 400px;
+  margin: auto;
+  flex-direction: column;
+  border-radius: 20px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.726); 
+  padding: 40px;
+  padding-top: 30px;
+  margin-top: 40px;
+}
+.superiro-curso{
+  display: flex;
+  flex-direction: column;
+  height: 35%;
+}
+.titulo{
+  margin-bottom: 15px;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.btn-test{
+  background-color: #da1543c5;
+  color: #fff;
+  margin-bottom: 30px;
+  padding: 8px;
+  width: 100px;
+  border: none;
+  border-radius: 10px;
+  text-align: center;
+  
+}
+.btn-test:hover{
+  transform: scale(1.03);
+}
+.contenido-info{
+  display: flex;
+  background-color: #eee;
+  padding: 20px;
+  border-radius: 20px;
+  height: 65%;
+  text-align: center;
+}
+.informacion{
+  width: 80%;
+  
+}
+
+.img-curso{
+  width: 20%;
+  border-radius: 10px;
+  height: 100%;
+
+}
+
+.titulo-colum{
+  font-size: 20px;
+  
+}
+
+.img-curso{
+  width: 250px;
+}
+
+.icon-info > button  {
+  background-color: #fff;
+  font-size: 20px;
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 50%;
+}
+
+.icon-info > button:hover{
+  transform: scale(1.1);
+}
+
+.img-res{
+  display: none;
+}
+
+@media (max-width: 1500px) {
+  .cursos-info{
+    width: 80%;
+
+  }
+}
+
+@media (max-width: 1100px) {
+  .cursos-info{
+    width: 90%;
+
+  }
+}
+
+
+@media (max-width: 800px) {
+  .cursos-info{
+    width: 95%;
+
+  }
+  .img-res{
+    position: absolute;
+    display: flex;
+    justify-content: flex-end;
+    height: 100px;
+    width: 100px;
+    right: 20px;
+  }
+
+  .img-res> img{
+    width: 100%;
+    height: 100%;
+  }
+
+  
+  .cursos-info{
+    height: 100%;
+    padding: 15px;
+  }
+  .contenido-info{
+    flex-direction: column;
+    
+    justify-content: center;
+    padding: 0px;
+  }
+  .img-con{
+    display: none;
+    
+  }
+  .superiro-curso{
+    position: relative;
+  }
+  
+  .informacion{
+    margin-top: 10px;
+    width: 100%;
+    height: 100%;
+  }
 }
