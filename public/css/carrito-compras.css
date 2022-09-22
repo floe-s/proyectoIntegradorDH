@@ -31,7 +31,7 @@
 
 .navbar-left>*,
 .navbar-right>*{
-  margin: 3px;
+  margin: 1px;
 }
 
 .navbar-left {
@@ -89,6 +89,19 @@
   border-radius: 20px;
   padding: 5px;
 }
+
+.shop-cart-icon i {
+  right: 3px;
+  font-size: 20px;
+  padding: 5px;
+  border: #000 2px solid;
+  border-radius: 50px;
+}
+
+.shop-cart-icon a {
+  text-decoration: none;
+  color: #000;
+}
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - -  */
 .marco {
   border: solid 3px #a74b61;
@@ -114,15 +127,15 @@ padding-right: 10px;
 justify-content: space-between;
 }
 .title{
-font-size: 3vw;
+font-size: 15px;
 font-weight: 700;
 }
 .carrito-img{
   background-image: url(../img/carb.png);
   background-size: 100% 100%;
   background-repeat: no-repeat;
-  height: 3.5vw;
-  width: 3.5vw;
+  height: 5vw;
+  width: 5vw;
 }
 .container-products{
 height: 65%;
@@ -138,9 +151,9 @@ padding: 5px;
 margin-bottom: 30px;
 }
 .trash-obj1{
-  height: 2vw;
+  height: 5vw;
   /* max-height: 34px; */
-  width: 2vw;
+  width: 5vw;
   /* max-width: 32px; */
   margin: 10px;
   background-image: url(/img/trash.png);
@@ -148,12 +161,14 @@ margin-bottom: 30px;
   background-repeat: no-repeat;
 }
 .logo-obj1{
-  height: auto;
+  /* height: auto; */
   width: 30%;
-  background-image: url(/img/idiomas.png);
+  background-image: url(/img/paises/inglaterra-figuras.webp);
   background-repeat: no-repeat;
   background-size: 100% 100%;
   margin: 10px;
+  border: #000 1px solid;
+  border-radius: 5px;
 }
 .info{
   display: grid;
@@ -199,9 +214,9 @@ border-radius: 10px;
 padding: 5px;
 }
 .trash-obj2{
-  height: 2vw;
+  height: 5vw;
   max-height: 34px;
-  width: 2vw;
+  width: 5vw;
   max-width: 32px;
   margin: 10px;
   background-image: url(/img/trash.png);
@@ -209,12 +224,14 @@ padding: 5px;
   background-repeat: no-repeat;
 }
 .logo-obj2{
-  height: auto;
+  /* height: auto; */
   width: 30%;
-  background-image: url(/img/idiomas.png);
+  background-image: url(/img/paises/brasil-figuras.webp);
   background-repeat: no-repeat;
   background-size: 100% 100%;
   margin: 10px;
+  border: #000 1px solid;
+  border-radius: 5px;
 }
 .info2{
   display: grid;
@@ -255,7 +272,8 @@ margin-top: 10px;
 height: 10%;
 }
 .totals{
-width: 35%;
+width: 70%;
+text-align: center;
 margin-top: 0;
 box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1); 
 border-radius: 5px;
@@ -265,22 +283,28 @@ display: grid;
 grid-template-columns: 1fr 1fr;
 grid-template-rows: 1fr 1fr 1fr;
 }
-.cuotas{
+.cuotas {
 text-decoration: none;
 color: #a74b61;
+font-size: 12px;
+}
+.cuotas:hover {
+  color: #a74b61;
 }
 .totals li{
 display: grid;
 color: #a74b61;
 }
 .cont-butt{
-height: 10vh;
+height: 20vh;
 display: flex;
+flex-direction: column;
 align-items: center;
-justify-content: center;
+margin-top: 10px;
 }
+
 .comprar {
-height: 5vh;
+height: 30%;
 width: 40%;
 border: solid 1px white;
 border-radius: 20px;
@@ -292,70 +316,6 @@ color: #fff;
   text-align: center;
 }
 
-/* .home-details {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
-  align-items: center;
-}
-
-.home-title {
-  font-size: 50px;
-  font-weight: 600;
-  margin: 30px 10px;
-}
-
-.home-text {
-  font-size: 16px;
-  text-align: center;
-}
-
-.home-button {
-  border: none;
-  border-radius: 5px;
-  background-color:#C24844;
-  color: #ffffff;
-  font-size: 14px;
-  padding: 8px;
-  margin-left: 150px;
-}
-
-.home-img {
-  width: 100vw;
-  margin-top: 10px;
-}
-
-.section-courses-now, .section-courses-next {
-  width: 90vw;
-  text-align: left;
-  margin: auto;
-}
-
-.courses-title {
-  margin: 30px 0;
-}
-
-.courses-cards {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
-
-.card {
-  width: 90vw;
-  box-shadow: 0px 0px 10px rgb(100 , 100 , 100);
-  margin-bottom: 20px;
-}
-
-.card a {
-  text-decoration: none;
-  color: #000;
-}
-
-.section-courses-now card:hover {
-  background-color: rgba(255,0,0,0.5);
-}
-
 .whatsapp-icon i {
   font-size: 70px;
   margin-left: 20px;
@@ -365,7 +325,7 @@ color: #fff;
 .whatsapp-icon a {
   text-decoration: none;
   color: #000;  
-} */
+}
 
 .footer-container {
   position: relative;
@@ -401,6 +361,10 @@ color: #fff;
   .navbar-left {
     display: none;
   }
+  .logo-obj1, .logo-obj2 {
+    display: none;
+  }
+
 }
 
 @media (min-width: 769px) {
@@ -413,19 +377,17 @@ color: #fff;
 .navbar-right>* {
   margin: 0 2px;
 }
-.home-img {
-  width: 80vw;
-  margin: auto;
-  margin-top: 10px;
+.title{
+  font-size: 20px;
+  font-weight: 700;
+  }
+.trash-obj1, .trash-obj2 {
+  height: 3vw;
+  width: 3vw;
 }
-.card {
-  width: 40vw;
-}
-.card:hover {
-  background-color: rgba(0,0,0,0.5);
-  transition: all 450ms;
-}
-
+.comprar {
+  width: 18%;
+  }
 .footer-content {
   display: flex;
   justify-content:space-between;
@@ -453,26 +415,18 @@ margin: 0 5px;
 .main-content {
   position: relative;
 }
-.courses-cards{
-  flex-wrap: nowrap;
+.title{
+  font-size: 50px;
+  font-weight: 700;
+  }
+.trash-obj1, .trash-obj2 {
+  height: 2vw;
+  width: 2vw;
 }
-.card {
-  width: 20vw;
+.logo-obj1, .logo-obj2 {
+  width: 20%;
 }
-.home-img {
-  width: 40vw;
-  margin: 10px 0;
-}
-.home-details {
-  flex-direction: row;
-  justify-content: center;
-  justify-content: space-around;
-}
-.home-details-text {
-  flex-wrap: wrap;
-  align-content: center;
-}
-.home-button {
-  margin: 5px 150px;
-}
+.comprar {
+  width: 15%;
+  }
 }

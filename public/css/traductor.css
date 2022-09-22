@@ -7,8 +7,6 @@
 .body {
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   background-image: url(../img/background.jpg);
-  /* background-size: contain; */
-  /* background-attachment: fixed; */
 }
 
 .logo {
@@ -33,7 +31,7 @@
 
 .navbar-left>*,
 .navbar-right>*{
-  margin: 3px;
+  margin: 1px;
 }
 
 .navbar-left {
@@ -77,7 +75,6 @@
   border: 1px solid transparent;
   border-radius: 5px;
   padding: 5px;
-  
 }
 
 .inises a {
@@ -92,72 +89,29 @@
   padding: 5px;
 }
 
-.main-content {
-  text-align: center;
+.shop-cart-icon i {
+  right: 3px;
+  font-size: 20px;
+  padding: 5px;
+  border: #000 2px solid;
+  border-radius: 50px;
 }
 
-.home-details {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
-  align-items: center;
-}
-
-.home-title {
-  font-size: 50px;
-  font-weight: 600;
-  margin: 30px 10px;
-}
-
-.home-text {
-  font-size: 16px;
-  text-align: center;
-}
-
-.home-button {
-  border: none;
-  border-radius: 5px;
-  background-color:#C24844;
-  color: #ffffff;
-  font-size: 14px;
-  padding: 8px;
-  margin-left: 150px;
-}
-
-.home-img {
-  width: 100vw;
-  margin-top: 10px;
-}
-
-.section-courses-now, .section-courses-next {
-  width: 90vw;
-  text-align: left;
-  margin: auto;
-}
-
-.courses-title {
-  margin: 30px 0;
-}
-
-.courses-cards {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
-
-.card {
-  width: 90vw;
-  box-shadow: 0px 0px 10px rgb(100 , 100 , 100);
-  margin-bottom: 20px;
-}
-
-.card a {
+.shop-cart-icon a {
   text-decoration: none;
   color: #000;
 }
 
-.section-courses-now card:hover {
-  background-color: rgba(255,0,0,0.5);
+.main-content {
+  text-align: center;
+}
+
+.sitio-en-obra {
+  text-align: center;
+}
+
+.img-sitio {
+  width: 100vw;
 }
 
 .whatsapp-icon {
@@ -220,18 +174,11 @@
 .navbar-right>* {
   margin: 0 2px;
 }
-.home-img {
-  width: 80vw;
-  margin: auto;
-  margin-top: 10px;
+
+.img-sitio {
+  width: 60vw;
 }
-.card {
-  width: 40vw;
-}
-.card:hover {
-  background-color: rgba(0,0,0,0.5);
-  transition: all 450ms;
-}
+
 .footer-content {
   display: flex;
   justify-content:space-between;
@@ -259,26 +206,7 @@ margin: 0 5px;
 .main-content {
   position: relative;
 }
-.courses-cards{
-  flex-wrap: nowrap;
-}
-.card {
-  width: 20vw;
-}
-.home-img {
-  width: 40vw;
-  margin: 10px 0;
-}
-.home-details {
-  flex-direction: row;
-  justify-content: center;
-  justify-content: space-around;
-}
-.home-details-text {
-  flex-wrap: wrap;
-  align-content: center;
-}
-.home-button {
-  margin: 5px 150px;
+.img-sitio {
+  width: 45vw;
 }
 }
