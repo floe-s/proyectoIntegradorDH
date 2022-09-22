@@ -4,7 +4,8 @@
   "description": "¡Bienvenidos a nuestro proyecto integrador! Somo el Grupo 6 de la comisión 39 del curso intensivo de Programación Web FullStack en Digital House.",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
   },
   "repository": {
     "type": "git",
