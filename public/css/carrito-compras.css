@@ -89,7 +89,205 @@
   border-radius: 20px;
   padding: 5px;
 }
-
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - -  */
+.marco {
+  border: solid 3px #a74b61;
+  border-radius: 20px;
+  height: 700px;
+  margin: 10%;
+  margin-top: 2%;
+  box-shadow: 0px 0px 10px rgba(170, 53, 68, 0.726);
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px); 
+  padding: 10px;
+  display: flex;
+}
+.container{
+height: 100%;
+}
+.contain-hed{
+display: flex;
+align-items: center;
+height: 10%;
+padding-left: 10px;
+padding-right: 10px;
+justify-content: space-between;
+}
+.title{
+font-size: 3vw;
+font-weight: 700;
+}
+.carrito-img{
+  background-image: url(../img/carb.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  height: 3.5vw;
+  width: 3.5vw;
+}
+.container-products{
+height: 65%;
+}
+.object1{
+display: flex;
+height: 45%;
+background-color: rgba(237, 248, 255, 0.4);
+  -webkit-backdrop-filter: blur(5px);
+backdrop-filter: blur(5px);
+border-radius: 10px;
+padding: 5px;
+margin-bottom: 30px;
+}
+.trash-obj1{
+  height: 2vw;
+  /* max-height: 34px; */
+  width: 2vw;
+  /* max-width: 32px; */
+  margin: 10px;
+  background-image: url(/img/trash.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+.logo-obj1{
+  height: auto;
+  width: 30%;
+  background-image: url(/img/idiomas.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  margin: 10px;
+}
+.info{
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  grid-template-rows: repeat(3,1fr);
+  grid-template-areas: 
+  "a a c"
+  "d e f"
+  "g g i";
+  height: auto;
+  width: 60%;
+  padding-left: 8%;
+}
+.c{
+  grid-area: a;
+  font-weight: 600;
+  margin: 10px;
+  margin-top: 20px;
+  margin-bottom: 0;
+}
+.n{
+grid-area: d;
+margin: 10px;
+margin-top: 0;
+}
+.p{
+grid-area: g;
+margin: 10px;
+}
+.price{
+grid-area: i;
+margin: 10px;
+}
+.object2{
+display: flex;
+height: 45%;
+/* background-color: rgba(247, 253, 255, 0.8);
+backdrop-filter: blur(10px); */
+background-color: rgba(237, 248, 255, 0.4);
+  -webkit-backdrop-filter: blur(5px);
+backdrop-filter: blur(5px);
+border-radius: 10px;
+padding: 5px;
+}
+.trash-obj2{
+  height: 2vw;
+  max-height: 34px;
+  width: 2vw;
+  max-width: 32px;
+  margin: 10px;
+  background-image: url(/img/trash.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+.logo-obj2{
+  height: auto;
+  width: 30%;
+  background-image: url(/img/idiomas.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  margin: 10px;
+}
+.info2{
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  grid-template-rows: repeat(3,1fr);
+  grid-template-areas: 
+  "a a c"
+  "d e f"
+  "g g i";
+  height: auto;
+  width: 60%;
+  padding-left: 8%;
+}
+.c2{
+  grid-area: a;
+  font-weight: 600;
+  margin: 10px;
+  margin-top: 20px;
+  margin-bottom: 0;
+}
+.n2{
+grid-area: d;
+margin: 10px;
+margin-top: 0;
+}
+.p2{
+grid-area: g;
+margin: 10px;
+}
+.price2{
+grid-area: i;
+margin: 10px;
+}
+.cont-tot{
+display: flex;
+justify-content: center;
+margin-top: 10px;
+height: 10%;
+}
+.totals{
+width: 35%;
+margin-top: 0;
+box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1); 
+border-radius: 5px;
+}
+ul{
+display: grid;
+grid-template-columns: 1fr 1fr;
+grid-template-rows: 1fr 1fr 1fr;
+}
+.cuotas{
+text-decoration: none;
+color: #a74b61;
+}
+.totals li{
+display: grid;
+color: #a74b61;
+}
+.cont-butt{
+height: 10vh;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+.comprar {
+height: 5vh;
+width: 40%;
+border: solid 1px white;
+border-radius: 20px;
+background-color: #a74b61;
+color: #fff;
+}
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - -  */
 .main-content {
   text-align: center;
 }
