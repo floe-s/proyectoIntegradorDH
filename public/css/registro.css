@@ -177,6 +177,7 @@
 
 .footer-container {
   display: flex;
+  margin: auto;
 }
 
 .footer-content {
@@ -236,6 +237,7 @@
   display: flex;
   justify-content:space-between;
   padding: 0 15px;
+
 }
 .footer-content p {
   padding: 10px 0;
@@ -419,14 +421,15 @@ margin: 0 5px;
 @media (max-width: 580px){
     .form-cont{
         width: 70vw;
-        height: 600px;
+    
     }
+
 }
 
 @media (max-width: 480px){
     .form-cont{
         width: 80vw;
-        height: 650px;
+      
     }
     main{
         height: 700px;

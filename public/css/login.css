@@ -380,12 +380,15 @@ margin: 0 5px;
         width: 70vw;
         height: 600px;
     }
+    main{
+        height: 700px;
+    }
 }
 
 @media (max-width: 480px){
     .form-login{
         width: 80vw;
-        height: 650px;
+        
     }
     main{
         height: 700px;
@@ -396,7 +399,7 @@ margin: 0 5px;
 @media (max-width: 378px){
     .form-login{
         width: 95vw;
-        height: 500px;
+        
     }
 
     main{
