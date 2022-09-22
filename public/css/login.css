@@ -7,6 +7,7 @@
 .body {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     background-image: url(../img/background.jpg);
+    
     /* background-size: contain; */
     /* background-attachment: fixed; */
 }
@@ -175,9 +176,9 @@
 }
 
 .footer-container {
-    position: relative;
-    min-height: 100vh;
-  }
+    display: flex;
+    
+}
 
 .footer-content {
     background-color: #000;
@@ -402,3 +403,12 @@ margin: 0 5px;
         height: 600px;
     }
 }
+
+@media (max-height: 1000px ) and (min-height:100px){
+    .footer-container{
+      margin: auto;
+      position: relative;
+      height: 200px;
+      bottom: 0px;
+    }
+  }

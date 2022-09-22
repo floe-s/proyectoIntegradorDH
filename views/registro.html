@@ -29,21 +29,23 @@
       </header>
           
           <main>
-            <div class="main-content">
-                <h1></font><center>Registrate</center></h1>
-                
-                <br>
-             <div><center><input class="btn-info" type="text" placeholder="Ingresar nombre"></center></div>
-              <br>
-            <div><center><input class="btn-info" type="text" placeholder="Ingresar apellido"></center></div>
-              <br>
-            <div></div><center><input class="btn-info" type="email" placeholder="Ingresar correo"></center></div>
-              <br>
-            <div><center><input class="btn-info" type="password" placeholder="Ingresar contraseña"></center></div>
-              <br>
-            <div><center><button id="boton-enviar">Crear una cuenta</button></center></div>
-     
-            
+            <section class="form-cont">
+              <h1 id="titulo">Registrarse</h1>
+              <input class="btn-form" type="text" placeholder="Nombre">
+              <input class="btn-form" type="text" placeholder="Apellido">
+              <input class="btn-form" type="email" placeholder="Email">
+              <input class="btn-form" type="password" placeholder="Contraseña">
+              <input id="btn-crear" type="button" value="Crear una cuenta">
+              <div class="o">
+                <label id="o"> o </label>
+              </div>
+              <div class="btn-ingresar">
+                <button class="btn-icon"><i class="fa-brands fa-google"></i></button>
+                <button class="btn-icon"><i class="fa-brands fa-linkedin"></i></button>
+                <button class="btn-icon"><i class="fa-brands fa-facebook"></i></button>
+              </div>
+              <a class="a" href="/login">Ya tienes una cuenta? Iniciar sesión</a>
+            </section>
           </main>
         
           <footer class="footer-container">
