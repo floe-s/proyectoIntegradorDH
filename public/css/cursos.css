@@ -57,6 +57,10 @@
   font-size: 18px;
   background-color:#fff;
 }
+.magnifying-glass-icon {
+  text-decoration: none;
+  color: #000;
+}
 
 .registrarse{
   background-color: #Eec8c7;
@@ -302,6 +306,10 @@ margin: 0 5px;
 
 .img-res{
   display: none;
+}
+
+.shop-cart-icon-button i {
+  color: #000;
 }
 
 /* @media (min-width: 769px) {

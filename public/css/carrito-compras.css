@@ -58,6 +58,11 @@
   background-color:#fff;
 }
 
+.magnifying-glass-icon {
+  text-decoration: none;
+  color: #000;
+}
+
 .registrarse{
   background-color: #Eec8c7;
   border: 1px solid transparent;
@@ -108,7 +113,7 @@
   border-radius: 20px;
   height: 700px;
   margin: 10%;
-  margin-top: 2%;
+  margin-top: 10%;
   box-shadow: 0px 0px 10px rgba(170, 53, 68, 0.726);
   -webkit-backdrop-filter: blur(5px);
   backdrop-filter: blur(5px); 
@@ -140,7 +145,7 @@ font-weight: 700;
 .container-products{
 height: 65%;
 }
-.object1{
+.object1, .object2 {
 display: flex;
 height: 45%;
 background-color: rgba(237, 248, 255, 0.4);
@@ -148,13 +153,11 @@ background-color: rgba(237, 248, 255, 0.4);
 backdrop-filter: blur(5px);
 border-radius: 10px;
 padding: 5px;
-margin-bottom: 30px;
+margin-bottom: 10px;
 }
-.trash-obj1{
+.trash-obj1, .trash-obj2 {
   height: 5vw;
-  /* max-height: 34px; */
   width: 5vw;
-  /* max-width: 32px; */
   margin: 10px;
   background-image: url(/img/trash.png);
   background-size: 100% 100%;
@@ -162,109 +165,57 @@ margin-bottom: 30px;
 }
 .logo-obj1{
   /* height: auto; */
-  width: 30%;
+  width: 200px;
   background-image: url(/img/paises/inglaterra-figuras.webp);
   background-repeat: no-repeat;
   background-size: 100% 100%;
   margin: 10px;
-  border: #000 1px solid;
-  border-radius: 5px;
+  /* border: #000 1px solid;
+  border-radius: 5px; */
 }
-.info{
-  display: grid;
+.info, .info2 {
+  /* display: grid;
   grid-template-columns: repeat(3,1fr);
   grid-template-rows: repeat(3,1fr);
   grid-template-areas: 
   "a a c"
   "d e f"
-  "g g i";
+  "g g i"; */
   height: auto;
   width: 60%;
   padding-left: 8%;
+  font-size: 14px;
 }
-.c{
+.c, .c2 {
   grid-area: a;
   font-weight: 600;
   margin: 10px;
   margin-top: 20px;
   margin-bottom: 0;
 }
-.n{
+.n, .n2 {
 grid-area: d;
 margin: 10px;
 margin-top: 0;
 }
-.p{
+.p, .p2 {
 grid-area: g;
 margin: 10px;
 }
-.price{
+.price, .price2 {
 grid-area: i;
 margin: 10px;
 }
-.object2{
-display: flex;
-height: 45%;
-/* background-color: rgba(247, 253, 255, 0.8);
-backdrop-filter: blur(10px); */
-background-color: rgba(237, 248, 255, 0.4);
-  -webkit-backdrop-filter: blur(5px);
-backdrop-filter: blur(5px);
-border-radius: 10px;
-padding: 5px;
-}
-.trash-obj2{
-  height: 5vw;
-  max-height: 34px;
-  width: 5vw;
-  max-width: 32px;
-  margin: 10px;
-  background-image: url(/img/trash.png);
-  background-size: 100% 100%;
-  background-repeat: no-repeat;
-}
+
 .logo-obj2{
   /* height: auto; */
-  width: 30%;
+  width: 200px;
   background-image: url(/img/paises/brasil-figuras.webp);
   background-repeat: no-repeat;
   background-size: 100% 100%;
   margin: 10px;
-  border: #000 1px solid;
-  border-radius: 5px;
 }
-.info2{
-  display: grid;
-  grid-template-columns: repeat(3,1fr);
-  grid-template-rows: repeat(3,1fr);
-  grid-template-areas: 
-  "a a c"
-  "d e f"
-  "g g i";
-  height: auto;
-  width: 60%;
-  padding-left: 8%;
-}
-.c2{
-  grid-area: a;
-  font-weight: 600;
-  margin: 10px;
-  margin-top: 20px;
-  margin-bottom: 0;
-}
-.n2{
-grid-area: d;
-margin: 10px;
-margin-top: 0;
-}
-.p2{
-grid-area: g;
-margin: 10px;
-}
-.price2{
-grid-area: i;
-margin: 10px;
-}
+
 .cont-tot{
 display: flex;
 justify-content: center;
@@ -272,13 +223,15 @@ margin-top: 10px;
 height: 10%;
 }
 .totals{
-width: 70%;
+width: 200px;
 text-align: center;
-margin-top: 0;
+padding: 10px;
+padding-right: 40px;
+/* margin-top: 0; */
 box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1); 
 border-radius: 5px;
 }
-ul{
+.totals-list {
 display: grid;
 grid-template-columns: 1fr 1fr;
 grid-template-rows: 1fr 1fr 1fr;
@@ -304,8 +257,8 @@ margin-top: 10px;
 }
 
 .comprar {
-height: 30%;
-width: 40%;
+width: 100px;
+padding: 5px;
 border: solid 1px white;
 border-radius: 20px;
 background-color: #a74b61;
@@ -381,13 +334,23 @@ color: #fff;
   font-size: 20px;
   font-weight: 700;
   }
+  .info, .info2 {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(3,1fr);
+    grid-template-areas: 
+    "a a c"
+    "d e f"
+    "g g i";
+    font-size: 16px;
+  }
 .trash-obj1, .trash-obj2 {
   height: 3vw;
   width: 3vw;
 }
-.comprar {
-  width: 18%;
-  }
+.cuotas {
+  font-size: 14px;
+}
 .footer-content {
   display: flex;
   justify-content:space-between;
@@ -416,17 +379,14 @@ margin: 0 5px;
   position: relative;
 }
 .title{
-  font-size: 50px;
+  font-size: 40px;
   font-weight: 700;
   }
+.info, .info2 {
+  font-size: 18px;
+}
 .trash-obj1, .trash-obj2 {
   height: 2vw;
   width: 2vw;
 }
-.logo-obj1, .logo-obj2 {
-  width: 20%;
-}
-.comprar {
-  width: 15%;
-  }
 }

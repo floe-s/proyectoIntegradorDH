@@ -58,6 +58,11 @@
     background-color:#fff;
 }
 
+.magnifying-glass-icon {
+    text-decoration: none;
+    color: #000;
+  }
+
 .registrarse{
     background-color: #Eec8c7;
     border: 1px solid transparent;

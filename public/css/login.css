@@ -58,6 +58,11 @@
     background-color:#fff;
 }
 
+.magnifying-glass-icon {
+    text-decoration: none;
+    color: #000;
+  }
+  
 .registrarse{
     background-color: #Eec8c7;
     border: 1px solid transparent;
@@ -240,13 +245,13 @@ margin: 0 5px;
 #boton-enviar{
     background-color: #a74b61;
     color: #ffffff;
-    border: none;
-    width: 60%;
+    width: 200px;
     margin: auto;
     margin-top: 20px;
     margin-bottom: 20px;
     padding: 10px;
     border-radius: 20px;
+    border: solid 1px white;
 }
 
 #boton-enviar:hover{
