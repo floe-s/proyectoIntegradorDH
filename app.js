@@ -1,4 +1,6 @@
 const productosRoutes = require('./src/routes/productosRoutes')
+/* const usuarioRoutes = require('./src/routes/usuarioRoutes')
+const productoRoutes = require('./src/routes/productoRoutes') */
 
 const express = require('express');
 const path = require('path');
@@ -9,6 +11,10 @@ const publicPath = path.resolve(__dirname, './public');
 app.use(express.static(publicPath));
 
 app.use('/', productosRoutes); //se contatenan las rutas del 1er y 2do parámetro
+
+/* app.use('/usuario', usuarioRoutes);
+
+app.use('/producto', productoRoutes); */
 
 app.listen(process.env.PORT || 3000, function() {
   console.log("Servidor corriendo en el puerto 3000");
