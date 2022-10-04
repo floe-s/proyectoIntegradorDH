@@ -1,4 +1,4 @@
-const productosRoutes = require('./routes/productosRoutes')
+const productosRoutes = require('./src/routes/productosRoutes')
 
 const express = require('express');
 const path = require('path');
@@ -10,6 +10,11 @@ app.use(express.static(publicPath));
 
 app.use('/', productosRoutes); //se contatenan las rutas del 1er y 2do parámetro
 
+app.listen(process.env.PORT || 3000, function() {
+  console.log("Servidor corriendo en el puerto 3000");
+});
+
+//Ejemplo que mostro Jero
 /* app.use('*', function(req, res) {
   res.send("ruta erronea ");
 }); */
@@ -18,12 +23,8 @@ app.use('/', productosRoutes); //se contatenan las rutas del 1er y 2do parámetr
   console.log("Servidor corriendo en el puerto 3000");
 }); */
 
-app.listen(process.env.PORT || 3000, function() {
-  console.log("Servidor corriendo en el puerto 3000");
-});
-
 //RUTAS
-app.get('/', (req, res) => {
+/* app.get('/', (req, res) => {
   res.sendFile(path.resolve(__dirname, './views/index.html'));
 });
 
@@ -57,4 +58,4 @@ app.get('/login', (req, res)=>{
 
 app.get('/carrito-compras', (req, res)=>{
   res.sendFile(path.resolve(__dirname, './views/carrito-compras.html'));
-});
+}); */
