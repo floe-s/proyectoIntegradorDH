@@ -1,3 +1,5 @@
+const productosRoutes = require('./routes/productosRoutes')
+
 const express = require('express');
 const path = require('path');
 
@@ -5,6 +7,12 @@ const app = express();
 
 const publicPath = path.resolve(__dirname, './public');
 app.use(express.static(publicPath));
+
+app.use('/', productosRoutes); //se contatenan las rutas del 1er y 2do parámetro
+
+/* app.use('*', function(req, res) {
+  res.send("ruta erronea ");
+}); */
 
 /* app.listen(3000, () => {
   console.log("Servidor corriendo en el puerto 3000");
