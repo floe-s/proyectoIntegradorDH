@@ -1,4 +1,6 @@
 const productosRoutes = require('./src/routes/productosRoutes')
+const mainRoutes = require('./src/routes/mainRoutes')
+const usuarioRoutes = require('./src/routes/usuarioRoutes')
 /* const usuarioRoutes = require('./src/routes/usuarioRoutes')
 const productoRoutes = require('./src/routes/productoRoutes') */
 
@@ -11,16 +13,16 @@ const publicPath = path.resolve(__dirname, './public');
 app.use(express.static(publicPath));
 
 app.set('view engine', 'ejs');
-app.set('views', path.join(__dirname, '/views'));
+app.set('views', path.join(__dirname, './src/views'));
 
-app.use('/', productosRoutes); //se contatenan las rutas del 1er y 2do parámetro
+app.use('/', mainRoutes); //se contatenan las rutas del 1er y 2do parámetro
 
-/* app.use('/usuario', usuarioRoutes);
+app.use('/usuario', usuarioRoutes);
 
-app.use('/producto', productoRoutes); */
+// app.use('/producto', productoRoutes);
 
-app.listen(process.env.PORT || 3000, function() {
-  console.log("Servidor corriendo en el puerto 3000");
+app.listen(process.env.PORT || 3002, function() {
+  console.log("Servidor corriendo en el puerto 3002");
 });
 
 //Ejemplo que mostro Jero
