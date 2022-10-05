@@ -1,5 +1,4 @@
 
-
 const controller= {
     registro: (req,res) => {
     res.render('./registro')

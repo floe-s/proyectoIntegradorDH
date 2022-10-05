@@ -1,40 +1,20 @@
-const path = require('path');
 
 const controlador = {
-  index: (req, res) => {
-    res.render(path.resolve('', './views/index.ejs'));
-  },
 
   cursos: (req, res) => {
-    res.sendFile(path.resolve('', './views/cursos.html'));
+    res.render('./cursos')
   },
 
   descargables: (req, res) => {
-    res.sendFile(path.resolve('', './views/descargables.html'));
-  },
-
-  traductor: (req, res) => {
-    res.sendFile(path.resolve('', './views/traductor.html'));
+    res.render('./descargables')
   },
 
   suscripciones: (req, res) => {
-    res.sendFile(path.resolve('', './views/suscripciones.html'));
-  },
-
-  contacto: (req, res) => {
-    res.sendFile(path.resolve('', './views/contacto.html'));
-  },
-
-  registro: (req, res) => {
-    res.sendFile(path.resolve('', './views/registro.html'));
-  },
-
-  login: (req, res) => {
-    res.sendFile(path.resolve('', './views/login.html'));
+    res.render('./suscripciones')
   },
 
   carrito: (req, res) => {
-    res.sendFile(path.resolve('', './views/carrito-compras.html'));
+    res.render('./carrito-compras')
   }
 
 }

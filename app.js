@@ -15,11 +15,11 @@ app.use(express.static(publicPath));
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, './src/views'));
 
-app.use('/', mainRoutes); //se contatenan las rutas del 1er y 2do parámetro
+app.use('/', mainRoutes);
 
 app.use('/usuario', usuarioRoutes);
 
-// app.use('/producto', productoRoutes);
+app.use('/producto', productosRoutes);
 
 app.listen(process.env.PORT || 3002, function() {
   console.log("Servidor corriendo en el puerto 3002");
