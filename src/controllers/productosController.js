@@ -2,7 +2,7 @@ const path = require('path');
 
 const controlador = {
   index: (req, res) => {
-    res.sendFile(path.resolve('', './views/index.html'));
+    res.render(path.resolve('', './views/index.ejs'));
   },
 
   cursos: (req, res) => {

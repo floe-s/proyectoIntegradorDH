@@ -10,6 +10,9 @@ const app = express();
 const publicPath = path.resolve(__dirname, './public');
 app.use(express.static(publicPath));
 
+app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, '/views'));
+
 app.use('/', productosRoutes); //se contatenan las rutas del 1er y 2do parámetro
 
 /* app.use('/usuario', usuarioRoutes);
