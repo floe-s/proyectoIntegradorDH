@@ -9,14 +9,15 @@ const path = require('path');
 
 const app = express();
 
-const publicPath = path.resolve(__dirname, './public');
-app.use(express.static(publicPath));
 
 app.use('/', mainRoutes);
 
 app.use('/usuario', usuarioRoutes);
 
 app.use('/producto', productosRoutes);
+
+const publicPath = path.resolve(__dirname, './public');
+app.use(express.static(publicPath));
 
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, './src/views'));
