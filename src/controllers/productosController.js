@@ -1,8 +1,9 @@
 
-const controlador = {
 
+const controlador = {
+  
   cursos: (req, res) => {
-    res.render('./cursos')
+    res.render('./products/cursos')
   },
 
   descargables: (req, res) => {

@@ -1,36 +1,11 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="//db.onlinewebfonts.com/c/d7e8a95865396cddca89b00080d2cba6?family=SoDo+Sans+SemiBold" rel="stylesheet" type="text/css"/>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" rel="stylesheet"/>
-  <link rel="stylesheet" href="/css/style.css">
-  <script src="https://kit.fontawesome.com/a4e61d7a9e.js"></script>
-  <title>MOIDI HOUSE</title>
+  <%-include('partials/head') %> 
 </head>
 <body class="body">
-  <header class="navbar">
-    <a href="/"><svg class="logo" href="/img/logo-moidi.svg"></svg></a>
-    <div class="navbar-left">
-      <div class="cursos"><a href="./producto/cursos">Cursos</a></div>
-      <div class="descargables"><a href="./producto/descargables">Descargables</a></div>
-      <div class="traductor"><a href="./usuario/traductor">Traductor</a></div>
-      <div class="suscripciones"><a href="./producto/suscripciones">Suscripciones</a></div>
-      <div class="contacto"><a href="./usuario/contacto">Contacto</a></div>
-      <div class="idioma">Idioma</div>
-    </div>
-    
-    <div class="navbar-right">
-      <input type="search" class="buscar" placeholder="Buscar"><button class="magnifying-glass-icon"><i class="fa-solid fa-magnifying-glass"></i></button>
-      <div class="registrarse"><a href="./usuario/registro">Registrarse</a></div>
-      <div class="inises"><a href="./usuario/login">Iniciar sesión</a></div>
-        <div class="shop-cart-icon"> 
-          <a href="./productos/carrito-commpras"><i class="fa-solid fa-cart-shopping"></i></a>
-        </div>  
-    </div>
-  </header>
+
+  <%-include('partials/header') %> 
   
   <main class="main">
     
@@ -128,19 +103,7 @@
   <a href=""><i class="fa-brands fa-whatsapp"></i></a> 
 </div>
 
-  <footer class="footer-container">
-    
-    <div class="footer-content">
-      <p>Copyright © 2022 Moidi Team6. Todos los derechos reservados.</p>
-      <ul class="list-unstyled d-flex justify-content-center">
-        <li class="ms-3"><a href="#"><i class="fa-brands fa-square-facebook"></i></a></li>
-        <li class="ms-3"><a href="#"><i class="fa-brands fa-square-instagram"></i></a></li>
-        <li class="ms-3"><a href="#"><i class="fa-brands fa-square-twitter"></i></a></li>
-        <li class="ms-3"><a href="#"><i class="fa-brands fa-square-youtube"></i></a></li>
-        <li class="ms-3"><a href="#"><i class="fa-brands fa-linkedin"></i></a></li>
-      </ul>
-    </div>
-  </footer>
+  <footer><%-include('partials/footer') %> </footer>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

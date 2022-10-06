@@ -1,10 +1,10 @@
 
 const controller= {
     registro: (req,res) => {
-    res.render('./registro')
+    res.render('./users/registro')
 },
     login:(req,res) => {
-    res.render('./login')
+    res.render('./users/login')
 }
 }
 
