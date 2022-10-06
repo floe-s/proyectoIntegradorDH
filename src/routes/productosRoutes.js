@@ -11,6 +11,11 @@ router.get('/suscripciones', productosController.suscripciones)
 
 router.get('/carrito-compras', productosController.carrito)
 
+router.get('/cargar', productosController.cargar)
+
+router.get('/editar', productosController.editar)
+
+
 module.exports = router;
 
 //Ejemplo que mostro Jero

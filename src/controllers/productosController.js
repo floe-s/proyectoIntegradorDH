@@ -16,6 +16,14 @@ const controlador = {
 
   carrito: (req, res) => {
     res.render('./carrito-compras')
+  },
+
+  cargar: (req, res) => {
+    res.render('./products/cargar')
+  },
+
+  editar: (req, res) => {
+    res.render('./products/editar')
   }
 
 }
