@@ -23,3 +23,5 @@ El usuario va a tener la posibilidad de iniciar sesión por medio de un login pa
 Por otro lado, vamos a generar un perfil administrador que permita cargar, modificar o eliminar alguno de los cursos en el sitio. Además de otorgar los permisos correctos para que el usuario pueda acceder a todos sus cursos y materiales requeridos.
 
 Por último, se contará con la posibilidad de poder cambiar el idioma base del sitio, entre las opciones de español, inglés, y portugués, para que sea más entendible la navegación en el sitio por parte del usuario.
+
+Link del proyecto en Heroku: https://moidi-grupo6.herokuapp.com/
