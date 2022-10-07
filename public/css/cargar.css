@@ -127,8 +127,8 @@ body{
 }
 
 .footer-container {
-    display: flex;
-    
+    position: relative;
+    min-height: 100vh;  
 }
 
 .footer-content {
