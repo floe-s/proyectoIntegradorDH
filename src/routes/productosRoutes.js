@@ -12,6 +12,7 @@ router.get('/suscripciones', productosController.suscripciones)
 router.get('/carrito-compras', productosController.carrito)
 
 router.get('/cargar', productosController.cargar)
+router.post('/carga', productosController.registrar)
 
 router.get('/editar', productosController.editar)
 

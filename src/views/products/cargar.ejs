@@ -13,17 +13,38 @@
     <body>
         <%-include('../partials/header')   %> 
         <main>
-            <h2>Crear producto</h2>
-            <form class="form-cargar" action="">
-                <div class="img-curso"></div>
-                <div class="info-curso">
-                    <table>
-                        
-                    </table>
+            <figure class="img-figure">
+                <img src="../../../img/Production_Two Color.svg" >
+                <label>No olviden llenar todos los campos!</label>
+            </figure>
+            <div class="cont">
+                <div class="img-curso">
+                    <h2 id="titulo">Nuevo producto</h2>
                 </div>
-            </form>
+                <form class="form-cargar" action="/producto/carga" method="POST">
+                    <input type="text" name="titulo" placeholder="Nombre del curso">
+                    <div class="inpu">
+                    
+                        <div class="tex-ifo"> 
+                            <input class="pro" type="text" name="basico" placeholder="Profesor nivel basico">
+                            <input class="precio" type="text" name="precioBaisco" placeholder="Precio">
+                        </div>
+                        <div class="tex-ifo">
+                            <input class="pro" type="text" name="medio" placeholder="Profesor nivel intermedio">
+                            <input class="precio"  type="text" name="precioMedio" placeholder="Precio">
+                        </div>
+                        <div class="tex-ifo">
+                            <input class="pro" type="text" name="avanzado" placeholder="Profesor nivel avanzado">
+                            <input class="precio"  type="text" name="precioAvanzado" placeholder="Precio">
+                        </div>
+                    </div>
+                    <div class="btn">
+                        <button type="submit">Agregar</button>
+                    </div>
+                </form>
+            </div>
         </main>
-        <%- include('../partials/footer') %> 
+        <%- include('../partials/footer') %>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
 
     </body>

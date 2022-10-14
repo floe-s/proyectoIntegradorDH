@@ -11,6 +11,27 @@ const controlador = {
     res.render('./products/cursos', { ps: curso});
   },
 
+  registrar:(req, res) => {
+
+    let productoNuevo ={
+      id:(curso[curso.length - 1].id + 1),
+      titule:req.body.titulo,
+      profesorBasico: req.body.basico,
+      precioBaisco: req.body.precioBaisco,
+      profesormedio: req.body.medio,
+      precioMedio: req.body.precioMedio,
+      profesorAvanzado: req.body.avanzado,
+      precioAvanzado: req.body.precioAvanzado,
+      img: "alemania-figuras.jpg"
+    }
+    curso.push(productoNuevo);
+
+    fs.writeFileSync(cursoPath,JSON.stringify(curso,null," "));
+  
+    res.redirect("/");
+  },
+
+
   descargables: (req, res) => {
     res.render('./descargables')
   },
