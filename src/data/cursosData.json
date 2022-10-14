@@ -1,0 +1,51 @@
+[
+    {
+        "id": 1,
+        "titule": "Cursos de Alemán",
+        "profesorBasico": "Harman Lout",
+        "precioBaisco": 3500,
+        "profesormedio": "Georfina Weisman",
+        "precioMedio": 4300,
+        "profesorAvanzado": "Nikola Right",
+        "precioAvanzado": 5800,
+        "img": "alemania-figuras.jpg"
+        
+    },
+
+    {
+        "id": 2,
+        "titule": "Cursos de Inglés",
+        "profesorBasico": "Jon Snow",
+        "precioBaisco": 3500,
+        "profesormedio": "Adam Moore",
+        "precioMedio": 4300,
+        "profesorAvanzado": "Olivia Thompson",
+        "precioAvanzado": 5800,
+        "img": "inglaterra-figuras.webp"
+
+    },
+
+    {
+        "id": 3,
+        "titule": "Cursos de Portugues",
+        "profesorBasico": "Ilina Ferreira",
+        "precioBaisco": 2500,
+        "profesormedio": "Renata Agostinho",
+        "precioMedio": 5300,
+        "profesorAvanzado": "Danilo Pereira",
+        "precioAvanzado": 6800,
+        "img": "brasil-figuras.webp"
+    },
+
+    {
+        "id": 4,
+        "titule": "Cursos de Español",
+        "profesorBasico": "Jose Fernanso",
+        "precioBaisco": 1500,
+        "profesormedio": "Maro Martinez",
+        "precioMedio": 2300,
+        "profesorAvanzado": "Daniela Peralda",
+        "precioAvanzado": 3800,
+        "img": "espana-figuras.webp"
+    }
+]

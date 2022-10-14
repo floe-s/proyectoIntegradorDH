@@ -19,236 +19,67 @@
         <h1>CURSOS</h1>
         <label>Contamos con todos los idiomas que necesitas.</label>
       </div>
-      <div class="cursos-info">
 
-        <div class="superiro-curso"><a name="curso-aleman"></a>
-          <label class="titulo">Cursos de Alemán</label>
-          <input class="btn-test" type="button" value="Iniciar Test">
-          <div class="img-res">
-            <img class="img-curso" src="img/paises/alemania-figuras.jpg" >
-          </div>
+      <!--clases-->
+      <% for(let i = 0; i < ps.length; i ++) { %>
+        <div class="cursos-info">
+          <div class="superiro-curso"><a name="curso-aleman"></a>
+            <label class="titulo"><%= ps[i].titule %> </label>
+            <input class="btn-test" type="button" value="Iniciar Test">
+            <div class="img-res">
+              <img class="img-curso" src="img/paises/alemania-figuras.jpg" >
+            </div>
           
+          </div>
+          <section class="contenido-info">
+            <div class="img-con">
+              <img class="img-curso" src="../../img/paises/<%= ps[i].img %> " >
+            </div>
+          
+          
+            <table class="informacion">
+              <tr class="titulo-colum">
+                <th></th>
+                <th>Niveles:</th>
+                <th>Profesor/ra:</th>
+                <th>Precio:</th>
+              </tr>
+              <tr>
+                <td class="icon-info">
+                  <button class="shop-cart-icon-button">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                  </button>
+                </td>
+                <td>Básico</td>
+                <td><%= ps[i].profesorBasico%> </td>
+                <td>$ <%= ps[i].precioBaisco%> </td>
+              </tr>
+              <tr>
+                <td class="icon-info">
+                  <button class="shop-cart-icon-button">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                  </button>
+                </td>
+                <td>Intermedio</td>
+                <td><%= ps[i].profesormedio%></td>
+                <td>$ <%= ps[i].precioMedio%></td>
+              </tr>
+              <tr>
+                <td class="icon-info">
+                  <button class="shop-cart-icon-button">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                  </button>
+                </td>
+                <td>Avanzado</td>
+                <td><%= ps[i].profesorAvanzado%></td></td>
+                <td>$ <%= ps[i].precioAvanzado%></td>
+              </tr>
+            </table>
+          </section>
         </div>
-        <section class="contenido-info">
-          <div class="img-con">
-            <img class="img-curso" src="../../img/paises/alemania-figuras.jpg" >
-          </div>
-          
-          
-          <table class="informacion">
-            <tr class="titulo-colum">
-              <th></th>
-              <th>Niveles:</th>
-              <th>Profesor/ra:</th>
-              <th>Precio:</th>
-            </tr>
-            <tr>
-              <td class="icon-info">
-                <button class="shop-cart-icon-button">
-                  <i class="fa-solid fa-cart-shopping"></i>
-                </button>
-              </td>
-              <td>Básico</td>
-              <td>Harman Lout</td>
-              <td>$3,500.00</td>
-            </tr>
-            <tr>
-              <td class="icon-info">
-                <button class="shop-cart-icon-button">
-                  <i class="fa-solid fa-cart-shopping"></i>
-                </button>
-              </td>
-              <td>Intermedio</td>
-              <td>Georfina Weisman</td>
-              <td>$4,300.00</td>
-            </tr>
-            <tr>
-              <td class="icon-info">
-                <button class="shop-cart-icon-button">
-                  <i class="fa-solid fa-cart-shopping"></i>
-                </button>
-              </td>
-              <td>Avanzado</td>
-              <td>Nikola Right</td>
-              <td>$5,800.00</td>
-            </tr>
-          </table>
-        </section>
-
-        
-      </div>
-      <!--siguiente curso-->
-      <div class="cursos-info">
-        
-        <div class="superiro-curso"><a name="curso-ingles"></a>
-          <label class="titulo">Cursos de Inglés</label>
-          <input class="btn-test" type="button" value="Iniciar Test">
-          <div class="img-res">
-            <img class="img-curso" src="img/paises/inglaterra-figuras.webp" >
-          </div>
-          
-        </div>
-        <section class="contenido-info">
-          <div class="img-con">
-            <img class="img-curso" src="../../img/paises/inglaterra-figuras.webp" >
-          </div>
-          
-          
-          <table class="informacion">
-            <tr class="titulo-colum">
-              <th></th>
-              <th>Niveles:</th>
-              <th>Profesor/ra:</th>
-              <th>Precio:</th>
-            </tr>
-            <tr>
-              <td class="icon-info">
-                <button class="shop-cart-icon-button">
-                  <i class="fa-solid fa-cart-shopping"></i>
-                </button>
-              </td>
-              <td>Básico</td>
-              <td>Jon Snow</td>
-              <td>$3,500.00</td>
-            </tr>
-            <tr>
-              <td class="icon-info">
-                <button class="shop-cart-icon-button">
-                  <i class="fa-solid fa-cart-shopping"></i>
-                </button>
-              </td>
-              <td>Intermedio</td>
-              <td>Adam Moore</td>
-              <td>$4,300.00</td>
-            </tr>
-            <tr>
-              <td class="icon-info">
-                <button class="shop-cart-icon-button">
-                  <i class="fa-solid fa-cart-shopping"></i>
-                </button>
-              </td>
-              <td>Avanzado</td>
-              <td>Olivia Thompson</td>
-              <td>$5,800.00</td>
-            </tr>
-          </table>
-        </section>
-      </div>
-
-
-       <!--siguiente curso-->
-       <div class="cursos-info">
-        
-        <div class="superiro-curso"><a name="curso-espanol"></a>
-          <label class="titulo">Cursos de Español</label>
-          <input class="btn-test" type="button" value="Iniciar Test">
-          <div class="img-res">
-            <img class="img-curso" src="img/paises/espana-figuras.webp" >
-          </div>
-          
-        </div>
-        <section class="contenido-info">
-          <div class="img-con">
-            <img class="img-curso" src="../../img/paises/espana-figuras.webp">
-          </div>
-          
-          <table class="informacion">
-            <tr class="titulo-colum">
-              <th></th>
-              <th>Niveles:</th>
-              <th>Profesor/ra:</th>
-              <th>Precio:</th>
-            </tr>
-            <tr>
-              <td class="icon-info">
-                <button class="shop-cart-icon-button">
-                  <i class="fa-solid fa-cart-shopping"></i>
-                </button>
-              </td>
-              <td>Básico</td>
-              <td>Jose Martinez</td>
-              <td>$3,500.00</td>
-            </tr>
-            <tr>
-              <td class="icon-info">
-                <button class="shop-cart-icon-button">
-                  <i class="fa-solid fa-cart-shopping"></i>
-                </button>
-              </td>
-              <td>Intermedio</td>
-              <td>Carlos Acosta</td>
-              <td>$4,300.00</td>
-            </tr>
-            <tr>
-              <td class="icon-info">
-                <button class="shop-cart-icon-button">
-                  <i class="fa-solid fa-cart-shopping"></i>
-                </button>
-              </td>
-              <td>Avanzado</td>
-              <td>Maria Sanchez</td>
-              <td>$5,800.00</td>
-            </tr>
-          </table>
-        </section>
-      </div>
-
-      <!--siguiente curso-->
-      <div class="cursos-info">
-        
-        <div class="superiro-curso"><a name="curso-portugues"></a>
-          <label class="titulo">Cursos de Portugués</label>
-          <input class="btn-test" type="button" value="Iniciar Test">
-          <div class="img-res">
-            <img class="img-curso" src="img/paises/brasil-figuras.webp">
-          </div>
-          
-        </div>
-        <section class="contenido-info">
-          <div class="img-con">
-            <img class="img-curso" src="../../img/paises/brasil-figuras.webp">
-          </div>
-          
-          <table class="informacion">
-            <tr class="titulo-colum">
-              <th></th>
-              <th>Niveles:</th>
-              <th>Profesor/ra:</th>
-              <th>Precio:</th>
-            </tr>
-            <tr>
-              <td class="icon-info">
-                <button class="shop-cart-icon-button">
-                  <i class="fa-solid fa-cart-shopping"></i>
-                </button>
-              </td>
-              <td>Básico</td>
-              <td>Pedro Coelho</td>
-              <td>$3,500.00</td>
-            </tr>
-            <tr>
-              <td class="icon-info">
-                <button class="shop-cart-icon-button">
-                  <i class="fa-solid fa-cart-shopping"></i>
-                </button>
-              </td>
-              <td>Intermedio</td>
-              <td>Bruna Saito</td>
-              <td>$4,300.00</td>
-            </tr>
-            <tr>
-              <td class="icon-info">
-                <button class="shop-cart-icon-button">
-                  <i class="fa-solid fa-cart-shopping"></i>
-                </button>
-              </td>
-              <td>Avanzado</td>
-              <td>Ruy Da Silva</td>
-              <td>$5,800.00</td>
-            </tr>
-          </table>
-        </section>
-      </div>
+      <% } %>  
+      
+     
       
     </section>
   </main>

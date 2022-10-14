@@ -1,9 +1,14 @@
+const fs = require('fs');
+const path = require('path');
 
+const cursoPath = path.join(__dirname, '../data/cursosData.json');// ruta del json
+const curso = JSON.parse(fs.readFileSync(cursoPath, 'utf-8')); 
 
 const controlador = {
   
   cursos: (req, res) => {
-    res.render('./products/cursos')
+    const curso = JSON.parse(fs.readFileSync(cursoPath, 'utf-8'));
+    res.render('./products/cursos', { ps: curso});
   },
 
   descargables: (req, res) => {
