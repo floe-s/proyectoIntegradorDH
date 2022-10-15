@@ -69,14 +69,3 @@ const controlador = {
 }
 
 module.exports = controlador;
-
-//Ejemplo que mostro Jero
-/* const controlador = {
-  index: (req, res) => {
-    res.sendFile(path.resolve(__dirname, './views/index.html'));
-  },
-
-  product: (req, res) => {
-    res.send("Producto223");
-  }
-} */
