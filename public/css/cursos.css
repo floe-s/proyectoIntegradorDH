@@ -111,6 +111,35 @@
   text-align: center;
 }
 
+.logo-obj3{
+  width: 200px;
+  background-image: url(/img/paises/alemania-figuras.jpg);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  margin: 10px;
+}
+.logo-obj4{
+  width: 200px;
+  background-image: url(/img/paises/inglaterra-figuras.webp);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  margin: 10px;
+}
+.logo-obj5{
+  width: 200px;
+  background-image: url(/img/paises/brasil-figuras.webp);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  margin: 10px;
+}
+.logo-obj6{
+  width: 200px;
+  background-image: url(/img/paises/espana-figuras.webp);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  margin: 10px;
+}
+
 .whatsapp-icon {
   position: relative;
 }

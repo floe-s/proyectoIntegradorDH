@@ -164,14 +164,11 @@ margin-bottom: 10px;
   background-repeat: no-repeat;
 }
 .logo-obj1{
-  /* height: auto; */
   width: 200px;
   background-image: url(/img/paises/inglaterra-figuras.webp);
   background-repeat: no-repeat;
   background-size: 100% 100%;
   margin: 10px;
-  /* border: #000 1px solid;
-  border-radius: 5px; */
 }
 .info, .info2 {
   /* display: grid;
