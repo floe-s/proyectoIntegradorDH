@@ -33,10 +33,4 @@ app.listen(process.env.PORT || 3002, function() {
   console.log("Servidor corriendo en el puerto 3002");
 });
 
-//Ejemplo que mostro Jero
-/* app.use('*', function(req, res) {
-  res.send("ruta erronea ");
-}); */
-
-
 

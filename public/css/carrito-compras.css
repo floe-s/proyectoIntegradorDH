@@ -26,7 +26,7 @@
 
 .navbar-left div{   
   text-transform: capitalize;
-  font-weight: 100;
+  font-weight: 400;
 }
 
 .navbar-left>*,
@@ -205,7 +205,6 @@ margin: 10px;
 }
 
 .logo-obj2{
-  /* height: auto; */
   width: 200px;
   background-image: url(/img/paises/brasil-figuras.webp);
   background-repeat: no-repeat;
@@ -224,7 +223,6 @@ width: 200px;
 text-align: center;
 padding: 10px;
 padding-right: 40px;
-/* margin-top: 0; */
 box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1); 
 border-radius: 5px;
 }
