@@ -4,11 +4,10 @@ const path = require('path');
 const usuarioPath = path.join(__dirname, '../data/usuarioData.json');
 const usuarios = JSON.parse(fs.readFileSync(usuarioPath, 'utf-8'));
 
-
-const controller= {
+const controller = {
 
     registro: (req,res) => {
-        res.render('./users/registro')
+        res.render('./users/registro');
     },
 
     // para crear registro
@@ -41,7 +40,11 @@ const controller= {
     },
 
     login:(req,res) => {
-        res.render('./users/login')
+        res.render('./users/login');
+    },
+
+    perfil:(req,res) => {
+        res.render('./users/perfil', {nombre: "Pepito"});
     }
 }
 
