@@ -9,6 +9,9 @@ const path = require('path');
 const app = express();
 // para poder usar put y delete 
 
+const publicPath = path.resolve(__dirname, './public');
+app.use(express.static(publicPath));
+
 app.use(methodOverride('_method'));
 //para indicar que vamos a usar POST
 
@@ -22,14 +25,9 @@ app.use('/usuario', usuarioRoutes);
 
 app.use('/producto', productosRoutes);
 
-const publicPath = path.resolve(__dirname, './public');
-app.use(express.static(publicPath));
-
-
 // para usar ejs
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, './src/views'));
-
 
 app.listen(process.env.PORT || 3002, function() {
   console.log("Servidor corriendo en el puerto 3002");
