@@ -21,22 +21,25 @@
                 <div class="img-curso">
                     <h2 id="titulo">Nuevo producto</h2>
                 </div>
-                <form class="form-cargar" action="/producto/carga" method="POST">
-                    <input type="text" name="titulo" placeholder="Nombre del curso">
+                <form class="form-cargar" action="/producto/carga" method="POST" enctype="multipart/form-data">
+                    <input type="text" name="titulo" placeholder="Nombre del curso:">
                     <div class="inpu">
                     
                         <div class="tex-ifo"> 
-                            <input class="pro" type="text" name="basico" placeholder="Profesor nivel basico">
-                            <input class="precio" type="text" name="precioBaisco" placeholder="Precio">
+                            <input class="pro" type="text" name="basico" placeholder="Profesor nivel basico:">
+                            <input class="precio" type="text" name="precioBaisco" placeholder="Precio:">
                         </div>
                         <div class="tex-ifo">
-                            <input class="pro" type="text" name="medio" placeholder="Profesor nivel intermedio">
-                            <input class="precio"  type="text" name="precioMedio" placeholder="Precio">
+                            <input class="pro" type="text" name="medio" placeholder="Profesor nivel intermedio:">
+                            <input class="precio"  type="text" name="precioMedio" placeholder="Precio:">
                         </div>
                         <div class="tex-ifo">
-                            <input class="pro" type="text" name="avanzado" placeholder="Profesor nivel avanzado">
-                            <input class="precio"  type="text" name="precioAvanzado" placeholder="Precio">
+                            <input class="pro" type="text" name="avanzado" placeholder="Profesor nivel avanzado:">
+                            <input class="precio"  type="text" name="precioAvanzado" placeholder="Precio:">
                         </div>
+                    </div>
+                    <div class="agregar-img">
+                        <input type="file" name="imgProduct" required>
                     </div>
                     <div class="btn">
                         <button type="submit">Agregar</button>

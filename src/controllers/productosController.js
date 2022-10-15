@@ -12,9 +12,22 @@ const controlador = {
   },
 
   registrar:(req, res) => {
+    let idNuevo = 0;
+
+    for(let s of curso){
+        if(idNuevo < s.id){
+            idNuevo = s.id
+        }
+    }
+
+    idNuevo++
+    
+    // llamamos el dato de la img de file que queremos 
+
+    let nombreImg = req.file.filename;
 
     let productoNuevo ={
-      id:(curso[curso.length - 1].id + 1),
+      id:idNuevo,
       titule:req.body.titulo,
       profesorBasico: req.body.basico,
       precioBaisco: req.body.precioBaisco,
@@ -22,8 +35,9 @@ const controlador = {
       precioMedio: req.body.precioMedio,
       profesorAvanzado: req.body.avanzado,
       precioAvanzado: req.body.precioAvanzado,
-      img: "alemania-figuras.jpg"
+      img: nombreImg
     }
+
     curso.push(productoNuevo);
 
     fs.writeFileSync(cursoPath,JSON.stringify(curso,null," "));

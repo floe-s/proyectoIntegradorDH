@@ -218,7 +218,7 @@ main{
 }
 
 .img-curso{
-    margin-top: 20%;
+    margin-top: 10%;
 }
 
 .img-figure{
@@ -260,7 +260,7 @@ main{
     border: none;
     background-color: #eee;
     padding: 10px;
-    border-radius: 8px;
+    border-radius: 8px 8px 0px 0px;
     font-weight: 200;
     outline: none;
     border-bottom: 1px solid #cf556c;
@@ -337,6 +337,23 @@ main{
 
 .btn > button:hover{
     transform: scale(1.05);
+}
+
+.agregar-img{
+    font-size: 13px;
+    text-align: center;
+    width: 100%;
+}
+
+.agregar-img > input{
+    border: none;
+    background-color: #eee;
+    padding: 10px;
+    border-radius: 8px;
+    font-weight: 200;
+    margin-top: 20px;
+    outline: none;
+    width: 70%;
 }
 
 /*--------- responsivo --------------*/
