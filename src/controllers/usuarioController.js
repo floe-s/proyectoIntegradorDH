@@ -15,7 +15,7 @@ const controller= {
     registrar:(req, res)=>{
         //console.log(req.body)
 
-        let idNuevo = 0;
+        let idNuevo = 1;
 
         for(let s of usuarios){
             if(idNuevo == s.id){
@@ -37,7 +37,7 @@ const controller= {
 
         fs.writeFileSync(usuarioPath,JSON.stringify(usuarios,null," "));
   
-        res.redirect("/");
+        res.redirect('/');
     },
 
     login:(req,res) => {

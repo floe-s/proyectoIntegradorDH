@@ -12,7 +12,7 @@ const controlador = {
   },
 
   registrar:(req, res) => {
-    let idNuevo = 0;
+    let idNuevo = 1;
 
     for(let s of curso){
         if(idNuevo < s.id){
@@ -42,7 +42,7 @@ const controlador = {
 
     fs.writeFileSync(cursoPath,JSON.stringify(curso,null," "));
   
-    res.redirect( '/producto/cursos');
+    res.redirect('/producto/cursos');
   },
 
 

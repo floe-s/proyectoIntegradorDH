@@ -1,16 +1,9 @@
 [
  {
-  "id": 0,
+  "id": 1,
   "nombre": "camilo",
   "apellido": "andrade",
   "email": "andrade@gmail.com",
   "contrasena": "camilo"
- },
- {
-  "id": 1,
-  "nombre": "Maria",
-  "apellido": "Ramirez",
-  "email": "mayra.a.andrade@hotmail.com",
-  "contrasena": "camilo04"
  }
 ]

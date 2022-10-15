@@ -323,7 +323,14 @@ main{
     height: 60px;
     margin-top: 30px;
     margin-bottom: 10px;
+    outline: none;
+    border: none;
 }
+
+.btn:focus{
+    border: none;
+}
+
 
 .btn > button{
     width: 280px;
