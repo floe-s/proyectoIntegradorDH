@@ -1,6 +1,6 @@
 const controller= {
         index: (req, res) => {
-                res.render('./index')
+                res.render('index')
         },
         traductor: (req, res) => {
                 res.render('./traductor')

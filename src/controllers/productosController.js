@@ -42,7 +42,7 @@ const controlador = {
 
     fs.writeFileSync(cursoPath,JSON.stringify(curso,null," "));
   
-    res.redirect("/");
+    res.redirect( '/producto/cursos');
   },
 
 
