@@ -1,3 +1,8 @@
+<head>
+  <%-include('./head') %> 
+  <link rel="stylesheet" href="/css/header.css">
+  <title>header</title>
+</head>
 
 <header class="navbar">
   <a href="/"><svg class="logo" href="/img/logo-moidi.svg"></svg></a>
@@ -7,15 +12,33 @@
     <div class="traductor"><a href="/traductor">Traductor</a></div>
     <div class="suscripciones"><a href="/producto/suscripciones">Suscripciones</a></div>
     <div class="contacto"><a href="/contacto">Contacto</a></div>
-    <form action="#" method="GET">
-      <label for=""></label> <!-- <i class="fa-solid fa-angle-down"></i> -->
-      <select name="lang">
+    <!-- <form action="#" method="GET">
+      <label for="lang"></label>
+      <select name="lang" id="lang">
         <option value="esp">ESP</option>
         <option value="ing">ING</option>
         <option value="por">POR</option>
       </select>
-    </form>
-    <div><a href="/producto/cargar">Cargar producto</a></div>
+    </form> -->
+    
+    <div class="dropdown">
+      <button class="dropbtn">Idioma <i class="fa-solid fa-angle-down"></i></button>
+      <div class="dropdown-content">
+        <a href="#">ESPAÑOL</a>
+        <a href="#">INGLÉS</a>
+        <a href="#">PORTUGUÉS</a>
+      </div>
+    </div>
+
+    <div class="dropdown">
+      <button class="dropbtn">Administrar <i class="fa-solid fa-angle-down"></i></button>
+      <div class="dropdown-content">
+        <a href="/producto/cargar">Cargar Curso</a>
+        <a href="/producto/editar">Editar Curso</a>
+        <a href="/producto/eliminar">Eliminar Curso</a>
+      </div>
+    </div>
+
   </div>
   
   <div class="navbar-right">

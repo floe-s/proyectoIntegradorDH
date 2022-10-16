@@ -64,7 +64,13 @@ const controlador = {
 
   editar: (req, res) => {
     res.render('./products/editar');
-  }
+  },
+
+  eliminar: (req, res) => {
+    res.render('./products/eliminar');
+  },
+
+  
 
 }
 

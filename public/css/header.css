@@ -1,0 +1,176 @@
+.logo {
+  background-image: url(/img/logo-moidi.svg);
+  background-size: cover;
+  width: 100px;
+  height: 70px;
+}
+
+.navbar {
+  font-size: 12px;
+  background-color: #ffffff;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 10px;
+}
+
+.navbar-left div{   
+  text-transform: capitalize;
+  font-weight: 400;
+}
+
+.navbar-left>*,
+.navbar-right>*{
+  margin: 1px;
+}
+
+.navbar-left {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.navbar-left a {
+  text-decoration: none;
+  color: #000;
+}
+
+/* Dropdown Button */
+.dropbtn {
+  padding: 5px;
+  font-size: 16px;
+  border: none;
+  background-color: #ffffff;
+  border: 1px solid black;
+  border-radius: 10px;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 130px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #ddd;}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {display: block;}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+/* .dropdown:hover .dropbtn {background-color: #3e8e41;} */
+
+.navbar-right{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.navbar-right button {
+  border: none;
+  border-radius: 5px;
+  font-size: 18px;
+  background-color:#fff;
+}
+
+.magnifying-glass-icon {
+  text-decoration: none;
+  color: #000;
+}
+
+.registrarse{
+  background-color: #Eec8c7;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.registrarse a {
+  text-decoration: none;
+  color: #c24844;
+}
+
+.inises {
+  background-color: #c24844; 
+  border: 1px solid transparent;
+  border-radius: 5px;
+  padding: 5px;
+  
+}
+
+.inises a {
+  text-decoration: none;
+  color: white;
+}
+
+.buscar {
+  border: 1px solid black;
+  text-align: center;
+  border-radius: 20px;
+  padding: 5px;
+}
+
+.shop-cart-icon i {
+  right: 3px;
+  font-size: 20px;
+  padding: 5px;
+  border: #000 2px solid;
+  border-radius: 50px;
+}
+
+.shop-cart-icon a {
+  text-decoration: none;
+  color: #000;
+}
+
+@media (max-width: 768px) {
+  .navbar-left {
+    display: none;
+  }
+}
+
+@media (min-width: 769px) {
+
+.navbar-left>* {
+  margin: 0 5px;
+}
+.navbar-right>* {
+  margin: 0 2px;
+}
+
+}
+
+@media (min-width: 1200px) {
+.logo {
+  width: 120px;
+  height: 90px;
+}
+.navbar {
+  font-size: 16px;
+}
+.navbar-left>* {
+margin: 0 10px;
+}
+.navbar-right>* {
+margin: 0 5px;
+}
+
+}

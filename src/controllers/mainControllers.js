@@ -1,4 +1,4 @@
-const controller= {
+const controller = {
         index: (req, res) => {
                 res.render('index');
         },

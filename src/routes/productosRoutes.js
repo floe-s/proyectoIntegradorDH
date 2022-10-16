@@ -43,14 +43,7 @@ router.post('/carga', uploadFile.single('imgProduct') ,productosController.regis
 
 router.get('/editar', productosController.editar)
 
+router.get('/eliminar', productosController.eliminar)
+
 
 module.exports = router;
-
-//Ejemplo que mostro Jero
-/* router.get('/product', productosController.product)
-
-router.get("/productos/:id", function(req, res) {
-  var p = req.params.id;
-  console.log("el numero dado es el " + p);
-  res.send("el numero dado es el " + p);
-}); */
