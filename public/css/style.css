@@ -57,6 +57,9 @@
     text-decoration: none;
     color: #000;
 }
+.card a:hover {
+    color: #000;
+}
 
 /* .section-courses-now card:hover {
     background-color: rgba(255,0,0,0.5);

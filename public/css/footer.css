@@ -1,6 +1,6 @@
 .whatsapp-icon {
     font-size: 70px;
-    padding: 0 30px 40px;
+    padding: 0 30px;
 }
 
 /* .anchor-wsp-icon {
@@ -15,14 +15,12 @@
 
 .footer-container {
   position: relative;
-  min-height: 100vh;
+  min-height: 25vh;
 }
 
 .whatsapp-icon a {
   text-decoration: none;
   color: #000;
-  z-index: 100;
-  /* position: fixed; */
 }
 
 .whatsapp-icon i {
