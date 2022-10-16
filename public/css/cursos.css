@@ -1,216 +1,9 @@
-*{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-.body {
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  background-image: url(../img/background.jpg);
-}
-
-.logo {
-  background-image: url(/img/logo-moidi.svg);
-  background-size: cover;
-  width: 100px;
-  height: 70px;
-}
-
-.navbar {
-  font-size: 12px;
-  background-color: #ffffff;
-  display: flex;
-  flex-wrap: wrap;
-  padding: 0 10px;
-}
-
-.navbar-left div{   
-  text-transform: capitalize;
-  font-weight: 400;
-}
-
-.navbar-left>*,
-.navbar-right>*{
-  margin: 1px;
-}
-
-.navbar-left {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.navbar-left a {
-  text-decoration: none;
-  color: #000;
-}
-.navbar-right{
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-}
-
-.navbar-right button {
-  border: none;
-  border-radius: 5px;
-  font-size: 18px;
-  background-color:#fff;
-}
-.magnifying-glass-icon {
-  text-decoration: none;
-  color: #000;
-}
-
-.registrarse{
-  background-color: #Eec8c7;
-  border: 1px solid transparent;
-  border-radius: 5px;
-  padding: 5px;
-}
-
-.registrarse a {
-  text-decoration: none;
-  color: #c24844;
-}
-
-.inises {
-  background-color: #c24844; 
-  border: 1px solid transparent;
-  border-radius: 5px;
-  padding: 5px;
-  
-}
-
-.inises a {
-  text-decoration: none;
-  color: white;
-}
-
-.buscar {
-  border: 1px solid black;
-  text-align: center;
-  border-radius: 20px;
-  padding: 5px;
-}
-
-.shop-cart-icon i {
-  right: 3px;
-  font-size: 20px;
-  padding: 5px;
-  border: #000 2px solid;
-  border-radius: 50px;
-}
-
-.shop-cart-icon a {
-  text-decoration: none;
-  color: #000;
-}
-
-.main-content {
-  text-align: center;
-}
-
-.whatsapp-icon {
-  position: relative;
-}
-
-.whatsapp-icon i {
-  font-size: 50px;
-  margin-left: 20px;
-}
-
-.whatsapp-icon a {
-  text-decoration: none;
-  color: #000;
-}
-
-.footer-container {
-  position: relative;
-  display: flex;
-  height: 100px;
-  margin: auto;
-}
-
-.footer-content {
-  background-color: #000;
-  padding: 3px;
-  margin-top: 20px;
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-}
-
-.footer-content p {
-  color: #ffffff;
-  font-size: 12px;
-  text-align: center;
-  margin: 0;
-}
-.footer-content ul {
-  margin: 0;
-}
-
-.footer-content i {
-  color: #ffffff;
-  font-size: 20px;
-  margin: 8px 0;  
-}
-
-@media (max-width: 768px) {
-  .navbar-left {
-    display: none;
-  }
-}
-
-@media (min-width: 769px) {
-/* .burger-menu {
-  display: none;
-}*/
-.navbar-left>* {
-  margin: 0 5px;
-}
-.navbar-right>* {
-  margin: 0 2px;
-}
-.footer-content {
-  display: flex;
-  justify-content:space-between;
-  padding: 0 15px;
-}
-.footer-content p {
-  padding: 10px 0;
-}
-}
-
-@media (min-width: 1200px) {
-.logo {
-  width: 120px;
-  height: 90px;
-}
-.navbar {
-  font-size: 16px;
-}
-.navbar-left>* {
-margin: 0 10px;
-}
-.navbar-right>* {
-margin: 0 5px;
-}
-.main-content {
-  position: relative;
-}
-}
-
-/*-------------Css de cursos parte main ----------------*/
-
 .principal{
   display: flex;
   flex-direction: column;
   width: 100%;
   justify-content: space-between;
-  height: 100%;
-  
+  height: 100%; 
 }
 
 .cabecera{
@@ -237,6 +30,7 @@ margin: 0 5px;
   padding-top: 30px;
   margin-top: 40px;
 }
+
 .superiro-curso{
   display: flex;
   flex-direction: column;
@@ -258,11 +52,12 @@ margin: 0 5px;
   border: none;
   border-radius: 10px;
   text-align: center;
-  
 }
+
 .btn-test:hover{
   transform: scale(1.03);
 }
+
 .contenido-info{
   display: flex;
   background-color: #eee;
@@ -271,6 +66,7 @@ margin: 0 5px;
   height: 65%;
   text-align: center;
 }
+
 .informacion{
   width: 80%;
 }
@@ -283,7 +79,6 @@ margin: 0 5px;
 
 .titulo-colum{
   font-size: 15px;
-  
 }
 
 .img-curso{
@@ -321,14 +116,12 @@ margin: 0 5px;
 @media (max-width: 1500px) {
   .cursos-info{
     width: 80%;
-
   }
 }
 
 @media (max-width: 1100px) {
   .cursos-info{
     width: 90%;
-
   }
 }
 
@@ -336,8 +129,8 @@ margin: 0 5px;
 @media (max-width: 768px) {
   .cursos-info{
     width: 95%;
-
   }
+
   .img-res{
     position: absolute;
     display: flex;
@@ -357,21 +150,20 @@ margin: 0 5px;
     display: none;
   }
 
-  
   .cursos-info{
     height: 100%;
     padding: 15px;
   }
   .contenido-info{
     flex-direction: column;
-    
     justify-content: center;
     padding: 0px;
   }
+
   .img-con{
     display: none;
-    
   }
+  
   .superiro-curso{
     position: relative;
   }

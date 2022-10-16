@@ -1,209 +1,3 @@
-*{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-.body {
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  background-image: url(../img/background.jpg);
-}
-
-.logo {
-  background-image: url(/img/logo-moidi.svg);
-  background-size: cover;
-  width: 100px;
-  height: 70px;
-}
-
-.navbar {
-  font-size: 12px;
-  background-color: #ffffff;
-  display: flex;
-  flex-wrap: wrap;
-  padding: 0 10px;
-}
-
-.navbar-left div{   
-  text-transform: capitalize;
-  font-weight: 400;
-}
-
-.navbar-left>*,
-.navbar-right>*{
-  margin: 1px;
-}
-
-.navbar-left {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.navbar-left a {
-  text-decoration: none;
-  color: #000;
-}
-.navbar-right{
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-}
-
-.navbar-right button {
-  border: none;
-  border-radius: 5px;
-  font-size: 18px;
-  background-color:#fff;
-}
-
-.magnifying-glass-icon {
-  text-decoration: none;
-  color: #000;
-}
-
-.registrarse{
-  background-color: #Eec8c7;
-  border: 1px solid transparent;
-  border-radius: 5px;
-  padding: 5px;
-}
-
-.registrarse a {
-  text-decoration: none;
-  color: #c24844;
-}
-
-.inises {
-  background-color: #c24844; 
-  border: 1px solid transparent;
-  border-radius: 5px;
-  padding: 5px;
-  
-}
-
-.inises a {
-  text-decoration: none;
-  color: white;
-}
-
-.buscar {
-  border: 1px solid black;
-  text-align: center;
-  border-radius: 20px;
-  padding: 5px;
-}
-
-.shop-cart-icon i {
-  right: 3px;
-  font-size: 20px;
-  padding: 5px;
-  border: #000 2px solid;
-  border-radius: 50px;
-}
-
-.shop-cart-icon a {
-  text-decoration: none;
-  color: #000;
-}
-
-.main-content {
-  text-align: center;
-}
-
-.whatsapp-icon {
-  position: relative;
-}
-
-.whatsapp-icon i {
-  font-size: 50px;
-  margin-left: 20px;
-}
-
-.whatsapp-icon a {
-  text-decoration: none;
-  color: #000;
-}
-
-.footer-container {
-  position: relative;
-  min-height: 100vh;  
-}
-
-.footer-content {
-  background-color: #000;
-  padding: 3px;
-  margin-top: 20px;
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-}
-
-.footer-content p {
-  color: #ffffff;
-  font-size: 12px;
-  text-align: center;
-  margin: 0;
-}
-.footer-content ul {
-  margin: 0;
-}
-
-.footer-content i {
-  color: #ffffff;
-  font-size: 20px;
-  margin: 8px 0;  
-}
-
-@media (max-width: 768px) {
-  .navbar-left {
-    display: none;
-  }
-}
-
-@media (min-width: 769px) {
-/* .burger-menu {
-  display: none;
-}*/
-.navbar-left>* {
-  margin: 0 5px;
-}
-.navbar-right>* {
-  margin: 0 2px;
-}
-.footer-content {
-  display: flex;
-  justify-content:space-between;
-  padding: 0 15px;
-}
-.footer-content p {
-  padding: 10px 0;
-}
-}
-
-@media (min-width: 1200px) {
-.logo {
-  width: 120px;
-  height: 90px;
-}
-.navbar {
-  font-size: 16px;
-}
-.navbar-left>* {
-margin: 0 10px;
-}
-.navbar-right>* {
-margin: 0 5px;
-}
-.main-content {
-  position: relative;
-}
-}
-
-
-/*------------------ main ------------------------*/
-
 main{
   width: 90%;
   height: 800px;
@@ -267,14 +61,11 @@ main{
   margin-top: 20px;
 }
 
-
-
 .inpu{
   width: 100%;
   display: flex;
   flex-direction: column;
 }
-
 
 .tex-ifo{
   display: flex;
@@ -299,7 +90,6 @@ main{
 
 .tex-ifo > .pro{
   width: 60%;
-
 }
 
 .tex-ifo > .precio{
@@ -307,16 +97,11 @@ main{
   margin-left: 10px;
 }
 
-
-
 #titulo{
   font-size: 35px;
   text-align: center;
   text-shadow: 2px 0px rgba(0, 0, 0, 0.726);
-
-
 }
-
 
 .btn{
   width: 100%;
@@ -364,8 +149,6 @@ main{
 }
 
 /*--------- responsivo --------------*/
-
-
 @media (min-width: 570px){
   main{
       width: 70%;
@@ -403,16 +186,10 @@ main{
   #titulo{
       margin-top: 20px;
   }
-
-
-
 }
 
 @media (min-width: 1200px){
   main{
       max-width: 900px;
   }
-
-
-  
 }

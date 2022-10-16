@@ -1,0 +1,65 @@
+.whatsapp-icon {
+    font-size: 70px;
+    padding: 0 30px 40px;
+}
+
+/* .anchor-wsp-icon {
+    position: fixed;
+    width: 200px;
+    z-index: 1000;
+} */
+/* No me sale hacer el icono con posición fixed
+    .whatsapp-icon i {
+    position: fixed;  
+} */
+
+.footer-container {
+  position: relative;
+  min-height: 100vh;
+}
+
+.whatsapp-icon a {
+  text-decoration: none;
+  color: #000;
+  z-index: 100;
+  /* position: fixed; */
+}
+
+.whatsapp-icon i {
+  position: relative;
+}
+
+.footer-content {
+  background-color: #000;
+  padding: 3px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+.footer-content p {
+  color: #ffffff;
+  font-size: 12px;
+  text-align: center;
+  margin: 0;
+}
+.footer-content ul {
+  margin: 0;
+}
+
+.footer-content i {
+  color: #ffffff;
+  font-size: 20px;
+  margin: 8px 0;  
+}
+
+@media (min-width: 769px) {
+.footer-content {
+  display: flex;
+  justify-content:space-between;
+  padding: 0 15px;
+}
+.footer-content p {
+  padding: 10px 0;
+}
+}
