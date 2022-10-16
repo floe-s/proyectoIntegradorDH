@@ -7,16 +7,16 @@ const express = require('express');
 const path = require('path');
 
 const app = express();
-// para poder usar put y delete 
 
 const publicPath = path.resolve(__dirname, './public');
 app.use(express.static(publicPath));
 
-app.use(methodOverride('_method'));
 //para indicar que vamos a usar POST
-
 app.use(express.urlencoded({extended:false}));
 app.use(express.json());
+
+// para poder usar put y delete 
+app.use(methodOverride('_method'));
 
 // rutas globales
 app.use('/', mainRoutes);

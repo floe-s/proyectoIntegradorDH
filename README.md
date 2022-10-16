@@ -4,7 +4,6 @@ Somos el Grupo 6 de la comisión 39 del curso intensivo de Programación Web Ful
 
 Listado del grupo:
 - Andrade Bahamon, Camilo
-- Argañaraz, Mauro
 - Barrera Peña, Kevin Andres
 - Schettini, Florencia Esmeralda
 - Vivas, Nicolas Alfredo

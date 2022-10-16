@@ -1,13 +1,13 @@
 const fs = require('fs');
 const path = require('path');
 
-const cursoPath = path.join(__dirname, '../data/cursosData.json');// ruta del json
+const cursoPath = path.join(__dirname, '../data/cursosData.json');// ruta del JSON
 const curso = JSON.parse(fs.readFileSync(cursoPath, 'utf-8')); 
 
 const controlador = {
   
   cursos: (req, res) => {
-    const curso = JSON.parse(fs.readFileSync(cursoPath, 'utf-8'));
+    const curso = JSON.parse(fs.readFileSync(cursoPath, 'utf-8')); //esta linea es necesaria?
     res.render('./products/cursos', { ps: curso});
   },
 
@@ -47,23 +47,23 @@ const controlador = {
 
 
   descargables: (req, res) => {
-    res.render('./descargables')
+    res.render('./descargables');
   },
 
   suscripciones: (req, res) => {
-    res.render('./suscripciones')
+    res.render('./suscripciones');
   },
 
   carrito: (req, res) => {
-    res.render('./carrito-compras')
+    res.render('./carrito-compras');
   },
 
   cargar: (req, res) => {
-    res.render('./products/cargar')
+    res.render('./products/cargar');
   },
 
   editar: (req, res) => {
-    res.render('./products/editar')
+    res.render('./products/editar');
   }
 
 }

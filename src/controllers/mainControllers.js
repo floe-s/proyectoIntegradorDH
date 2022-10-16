@@ -1,17 +1,14 @@
 const controller= {
         index: (req, res) => {
-                res.render('index')
+                res.render('index');
         },
         traductor: (req, res) => {
-                res.render('./traductor')
+                res.render('./traductor');
         },
 
         contacto: (req, res) => {
-                res.render('./contacto')
+                res.render('./contacto');
         },
-
-        
-
 
 
 }

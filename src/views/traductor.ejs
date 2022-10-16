@@ -1,17 +1,14 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="//db.onlinewebfonts.com/c/d7e8a95865396cddca89b00080d2cba6?family=SoDo+Sans+SemiBold" rel="stylesheet" type="text/css"/>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" rel="stylesheet"/>
-  <link rel="stylesheet" href="/css/traductor.css">
-  <script src="https://kit.fontawesome.com/a4e61d7a9e.js"></script>
-  <title>Traductor</title>
-</head>
+  <head>
+    <%-include('partials/head') %> 
+    <link rel="stylesheet" href="/css/traductor.css">
+    <title>Traductor</title>
+  </head>
+
 <body class="body">
   <%- include('partials/header') %> 
+  
   <main>
     <div class="main-content">
       <h1>Traductor</h1>
@@ -20,7 +17,9 @@
       <img class="img-sitio" src="/img/sitio-en-obra.png" alt="Sitio en Obra">
     </div>
   </main>
+
   <%- include('partials/footer') %> 
+
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
