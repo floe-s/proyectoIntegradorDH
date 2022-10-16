@@ -1,31 +1,47 @@
-.whatsapp-icon {
-    font-size: 70px;
-    padding: 0 30px;
-}
-
-/* .anchor-wsp-icon {
-    position: fixed;
-    width: 200px;
-    z-index: 1000;
-} */
-/* No me sale hacer el icono con posición fixed
-    .whatsapp-icon i {
-    position: fixed;  
-} */
-
 .footer-container {
   position: relative;
   min-height: 25vh;
 }
 
-.whatsapp-icon a {
-  text-decoration: none;
-  color: #000;
+/* Icono Whatsapp */
+#floating-button:hover {
+  box-shadow: 0 2px 3px 0 rgb(60 64 67 / 16%), 0 1px 5px 2px rgb(60 64 67 / 32%);
 }
-
-.whatsapp-icon i {
-  position: relative;
+#floating-button.right {
+  left: 20px;
 }
+#floating-button {
+  max-width: 300px;
+  overflow: hidden;
+  transition: all .4s ease-out;
+  min-width: 60px;
+  height: 60px;
+  border-radius: 60px;
+  cursor: pointer;
+  box-shadow: 0 1px 6px rgb(0 0 0 / 6%), 0 2px 32px rgb(0 0 0 / 16%);
+  position: fixed;
+  bottom: 20px;
+  z-index: 9999;
+}
+#floating-button {
+  bottom: 70px;
+  left: 25px;
+}
+.widget {
+  background: #25d366;
+}
+#widget_logo {
+  position: absolute;
+  top: 16px;
+  left: 15px;
+  transition: all .3s ease;
+  opacity: 1;
+  width: 28px;
+}
+img {
+  border: 0;
+}
+/* -------------------------- */
 
 .footer-content {
   background-color: #000;
