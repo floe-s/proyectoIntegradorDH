@@ -2,13 +2,13 @@ const fs = require('fs');
 const path = require('path');
 
 const cursoPath = path.join(__dirname, '../data/cursosData.json');// ruta del JSON
-const curso = JSON.parse(fs.readFileSync(cursoPath, 'utf-8')); 
+let curso = JSON.parse(fs.readFileSync(cursoPath, 'utf-8')); 
 
 const controlador = {
   
   cursos: (req, res) => {
-    const curso = JSON.parse(fs.readFileSync(cursoPath, 'utf-8')); //esta linea es necesaria?
-    res.render('./products/cursos', { ps: curso});
+    curso = JSON.parse(fs.readFileSync(cursoPath, 'utf-8')); // El JSON vuelve a leer los datos
+    res.render('./products/cursos', { ps: curso}); // Se cargan los nuevos datos en la vista
   },
 
   registrar:(req, res) => {
@@ -38,11 +38,11 @@ const controlador = {
       img: nombreImg
     }
 
-    curso.push(productoNuevo);
+    curso.push(productoNuevo); // Se guardan los datos logicamente
 
-    fs.writeFileSync(cursoPath,JSON.stringify(curso,null," ")); // Guarda datos al JSON 
+    fs.writeFileSync(cursoPath,JSON.stringify(curso,null," ")); // Se guarda los datos al JSON 
   
-    res.redirect('/producto/cursos');
+    res.redirect('/producto/cursos'); // Redirecciona a la vista cursos (productosRoutes)
   },
 
 
