@@ -40,7 +40,7 @@ const controlador = {
 
     curso.push(productoNuevo);
 
-    fs.writeFileSync(cursoPath,JSON.stringify(curso,null," "));
+    fs.writeFileSync(cursoPath,JSON.stringify(curso,null," ")); // Guarda datos al JSON 
   
     res.redirect('/producto/cursos');
   },

@@ -8,7 +8,7 @@
 .home-title {
     font-size: 50px;
     font-weight: 600;
-    margin: 30px 10px;
+    margin: 30px 10px 10px;
 }
 
 .home-text {
@@ -38,7 +38,7 @@
 }
 
 .courses-title {
-    margin: 30px 0;
+    margin: 100px 0 40px;
 }
 
 .courses-cards {
