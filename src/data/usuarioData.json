@@ -5,5 +5,19 @@
   "apellido": "andrade",
   "email": "andrade@gmail.com",
   "contrasena": "camilo"
+ },
+ {
+  "id": 2,
+  "nombre": "",
+  "apellido": "",
+  "email": "",
+  "contrasena": ""
+ },
+ {
+  "id": 2,
+  "nombre": "",
+  "apellido": "",
+  "email": "",
+  "contrasena": ""
  }
 ]
