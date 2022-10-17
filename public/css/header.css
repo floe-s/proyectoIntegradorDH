@@ -337,6 +337,7 @@ nav{
   }
 
 
+
   .inises, .registrarse{
     height: 38px;
     margin-right: 20px;
@@ -356,6 +357,12 @@ nav{
     }
     #item{
       display: none;
+    }
+
+
+    #mundo3{
+      display: initial;
+    
     }
   
     .logo{
