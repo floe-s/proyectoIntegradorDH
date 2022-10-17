@@ -112,7 +112,7 @@
     }
     .home-details-text{
         text-align: center;
-        width: 30%;
+        width: 40%;
         height: 200px;
         background-color: rgba(255, 255, 255, 0.5);
         backdrop-filter: blur(10px);
@@ -152,24 +152,31 @@
 .next-courses {
     
 } */
-.card {
-    width: 20vw;
+    .card {
+        width: 20vw;
+    }
+    .home-img {
+        width: 40vw;
+        margin: 10px 0;
+    }
+    .home-details {
+        flex-direction: row;
+        justify-content: center;
+        justify-content: space-around;
+    }
+    .home-details-text {
+        flex-wrap: wrap;
+        align-content: center;
+    }
+    .home-button {
+        margin: 5px 150px;
+    }
 }
-.home-img {
-    width: 40vw;
-    margin: 10px 0;
-}
-.home-details {
-    flex-direction: row;
-    justify-content: center;
-    justify-content: space-around;
-}
-.home-details-text {
-    flex-wrap: wrap;
-    align-content: center;
-}
-.home-button {
-    margin: 5px 150px;
-}
+
+@media (min-width: 1400px) {
+    
+    .home-details-text{
+        width: 30%;
+    }
 }
 

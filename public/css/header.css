@@ -264,9 +264,11 @@ nav{
     display: flex;
     justify-content: space-around;
     margin-bottom: 10px;
-    
   }
 
+  #mundo2{
+    margin-right: 50px;
+  }
 
 
   .i{
@@ -319,6 +321,9 @@ nav{
     color: #fff;
   }
   
+  #mundo3{
+    display: none;
+  }
 
 }
 
