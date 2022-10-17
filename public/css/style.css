@@ -1,10 +1,3 @@
-
-.body {
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    background-image: url(../img/fondos/background-4.jpg);
-    position: relative;
-}
-
 .home-details {
     display: flex;
     flex-wrap: wrap;
@@ -123,35 +116,6 @@
     .courses-cards{
         flex-wrap: nowrap;
     }
-/* Animación de aumento para cursos destacados
-    .now-courses:hover {
-    animation: aumentar 1s ease-in-out alternate;
-}
-@keyframes aumentar {
-    0% {
-      transform: scale(1);
-    }
-    100% {
-      transform: scale(1.2);
-    }
-} */
-/* Ejemplo de como hacer la trancisión para proximos cursos /Caja - Próximamente
-    .next-courses p {
-    background-color: rgba(0,0,0,0.7);
-    color: #ffffff;
-    margin: 0;
-    padding: 15px;
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    transition: all 450ms;
-}
-.next-courses {
-    
-} */
     .card {
         width: 20vw;
     }
@@ -174,7 +138,6 @@
 }
 
 @media (min-width: 1400px) {
-    
     .home-details-text{
         width: 30%;
     }
