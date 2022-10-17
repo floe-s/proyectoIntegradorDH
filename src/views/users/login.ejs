@@ -9,24 +9,26 @@
     <body class="body">
         <%-include('../partials/header') %>
           
-        <main class="principal">
-            <figure class="img-fi">
-                <img src="../../../img/userInterface.svg">
-                <div class="mensaje">
-                    <h2>Bienvenido...</h2>
-                    <label>Recuerda con la practica podras aprender cualquier idioma. Buena suerte en tu día!.</label>
+        <main>
+            <form class="principal">
+                <figure class="img-fi">
+                    <img src="../../../img/userInterface.svg">
+                    <div class="mensaje">
+                        <h2>Bienvenido...</h2>
+                        <label>Recuerda con la practica podras aprender cualquier idioma. Buena suerte en tu día!.</label>
+                    </div>
+                </figure>
+                <div class="form-login">
+                    <h1 id="titulo">Iniciar sesión</h1>
+                    <div class="conten-btn">
+                        <input class="btn-info" type="email" placeholder= "Email">
+                        <input class="btn-info"  type="password" placeholder="Contraseña">
+                    </div>
+                    <a class="olivdo-pas" href="">Has olvidado tu Contraseña?</a>
+                    <a href="/usuario/perfil"> <button id="boton-enviar">Iniciar Sesión</button> </a>
+                    <a class="olivdo-pas" href="/usuario/registro">No tienes una cuenta ? Registrarse</a>
                 </div>
-            </figure>
-            <div class="form-login">
-                <h1 id="titulo">Iniciar sesión</h1>
-                <div class="conten-btn">
-                    <input class="btn-info" type="email" placeholder= "Email">
-                    <input class="btn-info"  type="password" placeholder="Contraseña">
-                </div>
-                <a class="olivdo-pas" href="">Has olvidado tu Contraseña?</a>
-                <a href="/usuario/perfil"> <button id="boton-enviar">Iniciar Sesión</button> </a>
-                <a class="olivdo-pas" href="/usuario/registro">No tienes una cuenta ? Registrarse</a>
-            </div>
+            </form>
         </main>
 
         <%-include('../partials/footer') %>

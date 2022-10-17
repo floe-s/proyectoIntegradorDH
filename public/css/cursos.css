@@ -1,3 +1,7 @@
+main{
+  min-height: 800px;
+}
+
 .principal{
   display: flex;
   flex-direction: column;

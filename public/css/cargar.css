@@ -36,7 +36,7 @@ main{
 }
 
 .cont{
-    width: 60%;
+    width: 100%;
     display: flex;
     flex-direction: column;
 }
@@ -163,6 +163,7 @@ main{
         flex-direction: row;
         height: 600px;
     }
+  
     .img-figure{
         height: 100%;
         border-radius: 18px 0px 0px 18px;

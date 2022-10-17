@@ -1,6 +1,9 @@
 .footer-container {
-  position: relative;
-  min-height: 150vh;
+  margin-top: 200px;
+  position: absolute;
+  width: 100vw;
+  height: 200px;
+  display: flex;
 }
 
 /* Icono Whatsapp */
@@ -42,6 +45,7 @@ img {
   border: 0;
 }
 /* -------------------------- */
+
 
 .footer-content {
   background-color: #000;

@@ -19,10 +19,10 @@
       </div>
 
       <!--clases-->
-      <% for(let i = 0; i < ps.length; i++) { %>
+      <% for(let i of ps) { %>
         <div class="cursos-info">
           <div class="superiro-curso"><a name="curso-aleman"></a>
-            <label class="titulo"><%= ps[i].titule %> </label>
+            <label class="titulo"><%= i.titule %> </label>
             <input class="btn-test" type="button" value="Iniciar Test">
             <!-- <div class="img-res">
               <img class="img-curso" src="img/paises/alemania-figuras.jpg" >
@@ -31,7 +31,7 @@
           </div>
           <section class="contenido-info">
             <div class="img-con">
-              <img class="img-curso" src="../../img/paises/<%= ps[i].img %> " >
+              <img class="img-curso" src="../../img/paises/<%= i.img %> " >
             </div>
           
           
@@ -49,8 +49,8 @@
                   </button>
                 </td>
                 <td>Básico</td>
-                <td><%= ps[i].profesorBasico%> </td>
-                <td>$ <%= ps[i].precioBasico%> </td>
+                <td><%= i.profesorBasico%> </td>
+                <td>$ <%= i.precioBasico%> </td>
               </tr>
               <tr>
                 <td class="icon-info">
@@ -59,8 +59,8 @@
                   </button>
                 </td>
                 <td>Intermedio</td>
-                <td><%= ps[i].profesorMedio%></td>
-                <td>$ <%= ps[i].precioMedio%></td>
+                <td><%= i.profesorMedio%></td>
+                <td>$ <%= i.precioMedio%></td>
               </tr>
               <tr>
                 <td class="icon-info">
@@ -69,8 +69,8 @@
                   </button>
                 </td>
                 <td>Avanzado</td>
-                <td><%= ps[i].profesorAvanzado%></td></td>
-                <td>$ <%= ps[i].precioAvanzado%></td>
+                <td><%= i.profesorAvanzado%></td></td>
+                <td>$ <%= i.precioAvanzado%></td>
               </tr>
             </table>
           </section>
