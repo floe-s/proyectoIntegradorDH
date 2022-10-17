@@ -46,6 +46,8 @@ header{
 .magnifying-glass-icon{
   background-color: white;
   border: none;
+  font-size: 20px;
+  color: black;
 }
 
 .shop-cart-icon{
@@ -64,7 +66,7 @@ header{
   font-size: 30px;
 }
 
-.fa-cart-shopping:hover{
+.fa-cart-shopping:hover, .magnifying-glass-icon:hover {
   color: #4481eb;
 }
 
