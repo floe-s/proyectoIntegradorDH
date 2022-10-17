@@ -6,47 +6,84 @@
 
 <header class="navbar">
   <a href="/"><svg class="logo" href="/img/logo-moidi.svg"></svg></a>
-  <div class="navbar-left">
-    <div class="cursos"><a href="/producto/cursos">Cursos</a></div>
-    <div class="descargables"><a href="/producto/descargables">Descargables</a></div>
-    <div class="traductor"><a href="/traductor">Traductor</a></div>
-    <div class="suscripciones"><a href="/producto/suscripciones">Suscripciones</a></div>
-    <div class="contacto"><a href="/contacto">Contacto</a></div>
-    <!-- <form action="#" method="GET">
-      <label for="lang"></label>
-      <select name="lang" id="lang">
-        <option value="esp">ESP</option>
-        <option value="ing">ING</option>
-        <option value="por">POR</option>
-      </select>
-    </form> -->
-    
-    <div class="dropdown">
-      <button class="dropbtn">Idioma <i class="fa-solid fa-angle-down"></i></button>
-      <div class="dropdown-content">
-        <a href="#">ESPAÑOL</a>
-        <a href="#">INGLÉS</a>
-        <a href="#">PORTUGUÉS</a>
+  
+  <!-- --------------------------------------------------------------- -->
+  <div class="navbar-right" id="item">
+    <div class="btn-buscar">
+      <input type="search" class="buscar" placeholder="Buscar"></button>
+      <button class="magnifying-glass-icon"><i class="fa-solid fa-magnifying-glass"></i></button>
+    </div>
+    <div class="mundo">
+      <i class="fa-solid fa-earth-americas"></i>
+      <div class="idiomas">
+          <label >Español</label>
+          <label >Ingles</label>
+          <label >Portugues</label>
       </div>
     </div>
+    <div class="registrarse"><a href="/usuario/registro">Registrarse</a></div>
+    <div class="inises"><a href="/usuario/login">Iniciar sesión</a></div>
+    <div class="shop-cart-icon"> 
+        <a href="/producto/carrito-compras"><i class="fa-solid fa-cart-shopping"></i></a>
+    </div>  
+  </div>
 
-    <div class="dropdown">
-      <button class="dropbtn">Administrar <i class="fa-solid fa-angle-down"></i></button>
-      <div class="dropdown-content">
+  <!-- -------------------------------------------------------------- -->
+  <nav>
+    <label for="menu" class="nav-img">
+      <img src="../../../img/menu.svg" class="logo-img">
+    </label>
+    <input type="checkbox" class="input" id="menu" >
+    <div class="nav_menu" >
+      <div class="conte">
+        <a href="/usuario/registro">Registrarse</a>
+        <a href="/usuario/login">Iniciar sesión</a>
+        <a href="/producto/cursos">Cursos</a>
+        <a href="/producto/descargables">Descargables</a>
+        <a href="/traductor">Traductor</a>
+        <a href="/producto/suscripciones">Suscripciones</a>
+        <a href="/contacto">Contacto</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- nav para pantalla grande -->
+  <div class="contend">
+    <a class="i" href="/producto/cursos">Cursos</a>
+    <a class="i" href="/producto/descargables">Descargables</a>
+    <a class="i" href="/traductor">Traductor</a>
+    <a class="i" href="/producto/suscripciones">Suscripciones</a>
+    <a class="i"  href="/contacto">Contacto</a>
+    <div class="mundo" id="mundo2">
+      <a id="administar">Administrar</a>
+      <div class="idiomas" id="idioma">
         <a href="/producto/cargar">Cargar Curso</a>
         <a href="/producto/editar">Editar Curso</a>
         <a href="/producto/eliminar">Eliminar Curso</a>
+    </div>
+    </div>
+    <div class="mundo">
+      <i class="fa-solid fa-earth-americas"></i>
+      <div class="idiomas">
+          <label >Español</label>
+          <label >Ingles</label>
+          <label >Portugues</label>
       </div>
     </div>
-
   </div>
+
+  <!-- para 1300 en adelante -->
+  <div class="navbar-right" id="item2">
+    <div class="btn-buscar">
+      <input type="search" id="buscar2" class="buscar" placeholder="Buscar"></button>
+      <button class="magnifying-glass-icon"><i class="fa-solid fa-magnifying-glass"></i></button>
+    </div>
   
-  <div class="navbar-right">
-    <input type="search" class="buscar" placeholder="Buscar"><button class="magnifying-glass-icon"><i class="fa-solid fa-magnifying-glass"></i></button>
     <div class="registrarse"><a href="/usuario/registro">Registrarse</a></div>
     <div class="inises"><a href="/usuario/login">Iniciar sesión</a></div>
-      <div class="shop-cart-icon"> 
+    <div class="shop-cart-icon"> 
         <a href="/producto/carrito-compras"><i class="fa-solid fa-cart-shopping"></i></a>
-      </div>  
+    </div>  
   </div>
+  
 </header>

@@ -162,8 +162,9 @@ main{
         min-height: 1000px;
     }
     .principal{
-        width: 80%;
+        width: 85%;
     }
+    
 }
 
 @media (max-width: 850px){
@@ -223,8 +224,11 @@ main{
     main{
         min-height: 900px;
     }
+    .form-login{
+        width: 95%;
+    }
     .principal{
-        width: 80vw;
+        width: 90vw;
         height: 700px;
     }
 

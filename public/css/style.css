@@ -1,3 +1,10 @@
+
+.body {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-image: url(../img/fondos/background-4.jpg);
+    position: relative;
+}
+
 .home-details {
     display: flex;
     flex-wrap: wrap;
@@ -16,6 +23,21 @@
     text-align: center;
 }
 
+.home-details-text{
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(10px);
+    box-shadow: 0px 0px 20px rgba(0,0,0,0.3);
+    padding-bottom: 10px;
+    border-radius: 10px;
+    width: 95%;
+    height: 200px;
+    margin-top: 20px;
+}
+
+.home-details-text > button{
+    margin: auto;
+}
 .home-button {
     border: none;
     border-radius: 5px;
