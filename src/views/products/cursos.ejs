@@ -10,72 +10,73 @@
     <%-include('../partials/header') %>
 
     <main>
-      <section class="principal">
 
-        <div class="cabecera">
-          <h1>CURSOS</h1>
-          <label>Contamos con todos los idiomas que necesitas.</label>
-        </div>
+        <section class="principal">
 
-        <!--clases-->
-        <% for(let i of ps) { %>
-          <div class="cursos-info">
-            <div class="superiro-curso"><a name="curso-aleman"></a>
-              <label class="titulo"><%= i.titule %> </label>
-              <input class="btn-test" type="button" value="Iniciar Test">
-              <!-- <div class="img-res">
-                <img class="img-curso" src="img/paises/alemania-figuras.jpg" >
-              </div> --> 
-            
-            </div>
-            <section class="contenido-info">
-              <div class="img-con">
-                <img class="img-curso" src="../../img/paises/<%= i.img %> " >
-              </div>
-            
-            
-              <table class="informacion">
-                <tr class="titulo-colum">
-                  <th></th>
-                  <th>Niveles:</th>
-                  <th>Profesor/ra:</th>
-                  <th>Precio:</th>
-                </tr>
-                <tr>
-                  <td class="icon-info">
-                    <button class="shop-cart-icon-button">
-                      <i class="fa-solid fa-cart-shopping"></i>
-                    </button>
-                  </td>
-                  <td>Básico</td>
-                  <td><%= i.profesorBasico%> </td>
-                  <td>$ <%= i.precioBasico%> </td>
-                </tr>
-                <tr>
-                  <td class="icon-info">
-                    <button class="shop-cart-icon-button">
-                      <i class="fa-solid fa-cart-shopping"></i>
-                    </button>
-                  </td>
-                  <td>Intermedio</td>
-                  <td><%= i.profesorMedio%></td>
-                  <td>$ <%= i.precioMedio%></td>
-                </tr>
-                <tr>
-                  <td class="icon-info">
-                    <button class="shop-cart-icon-button">
-                      <i class="fa-solid fa-cart-shopping"></i>
-                    </button>
-                  </td>
-                  <td>Avanzado</td>
-                  <td><%= i.profesorAvanzado%></td></td>
-                  <td>$ <%= i.precioAvanzado%></td>
-                </tr>
-              </table>
-            </section>
+          <div class="cabecera">
+            <h1>CURSOS</h1>
+            <label>Contamos con todos los idiomas que necesitas.</label>
           </div>
-        <% } %>  
-      </section>
+
+          <div class="main">
+          <% for(let curso of ps) {%> 
+          <!--clases-->
+          <section class="setion">
+            <div class="contenido-cursos">
+              <figure class="img-cursos">
+                <img src="/img/paises/<%= curso.img %> ">
+              </figure>
+
+              <section class="descripcion-cursos">
+                <div class="titulo-curso">
+                  <h2><%= curso.titule %> </h2>
+                </div>
+                <div class="estudiantes">
+                  <label><i class="fa-solid fa-circle-user"></i> <%= curso.estudiantes%> Estudiantes</label>
+                </div>
+                <div class="info-precios">
+                    <div>
+                      <img src="/img/iconCurso/<%= curso.imgNivel %>">
+                      <label><%= curso.nivel %></label>
+                    </div>
+                    <label>$<%= curso.precio %></label>
+                </div>
+                <div class="profesor">
+                  <label>Profesor:</label>
+                  <label><%= curso.profesor %></label>
+                </div>
+
+                <section class="horas-curso">
+                  <div class="horas">
+                      <label class="arriba-h"><%= curso.lecciones %> <i class="fa-regular fa-plus"></i></label>
+                      <label class="abajo-h">lecciones</label>
+                  </div>
+                  <div class="horas">
+                      <label class="arriba-h"><i class="fa-regular fa-clock"></i><%= curso.horas %></label>
+                      <label class="abajo-h">horas</label>
+                  </div>
+                  <div class="horas">
+                      <label class="arriba-h"><%= curso.puntuacion %><i class="fa-solid fa-star"></i></label>
+                      <label class="abajo-h">Puntaje</label>
+                  </div>
+                </section>
+                <div class="curso-agregar">
+                  <a  id="btn-curso" href="#">Agregar</a>
+                  <div class="small-des">
+                    <label for="<%= curso.idinput %>" class="plus">+</label>
+                   
+                  </div>
+                </div>
+              </section>
+              <div class="small-des">
+                <input type="checkbox" id="<%= curso.idinput %>" class="input23">
+                <p class="small-desescription"><%= curso.des %></p>
+              </div>         
+            </div>
+          </section>
+          <% } %> 
+          </div>
+        </section>
     </main>
 
     <%-include('../partials/footer') %>

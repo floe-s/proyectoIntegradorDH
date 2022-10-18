@@ -2,45 +2,119 @@
  {
   "id": 1,
   "titule": "Cursos de Alemán",
-  "profesorBasico": "Harman Lout",
-  "precioBasico": 3500,
-  "profesorMedio": "Georfina Weisman",
-  "precioMedio": 4300,
-  "profesorAvanzado": "Nikola Right",
-  "precioAvanzado": 5800,
-  "img": "alemania-figuras.jpg"
+  "estudiantes": 223,
+  "profesor": "Harman Lout",
+  "precio": 6500,
+  "nivel": "avanzado",
+  "lecciones": 30,
+  "horas": 40,
+  "puntuacion": 4.5,
+  "img": "alemania-figuras.jpg",
+  "imgNivel": "fire.svg",
+  "des": "Curso intensivo de aleman de vocabulario y gramatica con un profesor experto en la metaria con mas de 10 años de experiencia.",
+  "idinput": "idcontenido"
  },
  {
-  "id": 2,
-  "titule": "Cursos de Inglés",
-  "profesorBasico": "Jon Snow",
-  "precioBasico": 3500,
-  "profesorMedio": "Adam Moore",
-  "precioMedio": 4300,
-  "profesorAvanzado": "Olivia Thompson",
-  "precioAvanzado": 5800,
-  "img": "inglaterra-figuras.webp"
- },
- {
-  "id": 3,
-  "titule": "Cursos de Portugues",
-  "profesorBasico": "Ilina Ferreira",
-  "precioBasico": 2500,
-  "profesorMedio": "Renata Agostinho",
-  "precioMedio": 5300,
-  "profesorAvanzado": "Ruy Da Silva",
-  "precioAvanzado": 5800,
-  "img": "brasil-figuras.webp"
- },
- {
-  "id": 4,
-  "titule": "Cursos de Español",
-  "profesorBasico": "Jose Fernanso",
-  "precioBasico": 1500,
-  "profesorMedio": "Maro Martinez",
-  "precioMedio": 2300,
-  "profesorAvanzado": "Daniela Peralda",
-  "precioAvanzado": 3800,
-  "img": "espana-figuras.webp"
- }
+    "id": 2,
+    "titule": "Cursos de Inglés",
+    "profesor": "Harman Lout",
+    "precio": 2400,
+    "nivel": "Basico",
+    "lecciones": 10,
+    "horas": 10,
+    "puntuacion": 4,
+    "img": "inglaterra-figuras.webp",
+    "imgNivel": "fire3.svg",
+    "des": "Curso intensivo de aleman de vocabulario y gramatica con un profesor experto en la metaria con mas de 10 años de experiencia.",
+    "idinput": "idcontenido2"
+   },
+   {
+    "id": 3,
+    "titule": "Cursos de Español",
+    "profesor": "Jose Fernanso",
+    "precio": 2400,
+    "nivel": "Intermedio",
+    "lecciones": 60,
+    "horas": 100,
+    "puntuacion": 4.8,
+    "img": "espana-figuras.webp",
+    "imgNivel": "fire2.svg",
+    "des": "Curso intensivo de aleman de vocabulario y gramatica con un profesor experto en la metaria con mas de 10 años de experiencia.",
+    "idinput": "idcontenido3"
+   },
+
+   {
+      "id": 4,
+      "titule": "Cursos de Español",
+      "profesor": "Jose Fernanso",
+      "precio": 2400,
+      "nivel": "Avanzado",
+      "lecciones": 60,
+      "horas": 100,
+      "puntuacion": 4.8,
+      "img": "espana-figuras.webp",
+      "imgNivel": "fire.svg",
+      "des": "Curso intensivo de aleman de vocabulario y gramatica con un profesor experto en la metaria con mas de 10 años de experiencia.",
+      "idinput": "idcontenido4"
+   },
+
+   {
+      "id": 5,
+      "titule": "Cursos de Español",
+      "profesor": "Jose Fernanso",
+      "precio": 2400,
+      "nivel": "Avanzado",
+      "lecciones": 60,
+      "horas": 100,
+      "puntuacion": 4.8,
+      "img": "espana-figuras.webp",
+      "imgNivel": "fire.svg",
+      "des": "Curso intensivo de aleman de vocabulario y gramatica con un profesor experto en la metaria con mas de 10 años de experiencia.",
+      "idinput": "idcontenido5"
+   },
+
+   {
+      "id": 6,
+      "titule": "Cursos de Español",
+      "profesor": "Jose Fernanso",
+      "precio": 2400,
+      "nivel": "Avanzado",
+      "lecciones": 60,
+      "horas": 100,
+      "puntuacion": 4.8,
+      "img": "espana-figuras.webp",
+      "imgNivel": "fire.svg",
+      "des": "Curso intensivo de aleman de vocabulario y gramatica con un profesor experto en la metaria con mas de 10 años de experiencia.",
+      "idinput": "idcontenido6"
+   },
+
+   {
+      "id": 7,
+      "titule": "Cursos de Español",
+      "profesor": "Jose Fernanso",
+      "precio": 2400,
+      "nivel": "Avanzado",
+      "lecciones": 60,
+      "horas": 100,
+      "puntuacion": 4.8,
+      "img": "espana-figuras.webp",
+      "imgNivel": "fire.svg",
+      "des": "Curso intensivo de aleman de vocabulario y gramatica con un profesor experto en la metaria con mas de 10 años de experiencia.",
+      "idinput": "idcontenido7"
+   },
+
+   {
+      "id": 8,
+      "titule": "Cursos de Español",
+      "profesor": "Jose Fernanso",
+      "precio": 2400,
+      "nivel": "Avanzado",
+      "lecciones": 60,
+      "horas": 100,
+      "puntuacion": 4.8,
+      "img": "espana-figuras.webp",
+      "imgNivel": "fire.svg",
+      "des": "Curso intensivo de aleman de vocabulario y gramatica con un profesor experto en la metaria con mas de 10 años de experiencia.",
+      "idinput": "idcontenido8"
+   }
 ]

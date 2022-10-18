@@ -1,6 +1,17 @@
-/* main{
+main{
   min-height: 800px;
-} */
+}
+
+.setion{
+  position: relative;
+  height: 620px;
+  width: 100%;
+}
+
+.main{
+  width: 100%;
+}
+
 
 .principal{
   display: flex;
@@ -8,7 +19,10 @@
   width: 100%;
   justify-content: space-between;
   height: 100%; 
+  position: relative;
 }
+
+
 
 .cabecera{
   margin-left: 30px;
@@ -19,162 +33,253 @@
   font-size: 50px;
 }
 
-.cursos-info{
-  background-color: #ffffff;
-  border: solid 3px #a74b61;
+
+.contenido-cursos{
   display: flex;
-  width: 65%;
-  height: 400px;
+  flex-direction: column;
+  width: 310px;
+  height: 500px;
+  background-color: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(10px);
+  box-shadow: 0px 0px 15px rgba(0,0,0,0.5);
   margin: auto;
-  flex-direction: column;
-  border-radius: 20px;
-  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.726); 
-  padding: 40px;
-  padding-top: 30px;
   margin-top: 40px;
+  border-radius: 20px;
+  position: relative;
+
 }
 
-.superiro-curso{
+.img-cursos{
+  display: flex;
+  width: 100%;
+  height: 40%;
+  justify-content: center;
+  border-radius: 20px 20px 3px 3px;
+  /* background-image: linear-gradient(to top, #accbee 0%, #e7f0fd 100%);background-image: linear-gradient(to top, #accbee 0%, #e7f0fd 100%); */
+}
+
+.img-cursos > img{
+  margin: auto;
+  width: 80%;
+  height: 80%;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0,0,0,0.3);
+
+}
+
+.descripcion-cursos{
+  height: 70%;
+  width: 100%;
   display: flex;
   flex-direction: column;
-  height: 35%;
 }
 
-.titulo{
-  margin-bottom: 15px;
-  font-size: 30px;
+.titulo-curso{
+  height: 30px;
+  width: 100%;
+  text-align: center;
+}
+
+.titulo-curso >h2{
+  font-weight: 400;
+  font-size: 25px;
+}
+.estudiantes{
+  width: 100%;
+  height: 30px;
+  text-align: center;
+}
+.estudiantes > label{
+  font-weight: 300;
+  font-size: 12px;
+
+}
+
+.estudiantes > label > i{
+  font-size: 15px;
+  color: #ccc;
+}
+
+.info-precios{
+  display: flex;
+  justify-content: space-around;
+  margin-top: 10px;
+}
+.info-precios > div{
+  border: 1px  solid rgba(0, 0, 0, 0.423);
+  border-radius: 20px;
+  padding: 5px;
+}
+
+.info-precios > div > img{
+  width: 16px;
+  margin-bottom: 2px;
+}
+
+.info-precios > label{
+  margin-top: 5px;
   font-weight: bold;
 }
 
-.btn-test{
-  background-color: #da1543c5;
-  color: #fff;
-  margin-bottom: 30px;
-  padding: 8px;
-  width: 100px;
-  border: none;
-  border-radius: 10px;
+.profesor{
+  width: 100%;
   text-align: center;
+  margin-top: 10px;
 }
 
-.btn-test:hover{
-  transform: scale(1.03);
+.profesor > label{
+  font-weight: 300;
 }
 
-.contenido-info{
+.horas-curso{
   display: flex;
-  background-color: #eee;
-  padding: 20px;
-  border-radius: 20px;
-  height: 65%;
+  justify-content: space-around;
+  width: 100%;
+  height: 55px;
+  margin-top: 10px;
+}
+
+.horas{
+  width: 27%;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgba(0, 0, 0, 0.26);
+  padding: 2px;
   text-align: center;
+  border-radius: 3px;
 }
 
-.informacion{
-  width: 80%;
+
+.abajo-h{
+  font-weight: 100;
 }
 
-.img-curso{
-  width: 20%;
-  border-radius: 10px;
-  height: 100%;
-}
-
-.titulo-colum{
+.arriba-h > .fa-clock{
   font-size: 15px;
+  margin-right: 2px;
 }
 
-.img-curso{
-  width: 200px;
-  /* display: none; */
+.arriba-h > .fa-star{
+  font-size: 15px;
+  color: rgb(245, 245, 33);
+  margin-left: 2px;
 }
 
-.icon-info > button  {
-  background-color: #fff;
-  font-size: 20px;
-  width: 40px;
-  height: 40px;
-  border: none;
-  border-radius: 50%;
+.curso-agregar{
+  width: 100%;
+  display: flex;
+  margin-top: 20px;
+  justify-content: center;
+  text-align: center;
+  position: relative;
 }
 
-.icon-info > button:hover{
-  transform: scale(1.1);
+#btn-curso{
+  width: 40%;
+  height: 35px;
+  text-decoration: none;
+  background-image: linear-gradient(to right, #ff8177 0%, #ff867a 0%, #ff8c7f 21%, #f99185 52%, #cf556c 78%, #b12a5b 100%);
+  color: #fff;
+  border-radius: 10px;
+  padding-top: 5px;
+} 
+
+#btn-curso:hover{
+  box-shadow: 0px 0px 5px rgba(0,0,0,0.3);
+  transform: scale(1.02);
 }
 
-.img-res{
+.small-des{
+  position: absolute;
+  width: 100%;
+}
+
+.small-des > label{
+  right: 25px;
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  border: 1px solid rgba(0, 0, 0, 0.178);
+  border-radius: 40px;
+  text-align: center;
+  cursor: pointer;
+  margin-top: 2px;
+  box-shadow: 0px 0px 2px rgba(0,0,0,0.3);
+  font-weight: 100;
+  background-color: white;
+}
+
+.small-des> label:hover{
+  box-shadow: 0px 0px 2px rgba(0,0,0);
+}
+
+.small-desescription{
+  width: 275px;
+  height: 100px;
+  z-index: -3000;
+  background-image: linear-gradient(to right, #ff8177 0%, #ff867a 0%, #ff8c7f 21%, #f99185 52%, #cf556c 78%, #b12a5b 100%);
+  position: absolute;
+  left: 40px;
+  font-size: 14px;
+  transition: all 500ms ease;
+  padding: 5px;
+  text-overflow:ellipsis;
+  visibility: hidden;
+  opacity: 0;
+  color: white;
+  border-radius: 0px 0px 6px 6px;
+  padding-left: 10px;
+  text-align: justify;
+  padding-right: 10px;
+  top: 500px;
+  left: 17px;
+}
+
+.input23{
   display: none;
 }
 
-.shop-cart-icon-button i {
-  color: #000;
-  font-size: 20px;
-}
 
-/* @media (min-width: 769px) {
-  .img-curso{
-    width: 250px;
-  }
-} */
-
-@media (max-width: 1500px) {
-  .cursos-info{
-    width: 80%;
-  }
-}
-
-@media (max-width: 1100px) {
-  .cursos-info{
-    width: 90%;
-  }
+.input23:checked + .small-desescription{
+  transition: all 500ms ease;
+  opacity:  1;
+  visibility: visible;
+  margin-top: 1px;
 }
 
 
-@media (max-width: 768px) {
-  .cursos-info{
-    width: 95%;
-  }
 
-  .img-res{
-    position: absolute;
+/* responsive */
+
+
+@media (min-width: 500px){
+  .setion{
     display: flex;
-    justify-content: flex-end;
-    height: 100px;
-    width: 100px;
-    right: 20px;
+    flex-wrap: wrap;
+    width: 350px;
   }
 
-  .img-res> img{
-    width: 100%;
-    height: 100%;
-  }
-
-  .img-curso{
-    width: 250px;
-    display: none;
-  }
-
-  .cursos-info{
-    height: 100%;
-    padding: 15px;
-  }
-  .contenido-info{
-    flex-direction: column;
+  .main{
+    display: flex;
+    margin: auto;
     justify-content: center;
-    padding: 0px;
-  }
-
-  .img-con{
-    display: none;
-  }
-  
-  .superiro-curso{
-    position: relative;
-  }
-  
-  .informacion{
-    margin-top: 10px;
-    width: 100%;
-    height: 100%;
+    flex-wrap: wrap;
+    width: 90%;
+    
   }
 }
+
+
+@media (min-width: 1300px){
+
+  .main{
+    display: flex;
+    margin: auto;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 80%;
+    
+  }
+}
+
+
