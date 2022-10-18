@@ -218,7 +218,7 @@ main{
   height: 100px;
   z-index: -3000;
   background-image: linear-gradient(to right, #ff8177 0%, #ff867a 0%, #ff8c7f 21%, #f99185 52%, #cf556c 78%, #b12a5b 100%);
-  position: absolute;
+  position: relative;
   left: 40px;
   font-size: 14px;
   transition: all 500ms ease;
@@ -231,8 +231,9 @@ main{
   padding-left: 10px;
   text-align: justify;
   padding-right: 10px;
-  top: 500px;
-  left: 17px;
+  top: 420px;
+  left: 40px;
+  margin-top: 1;
 }
 
 .input23{
@@ -244,7 +245,7 @@ main{
   transition: all 500ms ease;
   opacity:  1;
   visibility: visible;
-  margin-top: 1px;
+  margin-top: 120px;
 }
 
 
