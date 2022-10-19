@@ -2,30 +2,30 @@
  {
   "id": 1,
   "titule": "Cursos de Alemán",
-  "estudiantes": 223,
   "profesor": "Harman Lout",
   "precio": 6500,
-  "nivel": "avanzado",
+  "nivel": "Avanzado",
   "lecciones": 30,
   "horas": 40,
   "puntuacion": 4.5,
   "img": "alemania-figuras.jpg",
   "imgNivel": "fire.svg",
-  "des": "Curso intensivo de aleman de vocabulario y gramatica con un profesor experto en la metaria con mas de 10 años de experiencia.",
-  "idinput": "idcontenido"
+  "des": "Curso intensivo de alemán de vocabulario y gramática con un profesor experto en la metaria con mas de 10 años de experiencia.",
+  "idinput": "idcontenido",
+  "estudiantes": 223
  },
  {
   "id": 2,
   "titule": "Cursos de Inglés",
   "profesor": "Harman Lout",
   "precio": 2400,
-  "nivel": "Basico",
+  "nivel": "Básico",
   "lecciones": 10,
   "horas": 10,
   "puntuacion": 4,
   "img": "inglaterra-figuras.webp",
   "imgNivel": "fire3.svg",
-  "des": "Curso intensivo de aleman de vocabulario y gramatica con un profesor experto en la metaria con mas de 10 años de experiencia.",
+  "des": "Curso intensivo de inglés de vocabulario y gramática con un profesor experto en la metaria con mas de 15 años de experiencia.",
   "idinput": "idcontenido2",
   "estudiantes": 50
  },
@@ -40,8 +40,23 @@
   "puntuacion": 4.8,
   "img": "espana-figuras.webp",
   "imgNivel": "fire2.svg",
-  "des": "Curso intensivo de aleman de vocabulario y gramatica con un profesor experto en la metaria con mas de 10 años de experiencia.",
+  "des": "Curso intensivo de español de vocabulario y gramática con un profesor experto en la metaria con mas de 12 años de experiencia.",
   "idinput": "idcontenido3",
   "estudiantes": 169
+ },
+ {
+  "id": 4,
+  "titule": "Cursos de Portugués",
+  "profesor": "Ruy Da Silva",
+  "precio": 5800,
+  "nivel": "Avanzado",
+  "lecciones": 40,
+  "horas": 70,
+  "puntuacion": 4.3,
+  "img": "brasil-figuras.webp",
+  "imgNivel": "fire.svg",
+  "des": "Curso intensivo de portugués de vocabulario y gramática con un profesor experto en la metaria con mas de 8 años de experiencia.",
+  "idinput": "idcontenido4",
+  "estudiantes": 195
  }
 ]
