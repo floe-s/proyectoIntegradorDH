@@ -27,7 +27,7 @@
   "imgNivel": "fire3.svg",
   "des": "Curso intensivo de aleman de vocabulario y gramatica con un profesor experto en la metaria con mas de 10 años de experiencia.",
   "idinput": "idcontenido2",
-  "estudiantes": 223
+  "estudiantes": 50
  },
  {
   "id": 3,
@@ -42,6 +42,6 @@
   "imgNivel": "fire2.svg",
   "des": "Curso intensivo de aleman de vocabulario y gramatica con un profesor experto en la metaria con mas de 10 años de experiencia.",
   "idinput": "idcontenido3",
-  "estudiantes": 223
+  "estudiantes": 169
  }
 ]
