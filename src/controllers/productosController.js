@@ -12,6 +12,7 @@ const controlador = {
   },
 
   registrar:(req, res) => {
+
     let idNuevo = 1;
 
     for(let s of curso){
@@ -21,21 +22,38 @@ const controlador = {
     }
 
     idNuevo++
+
+    
+
+
     
     // llamamos el dato de la img de file que queremos 
 
     let nombreImg = req.file.filename;
 
+    let icon;
+    if(req.body.nivel == "basico"){
+      icon = "fire3.svg";
+    }else if(req.body.nivel == "intermedio"){
+      icon = "fire2.svg"
+    }else{
+      icon = "fire.svg"
+    }
+
     let productoNuevo ={
       id:idNuevo,
-      titule:req.body.titulo,
-      profesorBasico: req.body.basico,
-      precioBasico: req.body.precioBaisco,
-      profesorMedio: req.body.medio,
-      precioMedio: req.body.precioMedio,
-      profesorAvanzado: req.body.avanzado,
-      precioAvanzado: req.body.precioAvanzado,
-      img: nombreImg
+      titule: req.body.titulo,
+      estudiantes: req.body.estudiantes,
+      profesor: req.body.profesor,
+      precio: req.body.precio,
+      nivel: req.body.nivel,
+      lecciones: req.body.lecciones,
+      horas: req.body.horas,
+      puntuacion: req.body.puntuacion,
+      img: nombreImg,
+      imgNivel: icon,
+      des: req.body.descripcion,
+      idinput: nombreImg
     }
 
     curso.push(productoNuevo); // Se guardan los datos logicamente

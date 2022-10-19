@@ -20,22 +20,44 @@
                 </div>
                 <form class="form-cargar" action="/producto/carga" method="POST" enctype="multipart/form-data">
                     <input type="text" name="titulo" placeholder="Nombre del curso:">
-                    <div class="inpu">
-                    
+                    <section class="inpu">
                         <div class="tex-ifo"> 
-                            <input class="pro" type="text" name="basico" placeholder="Profesor nivel basico:">
-                            <input class="precio" type="text" name="precioBaisco" placeholder="Precio:">
+                            <input class="pro" type="text" name="profesor" placeholder="Profesor/ra:">
+                            <input class="precio" type="text" name="precio" placeholder="Precio:">
                         </div>
-                        <div class="tex-ifo">
-                            <input class="pro" type="text" name="medio" placeholder="Profesor nivel intermedio:">
-                            <input class="precio"  type="text" name="precioMedio" placeholder="Precio:">
+                        <div class="inf-basica">
+                            <div class="div">
+                                <label><i class="fa-solid fa-circle-user"></i> Est.</label>
+                                <input type="text" name="estudiantes">
+                            </div>
+                            <div class="div">
+                                <label>Lecciones</label>
+                                <input type="text" name="lecciones">
+                            </div>
+                            <div class="div">
+                                <label><i class="fa-regular fa-clock"></i> Horas</label>
+                                <input type="text" name="horas">
+                            </div>
+                            <div class="div">
+                                <label><i class="fa-solid fa-star"></i> Punt.</label>
+                                <input type="text" name="puntuacion">
+                            <div>
                         </div>
-                        <div class="tex-ifo">
-                            <input class="pro" type="text" name="avanzado" placeholder="Profesor nivel avanzado:">
-                            <input class="precio"  type="text" name="precioAvanzado" placeholder="Precio:">
+                    </section>
+                    <div class="final">
+                        <div class="file">
+                            <input name="imgProduct" type="file">
                         </div>
-                        <div class="agregar-img">
-                            <input type="file" name="imgProduct" required>
+                        <div class="check-form">
+                            <label>Nivel de dificultad:</label>
+                            <select class="select" name="nivel" >
+                                <option selected value="basico">Basico</option>
+                                <option value="intermedio">Intermedio</option>
+                                <option value="avanzando">Avanzando</option>
+                            </select>
+                        </div>
+                        <div class="form-descrip">
+                            <textarea placeholder="Descripción..." class="descripcion" maxlength="125" name="descripcion" id="" cols="2" rows="5"></textarea>
                         </div>
                         <div class="btn">
                             <button type="submit">Agregar</button>
