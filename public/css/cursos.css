@@ -1,18 +1,24 @@
 main{
   min-height: 800px;
+  
 }
+
 
 .setion{
   position: relative;
-  height: 620px;
-  display: flex;
-  flex-wrap: wrap;
+  height: 650px;
   width: 350px;
-
+  margin: auto;
+  display: flex;
 }
 
+
 .main{
-  width: 100%;
+  display: flex;
+  margin: auto;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 90%;
 }
 
 
@@ -39,7 +45,7 @@ main{
   display: flex;
   flex-direction: column;
   width: 310px;
-  height: 500px;
+  height: 540px;
   background-color: rgba(255, 255, 255, 0.6);
   backdrop-filter: blur(10px);
   box-shadow: 0px 0px 15px rgba(0,0,0,0.5);
@@ -47,6 +53,7 @@ main{
   margin-top: 40px;
   border-radius: 20px;
   position: relative;
+  margin-bottom: 80px;
 
 }
 
@@ -181,11 +188,13 @@ main{
   color: #fff;
   border-radius: 10px;
   padding-top: 5px;
+  text-align: center;
+  transition: all 300ms ease;
 } 
 
 #btn-curso:hover{
   box-shadow: 0px 0px 5px rgba(0,0,0,0.3);
-  transform: scale(1.02);
+  transform: scale(1.05);
 }
 
 .small-des{
@@ -206,19 +215,20 @@ main{
   box-shadow: 0px 0px 2px rgba(0,0,0,0.3);
   font-weight: 100;
   background-color: white;
+  transition: all 300ms ease;
 }
 
 .small-des> label:hover{
   box-shadow: 0px 0px 2px rgba(0,0,0);
+  transform: scale(1.05);
 }
 
 .small-desescription{
   width: 275px;
   height: 100px;
-  z-index: -3000;
+  z-index: -10;
   background-image: linear-gradient(to right, #ff8177 0%, #ff867a 0%, #ff8c7f 21%, #f99185 52%, #cf556c 78%, #b12a5b 100%);
-  position: relative;
-  left: 40px;
+  position: absolute;
   font-size: 14px;
   transition: all 500ms ease;
   padding: 5px;
@@ -230,9 +240,10 @@ main{
   padding-left: 10px;
   text-align: justify;
   padding-right: 10px;
-  top: 420px;
+  top: 451px;
   left: 40px;
   margin-top: 1;
+  padding-top: 15px;
 }
 
 .input23{
@@ -247,38 +258,38 @@ main{
   margin-top: 120px;
 }
 
+.s-llave{
+  width: 100%;
+  position: absolute;
+}
+
+.llave{
+  left: 25px;
+  position: absolute;
+  text-decoration: none;
+  width: 30px;
+  height: 30px;
+  border-radius: 40px;
+  padding-top: 3px;
+  background-color: #2898ee;
+  color: white;
+  transition: all 300ms ease;
+}
+
+.llave:hover{
+  color: white;
+  transform: scale(1.05);
+}
 
 
 /* responsive */
 
 
-@media (min-width: 500px){
-  .setion{
-    display: flex;
-    flex-wrap: wrap;
-    width: 350px;
-  }
-
-  .main{
-    display: flex;
-    margin: auto;
-    justify-content: center;
-    flex-wrap: wrap;
-    width: 90%;
-    
-  }
-}
-
 
 @media (min-width: 1300px){
 
   .main{
-    display: flex;
-    margin: auto;
-    justify-content: center;
-    flex-wrap: wrap;
     width: 80%;
-    
   }
 }
 

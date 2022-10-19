@@ -12,18 +12,16 @@
 
     <main>
       
-        <section class="principal">
+      <section class="principal">
 
-          <div class="cabecera">
-            <h1>CURSOS</h1>
-            <label>Contamos con todos los idiomas que necesitas.</label>
-          </div>
-          
-          <div class="main">
-         
+        <div class="cabecera">
+          <h1>CURSOS</h1>
+          <label>Contamos con todos los idiomas que necesitas.</label>
+        </div>
+
+        <div class="main">
           <% for(let curso of ps) {%> 
           <section class="setion">
-            
             <div class="contenido-cursos">
               <figure class="img-cursos">
                 <img src="/img/paises/<%= curso.img %> ">
@@ -37,10 +35,10 @@
                   <label><i class="fa-solid fa-circle-user"></i> <%= curso.estudiantes%> Estudiantes</label>
                 </div>
                 <div class="info-precios">
-                    <div>
-                      <img src="/img/iconCurso/<%= curso.imgNivel %>">
-                      <label><%= curso.nivel %></label>
-                    </div>
+                  <div>
+                    <img src="/img/iconCurso/<%= curso.imgNivel %>">
+                    <label><%= curso.nivel %></label>
+                  </div>
                     <label>$<%= curso.precio %></label>
                 </div>
                 <div class="profesor">
@@ -61,30 +59,25 @@
                       <label class="abajo-h">Puntaje</label>
                   </div>
                 </section>
-
                 <div class="curso-agregar">
+                  <div class="s-llave">
+                    <a href="" class="llave"><i class="fa-solid fa-gear"></i></a>
+                  </div>
                   <a  id="btn-curso" href="#">Agregar</a>
                   <div class="small-des">
                     <label for="<%= curso.idinput %>" class="plus">+</label>
                   </div>
                 </div>
-              </section> 
-        
-              <div class="small-des">
-                <input type="checkbox" id="<%= curso.idinput %>" class="input23">
-                <p class="small-desescription"><%= curso.des %></p>
-              </div>         
-           </div>
+            </div>
             <div class="small-des">
-              <input type="checkbox" id="<%= curso.idinput %>" class="input23">
+              <input type="checkbox" id="<%= curso.idinput%>" class="input23">
               <p class="small-desescription"><%= curso.des %></p>
-            </div> 
+            </div>
+            
           </section>
-          <% } %> 
-          
-          </div>
-        </section>
-        
+          <% } %>
+        </div>
+      </section>
     </main>
 
     <%-include('../partials/footer') %>
