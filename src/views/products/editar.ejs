@@ -18,58 +18,57 @@
         <div class="cont">
             <div class="img-curso">
                 <h2 id="titulo">Editar Curso</h2>
-                <!-- <h3 class="products-title">Estás editando: <i>< %=curso.name %></i></h3> -->
+                <!-- <h3 class="products-title">Estás editando: <i>< %=curso.titulo %></i></h3> -->
             </div>
-           <!--  <form class="form-cargar" action="/producto/edita< %= curso.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
-                <input type="text" name="titulo" value="< %=curso.name %>" placeholder="Nombre del curso:">
-                <div class="inpu">
+            <!-- < % for(let curso of ps) {%> Sacar de adentro del form xq repite los campos -->
+            <form class="form-cargar" action="/producto/editar/" method="POST" enctype="multipart/form-data"> <!-- action="producto/editar/:id < %= curso.id %>?_method=PUT"-->
                 
+                <input type="text" name="titulo" placeholder="Nombre del curso:"> <!-- < %= curso.titule%> -->
+                <section class="inpu">
                     <div class="tex-ifo"> 
-                        <input class="pro" type="text" name="basico" value="< %=curso.profesorBasico %>" placeholder="Profesor nivel basico:">
-                        <input class="precio" type="text" name="precioBaisco" value="< %=curso.precioBasico %>" placeholder="Precio:">
+                        <input class="pro" type="text" name="profesor" placeholder="Profesor/ra:">
+                        <input class="precio" type="text" name="precio" placeholder="Precio:">
                     </div>
-                    <div class="tex-ifo">
-                        <input class="pro" type="text" name="medio" value="< %=curso.profesorMedio %>" placeholder="Profesor nivel intermedio:">
-                        <input class="precio"  type="text" name="precioMedio" value="< %=curso.precioMedio %>" placeholder="Precio:">
+                    <div class="inf-basica">
+                        <div class="div">
+                            <label><i class="fa-solid fa-circle-user"></i> Est.</label>
+                            <input type="text" name="estudiantes">
+                        </div>
+                        <div class="div">
+                            <label>Lecciones</label>
+                            <input type="text" name="lecciones">
+                        </div>
+                        <div class="div">
+                            <label><i class="fa-regular fa-clock"></i> Horas</label>
+                            <input type="text" name="horas">
+                        </div>
+                        <div class="div">
+                            <label><i class="fa-solid fa-star"></i> Punt.</label>
+                            <input type="text" name="puntuacion">
+                        <div>
                     </div>
-                    <div class="tex-ifo">
-                        <input class="pro" type="text" name="avanzado" value="< %=curso.profesorAvanzado %>" placeholder="Profesor nivel avanzado:">
-                        <input class="precio"  type="text" name="precioAvanzado" value="< %=curso.precioAvanzado %>" placeholder="Precio:">
+                </section>
+                <div class="final">
+                    <div class="file">
+                        <input name="imgProduct" type="file">
                     </div>
-                </div>
-                <div class="col-12 col-md-6">
-                    <label for="lang" class="form-label">Idioma:</label>
-                    < %if (curso.lang=="al") { %>
-                    <select name="lang" id="lang" class="form-input">
-                        <option value="">Elegí</option>
-                        <option value="al">Alemán</option>
-                        <option value="in">Inglés</option>
-                        <option value="po">Portugués</option>
-                        <option value="es">Español</option>
-                    </select>
-                    < % } else { %>
-                        <select name="lang" id="lang" class="form-input">
-                        <option value="al">Alemán</option>
-                        <option value="in">Inglés</option>
-                        <option value="po">Portugués</option>
-                        <option value="es">Español</option>
+                    <div class="check-form">
+                        <label>Nivel de dificultad:</label>
+                        <select class="select" name="nivel" >
+                            <option selected value="basico">Básico</option>
+                            <option value="intermedio">Intermedio</option>
+                            <option value="avanzando">Avanzado</option>
                         </select>
-                    < % } %>
+                    </div>
+                    <div class="form-descrip">
+                        <textarea placeholder="Descripción..." class="descripcion" maxlength="125" name="descripcion" id="" cols="2" rows="5"></textarea>
+                    </div>
+                    <div class="btn">
+                        <button type="submit">Guardar</button>
+                    </div>
                 </div>
-                <div class="agregar-img">
-                    <input type="file" name="imgProduct" required>
-                </div>
-                <div class="col-12">
-                    <label for="description" class="form-label">Descipción:</label>
-                    <textarea name="description" id="description" class="form-input">< %= curso.description %></textarea>
-                </div>
-                <div class="col-12">
-                    <button type="submit" class="buy-now-button">Guardar producto</button>
-                </div>
-                <div class="btn">
-                    <button type="submit">Modificar</button>
-                </div>
-            </form> -->
+            </form>
+            <!-- < % } %> -->
         </div>
     </main>
 

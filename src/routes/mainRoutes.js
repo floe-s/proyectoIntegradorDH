@@ -1,11 +1,11 @@
-const mainControllers = require('../controllers/mainControllers')
-
 const express = require('express');
 const router = express.Router();
 
-router.get('/', mainControllers.index);
-router.get('/traductor', mainControllers.traductor);
-router.get('/contacto', mainControllers.contacto);
+const mainController = require('../controllers/mainController');
+
+router.get('/', mainController.index);
+router.get('/traductor', mainController.traductor);
+router.get('/contacto', mainController.contacto);
 
 // router.get('/traductor', productosController.traductor)
 
