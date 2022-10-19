@@ -10,7 +10,7 @@
         <%-include('../partials/header') %>
           
         <main>
-            <form class="principal">
+            <div class="principal">
                 <figure class="img-fi">
                     <img src="../../../img/userInterface.svg">
                     <div class="mensaje">
@@ -18,17 +18,17 @@
                         <label>Recuerda con la practica podras aprender cualquier idioma. Buena suerte en tu día!.</label>
                     </div>
                 </figure>
-                <div class="form-login">
+                <form class="form-login" action="/usuario/login2" method="POST">
                     <h1 id="titulo">Iniciar sesión</h1>
                     <div class="conten-btn">
                         <input class="btn-info" type="email" placeholder= "Email">
                         <input class="btn-info"  type="password" placeholder="Contraseña">
                     </div>
                     <a class="olivdo-pas" href="">Has olvidado tu Contraseña?</a>
-                    <a href="/usuario/perfil"> <button id="boton-enviar">Iniciar Sesión</button> </a>
+                    <a> <button type="submit" id="boton-enviar">Iniciar Sesión</button> </a>
                     <a class="olivdo-pas" href="/usuario/registro">No tienes una cuenta ? Registrarse</a>
-                </div>
-            </form>
+                </form>
+            </div>
         </main>
 
         <%-include('../partials/footer') %>

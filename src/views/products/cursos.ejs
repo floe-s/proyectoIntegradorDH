@@ -2,6 +2,7 @@
 <html lang="es">
   <head>
     <%-include('../partials/head') %> 
+    <!-- {title: 'Todos los cursos'} -->
     <link rel="stylesheet" href="/css/cursos.css">
     <title>Cursos</title>
   </head>
@@ -10,17 +11,17 @@
     <%-include('../partials/header') %>
 
     <main>
-
+      
         <section class="principal">
 
           <div class="cabecera">
             <h1>CURSOS</h1>
             <label>Contamos con todos los idiomas que necesitas.</label>
           </div>
-
+          
           <div class="main">
+         
           <% for(let curso of ps) {%> 
-          <!--clases-->
           <section class="setion">
             <div class="contenido-cursos">
               <figure class="img-cursos">
@@ -44,8 +45,7 @@
                 <div class="profesor">
                   <label>Profesor:</label>
                   <label><%= curso.profesor %></label>
-                </div>
-
+                </div> 
                 <section class="horas-curso">
                   <div class="horas">
                       <label class="arriba-h"><%= curso.lecciones %> <i class="fa-regular fa-plus"></i></label>
@@ -60,28 +60,31 @@
                       <label class="abajo-h">Puntaje</label>
                   </div>
                 </section>
+
                 <div class="curso-agregar">
                   <a  id="btn-curso" href="#">Agregar</a>
                   <div class="small-des">
                     <label for="<%= curso.idinput %>" class="plus">+</label>
-                   
                   </div>
                 </div>
-              </section>
-              <!-- <div class="small-des">
+              </section> 
+        
+              <div class="small-des">
                 <input type="checkbox" id="<%= curso.idinput %>" class="input23">
                 <p class="small-desescription"><%= curso.des %></p>
-              </div>          -->
-            </div>
+              </div>         
+           </div>
             <div class="small-des">
               <input type="checkbox" id="<%= curso.idinput %>" class="input23">
               <p class="small-desescription"><%= curso.des %></p>
-            </div>   
+            </div> 
+            
           </section>
-          
           <% } %> 
+          
           </div>
         </section>
+        
     </main>
 
     <%-include('../partials/footer') %>

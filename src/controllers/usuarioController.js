@@ -43,8 +43,12 @@ const controller = {
         res.render('./users/login');
     },
 
+    logeado:(req,res) => {
+        res.redirect('/usuario/login2');
+    },
+
     perfil:(req,res) => {
-        res.render('./users/perfil', {nombre: "Pepito"});
+        /* res.render('./users/perfil', {nombre: "Pepito"}); */
     }
 }
 
