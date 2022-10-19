@@ -48,7 +48,11 @@ const controller = {
     },
 
     perfil:(req,res) => {
-        /* res.render('./users/perfil', {nombre: "Pepito"}); */
+        res.render('./users/perfil', {nombre: "Pepito"});
+    },
+    
+    editar:(req,res) => {
+        res.render('./users/editarUsuario');
     }
 }
 
