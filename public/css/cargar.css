@@ -1,6 +1,6 @@
 main{
     width: 90%;
-    height: 800px;
+    height: 850px;
     display: flex;
     flex-direction: column;
     margin: auto;
@@ -276,7 +276,7 @@ main{
     main{
         width: 95%;
         flex-direction: row;
-        height: 600px;
+        height: 620px;
     }
   
     .img-figure{
