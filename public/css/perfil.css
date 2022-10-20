@@ -1,7 +1,5 @@
-<<<<<<< HEAD
 .marco {
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-  font-weight: 750;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   font-size: 15px;
   border: solid 3px #a74b61;
   border-radius: 20px;
@@ -11,53 +9,6 @@
   box-shadow: 0px 0px 10px rgba(170, 53, 68, 0.726);
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px); 
-=======
-main{
-  height: 500px;
-}
-.img-curso{
-  margin-top: 10%;
-}
-
-.img-figure{
-  background-image: linear-gradient(to right, #ed6ea0 0%, #ec8c69 100%);
-  border-radius: 18px 18px 0px 0px;
-  height: 300px;
-  display: flex;
-  justify-content: center;
-  position: relative;
-}
-
-
-.img-figure>label{
-  position: absolute;
-  bottom: 20px;
-  font-weight: 100;
-}
-
-.img-figure > img{
-  width: 300px;
-  
-}
-
-.cont{
-  width: 60%;
-  display: flex;
-  flex-direction: column;
-}
-
-.form-cargar{
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-}
-
-.form-cargar > input{
-  width: 70%;
-  margin: auto;
-  border: none;
-  background-color: #eee;
->>>>>>> 45b3efd37a11091d31bde12e40bfbc1d3dc69963
   padding: 10px;
   display: flex;
   flex-direction: column;

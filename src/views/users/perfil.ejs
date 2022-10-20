@@ -8,16 +8,16 @@
 
 <body class="body">
   
-<<<<<<< HEAD
   <%-include('../partials/header') %>
-
+<main>
   <div class="marco">
     <div class="cont-sup">
       <div class="cont-imgp">
         <div><img src="../img/logo-moidi1.svg" class="imgpf"></div>
       </div>
       <div class="edit">
-        <a href="/usuario/editarUsuario/<%= us.id %>">Editar perfil</a>
+        <a href="/usuario/editar-usuario/<%= us.id %>">Editar perfil</a> 
+        
       </div>
 
     </div>
@@ -42,13 +42,7 @@
       <% } %> 
     </div>
   </div>
-=======
-<h1>Perfil Usuario</h1>
-<!-- <p>< %= nombre %> </p> -->
-
-<main></main>
->>>>>>> 45b3efd37a11091d31bde12e40bfbc1d3dc69963
-
+</main>
   <%-include('../partials/footer') %>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
