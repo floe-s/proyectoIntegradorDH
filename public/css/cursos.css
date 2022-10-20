@@ -304,6 +304,12 @@ main{
 /* responsive */
 
 
+@media (min-width: 300px){
+
+  .body{
+    background-size: auto !important;
+  }
+}
 
 @media (min-width: 1300px){
 
@@ -311,5 +317,22 @@ main{
     width: 80%;
   }
 }
+
+
+@media (min-width: 1400px){
+
+  .body{
+    background-size: contain !important;
+  }
+}
+
+
+@media (min-width: 1700px){
+
+  .body{
+    background-size: cover !important;
+  }
+}
+
 
 

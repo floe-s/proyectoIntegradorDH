@@ -40,7 +40,7 @@ const controlador = {
 
     let productoNuevo ={
       id:idNuevo,
-      titule: req.body.titulo,
+      titulo: req.body.titulo,
       estudiantes: req.body.estudiantes,
       profesor: req.body.profesor,
       precio: req.body.precio,
@@ -84,7 +84,7 @@ const controlador = {
         break;
       }
     }
-    console.log(objCurso, req.params)
+
     res.render('./products/editar', {ps: objCurso});
   },
 

@@ -4,7 +4,7 @@
   "titulo": "Curso de Alemán  ",
   "profesor": "Herman Lout  ",
   "precio": "3500 ",
-  "nivel": "basico",
+  "nivel": "Básico",
   "lecciones": "30  ",
   "horas": "40  ",
   "puntuacion": "4.5  ",
@@ -169,14 +169,14 @@
   "titulo": "Curso de Portugués ",
   "profesor": "Ruy Da Silva ",
   "precio": "6800 ",
-  "nivel": "avanzando",
+  "nivel": "Avanzado",
   "lecciones": "30 ",
   "horas": "40 ",
   "puntuacion": "4.4 ",
-  "img": "1666235479854brasil-figuras.webp",
+  "img": "brasil-figuras3.jpg",
   "imgNivel": "fire.svg",
   "des": "Curso intensivo de portugués de vocabulario y gramática con un profesor experto en la metaria con mas de 12 años de experiencia. ",
-  "idinput": "1666235479854brasil-figuras.webp",
+  "idinput": "idcontenido12",
   "estudiantes": "200 "
  }
 ]
