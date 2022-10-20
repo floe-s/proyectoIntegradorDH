@@ -4,15 +4,15 @@ const express = require('express');
 
 const router = express.Router();
 
-router.get('/registro',usuarioController.registro)
-router.post('/regitro', usuarioController.registrar)
+router.get('/registro',usuarioController.registro);
+router.post('/regitro', usuarioController.registrar);
 
-router.get('/login',usuarioController.login)
-router.post('/login2',usuarioController.logeado)
+router.get('/login',usuarioController.login);
+router.post('/login2',usuarioController.logeado);
 
-router.post('/perfil',usuarioController.perfil)
+router.post('/perfil',usuarioController.perfil);
 
-router.get('/editarUsuario/id', usuarioController.editar)
-
+router.get('/editarUsuario', usuarioController.editar);
+// router.put('/editarUsuario/:id', productosController.update);
 
 module.exports = router;

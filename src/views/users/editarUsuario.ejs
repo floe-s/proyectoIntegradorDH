@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <%-include('../partials/head') %> 
+    <link rel="stylesheet" href="/css/editarUsuario.css">
+    <title>Perfil</title>
+  </head>
+
+<body class="body">
+  
+  <%-include('../partials/header') %>
+
+  <div class="marco">
+    <form class="form-perfil" action="/usuario/perfil" method="post" >
+        <a href="/usuario/perfil" class="volv">Volver</a>
+    </form>
+  <div class="titulo">
+    <p>Informacion de la cuenta</p>
+  </div>
+    <form class="form-cargar" action="/usuario/perfil" method="POST" enctype="multipart/form-data"> <!-- action="producto/editar/:id < %= curso.id %>?_method=PUT"-->
+        <section>
+            <div class="file">
+              <div class="cont-imgperfil">
+                <img src="../img/logo-moidi1.svg">
+              </div>
+              <input name="profileimg" type="file" >
+            </div>
+            <div class="inputs">
+              <!-- <label><i class="fa-solid fa-circle-user"></i></label> -->
+              <input class="" type="text" name="nombres" >
+              <input class="" type="text" name="apellidos" >
+              <input class="" type="text" name="email" >
+            </div>
+            <div class="inputs">
+              <div class="pasw-tit"><p>Cambio de contraseña</p></div>
+              <input class="" type="text" name="oldpassword" placeholder="Password actual">
+            </div>
+            <a> <button type="submit" id="boton-enviar">Enviar</button> </a>
+        </section>
+    </form>
+  </div>
+
+  <%-include('../partials/footer') %>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -48,11 +48,22 @@ const controller = {
     },
 
     perfil:(req,res) => {
-        res.render('./users/perfil', {nombre: "Pepito"});
+        res.render('./users/perfil', {us: usuarios});
     },
     
     editar:(req,res) => {
-        res.render('./users/editarUsuario');
+    
+    let idus = req.params.id;
+    let objusuario;
+
+    for(let o of usuarios) {
+      if(idus == o.id) {
+        objusuario = o;
+        break;
+      }
+    }
+    console.log(objusuario, req.params)
+        res.render('./users/editarUsuario', {us: objusuario});
     }
 }
 
