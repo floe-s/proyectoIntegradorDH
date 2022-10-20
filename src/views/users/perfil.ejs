@@ -7,10 +7,40 @@
   </head>
 
 <body class="body">
-  <%-include('../partials/header') %>
   
-<h1>Perfil Usuario</h1>
-<p><%= nombre %> </p>
+  <%-include('../partials/header') %>
+
+  <div class="marco">
+    <div class="cont-sup">
+      <div class="cont-imgp">
+        <div><img src="../img/logo-moidi1.svg" class="imgpf"></div>
+      </div>
+      <div class="edit">
+        <a href="/usuario/editarUsuario/<%= us.id %>">Editar perfil</a>
+      </div>
+
+    </div>
+      <% for(let obj of us) {%> 
+        <div class="tit-per">
+          <p>Bienvenido <%= obj.nombre %> </p>
+        </div>
+      <div class="cont-inf">
+      <div class="inf-p">
+          <label class="tit-inf">Informacion del usuario</label>
+          <p>Nombres: <%= obj.nombre %></p>
+          <p>Apellidos: <%= obj.apellido %></p>
+          <p>Email: <%= obj.email%></p>
+          <p>ID:  <%= obj.id %></p>
+          <p>COD: <%= obj.contrasena %></p>
+      </div>
+      <div class="cont-curs">
+          <img src="../img/paises/1666170251032avatar.svg" class="img-cur">
+          <p>¿Aun no tienes curso?</p>
+          <a href="/producto/cursos">Obten tu curso aqui</a>
+      </div>
+      <% } %> 
+    </div>
+  </div>
 
   <%-include('../partials/footer') %>
 
