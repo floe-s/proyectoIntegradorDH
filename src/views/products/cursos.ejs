@@ -29,7 +29,7 @@
 
               <section class="descripcion-cursos">
                 <div class="titulo-curso">
-                  <h2><%= curso.titule %> </h2>
+                  <h2><%= curso.titulo %> </h2>
                 </div>
                 <div class="estudiantes">
                   <label><i class="fa-solid fa-circle-user"></i> <%= curso.estudiantes%> Estudiantes</label>
@@ -61,11 +61,14 @@
                 </section>
                 <div class="curso-agregar">
                   <div class="s-llave">
-                    <a href="" class="llave"><i class="fa-solid fa-gear"></i></a>
+                    <a href="/producto/editar/<%= curso.id %> " class="llave"><i class="fa-solid fa-gear"></i></a>
                   </div>
+                  <form action="/producto/eliminar/<%=curso.id%>?_method=DELETE" method="POST" >
+                    <button id="eliminar" class="buttom" type="submit"><i class="fa-solid fa-trash"></i></button>
+                </form>
                   <a  id="btn-curso" href="#">Agregar</a>
                   <div class="small-des">
-                    <label for="<%= curso.idinput %>" class="plus">+</label>
+                    <label for="<%= curso.idinput %>" class="plus"><i class="fa-solid fa-plus"></i></label>
                   </div>
                 </div>
             </div>

@@ -16,6 +16,19 @@ main{
   display: flex;
   justify-content: center;
 }
+.img-curso > a{
+  position: absolute;
+  right: 20px;
+  top: 10px;
+  padding: 5px;
+  border-radius: 20px;
+  background-color:  #2898ee;
+  color: #fff;
+  text-decoration: none;
+}
+.img-curso > a:hover{
+  color: #fff;
+}
 
 .img-curso > h2{
   font-size: 40px;
@@ -242,14 +255,15 @@ main{
 }
 
 .btn{
-  margin-top: 10px;
+  margin-top: 20px;
+  width: 100%;
 }
 
 .btn > button{
   padding: 5px;
   background-image: linear-gradient(to right, #ff8177 0%, #ff867a 0%, #ff8c7f 21%, #f99185 52%, #cf556c 78%, #b12a5b 100%);
   color: #ffffff;
-  width: 70%;
+  width: 50%;
   border-radius: 20px;
   border: none;
   box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.4);
@@ -262,13 +276,15 @@ main{
   transform: scale(1.05);
 }
 
+
+
 /*--------- responsivo --------------*/
 @media (min-width: 570px){
   main{
       width: 70%;
   }
   .btn > button{
-      width: 70%;
+      width: 50%;
   }
 }
 

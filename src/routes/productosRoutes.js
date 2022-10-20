@@ -36,8 +36,8 @@ router.get('/carrito-compras', productosController.carrito);
 router.get('/cargar', productosController.cargar);
 router.post('/cargar', uploadFile.single('imgProduct') ,productosController.registrar);
 
-router.get('/editar', productosController.edit);
-router.put('/editar/:id', productosController.update);
+router.get('/editar/:id', productosController.edit);
+router.put('/editar/:id', uploadFile.single('img'),productosController.update);
 
 router.delete('/eliminar/:id', productosController.destroy)
 

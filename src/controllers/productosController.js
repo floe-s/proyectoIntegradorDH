@@ -84,17 +84,31 @@ const controlador = {
         break;
       }
     }
-
-    res.render('./products/editar', {ps: curso});
+    console.log(objCurso, req.params)
+    res.render('./products/editar', {ps: objCurso});
   },
 
   update: (req, res) => {
 
     let idCurso = req.params.id;
+    let nombreImg = req.file.filename;
+     
+    // para elegir que icono usar;
+    let icon;
+    if(req.body.nivel == "basico"){
+      icon = "fire3.svg";
+    }else if(req.body.nivel == "intermedio"){
+      icon = "fire2.svg"
+    }else{
+      icon = "fire.svg"
+  
+    }
+  
+
 
     for(let o of curso) {
       if(idCurso == o.id) {
-        o.titule = req.body.titulo;
+        o.titulo = req.body.titulo;
         o.estudiantes = req.body.estudiantes;
         o.profesor = req.body.profesor;
         o.precio = req.body.precio;
@@ -109,7 +123,6 @@ const controlador = {
         break;
       }
     }
-
     fs.writeFileSync(cursoPath,JSON.stringify(curso,null," ")); // Se guarda los datos al JSON 
   
     res.redirect('/producto/cursos');
@@ -118,13 +131,22 @@ const controlador = {
   destroy: (req, res) => {
 
     let idCurso = req.params.id;
+    let cursoEncontrado;
+
     let arrayCursos = curso.filter(function(elemento) {
       return elemento.id != idCurso;
     })
 
+    for(let cursoss of curso){
+      if(cursoss.id == idCurso){
+        cursoEncontrado = cursoss;
+      }
+    }
+    fs.unlinkSync(path.join(__dirname, '../../public/img/paises', cursoEncontrado.img));
+
     fs.writeFileSync(cursoPath,JSON.stringify(arrayCursos,null," ")); 
 
-    res.render('./products/cursos');
+    res.redirect('/producto/cursos');
   },
 };
 

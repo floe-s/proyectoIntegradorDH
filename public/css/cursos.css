@@ -213,15 +213,15 @@ main{
   text-align: center;
   cursor: pointer;
   margin-top: 2px;
-  box-shadow: 0px 0px 2px rgba(0,0,0,0.3);
+  padding-top: 2px;
   font-weight: 100;
-  background-color: white;
-  transition: all 300ms ease;
+  background-color: rgba(255, 255, 255, 0.801);
+  top: -198px;
 }
 
+
 .small-des> label:hover{
-  box-shadow: 0px 0px 2px rgba(0,0,0);
-  transform: scale(1.05);
+  box-shadow: 0px 0px 2px rgba(0,0,0,4);
 }
 
 .small-desescription{
@@ -268,10 +268,10 @@ main{
   left: 25px;
   position: absolute;
   text-decoration: none;
-  width: 30px;
-  height: 30px;
+  width: 35px;
+  height: 35px;
   border-radius: 40px;
-  padding-top: 3px;
+  padding-top: 5px;
   background-color: #2898ee;
   color: white;
   transition: all 300ms ease;
@@ -280,8 +280,26 @@ main{
 .llave:hover{
   color: white;
   transform: scale(1.05);
+  box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.4);
 }
 
+#eliminar{
+  position: absolute;
+  
+  right: 25px;
+  height: 40px;
+  width: 40px;
+  border-radius: 50px;
+  border: none;
+}
+
+#eliminar> i{
+  color: #b12a5b;
+}
+
+#eliminar:hover{
+  box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.4);
+}
 
 /* responsive */
 

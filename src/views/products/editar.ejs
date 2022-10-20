@@ -18,53 +18,56 @@
         <div class="cont">
             <div class="img-curso">
                 <h2 id="titulo">Editar Curso</h2>
+                <a href="/producto/cursos">Volver</a>
                 <!-- <h3 class="products-title">Estás editando: <i>< %=curso.titulo %></i></h3> -->
             </div>
             <!-- < % for(let curso of ps) {%> Sacar de adentro del form xq repite los campos -->
-            <form class="form-cargar" action="/producto/editar/" method="POST" enctype="multipart/form-data"> <!-- action="producto/editar/:id < %= curso.id %>?_method=PUT"-->
+            <form class="form-cargar" action="/producto/editar/<%= ps.id %>?_method=PUT" method="POST" enctype="multipart/form-data"> <!-- action="producto/editar/:id < %= curso.id %>?_method=PUT"-->
                 
-                <input type="text" name="titulo" placeholder="Nombre del curso:"> <!-- < %= curso.titule%> -->
+                <input type="text" name="titulo" placeholder="Nombre del curso:" value="<%= ps.titulo %> "> <!-- < %= curso.titule%> -->
                 <section class="inpu">
                     <div class="tex-ifo"> 
-                        <input class="pro" type="text" name="profesor" placeholder="Profesor/ra:">
-                        <input class="precio" type="text" name="precio" placeholder="Precio:">
+                        <input class="pro" type="text" name="profesor" placeholder="Profesor/ra:" value="<%= ps.profesor %> ">
+                        <input class="precio" type="text" name="precio" placeholder="Precio:" value="<%= ps.precio %> ">
                     </div>
                     <div class="inf-basica">
                         <div class="div">
                             <label><i class="fa-solid fa-circle-user"></i> Est.</label>
-                            <input type="text" name="estudiantes">
+                            <input type="text" name="estudiantes" value="<%= ps.estudiantes %> ">
                         </div>
                         <div class="div">
                             <label>Lecciones</label>
-                            <input type="text" name="lecciones">
+                            <input type="text" name="lecciones" value="<%= ps.lecciones %> ">
                         </div>
                         <div class="div">
                             <label><i class="fa-regular fa-clock"></i> Horas</label>
-                            <input type="text" name="horas">
+                            <input type="text" name="horas" value="<%= ps.horas %> ">
                         </div>
                         <div class="div">
                             <label><i class="fa-solid fa-star"></i> Punt.</label>
-                            <input type="text" name="puntuacion">
+                            <input type="text" name="puntuacion" value="<%= ps.puntuacion %> ">
                         <div>
                     </div>
                 </section>
                 <div class="final">
                     <div class="file">
-                        <input name="imgProduct" type="file">
+                        <input name="img" type="file" required>
                     </div>
                     <div class="check-form">
                         <label>Nivel de dificultad:</label>
-                        <select class="select" name="nivel" >
+                        <select class="select" name="nivel"  >
                             <option selected value="basico">Básico</option>
                             <option value="intermedio">Intermedio</option>
                             <option value="avanzando">Avanzado</option>
                         </select>
                     </div>
                     <div class="form-descrip">
-                        <textarea placeholder="Descripción..." class="descripcion" maxlength="125" name="descripcion" id="" cols="2" rows="5"></textarea>
+                        <textarea placeholder="Descripción..." class="descripcion" maxlength="125" name="descripcion" id="" cols="2" rows="5"><%= ps.des %> </textarea>
                     </div>
-                    <div class="btn">
-                        <button type="submit">Guardar</button>
+                    <div class="btn-form">
+                        <div class="btn">
+                            <button class="buttom" type="submit">Guardar</button>
+                        </div>
                     </div>
                 </div>
             </form>

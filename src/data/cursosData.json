@@ -1,22 +1,22 @@
 [
  {
   "id": 1,
-  "titule": "Curso de Alemán",
-  "profesor": "Herman Lout",
-  "precio": 6500,
-  "nivel": "Básico",
-  "lecciones": 30,
-  "horas": 40,
-  "puntuacion": 4.5,
+  "titulo": "Curso de Alemán  ",
+  "profesor": "Herman Lout  ",
+  "precio": "3500 ",
+  "nivel": "basico",
+  "lecciones": "30  ",
+  "horas": "40  ",
+  "puntuacion": "4.5  ",
   "img": "alemania-figuras.jpg",
   "imgNivel": "fire3.svg",
-  "des": "Curso intensivo de alemán de vocabulario y gramática con un profesor experto en la metaria con mas de 10 años de experiencia.",
-  "idinput": "idcontenido",
-  "estudiantes": 200
+  "des": "Curso intensivo de alemán de vocabulario y gramática con un profesor experto en la metaria con mas de 10 años de experiencia.  ",
+  "idinput": "1666229320049alemania-figuras.jpg",
+  "estudiantes": "200  "
  },
  {
   "id": 2,
-  "titule": "Curso de Alemán",
+  "titulo": "Curso de Alemán",
   "profesor": "Georgina Weisman",
   "precio": 8500,
   "nivel": "Intermedio",
@@ -31,7 +31,7 @@
  },
  {
   "id": 3,
-  "titule": "Curso de Alemán",
+  "titulo": "Curso de Alemán",
   "profesor": "Nikola Right",
   "precio": 9500,
   "nivel": "Avanzado",
@@ -46,7 +46,7 @@
  },
  {
   "id": 4,
-  "titule": "Curso de Inglés",
+  "titulo": "Curso de Inglés",
   "profesor": "Jon Snow",
   "precio": 2400,
   "nivel": "Básico",
@@ -61,7 +61,7 @@
  },
  {
   "id": 5,
-  "titule": "Curso de Inglés",
+  "titulo": "Curso de Inglés",
   "profesor": "Vivian Lock",
   "precio": 4500,
   "nivel": "Intermedio",
@@ -76,7 +76,7 @@
  },
  {
   "id": 6,
-  "titule": "Curso de Inglés",
+  "titulo": "Curso de Inglés",
   "profesor": "Demian Archer",
   "precio": 6800,
   "nivel": "Avanzado",
@@ -91,7 +91,7 @@
  },
  {
   "id": 7,
-  "titule": "Curso de Español",
+  "titulo": "Curso de Español",
   "profesor": "Letizia Villegas",
   "precio": 6500,
   "nivel": "Básico",
@@ -106,7 +106,7 @@
  },
  {
   "id": 8,
-  "titule": "Curso de Español",
+  "titulo": "Curso de Español",
   "profesor": "Marina Diaz",
   "precio": 8500,
   "nivel": "Intermedio",
@@ -121,7 +121,7 @@
  },
  {
   "id": 9,
-  "titule": "Curso de Español",
+  "titulo": "Curso de Español",
   "profesor": "Gerardo Paez",
   "precio": 9500,
   "nivel": "Avanzado",
@@ -136,7 +136,7 @@
  },
  {
   "id": 10,
-  "titule": "Curso de Portugués",
+  "titulo": "Curso de Portugués",
   "profesor": "Carlos Cabreras",
   "precio": 2400,
   "nivel": "Básico",
@@ -151,7 +151,7 @@
  },
  {
   "id": 11,
-  "titule": "Curso de Portugués",
+  "titulo": "Curso de Portugués",
   "profesor": "Fernando Ferreira",
   "precio": 4500,
   "nivel": "Intermedio",
@@ -166,17 +166,17 @@
  },
  {
   "id": 12,
-  "titule": "Curso de Portugués",
-  "profesor": "Ruy Da Silva",
-  "precio": 6800,
-  "nivel": "Avanzado",
-  "lecciones": 30,
-  "horas": 40,
-  "puntuacion": 4.4,
-  "img": "brasil-figuras3.jpg",
+  "titulo": "Curso de Portugués ",
+  "profesor": "Ruy Da Silva ",
+  "precio": "6800 ",
+  "nivel": "avanzando",
+  "lecciones": "30 ",
+  "horas": "40 ",
+  "puntuacion": "4.4 ",
+  "img": "1666235479854brasil-figuras.webp",
   "imgNivel": "fire.svg",
-  "des": "Curso intensivo de portugués de vocabulario y gramática con un profesor experto en la metaria con mas de 12 años de experiencia.",
-  "idinput": "idcontenido12",
-  "estudiantes": 200
+  "des": "Curso intensivo de portugués de vocabulario y gramática con un profesor experto en la metaria con mas de 12 años de experiencia. ",
+  "idinput": "1666235479854brasil-figuras.webp",
+  "estudiantes": "200 "
  }
 ]
