@@ -84,7 +84,7 @@ const controlador = {
         break;
       }
     }
-    console.log(objCurso, req.params)
+
     res.render('./products/editar', {ps: objCurso});
   },
 
