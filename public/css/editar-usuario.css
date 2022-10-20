@@ -49,6 +49,10 @@ display: grid;
 align-items: center;
 margin: 10px 100px ;
 }
+
+.cont-imgperfil > img{
+  width: 300px;
+}
 .inputs{
 display: grid;
 justify-content: center;
