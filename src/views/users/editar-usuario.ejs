@@ -2,8 +2,8 @@
 <html lang="es">
   <head>
     <%-include('../partials/head') %> 
-    <link rel="stylesheet" href="/css/editarUsuario.css">
-    <title>Perfil</title>
+    <link rel="stylesheet" href="/css/editar-usuario.css">
+    <title>Editar Perfil</title>
   </head>
 
 <body class="body">
@@ -11,13 +11,13 @@
   <%-include('../partials/header') %>
 
   <div class="marco">
-    <form class="form-perfil" action="/usuario/perfil" method="post" >
+    <form class="form-perfil" action="/usuario/perfil" method="GET" >
         <a href="/usuario/perfil" class="volv">Volver</a>
     </form>
   <div class="titulo">
     <p>Informacion de la cuenta</p>
   </div>
-    <form class="form-cargar" action="/usuario/perfil" method="POST" enctype="multipart/form-data"> <!-- action="producto/editar/:id < %= curso.id %>?_method=PUT"-->
+    <form class="form-cargar" action="/usuario/editar-usuario" method="GET"> <!-- action="/usuario/editar-usuario/:id < %= us.id %>?_method=PUT" method="POST" enctype="multipart/form-data"  -->
         <section>
             <div class="file">
               <div class="cont-imgperfil">

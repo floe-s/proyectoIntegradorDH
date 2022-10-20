@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 
 const usuarioPath = path.join(__dirname, '../data/usuarioData.json');
-const usuarios = JSON.parse(fs.readFileSync(usuarioPath, 'utf-8'));
+let usuarios = JSON.parse(fs.readFileSync(usuarioPath, 'utf-8'));
 
 const controller = {
 
@@ -44,26 +44,51 @@ const controller = {
     },
 
     logeado:(req,res) => {
-        res.redirect('/usuario/login2');
+        res.redirect('/users/login'); // esto va?
     },
 
     perfil:(req,res) => {
-        res.render('./users/perfil', {us: usuarios});
+        res.render('./users/perfil',{us: usuarios});
     },
     
     editar:(req,res) => {
     
     let idus = req.params.id;
-    let objusuario;
+    let objUsuario;
 
     for(let o of usuarios) {
       if(idus == o.id) {
-        objusuario = o;
+        objUsuario = o;
         break;
       }
     }
-    console.log(objusuario, req.params)
-        res.render('./users/editarUsuario', {us: objusuario});
+    console.log(objUsuario, req.params)
+        res.render('./users/editar-usuario',{us: objUsuario});
+    },
+
+    update: (req,res) => {
+        let idus = req.params.id;
+
+    for(let o of usuarios) {
+      if(idus == o.id) {
+        o.titulo = req.body.titulo;
+        o.estudiantes = req.body.estudiantes;
+        o.profesor = req.body.profesor;
+        o.precio = req.body.precio;
+        o.nivel = req.body.nivel;
+        o.lecciones = req.body.lecciones;
+        o.horas = req.body.horas;
+        o.puntuacion = req.body.puntuacion;
+        o.img = nombreImg;
+        o.imgNivel = icon;
+        o.des = req.body.descripcion;
+        o.idinput = nombreImg;
+        break;
+      }
+    }
+    fs.writeFileSync(usuarioPath,JSON.stringify(usuarios,null," ")); // Se guarda los datos al JSON 
+  
+    res.redirect('/usuario/perfil');
     }
 }
 
