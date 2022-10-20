@@ -79,7 +79,12 @@
 /* .section-courses-now card:hover {
     background-color: rgba(255,0,0,0.5);
 } */
+@media (min-width: 300px){
 
+    .body{
+      background-size: auto !important;
+    }
+  }
   
 @media (min-width: 769px) {
 .home-img {
@@ -141,5 +146,18 @@
     .home-details-text{
         width: 30%;
     }
+
+    .body{
+        background-size: contain !important;
+      }
 }
 
+
+  
+  
+  @media (min-width: 1700px){
+  
+    .body{
+      background-size: cover !important;
+    }
+  }
