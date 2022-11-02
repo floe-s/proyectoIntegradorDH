@@ -7,7 +7,7 @@ let usuarios = JSON.parse(fs.readFileSync(usuarioPath, 'utf-8'));
 const controller = {
 
     registro: (req,res) => {
-        res.render('./users/registro');
+        res.render('./users/registro',{email: false});
     },
 
     // para crear registro
@@ -24,12 +24,17 @@ const controller = {
 
         idNuevo++;
 
+        console.log(req.file)
+        let imgName = req.file.filename;
+
         let usuarioNuevo ={
             id:idNuevo,
             nombre: req.body.nombre,
             apellido: req.body.apellido,
+            telefono: req.body.telefono,
             email: req.body.email,
-            contrasena: req.body.contrasena
+            contrasena: req.body.contrasena,
+            img: imgName
         }
 
         usuarios.push(usuarioNuevo);
