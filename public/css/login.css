@@ -108,12 +108,23 @@ main{
 
 .olivdo-pas{
     color: #a74b61;
-    margin-top: 20px;
+    margin-top: 10px;
     text-decoration: none;
 }
 
 .olivdo-pas:hover{
     color: #da1543c5;
+}
+
+.error{
+    color: red;
+    border: solid 1px red;
+    width: 70%;
+    text-align: center;
+    margin: auto;
+    margin-top: 10px;
+    font-size: 14px;
+    border-radius: 10px;
 }
 
 /*diseño adaptativo */

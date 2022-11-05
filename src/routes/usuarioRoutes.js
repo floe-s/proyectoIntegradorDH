@@ -19,15 +19,13 @@ const configuracionImg = multer.diskStorage({
 
 const uploadfile = multer({storage:configuracionImg});
 const validacionRegitro = require('../middleware/validacionRegistro');
-
+const validacionLogin = require('../middleware/validacionLogin');
 
 router.get('/registro',usuarioController.registro);
 router.post('/regitro', uploadfile.single('img'), validacionRegitro ,usuarioController.registrar);
 
 router.get('/login',usuarioController.login);
-router.post('/login',usuarioController.logeado); //esta ruta va?
-
-router.post('/perfil',usuarioController.perfil);
+router.post('/perfil',validacionLogin,usuarioController.perfil);
 
 router.get('/editar-usuario', usuarioController.editar);
 router.put('/editar-usuario/:id', usuarioController.update);

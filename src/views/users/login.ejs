@@ -20,9 +20,12 @@
                 </figure>
                 <form class="form-login" action="/usuario/perfil" method="POST">
                     <h1 id="titulo">Iniciar sesión</h1>
+                    <% if(error) {%> 
+                        <label class="error"><i class="fa-solid fa-circle-exclamation"></i> Email o la contraseña están mal escrito.</label>
+                    <% } %> 
                     <div class="conten-btn">
-                        <input class="btn-info" type="email" placeholder= "Email">
-                        <input class="btn-info"  type="password" placeholder="Contraseña">
+                        <input class="btn-info" name="email" type="email" placeholder= "Email">
+                        <input class="btn-info" name="password" type="password" placeholder="Contraseña">
                     </div>
                     <a class="olivdo-pas" href="">Has olvidado tu Contraseña?</a>
                     <a> <button type="submit" id="boton-enviar">Iniciar Sesión</button> </a>

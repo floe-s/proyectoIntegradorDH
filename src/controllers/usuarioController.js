@@ -45,15 +45,12 @@ const controller = {
     },
 
     login:(req,res) => {
-        res.render('./users/login');
+        res.render('./users/login',{ error:false});
     },
 
-    logeado:(req,res) => {
-        res.redirect('/users/login'); // esto va?
-    },
 
     perfil:(req,res) => {
-        res.render('./users/perfil',{us: usuarios});
+        res.render('users/perfil',{us: usuarios});
     },
     
     editar:(req,res) => {
