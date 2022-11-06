@@ -50,7 +50,14 @@ const controller = {
 
 
     perfil:(req,res) => {
-        res.render('users/perfil',{us: usuarios});
+        let em=req.body.email
+        var i;
+        for(let u of usuarios){
+        if(em == u.email){
+            i = u
+        }
+    }
+        res.render('users/perfil',{i});
     },
     
     editar:(req,res) => {

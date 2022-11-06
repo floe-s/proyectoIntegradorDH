@@ -1,11 +1,20 @@
 [
  {
-  "id": 2,
+  "id": 1,
   "nombre": "camilo",
   "apellido": "andrade",
   "telefono": "3167408977",
   "email": "camilo@gmail.com",
   "contrasena": "camilo04",
   "img": "1667364232483Designer _Outline.svg"
+ },
+ {
+  "id": 2,
+  "nombre": "kevin",
+  "apellido": "barrera",
+  "telefono": "3123",
+  "email": "k@b",
+  "contrasena": "3293",
+  "img": "1667693921098BOGOTA.png"
  }
 ]

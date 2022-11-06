@@ -16,30 +16,27 @@
         <div><img src="/img/logo-moidi2.svg" class="imgpf"></div>
       </div>
       <div class="edit">
-        <a href="/usuario/editar-usuario/<%= us.id %>">Editar perfil</a> 
+        <a href="/usuario/editar-usuario">Editar perfil</a> 
         
       </div>
 
     </div>
-      <% for(let obj of us) {%> 
         <div class="tit-per">
-          <p>Bienvenido <%= obj.nombre %> </p>
+          <p>Bienvenido <%= i.nombre %> </p>
         </div>
       <div class="cont-inf">
       <div class="inf-p">
           <label class="tit-inf">Informacion del usuario</label>
-          <p>Nombres: <%= obj.nombre %></p>
-          <p>Apellidos: <%= obj.apellido %></p>
-          <p>Email: <%= obj.email%></p>
-          <p>ID:  <%= obj.id %></p>
-          <p>COD: <%= obj.contrasena %></p>
+          <p>Nombres: <%= i.nombre %></p>
+          <p>Apellidos: <%= i.apellido %></p>
+          <p>Email: <%= i.email%></p>
+          <p>ID:  <%= i.id %></p>
       </div>
       <div class="cont-curs">
           <img src="/img/Personal data _Monochromatic.svg" class="img-cur">
           <p>¿Aun no tienes curso?</p>
           <a href="/producto/cursos">Obten tu curso aqui</a>
       </div>
-      <% } %> 
     </div>
   </div>
 </main>
