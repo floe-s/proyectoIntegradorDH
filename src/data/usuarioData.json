@@ -3,10 +3,10 @@
   "id": 1,
   "nombre": "admin",
   "apellido": "gomez",
-  "telefono": "123456",
+  "telefono": "31347890",
   "email": "admin@gmail.com",
-  "contrasena": "admin",
-  "img": "1667964306889trabajo.png",
+  "contrasena": "$2a$10$9eF0o2VfITXDgNfA7R.pke8O8K8hvaL07v9MdNt6PR/8Vkj2TM60K",
+  "img": "1667973220030trabajo.png",
   "tipoUsuario": "admin"
  },
  {
@@ -15,8 +15,8 @@
   "apellido": "andrade",
   "telefono": "3167408977",
   "email": "camilo@gmail.com",
-  "contrasena": "camilo04",
-  "img": "1667964876337trabajo.png",
+  "contrasena": "$2a$10$dVfROyAlFmqZuuRxKXAdRuWu3ZkTTuN2AudefqJkKeStrse0uIFO2",
+  "img": "1667973306414trabajo.png",
   "tipoUsuario": "usuario"
  }
 ]

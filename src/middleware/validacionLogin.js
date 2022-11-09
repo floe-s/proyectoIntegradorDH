@@ -1,6 +1,6 @@
 const fs = require('fs');
 const path = require('path');
-
+const bcryptjs = require('bcryptjs');
 
 function validacionLogin (req,res,next){
     const pathUsuario = path.join(__dirname, '../data/usuarioData.json');
@@ -8,10 +8,12 @@ function validacionLogin (req,res,next){
 
     let email = req.body.email;
     let password = req.body.password;
+
     let usuarioEncontrado = usuario.find(elemento =>{
-        return (elemento.email == email && elemento.contrasena == password);
+        return (elemento.email == email && bcryptjs.compareSync(password,elemento.contrasena) == true);
     });
     
+
     if(usuarioEncontrado == undefined){
         
         res.render('users/login',{error: true, usu:false, admi:false});
