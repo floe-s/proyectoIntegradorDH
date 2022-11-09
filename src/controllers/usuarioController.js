@@ -8,10 +8,14 @@ const controller = {
 
     registro: (req,res) => {
         let usu=false
+        let admi =false;
         if(req.session.profile){
                usu =true;
+               if(req.session.profile.tipoUsuario == "admin"){
+                admi=true
+              }
         }
-        res.render('./users/registro',{email: false,usu:usu});
+        res.render('./users/registro',{email: false,usu:usu, admi:admi});
     },
 
     // para crear registro
@@ -51,10 +55,14 @@ const controller = {
 
     login:(req,res) => {
         let usu=false
+        let admi = false;
         if(req.session.profile){
                usu =true;
+               if(req.session.profile.tipoUsuario == "admin"){
+                admi=true
+              }
         }
-        res.render('./users/login',{ error:false,usu:usu});
+        res.render('./users/login',{ error:false,usu:usu,admi:admi});
     },
 
 
@@ -66,7 +74,7 @@ const controller = {
         });
 
         req.session.profile = usuarioInicio;
-     
+        
        
         res.redirect('/usuario/vistaPefl')
         
@@ -74,9 +82,13 @@ const controller = {
 
     vistaPerfil:(req,res)=>{
         let usu =false
+        let admi = false;
         if(req.session.profile){
             usu = true
-            res.render('users/perfil',{i:req.session.profile, usu:usu});
+            if(req.session.profile.tipoUsuario == "admin"){
+                admi=true
+            }
+            res.render('users/perfil',{i:req.session.profile, usu:usu, admi:admi});
         }else {
             delete req.session.profile;
             
@@ -99,10 +111,14 @@ const controller = {
     }
     
     let usu=false
+    let admi = false;
     if(req.session.profile){
            usu =true;
+           if(req.session.profile.tipoUsuario == "admin"){
+            admi=true
+          }
     }
-        res.render('./users/editar-usuario',{us: objUsuario,usu:usu});
+        res.render('./users/editar-usuario',{us: objUsuario,usu:usu,admi:admi});
     },
 
     update: (req,res) => {

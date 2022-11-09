@@ -8,19 +8,27 @@ const controlador = {
   
   cursos: (req, res) => {
     let usu=false
+    let admi = false
     if(req.session.profile){
-           usu =true;
+      usu =true;
+      if(req.session.profile.tipoUsuario == "admin"){
+        admi=true
+      }
     }
     curso = JSON.parse(fs.readFileSync(cursoPath, 'utf-8')); // El JSON vuelve a leer los datos
-    res.render('./products/cursos', { ps: curso, usu:usu}); // Se cargan los nuevos datos en la vista
+    res.render('./products/cursos', { ps: curso, usu:usu, admi:admi}); // Se cargan los nuevos datos en la vista
   },
 
   cargar: (req, res) => {
     let usu=false
+    let admi=false;
     if(req.session.profile){
            usu =true;
+           if(req.session.profile.tipoUsuario == "admin"){
+            admi=true
+          }
     }
-    res.render('./products/cargar',{usu:usu});
+    res.render('./products/cargar',{usu:usu , admi:admi});
   },
 
   registrar: (req, res) => {
@@ -70,27 +78,39 @@ const controlador = {
   },
 
   descargables: (req, res) => {
-    let usu=false
+    let usu=false;
+    let admi = false;
     if(req.session.profile){
            usu =true;
+           if(req.session.profile.tipoUsuario == "admin"){
+            admi=true
+          }
     }
-    res.render('./descargables',{usu:usu});
+    res.render('./descargables',{usu:usu, admi:admi});
   },
 
   suscripciones: (req, res) => {
     let usu=false
+    let admi = false;
     if(req.session.profile){
            usu =true;
+           if(req.session.profile.tipoUsuario == "admin"){
+            admi=true
+          }
     }
-    res.render('./suscripciones',{usu:usu});
+    res.render('./suscripciones',{usu:usu, admi:admi});
   },
 
   carrito: (req, res) => {
-    let usu=false
+    let usu=false;
+    let admi = false;
     if(req.session.profile){
            usu =true;
+           if(req.session.profile.tipoUsuario == "admin"){
+            admi=true
+          }
     }
-    res.render('./carrito-compras',{usu:usu});
+    res.render('./carrito-compras',{usu:usu, admi:admi});
   },
 
   edit: (req, res) => {
@@ -105,10 +125,14 @@ const controlador = {
       }
     }
     let usu=false
+    let admi = false;
     if(req.session.profile){
            usu =true;
+           if(req.session.profile.tipoUsuario == "admin"){
+            admi=true
+          }
     }
-    res.render('./products/editar', {ps: objCurso,usu:usu});
+    res.render('./products/editar', {ps: objCurso,usu:usu, admi:admi});
   },
 
   update: (req, res) => {
