@@ -18,17 +18,17 @@ const controller = {
     registrar:(req, res)=>{
         //console.log(req.body)
 
-        let idNuevo = 1;
+        let idNuevo = 0;
 
         for(let s of usuarios){
-            if(idNuevo == s.id){
+            if(idNuevo < s.id){
                 idNuevo = s.id
             }
         }
 
         idNuevo++;
 
-        console.log(req.file)
+        
         let imgName = req.file.filename;
 
         let usuarioNuevo ={
@@ -38,14 +38,15 @@ const controller = {
             telefono: req.body.telefono,
             email: req.body.email,
             contrasena: req.body.contrasena,
-            img: imgName
+            img: imgName,
+            tipoUsuario: "usuario"
         }
 
         usuarios.push(usuarioNuevo);
 
         fs.writeFileSync(usuarioPath,JSON.stringify(usuarios,null," "));
   
-        res.redirect('/');
+        res.redirect('/usuario/login');
     },
 
     login:(req,res) => {
@@ -59,13 +60,14 @@ const controller = {
 
     perfil:(req,res) => {
         let email=req.body.email
-
+        
         let usuarioInicio = usuarios.find(usuario =>{
-            return usuario.email = email
+            return usuario.email == email 
         });
 
         req.session.profile = usuarioInicio;
-        
+     
+       
         res.redirect('/usuario/vistaPefl')
         
     },
@@ -73,8 +75,8 @@ const controller = {
     vistaPerfil:(req,res)=>{
         let usu =false
         if(req.session.profile){
-
-            res.render('users/perfil',{i:req.session.profile, usu:true});
+            usu = true
+            res.render('users/perfil',{i:req.session.profile, usu:usu});
         }else {
             delete req.session.profile;
             
@@ -95,7 +97,7 @@ const controller = {
         break;
       }
     }
-    console.log(objUsuario, req.params)
+    
     let usu=false
     if(req.session.profile){
            usu =true;
@@ -106,26 +108,26 @@ const controller = {
     update: (req,res) => {
         let idus = req.params.id;
 
-    for(let o of usuarios) {
-      if(idus == o.id) {
-        o.titulo = req.body.titulo;
-        o.estudiantes = req.body.estudiantes;
-        o.profesor = req.body.profesor;
-        o.precio = req.body.precio;
-        o.nivel = req.body.nivel;
-        o.lecciones = req.body.lecciones;
-        o.horas = req.body.horas;
-        o.puntuacion = req.body.puntuacion;
-        o.img = nombreImg;
-        o.imgNivel = icon;
-        o.des = req.body.descripcion;
-        o.idinput = nombreImg;
-        break;
-      }
-    }
-    fs.writeFileSync(usuarioPath,JSON.stringify(usuarios,null," ")); // Se guarda los datos al JSON 
-  
-    res.redirect('/usuario/perfil');
+        for(let o of usuarios) {
+            if(idus == o.id) {
+                o.titulo = req.body.titulo;
+                o.estudiantes = req.body.estudiantes;
+                o.profesor = req.body.profesor;
+                o.precio = req.body.precio;
+                o.nivel = req.body.nivel;
+                o.lecciones = req.body.lecciones;
+                o.horas = req.body.horas;
+                o.puntuacion = req.body.puntuacion;
+                o.img = nombreImg;
+                o.imgNivel = icon;
+                o.des = req.body.descripcion;
+                o.idinput = nombreImg;
+                break;
+            }
+        }
+        fs.writeFileSync(usuarioPath,JSON.stringify(usuarios,null," ")); // Se guarda los datos al JSON 
+    
+        
     },
 
     salir:(req,res)=>{

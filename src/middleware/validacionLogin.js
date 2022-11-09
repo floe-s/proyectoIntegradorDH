@@ -13,7 +13,8 @@ function validacionLogin (req,res,next){
     });
     
     if(usuarioEncontrado == undefined){
-        res.render('users/login',{error: true});
+        
+        res.render('users/login',{error: true, usu:false});
         
     }else {
         next();

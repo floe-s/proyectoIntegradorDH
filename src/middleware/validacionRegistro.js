@@ -13,7 +13,7 @@ function validacionRegitro(req, res, next){
     });
     
     if(registro != undefined){   
-        res.render('users/registro',{email: true});
+        res.render('users/registro',{email: true,usu:false});
     }else{
        next();
     }
