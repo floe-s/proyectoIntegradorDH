@@ -22,8 +22,12 @@
           <label >Portugués</label>
       </div>
     </div>
+    <% if(usu) {%> 
+      <div class="registrarse"><a href="/usuario/vistaPefl"><i class="fa-solid fa-user"></i>Perfil</a></div>
+    <% }else { %> 
     <div class="registrarse"><a href="/usuario/registro">Registrarse</a></div>
     <div class="inises"><a href="/usuario/login">Iniciar sesión</a></div>
+    <% } %> 
     <div class="shop-cart-icon"> 
         <a href="/producto/carrito-compras"><i class="fa-solid fa-cart-shopping"></i></a>
     </div>  
@@ -37,8 +41,12 @@
     <input type="checkbox" class="input" id="menu" >
     <div class="nav_menu" >
       <div class="conte">
+        <% if(usu) { %> 
+        <a href="/usuario/vistaPefl">Perfil</a>
+        <% }else { %> 
         <a href="/usuario/registro">Registrarse</a>
         <a href="/usuario/login">Iniciar sesión</a>
+        <% } %> 
         <a href="/producto/cursos">Cursos</a>
         <a href="/producto/descargables">Descargables</a>
         <a href="/traductor">Traductor</a>
@@ -78,9 +86,12 @@
       <input type="search" id="buscar2" class="buscar" placeholder="Buscar"></button>
       <button class="magnifying-glass-icon"><i class="fa-solid fa-magnifying-glass"></i></button>
     </div>
-  
+    <% if(usu) { %>
+      <div class="registrarse"><a href="/usuario/vistaPefl"><i class="fa-solid fa-user"></i>Perfil</a></div>
+    <% } else {%> 
     <div class="registrarse"><a href="/usuario/registro">Registrarse</a></div>
     <div class="inises"><a href="/usuario/login">Iniciar sesión</a></div>
+    <% } %> 
     <div class="shop-cart-icon">
         <a href="/producto/carrito-compras"><i class="fa-solid fa-cart-shopping"></i></a>
     </div>  

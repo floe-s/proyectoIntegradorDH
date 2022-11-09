@@ -1,13 +1,28 @@
 const controller = {
         index: (req, res) => {
-                res.render('index');
+                let usu=false
+                if(req.session.profile){
+                       usu =true;
+                }
+                res.render('index',{usu:usu});
+                        
+                
+                
         },
         traductor: (req, res) => {
-                res.render('./traductor');
+                let usu=false
+                if(req.session.profile){
+                       usu =true;
+                }
+                res.render('./traductor',{usu:usu});
         },
 
         contacto: (req, res) => {
-                res.render('./contacto');
+                let usu=false
+                if(req.session.profile){
+                       usu =true;
+                }
+                res.render('./contacto',{usu:usu});
         },
 
 

@@ -7,7 +7,11 @@ let usuarios = JSON.parse(fs.readFileSync(usuarioPath, 'utf-8'));
 const controller = {
 
     registro: (req,res) => {
-        res.render('./users/registro',{email: false});
+        let usu=false
+        if(req.session.profile){
+               usu =true;
+        }
+        res.render('./users/registro',{email: false,usu:usu});
     },
 
     // para crear registro
@@ -45,20 +49,40 @@ const controller = {
     },
 
     login:(req,res) => {
-        res.render('./users/login',{ error:false});
+        let usu=false
+        if(req.session.profile){
+               usu =true;
+        }
+        res.render('./users/login',{ error:false,usu:usu});
     },
 
 
     perfil:(req,res) => {
-        let em=req.body.email
-        var i;
-        for(let u of usuarios){
-        if(em == u.email){
-            i = u
-        }
-    }
-        res.render('users/perfil',{i});
+        let email=req.body.email
+
+        let usuarioInicio = usuarios.find(usuario =>{
+            return usuario.email = email
+        });
+
+        req.session.profile = usuarioInicio;
+        
+        res.redirect('/usuario/vistaPefl')
+        
     },
+
+    vistaPerfil:(req,res)=>{
+        let usu =false
+        if(req.session.profile){
+
+            res.render('users/perfil',{i:req.session.profile, usu:true});
+        }else {
+            delete req.session.profile;
+            
+            res.redirect('/')
+        }
+    },
+        
+    
     
     editar:(req,res) => {
     
@@ -72,7 +96,11 @@ const controller = {
       }
     }
     console.log(objUsuario, req.params)
-        res.render('./users/editar-usuario',{us: objUsuario});
+    let usu=false
+    if(req.session.profile){
+           usu =true;
+    }
+        res.render('./users/editar-usuario',{us: objUsuario,usu:usu});
     },
 
     update: (req,res) => {
@@ -98,6 +126,14 @@ const controller = {
     fs.writeFileSync(usuarioPath,JSON.stringify(usuarios,null," ")); // Se guarda los datos al JSON 
   
     res.redirect('/usuario/perfil');
+    },
+
+    salir:(req,res)=>{
+        let id = req.params.id
+        if(id == "delete"){
+            delete req.session.profile
+            res.redirect('/')
+        }
     }
 }
 

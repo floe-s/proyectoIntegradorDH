@@ -31,11 +31,16 @@
           <p>Apellidos: <%= i.apellido %></p>
           <p>Email: <%= i.email%></p>
           <p>ID:  <%= i.id %></p>
+          <form action="/usuario/salir/delete" method="POST">
+            <button type="submit">Cerrar sesion</button>
+          </form>
       </div>
+
       <div class="cont-curs">
           <img src="/img/Personal data _Monochromatic.svg" class="img-cur">
           <p>¿Aun no tienes curso?</p>
           <a href="/producto/cursos">Obten tu curso aqui</a>
+
       </div>
     </div>
   </div>

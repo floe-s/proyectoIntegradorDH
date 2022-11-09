@@ -7,12 +7,20 @@ let curso = JSON.parse(fs.readFileSync(cursoPath, 'utf-8'));
 const controlador = {
   
   cursos: (req, res) => {
+    let usu=false
+    if(req.session.profile){
+           usu =true;
+    }
     curso = JSON.parse(fs.readFileSync(cursoPath, 'utf-8')); // El JSON vuelve a leer los datos
-    res.render('./products/cursos', { ps: curso}); // Se cargan los nuevos datos en la vista
+    res.render('./products/cursos', { ps: curso, usu:usu}); // Se cargan los nuevos datos en la vista
   },
 
   cargar: (req, res) => {
-    res.render('./products/cargar');
+    let usu=false
+    if(req.session.profile){
+           usu =true;
+    }
+    res.render('./products/cargar',{usu:usu});
   },
 
   registrar: (req, res) => {
@@ -62,15 +70,27 @@ const controlador = {
   },
 
   descargables: (req, res) => {
-    res.render('./descargables');
+    let usu=false
+    if(req.session.profile){
+           usu =true;
+    }
+    res.render('./descargables',{usu:usu});
   },
 
   suscripciones: (req, res) => {
-    res.render('./suscripciones');
+    let usu=false
+    if(req.session.profile){
+           usu =true;
+    }
+    res.render('./suscripciones',{usu:usu});
   },
 
   carrito: (req, res) => {
-    res.render('./carrito-compras');
+    let usu=false
+    if(req.session.profile){
+           usu =true;
+    }
+    res.render('./carrito-compras',{usu:usu});
   },
 
   edit: (req, res) => {
@@ -84,8 +104,11 @@ const controlador = {
         break;
       }
     }
-
-    res.render('./products/editar', {ps: objCurso});
+    let usu=false
+    if(req.session.profile){
+           usu =true;
+    }
+    res.render('./products/editar', {ps: objCurso,usu:usu});
   },
 
   update: (req, res) => {

@@ -26,8 +26,11 @@ router.post('/regitro', uploadfile.single('img'), validacionRegitro ,usuarioCont
 
 router.get('/login',usuarioController.login);
 router.post('/perfil',validacionLogin,usuarioController.perfil);
+router.get('/vistaPefl',usuarioController.vistaPerfil )
 
 router.get('/editar-usuario', usuarioController.editar);
 router.put('/editar-usuario/:id', usuarioController.update);
+
+router.post('/salir/:id', usuarioController.salir);
 
 module.exports = router;
