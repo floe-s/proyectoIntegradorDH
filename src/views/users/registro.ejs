@@ -17,14 +17,20 @@
               </figure>
               <form class="form-cont" action="/usuario/regitro" method="POST" enctype="multipart/form-data">
                 <h1 id="titulo">Registrarse</h1>
-                <input class="btn-form" type="text" placeholder="Nombre" name="nombre">
-                <input class="btn-form" type="text" placeholder="Apellido" name="apellido">
-                <input class="btn-form" type="text" name="telefono" placeholder="Télefono">
-                <input class="btn-form" type="email" placeholder="Email" name="email">
+                <input class="btn-form" type="text" placeholder="Nombre" name="nombre" required>
+                <% if (locals && locals.errors) { %>
+                  <% if (locals.errors[0].params == "nombre") { %>
+                    <h3> <%= locals.errors[0].msg %> </h3>
+                  <% } %>
+                <% } %>
+
+                <input class="btn-form" type="text" placeholder="Apellido" name="apellido" required>
+                <input class="btn-form" type="text" placeholder="Télefono" name="telefono" required>
+                <input class="btn-form" type="email" placeholder="Email" name="email" required>
                 <% if(email){%> 
                   <label style="color: red; margin-left:80px; font-size: 14px;"><i class="fa-solid fa-circle-exclamation"></i>Error: Este Email ya existe.</label>
                 <% } %> 
-                <input class="btn-form" type="password" placeholder="Contraseña" name="contrasena">
+                <input class="btn-form" type="password" placeholder="Contraseña" name="contrasena" required>
                 <label for="file" class="foto">
                   <i class="fa-solid fa-file"></i>
                   <label for="file" id="foto">Agregar imagen de perfil</label>

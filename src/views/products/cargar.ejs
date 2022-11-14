@@ -19,28 +19,28 @@
                     <h2 id="titulo">Cargar Curso</h2>
                 </div>
                 <form class="form-cargar" action="/producto/cargar" method="POST" enctype="multipart/form-data">
-                    <input type="text" name="titulo" placeholder="Nombre del curso:">
+                    <input type="text" name="titulo" placeholder="Nombre del curso:" required>
                     <section class="inpu">
                         <div class="tex-ifo"> 
-                            <input class="pro" type="text" name="profesor" placeholder="Profesor/ra:">
-                            <input class="precio" type="text" name="precio" placeholder="Precio:">
+                            <input class="pro" type="text" name="profesor" placeholder="Profesor/ra:" required>
+                            <input class="precio" type="text" name="precio" placeholder="Precio:" required>
                         </div>
                         <div class="inf-basica">
                             <div class="div">
                                 <label><i class="fa-solid fa-circle-user"></i> Est.</label>
-                                <input type="text" name="estudiantes">
+                                <input type="text" name="estudiantes" required>
                             </div>
                             <div class="div">
                                 <label>Lecciones</label>
-                                <input type="text" name="lecciones">
+                                <input type="text" name="lecciones" required>
                             </div>
                             <div class="div">
                                 <label><i class="fa-regular fa-clock"></i> Horas</label>
-                                <input type="text" name="horas">
+                                <input type="text" name="horas" required>
                             </div>
                             <div class="div">
                                 <label><i class="fa-solid fa-star"></i> Punt.</label>
-                                <input type="text" name="puntuacion">
+                                <input type="text" name="puntuacion" required>
                             <div>
                         </div>
                     </section>
@@ -57,7 +57,7 @@
                             </select>
                         </div>
                         <div class="form-descrip">
-                            <textarea placeholder="Descripción..." class="descripcion" maxlength="125" name="descripcion" id="" cols="2" rows="5"></textarea>
+                            <textarea placeholder="Descripción..." class="descripcion" maxlength="125" name="descripcion" id="" cols="2" rows="5" required></textarea>
                         </div>
                         <div class="btn">
                             <button type="submit">Agregar</button>

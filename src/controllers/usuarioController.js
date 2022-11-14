@@ -3,6 +3,7 @@ const path = require('path');
 const bcryptjs = require('bcryptjs');
 const usuarioPath = path.join(__dirname, '../data/usuarioData.json');
 let usuarios = JSON.parse(fs.readFileSync(usuarioPath, 'utf-8'));
+const { validationResult } = require('express-validator');
 
 const controller = {
 
@@ -21,6 +22,9 @@ const controller = {
     // para crear registro
     registrar:(req, res)=>{
         //console.log(req.body)
+
+        let errors = validationResult(req);
+        if( errors.isEmpty() ) {
 
         let idNuevo = 0;
 
@@ -53,9 +57,14 @@ const controller = {
         fs.writeFileSync(usuarioPath,JSON.stringify(usuarios,null," "));
   
         res.redirect('/usuario/login');
+
+        } else {
+            res.render('./users/registro', {errors: errors.array() } ); 
+        }
     },
 
     login:(req,res) => {
+
         let usu=false
         let admi = false;
         if(req.session.profile){
@@ -65,10 +74,34 @@ const controller = {
               }
         }
         res.render('./users/login',{ error:false,usu:usu,admi:admi});
+
+    },
+
+    logueado: (req,res) => {
+
+        let errors = validationResult(req);
+        if( errors.isEmpty() ) {
+
+        let usu=false
+        let admi = false;
+        if(req.session.profile){
+               usu =true;
+               if(req.session.profile.tipoUsuario == "admin"){
+                admi=true
+              }
+        }
+        res.render('./users/login',{ error:false,usu:usu,admi:admi});
+
+    } else {
+        res.render('./users/login', {errors: errors.array() } ); 
+    }
+
     },
 
 
     perfil:(req,res) => {
+
+
         let email=req.body.email
         
         let usuarioInicio = usuarios.find(usuario =>{
@@ -78,7 +111,7 @@ const controller = {
         req.session.profile = usuarioInicio;
         
        
-        res.redirect('/usuario/vista-perfil')
+        res.redirect('/usuario/vista-perfil');
         
     },
 
