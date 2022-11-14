@@ -18,5 +18,15 @@
   "contrasena": "$2a$10$dVfROyAlFmqZuuRxKXAdRuWu3ZkTTuN2AudefqJkKeStrse0uIFO2",
   "img": "1667973306414trabajo.png",
   "tipoUsuario": "usuario"
+ },
+ {
+  "id": 3,
+  "nombre": "kevin",
+  "apellido": "barrera",
+  "telefono": "314609",
+  "email": "k@b",
+  "contrasena": "$2a$10$pYOxiDblG6UT.JmqVB/DmOxiy1WmW/qDbc.vaGmy8mfOg8gJ7kXte",
+  "img": "166812825746520210706_225050.jpg",
+  "tipoUsuario": "usuario"
  }
 ]

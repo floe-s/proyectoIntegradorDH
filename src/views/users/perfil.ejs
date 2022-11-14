@@ -11,37 +11,41 @@
   <%-include('../partials/header') %>
 <main>
   <div class="marco">
-    <div class="cont-sup">
-      <div class="cont-imgp">
-        <div><img src="/img/logo-moidi2.svg" class="imgpf"></div>
-      </div>
+    <div class="left">
       <div class="edit">
-        <a href="/usuario/editar-usuario">Editar perfil</a> 
-        
+        <a href="/usuario/editar-usuario"><img src="../img/iconcurso/perfil/editar.png" alt=""> </a>
       </div>
-
+      <div class="cont-imgp">
+        <img src="/img/perfil/<%= i.img %>" class="imgpf">
+      </div>
+      <div class="tit-per">
+        <h1>Bienvenido</h1>
+        <h2><%= i.nombre %></h2>
+            </div>
+            <div class="inf-p">
+              <p>Email: <%= i.email%></p>
+              <p>ID:  <%= i.id %></p>
+              <button type="submit"><a href="/producto/cursos">Programacion</a></button>
+              <button type="submit"><a href="/producto/cursos">Atencion al usuario</a></button>
+              <button type="submit"><a href="/producto/cursos">Financiero</a></button>
+      </div>
+        <form class="cs" action="/usuario/salir/delete" method="POST">
+          <button type="submit">Cerrar sesion</button>
+        </form>
     </div>
-        <div class="tit-per">
-          <p>Bienvenido <%= i.nombre %> </p>
-        </div>
-      <div class="cont-inf">
-      <div class="inf-p">
-          <label class="tit-inf">Informacion del usuario</label>
-          <p>Nombres: <%= i.nombre %></p>
-          <p>Apellidos: <%= i.apellido %></p>
-          <p>Email: <%= i.email%></p>
-          <p>ID:  <%= i.id %></p>
-          <form action="/usuario/salir/delete" method="POST">
-            <button type="submit">Cerrar sesion</button>
-          </form>
+    <div class="right">
+      <div class="prox-cla">
+        <p>Proximas clases:</p>
       </div>
-
-      <div class="cont-curs">
-          <img src="/img/Personal data _Monochromatic.svg" class="img-cur">
-          <p>¿Aun no tienes curso?</p>
-          <a href="/producto/cursos">Obten tu curso aqui</a>
-
-      </div>
+          <div class="curso-persona">
+            <div class="con-imgc"><img src="/img/Personal data _Monochromatic.svg" class="img-cur"></div>
+            <div class="cont-infcur">
+            <h1>Fecha:</h1>
+            <h2>Curso:</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas necessitatibus, sit exercitationem itaque fugiat est quisquam, architecto sunt tenetur hic maxime libero deserunt fuga ut reiciendis repellat. Possimus, veniam beatae.</p>
+            </div>
+            <button class="add-cur" type="submit"><a href="/producto/cursos">Agregar curso</a></button>
+          </div>
     </div>
   </div>
 </main>
