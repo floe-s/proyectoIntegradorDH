@@ -78,7 +78,7 @@ const controller = {
         req.session.profile = usuarioInicio;
         
        
-        res.redirect('/usuario/vistaPefl')
+        res.redirect('/usuario/vista-perfil')
         
     },
 

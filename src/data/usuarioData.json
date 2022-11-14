@@ -18,5 +18,25 @@
   "contrasena": "$2a$10$dVfROyAlFmqZuuRxKXAdRuWu3ZkTTuN2AudefqJkKeStrse0uIFO2",
   "img": "1667973306414trabajo.png",
   "tipoUsuario": "usuario"
+ },
+ {
+  "id": 3,
+  "nombre": "floe",
+  "apellido": "sch",
+  "telefono": "123456",
+  "email": "sflorencia.e@gmail.com",
+  "contrasena": "$2a$10$.nplbVu51RLmRng8CJMvIeh3unm3VDEfbxLs4s0HQkxW0c40TYw0u",
+  "img": "1668360004916profile22.jpeg",
+  "tipoUsuario": "usuario"
+ },
+ {
+  "id": 4,
+  "nombre": "Juan",
+  "apellido": "Perez",
+  "telefono": "09876",
+  "email": "juan@hotmail.com",
+  "contrasena": "$2a$10$QL81JCCUrHhKlrORNZFYqekiCM.D5TfZz08JnfhX6lPWot.MeXS1W",
+  "img": "1668385375588Eye.jpg",
+  "tipoUsuario": "usuario"
  }
 ]
