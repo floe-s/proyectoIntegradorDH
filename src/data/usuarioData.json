@@ -21,6 +21,16 @@
  },
  {
   "id": 3,
+  "nombre": "Florencia",
+  "apellido": "Sche",
+  "telefono": "003",
+  "email": "sflorencia.e@gmail.com",
+  "contrasena": "$2a$10$0URiNhVi9YClJmSywzWD1.RjDQTCg6mLlcFDiJO9OCwKjCEfncVRu",
+  "img": "1668438742413Eye.jpg",
+  "tipoUsuario": "usuario"
+ },
+ {
+  "id": 4,
   "nombre": "kevin",
   "apellido": "barrera",
   "telefono": "314609",

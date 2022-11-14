@@ -3,6 +3,7 @@ const path = require('path');
 
 const cursoPath = path.join(__dirname, '../data/cursosData.json'); // ruta del JSON
 let curso = JSON.parse(fs.readFileSync(cursoPath, 'utf-8')); 
+const { validationResult } = require('express-validator');
 
 const controlador = {
   
@@ -32,6 +33,9 @@ const controlador = {
   },
 
   registrar: (req, res) => {
+
+    let errors = validationResult(req);
+        if( errors.isEmpty() ) {
 
     let idNuevo = 1;
 
@@ -75,6 +79,10 @@ const controlador = {
     fs.writeFileSync(cursoPath,JSON.stringify(curso,null," ")); // Se guarda los datos al JSON 
   
     res.redirect('/producto/cursos'); // Redirecciona a la vista cursos (productosRoutes)
+
+    } else {
+            res.render('./products/cargar', {errors: errors.array() } ); 
+        }
   },
 
   descargables: (req, res) => {
