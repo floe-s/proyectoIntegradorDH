@@ -77,10 +77,9 @@ const controller = {
 
     },
 
-    logueado: (req,res) => {
+    /* logueado: (req,res) => {
 
-        let errors = validationResult(req);
-        if( errors.isEmpty() ) {
+        
 
         let usu=false
         let admi = false;
@@ -92,15 +91,15 @@ const controller = {
         }
         res.render('./users/login',{ error:false,usu:usu,admi:admi});
 
-    } else {
-        res.render('./users/login', {errors: errors.array() } ); 
-    }
+    
 
-    },
+    }, */
 
 
     perfil:(req,res) => {
 
+        let errors = validationResult(req);
+        if( errors.isEmpty() ) {
 
         let email=req.body.email
         
@@ -112,6 +111,10 @@ const controller = {
         
        
         res.redirect('/usuario/vista-perfil');
+
+    } else {
+        res.render('./users/login', {errors: errors.array() } ); 
+    }
         
     },
 

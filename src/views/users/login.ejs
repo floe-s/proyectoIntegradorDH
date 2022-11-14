@@ -24,14 +24,14 @@
                         <label class="error"><i class="fa-solid fa-circle-exclamation"></i>Error: Email y/o contraseña incorrectos.</label>
                     < % } %>  -->
                     <div class="conten-btn">
-                        <input class="btn-info" name="email" type="email" placeholder= "Email" required>
+                        <input class="btn-info" name="email" type="email" placeholder= "Email">
                         <% if (locals && locals.errors) { %>
                             <% if (locals.errors[0].params == "email") { %>
                               <h3> <%= locals.errors[0].msg %> </h3>
                             <% } %>
                           <% } %>
 
-                        <input class="btn-info" name="password" type="password" placeholder="Contraseña" required>
+                        <input class="btn-info" name="password" type="password" placeholder="Contraseña">
                         <% if (locals && locals.errors) { %>
                             <% if (locals.errors[0].params == "password") { %>
                               <h3> <%= locals.errors[0].msg %> </h3>

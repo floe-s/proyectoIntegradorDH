@@ -21,22 +21,21 @@ const uploadfile = multer({storage:configuracionImg});
 const validacionRegitro = require('../middleware/validacionRegistro');
 const validacionLogin = require('../middleware/validacionLogin');
 
-/* Validation */
-let validacionReg = [
+// Validation
+/* let validacionReg = [
     body('nombre').notEmpty().withMessage('Campo vacio').bail(),
-];
+]; */
 
-let validacionLog = [
+/* let validacionLog = [
     body('email').isEmail,
     body('password').isLength({ min: 5, max:10 }).withMessage('Debe contener entre 5 y 10 caracteres').bail()
-];
+]; */
 
 router.get('/registro',usuarioController.registro);
-router.post('/regitro', uploadfile.single('img'), validacionRegitro, validacionReg, usuarioController.registrar);
+router.post('/regitro', uploadfile.single('img'), validacionRegitro, /* validacionReg, */ usuarioController.registrar);
 
 router.get('/login', usuarioController.login);
-router.post('/login', validacionLog, usuarioController.logueado);
-router.post('/perfil',validacionLogin, usuarioController.perfil);
+router.post('/perfil',validacionLogin, /* validacionLog, */ usuarioController.perfil);
 router.get('/vista-perfil',usuarioController.vistaPerfil )
 
 router.get('/editar-usuario', usuarioController.editar);

@@ -21,92 +21,12 @@
  },
  {
   "id": 3,
-  "nombre": "floe",
-  "apellido": "sch",
-  "telefono": "123456",
+  "nombre": "Florencia",
+  "apellido": "Sche",
+  "telefono": "003",
   "email": "sflorencia.e@gmail.com",
-  "contrasena": "$2a$10$.nplbVu51RLmRng8CJMvIeh3unm3VDEfbxLs4s0HQkxW0c40TYw0u",
-  "img": "1668360004916profile22.jpeg",
-  "tipoUsuario": "usuario"
- },
- {
-  "id": 4,
-  "nombre": "Juan",
-  "apellido": "Perez",
-  "telefono": "09876",
-  "email": "juan@hotmail.com",
-  "contrasena": "$2a$10$QL81JCCUrHhKlrORNZFYqekiCM.D5TfZz08JnfhX6lPWot.MeXS1W",
-  "img": "1668385375588Eye.jpg",
-  "tipoUsuario": "usuario"
- },
- {
-  "id": 5,
-  "nombre": "Florencia",
-  "apellido": "Schettini",
-  "telefono": "01159610003",
-  "email": "perro@gmail.com",
-  "contrasena": "$2a$10$uiP2dHic265ZsVlCx1d4tu2SEogzZHpR7x2H3LAVeVfpFBLhskkH2",
-  "img": "1668427829728Eye.jpg",
-  "tipoUsuario": "usuario"
- },
- {
-  "id": 6,
-  "nombre": "Florencia",
-  "apellido": "Schettini",
-  "telefono": "01159610003",
-  "email": "tutu@gmail.com",
-  "contrasena": "$2a$10$JVc333kCU6V8bA2pAWZH..e5Rr.CCUbhE9ibOacPN0fkA9GuJEEz.",
-  "img": "1668428054515Eye.jpg",
-  "tipoUsuario": "usuario"
- },
- {
-  "id": 7,
-  "nombre": "Florencia",
-  "apellido": "Schettini",
-  "telefono": "01159610003",
-  "email": "camion@gmail.com",
-  "contrasena": "$2a$10$qVQFEhXDNOBFcSyURepcweJfH9CPV9ff9Ha6x5gxrWrHeXiE8QW7G",
-  "img": "1668428143176Eye.jpg",
-  "tipoUsuario": "usuario"
- },
- {
-  "id": 8,
-  "nombre": "Florencia",
-  "apellido": "Schettini",
-  "telefono": "01159610003",
-  "email": "hola@gmail.com",
-  "contrasena": "$2a$10$21qD615k3k9D.G/lbOtXdeetuTSEK0.EWUGm0Ex09KaxtoczVWUJ6",
-  "img": "1668429126392Eye.jpg",
-  "tipoUsuario": "usuario"
- },
- {
-  "id": 9,
-  "nombre": "Florencia",
-  "apellido": "Schettini",
-  "telefono": "01159610003",
-  "email": "hey@gmail.com",
-  "contrasena": "$2a$10$lzi9DElfKksafcB5kXNQ/.7U1qmDYiJsR1zZZi/YbVGKH72GvHVvu",
-  "img": "1668429168296Eye.jpg",
-  "tipoUsuario": "usuario"
- },
- {
-  "id": 10,
-  "nombre": "joji",
-  "apellido": "beck",
-  "telefono": "6978",
-  "email": "hola@mundo",
-  "contrasena": "$2a$10$tfJYI9NQQn8QGrFv6RtwwOBiHmRmgNGSIhQNIX3YD.iblBn.0Qx5S",
-  "img": "1668430937676Eye.jpg",
-  "tipoUsuario": "usuario"
- },
- {
-  "id": 11,
-  "nombre": "perro",
-  "apellido": "malo",
-  "telefono": "8796",
-  "email": "hola@perro",
-  "contrasena": "$2a$10$iK9YsTjn2fB/qecOpQxCHOfuMUy3UqEeLPDUo3yIQQxeGQMNwEL6i",
-  "img": "1668431594623Eye.jpg",
+  "contrasena": "$2a$10$0URiNhVi9YClJmSywzWD1.RjDQTCg6mLlcFDiJO9OCwKjCEfncVRu",
+  "img": "1668438742413Eye.jpg",
   "tipoUsuario": "usuario"
  }
 ]
