@@ -33,7 +33,7 @@ let validacionReg = [
 ];
 
 let validacionLog = [
-    body('email').isEmail,
+    body('email').isEmail(),
     body('password').isLength({ min: 5, max:10 }).withMessage('Debe contener entre 5 y 10 caracteres')
 ];
 
@@ -41,8 +41,7 @@ router.get('/registro',usuarioController.registro);
 router.post('/regitro', uploadfile.single('img'), validacionRegitro, validacionReg, usuarioController.registrar);
 
 router.get('/login', usuarioController.login);
-router.post('/login', validacionLog, usuarioController.login);
-router.post('/perfil',validacionLogin, usuarioController.perfil);
+router.post('/perfil', validacionLogin, validacionLog, usuarioController.perfil);
 router.get('/vista-perfil',usuarioController.vistaPerfil )
 
 router.get('/editar-usuario', usuarioController.editar);

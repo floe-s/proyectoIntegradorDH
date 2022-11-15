@@ -78,5 +78,15 @@
   "contrasena": "$2a$10$Mzo4zn5mf/daFSqhpTUACeQx1iKDtQFS7NF0r1TZt0uFq//r0XIYm",
   "img": "1668485228379Eye.jpg",
   "tipoUsuario": "usuario"
+ },
+ {
+  "id": 9,
+  "nombre": "floe",
+  "apellido": "floe",
+  "telefono": "0000",
+  "email": "floe@gmail.com",
+  "contrasena": "$2a$10$A5GwplwAWypDTl6sTZpaKu21oCDhCmviZ3RFXYihP4jN1dH2jsdhy",
+  "img": "1668541101871Eye.jpg",
+  "tipoUsuario": "usuario"
  }
 ]

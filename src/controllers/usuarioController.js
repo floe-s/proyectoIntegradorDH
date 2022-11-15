@@ -71,14 +71,11 @@ const controller = {
 
         } else {
         console.log(errors.array())
-            res.render('./users/registro', {errors: errors.array(), error:false, email: false,usu:usu, admi:admi } ); 
+            res.render('./users/registro', {errors: errors.array(), error:false, email: false, usu:usu, admi:admi } ); 
         }
     },
 
     login:(req,res) => {
-
-    let errors = validationResult(req);
-        if( errors.isEmpty() ) {
 
             let usu=false
             let admi = false;
@@ -89,17 +86,21 @@ const controller = {
                 }
             }
             res.render('./users/login',{ error:false,usu:usu,admi:admi});
-
-        } else {
-            /* console.log(hola) */
-            res.render('./users/login', {errors: errors.array() } ); 
-        }
-
     },
 
     perfil:(req,res) => {
-        /* let errors = validationResult(req);
-        if( errors.isEmpty() ) { */
+
+        let usu=false
+        let admi =false;
+        if(req.session.profile){
+               usu =true;
+               if(req.session.profile.tipoUsuario == "admin"){
+                admi=true
+              }
+        }
+
+        let errors = validationResult(req);
+        if( errors.isEmpty() ) {
 
             let email=req.body.email
             
@@ -110,11 +111,10 @@ const controller = {
             req.session.profile = usuarioInicio;
 
           return res.redirect('/usuario/vista-perfil')
-          
 
-        /* } else {
-            res.render('./users/login', {errors: errors.array() } ); 
-        } */
+        } else {
+            res.render('./users/login', {errors: errors.array(), error:false, usu:usu, admi:admi } ); 
+        }
     },
 
     vistaPerfil:(req,res)=>{
