@@ -20,9 +20,9 @@
                 </figure>
                 <form class="form-login" action="/usuario/perfil" method="POST">
                     <h1 id="titulo">Iniciar sesión</h1>
-                    <!-- < % if(error) {%> 
+                    <% if(error) {%> 
                         <label class="error"><i class="fa-solid fa-circle-exclamation"></i>Error: Email y/o contraseña incorrectos.</label>
-                    < % } %>  -->
+                    <% } %> 
                     <div class="conten-btn">
                         <input class="btn-info" name="email" type="email" placeholder= "Email">
                         <% if (locals && locals.errors) { %>
