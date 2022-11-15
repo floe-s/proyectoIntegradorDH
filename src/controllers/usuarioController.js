@@ -147,6 +147,10 @@ const controller = {
     },
 
     update: (req,res) => {
+
+        /* let errors = validationResult(req);
+        if( errors.isEmpty() ) { */
+
         let idus = req.params.id;
 
         for(let o of usuarios) {
@@ -161,7 +165,9 @@ const controller = {
         }
         fs.writeFileSync(usuarioPath,JSON.stringify(usuarios,null," ")); // Se guarda los datos al JSON 
     
-        
+        /* } else {
+            res.render('./users/editar-usuario', {errors: errors.array(), error:false, usu:usu, admi:admi } ); 
+        } */
     },
 
     salir:(req,res)=>{

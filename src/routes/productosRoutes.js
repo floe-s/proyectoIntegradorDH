@@ -27,7 +27,14 @@ const uploadFile = multer({storage: configuracionImg});
 
 // Validation
 let validaciones = [
-  body('titulo').notEmpty().withMessage('Campo vacio').bail(),
+  body('titulo').notEmpty().withMessage('Llenar campo'),
+  body('profesor').notEmpty().withMessage('Llenar campo'),
+  body('precio').notEmpty().withMessage('Llenar campo'),
+  body('estudiantes').notEmpty().withMessage('Llenar campo'),
+  body('lecciones').notEmpty().withMessage('Llenar campo'),
+  body('horas').notEmpty().withMessage('Llenar campo'),
+  body('puntuacion').notEmpty().withMessage('Llenar campo'),
+  body('descripcion').notEmpty().withMessage('Llenar campo')
 ];
 
 //rutas especificas

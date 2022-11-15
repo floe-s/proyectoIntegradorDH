@@ -103,7 +103,7 @@ main{
 
 .precio {
     width: 20%;
-    margin-right: 20px;
+    /* margin-right: 20px; */
     text-align: center;
 }
 
@@ -261,6 +261,12 @@ main{
     
     transform: scale(1.05);
 }
+
+.errors-validation {
+    font-size: 15px;
+    color: red;
+    text-align: center;
+  }
 
 /*--------- responsivo --------------*/
 @media (min-width: 570px){

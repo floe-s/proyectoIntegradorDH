@@ -21,32 +21,64 @@
                 <form class="form-cargar" action="/producto/cargar" method="POST" enctype="multipart/form-data">
                     <input type="text" name="titulo" placeholder="Nombre del curso:" >
                     <% if (locals && locals.errors) { %>
-                        <% if (locals.errors[0].params == "titulo") { %>
-                          <h3> <%= locals.errors[0].msg %> </h3>
+                        <% if (locals.errors[0].param == "titulo") { %>
+                          <h3 class="errors-validation"> <%= locals.errors[0].msg %> </h3>
                         <% } %>
                       <% } %>
 
                     <section class="inpu">
                         <div class="tex-ifo"> 
+                            <% if (locals && locals.errors) { %>
+                                <% if (locals.errors[0].param == "profesor") { %>
+                                  <h3 class="errors-validation"> <%= locals.errors[0].msg %> </h3>
+                                <% } %>
+                              <% } %>
                             <input class="pro" type="text" name="profesor" placeholder="Profesor/ra:">
+
+                            <% if (locals && locals.errors) { %>
+                                <% if (locals.errors[0].param == "precio") { %>
+                                  <h3 class="errors-validation"> <%= locals.errors[0].msg %> </h3>
+                                <% } %>
+                              <% } %>
                             <input class="precio" type="text" name="precio" placeholder="Precio:">
+                            
                         </div>
                         <div class="inf-basica">
                             <div class="div">
                                 <label><i class="fa-solid fa-circle-user"></i> Est.</label>
                                 <input type="text" name="estudiantes">
+                                <% if (locals && locals.errors) { %>
+                                    <% if (locals.errors[0].param == "estudiantes") { %>
+                                      <h3 class="errors-validation"> <%= locals.errors[0].msg %> </h3>
+                                    <% } %>
+                                  <% } %>
                             </div>
                             <div class="div">
                                 <label>Lecciones</label>
                                 <input type="text" name="lecciones">
+                                <% if (locals && locals.errors) { %>
+                                    <% if (locals.errors[0].param == "lecciones") { %>
+                                      <h3 class="errors-validation"> <%= locals.errors[0].msg %> </h3>
+                                    <% } %>
+                                  <% } %>
                             </div>
                             <div class="div">
                                 <label><i class="fa-regular fa-clock"></i> Horas</label>
                                 <input type="text" name="horas">
+                                <% if (locals && locals.errors) { %>
+                                    <% if (locals.errors[0].param == "horas") { %>
+                                      <h3 class="errors-validation"> <%= locals.errors[0].msg %> </h3>
+                                    <% } %>
+                                  <% } %>
                             </div>
                             <div class="div">
                                 <label><i class="fa-solid fa-star"></i> Punt.</label>
                                 <input type="text" name="puntuacion">
+                                <% if (locals && locals.errors) { %>
+                                    <% if (locals.errors[0].param == "puntuacion") { %>
+                                      <h3 class="errors-validation"> <%= locals.errors[0].msg %> </h3>
+                                    <% } %>
+                                  <% } %>
                             <div>
                         </div>
                     </section>
@@ -65,6 +97,11 @@
                         <div class="form-descrip">
                             <textarea placeholder="Descripción..." class="descripcion" maxlength="125" name="descripcion" id="" cols="2" rows="5"></textarea>
                         </div>
+                        <% if (locals && locals.errors) { %>
+                            <% if (locals.errors[0].param == "descripcion") { %>
+                              <h3 class="errors-validation"> <%= locals.errors[0].msg %> </h3>
+                            <% } %>
+                          <% } %>
                         <div class="btn">
                             <button type="submit">Agregar</button>
                         </div>

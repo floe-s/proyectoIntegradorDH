@@ -37,6 +37,14 @@ let validacionLog = [
     body('password').isLength({ min: 4, max:10 }).withMessage('Debe contener entre 4 y 10 caracteres')
 ];
 
+/* let validacionUsu = [
+    body('nombres').notEmpty().withMessage('Campo vacio'),
+    body('apellidos').notEmpty().withMessage('Campo vacio'),
+    body('email').isEmail(),
+    body('telefono').notEmpty().withMessage('Campo vacio'),
+    body('oldpassword').isLength({ min: 4, max:10 }).withMessage('Debe contener entre 4 y 10 caracteres')
+]; */
+
 router.get('/registro',usuarioController.registro);
 router.post('/regitro', uploadfile.single('img'), validacionRegitro, validacionReg, usuarioController.registrar);
 
@@ -45,7 +53,7 @@ router.post('/perfil', validacionLogin, validacionLog, usuarioController.perfil)
 router.get('/vista-perfil',usuarioController.vistaPerfil )
 
 router.get('/editar-usuario', usuarioController.editar);
-router.put('/editar-usuario', uploadfile.single('img'), usuarioController.update);
+router.put('/editar-usuario', uploadfile.single('img'), /* validacionUsu, */ usuarioController.update);
 
 
 router.post('/salir/:id', usuarioController.salir);

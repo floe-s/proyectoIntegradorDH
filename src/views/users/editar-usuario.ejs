@@ -23,14 +23,34 @@
               <div class="cont-imgp">
                 <img src="/img/perfil/166812825746520210706_225050.jpg" class="imgpf">
               </div>
-              <input name="profileimg" type="file" >
+              <input name="profileimg" type="file" required>
             </div>
             <div class="inputs">
               <!-- <label><i class="fa-solid fa-circle-user"></i></label> -->
               <input class="" type="text" name="nombres" placeholder="<%- i.nombre %>">
+              <% if (locals && locals.errors) { %>
+                <% if (locals.errors[0].param == "nombres") { %>
+                  <h3 class="errors-validation"> <%= locals.errors[0].msg %> </h3>
+                <% } %>
+              <% } %>
               <input class="" type="text" name="apellidos" placeholder="<%- i.apellido %>">
+              <% if (locals && locals.errors) { %>
+                <% if (locals.errors[0].param == "apellidos") { %>
+                  <h3 class="errors-validation"> <%= locals.errors[0].msg %> </h3>
+                <% } %>
+              <% } %>
               <input class="" type="text" name="email" placeholder="<%- i.email%>">
+              <% if (locals && locals.errors) { %>
+                <% if (locals.errors[0].param == "email") { %>
+                  <h3 class="errors-validation"> <%= locals.errors[0].msg %> </h3>
+                <% } %>
+              <% } %>
               <input class="" type="text" name="telefono" placeholder="<%- i.telefono%>">
+              <% if (locals && locals.errors) { %>
+                <% if (locals.errors[0].param == "telefono") { %>
+                  <h3 class="errors-validation"> <%= locals.errors[0].msg %> </h3>
+                <% } %>
+              <% } %>
             </div>
             <div class="inputs">
               <div class="pasw-tit"><p>Cambio de contraseña</p></div>
