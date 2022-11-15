@@ -168,6 +168,12 @@ main{
   color:  #da1543c5;
 }
 
+.errors-validation {
+  font-size: 15px;
+  color: red;
+  text-align: center;
+}
+
 /*diseño adaptativo */
 @media (max-width: 1600px){
     .form-cont{

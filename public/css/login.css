@@ -127,6 +127,12 @@ main{
     border-radius: 10px;
 }
 
+.errors-validation {
+    font-size: 15px;
+    color: red;
+    text-align: center;
+  }
+
 /*diseño adaptativo */
 @media (max-width: 1600px){
     .principal{

@@ -20,26 +20,26 @@
                 <input class="btn-form" type="text" placeholder="Nombre" name="nombre">
                 <% if (locals && locals.errors) { %>
                   <% if (locals.errors[0].param == "nombre") { %>
-                    <h3> <%= locals.errors[0].msg %> </h3>
+                    <h3 class="errors-validation"> <%= locals.errors[0].msg %> </h3>
                   <% } %>
                 <% } %>
 
                 <input class="btn-form" type="text" placeholder="Apellido" name="apellido">
                 <% if (locals && locals.errors) { %>
                   <% if (locals.errors[0].param == "apellido") { %>
-                    <h3> <%= locals.errors[0].msg %> </h3>
+                    <h3 class="errors-validation"> <%= locals.errors[0].msg %> </h3>
                   <% } %>
                 <% } %>
-                <input class="btn-form" type="text" placeholder="Télefono" name="telefono">
+                <input class="btn-form" type="text" placeholder="Teléfono" name="telefono">
                 <% if (locals && locals.errors) { %>
                   <% if (locals.errors[0].param == "telefono") { %>
-                    <h3> <%= locals.errors[0].msg %> </h3>
+                    <h3 class="errors-validation"> <%= locals.errors[0].msg %> </h3>
                   <% } %>
                 <% } %>
                 <input class="btn-form" type="email" placeholder="Email" name="email">
                 <% if (locals && locals.errors) { %>
                   <% if (locals.errors[0].param == "email") { %>
-                    <h3> <%= locals.errors[0].msg %> </h3>
+                    <h3 class="errors-validation"> <%= locals.errors[0].msg %> </h3>
                   <% } %>
                 <% } %>
                 <% if(email){%> 
@@ -48,7 +48,7 @@
                 <input class="btn-form" type="password" placeholder="Contraseña" name="contrasena">
                 <% if (locals && locals.errors) { %>
                   <% if (locals.errors[0].param == "contrasena") { %>
-                    <h3> <%= locals.errors[0].msg %> </h3>
+                    <h3 class="errors-validation"> <%= locals.errors[0].msg %> </h3>
                   <% } %>
                 <% } %>
                 <label for="file" class="foto">

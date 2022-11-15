@@ -77,29 +77,29 @@ const controller = {
 
     login:(req,res) => {
 
-     /* res.cookie('email','req.body.email', {expire: 360000 + Date.now()});
-    res.cookie('contrasena','nuevaPasword', {expire: 360000 + Date.now()}); */
+    let errors = validationResult(req);
+        if( errors.isEmpty() ) {
 
-    
+            let usu=false
+            let admi = false;
+            if(req.session.profile){
+                usu =true;
+                if(req.session.profile.tipoUsuario == "admin"){
+                    admi=true
+                }
+            }
+            res.render('./users/login',{ error:false,usu:usu,admi:admi});
 
-        let usu=false
-        let admi = false;
-        if(req.session.profile){
-               usu =true;
-               if(req.session.profile.tipoUsuario == "admin"){
-                admi=true
-              }
+        } else {
+            /* console.log(hola) */
+            res.render('./users/login', {errors: errors.array() } ); 
         }
-        res.render('./users/login',{ error:false,usu:usu,admi:admi});
-
-    
 
     },
 
-
     perfil:(req,res) => {
-        let errors = validationResult(req);
-        if( errors.isEmpty() ) {
+        /* let errors = validationResult(req);
+        if( errors.isEmpty() ) { */
 
             let email=req.body.email
             
@@ -108,12 +108,13 @@ const controller = {
             });
 
             req.session.profile = usuarioInicio;
-                
-        
+
           return res.redirect('/usuario/vista-perfil')
-    } else {
-        res.render('./users/login', {errors: errors.array() } ); 
-    }
+          
+
+        /* } else {
+            res.render('./users/login', {errors: errors.array() } ); 
+        } */
     },
 
     vistaPerfil:(req,res)=>{
@@ -131,8 +132,6 @@ const controller = {
             res.redirect('/')
         }
     },
-        
-    
     
     editar:(req,res) => {
     

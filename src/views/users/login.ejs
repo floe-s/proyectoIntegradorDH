@@ -27,14 +27,14 @@
                         <input class="btn-info" name="email" type="email" placeholder= "Email">
                         <% if (locals && locals.errors) { %>
                             <% if (locals.errors[0].param == "email") { %>
-                              <h3> <%= locals.errors[0].msg %> </h3>
+                              <h3 class="errors-validation"> <%= locals.errors[0].msg %> </h3>
                             <% } %>
                           <% } %>
 
                         <input class="btn-info" name="password" type="password" placeholder="Contraseña">
                         <% if (locals && locals.errors) { %>
                             <% if (locals.errors[0].param == "password") { %>
-                              <h3> <%= locals.errors[0].msg %> </h3>
+                              <h3 class="errors-validation"> <%= locals.errors[0].msg %> </h3>
                             <% } %>
                           <% } %>
                     </div>
