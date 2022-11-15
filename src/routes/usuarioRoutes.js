@@ -28,13 +28,13 @@ let validacionReg = [
     body('apellido').notEmpty().withMessage('Campo vacio'),
     body('telefono').notEmpty().withMessage('Campo vacio'),
     body('email').isEmail(),
-    body('contrasena').isLength({ min: 5, max:10 }).withMessage('Debe contener entre 5 y 10 caracteres')
+    body('contrasena').isLength({ min: 4, max:10 }).withMessage('Debe contener entre 4 y 10 caracteres')
 
 ];
 
 let validacionLog = [
     body('email').isEmail(),
-    body('password').isLength({ min: 5, max:10 }).withMessage('Debe contener entre 5 y 10 caracteres')
+    body('password').isLength({ min: 4, max:10 }).withMessage('Debe contener entre 4 y 10 caracteres')
 ];
 
 router.get('/registro',usuarioController.registro);
