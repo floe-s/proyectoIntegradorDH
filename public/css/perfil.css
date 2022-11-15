@@ -23,15 +23,15 @@ main{
   border-right: solid 1px rgb(255, 120, 120);
   display: flex;
   flex-direction: column;
-  color: rgb(212, 64, 64);
+  color: rgb(0, 0, 0);
 }
 .edit{
-  height: 30px;
-  width: 30px;
+  height: 2vw;
+  width: 2vw;
   border-radius: 50%;
-  background-color: rgb(212, 64, 64,.8);
-  box-shadow: 0px 0px 10px rgb(212, 64, 64);
-  border: solid 1px rgba(255, 255, 255, 0.5);
+  background-color: rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 0px 5px 2px rgb(0, 0, 0,.3);
+  border: solid 1px rgba(0, 0, 0, 0.5);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -53,7 +53,7 @@ main{
   width: 150px;
   align-self: center;
   border-radius: 50%;
-  box-shadow: 0px 0px 20px rgb(249, 99, 99);
+  box-shadow: 0px 0px 15px 5px rgb(0, 0, 0,.5);
   margin-bottom: 20px;
 }
 .cont-imgp img{
@@ -87,8 +87,8 @@ main{
 }
 .inf-p button{
   border-style: hidden;
-  background-color: rgb(212, 64, 64,.8);
-  box-shadow: 0px 0px 10px rgb(212, 64, 64);
+  background-image: linear-gradient(to right, #ff8177 0%, #ff867a 0%, #ff8c7f 21%, #f99185 52%, #cf556c 78%, #b12a5b 100%);
+  box-shadow: 0px 0px 7px 5px rgb(0, 0, 0,.1);
   color: aliceblue;
   margin: 10px;
   border-radius: 10px;
@@ -104,7 +104,7 @@ main{
 }
 .cs button{
   border-style: hidden;
-  background-color: rgb(212, 64, 64,.8);
+  background-image: linear-gradient(to right, #ff8177 0%, #ff867a 0%, #ff8c7f 21%, #f99185 52%, #cf556c 78%, #b12a5b 100%);
   box-shadow: 0px 0px 10px rgb(212, 64, 64);
   color: aliceblue;
   padding: 5px;
@@ -119,7 +119,7 @@ main{
 }
 .prox-cla{
   background-color: rgba(237, 248, 255, 0.4);
-  box-shadow: 0px 0px 20px 5px rgba(0, 221, 255, 0.1);
+  box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.1);
   -webkit-backdrop-filter: blur(5px);
   backdrop-filter: blur(5px);
   height: 15%;
@@ -133,7 +133,7 @@ main{
 }
 .curso-persona{
   background-color: rgba(237, 248, 255, 0.4);
-  box-shadow: 0px 0px 20px 5px rgba(0, 221, 255, 0.1);
+  box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.3);
   -webkit-backdrop-filter: blur(5px);
   backdrop-filter: blur(5px);
   display: flex;
@@ -141,10 +141,12 @@ main{
   padding: 10px;
   margin: 20px;
   position: relative;
+  max-height: 300px;
+  overflow: hidden;
 }
 .con-imgc{
-  min-height: 250px;
-  min-width: 250px;
+  max-height: 500px;
+  max-width: 500px;
 }
 .img-cur{
   height: 100%;
@@ -166,7 +168,7 @@ main{
   bottom: 20px;
   right: 20px;
   border-style: hidden;
-  background-color: rgb(212, 64, 64);
+  background-image: linear-gradient(to right, #ff8177 0%, #ff867a 0%, #ff8c7f 21%, #f99185 52%, #cf556c 78%, #b12a5b 100%);
   box-shadow: 0px 0px 10px rgb(212, 64, 64);
   color: aliceblue;
   padding: 5px;
@@ -177,12 +179,63 @@ main{
   color: aliceblue;
 }
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - -  */
-@media (max-width: 768px) {
-
+@media (max-width: 769px) {
+  /* left */
+  .marco{
+    width: 90%;
+    display: block;
+  }
+  .left{
+    font-size: 10px;
+    min-width: 100%;
+    border-right: white;
+    display: flex;
+  }
+  .edit{
+    height: 20px;
+    width: 20px;
+  }
+  .cont-imgp{
+    height: 100px;
+    width: 100px;
+  }
+  .left{
+    padding: 20px;
+    width: 25%;
+    border-radius: 30px 5px 5px 30px;
+    background-color: rgba(237, 248, 255, 0.4);
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+    border-right: solid 1px rgb(255, 120, 120);
+    display: flex;
+    overflow: hidden;
+    flex-wrap: nowrap;
+    color: rgb(0, 0, 0);
+  }
+  .cs{
+    top: 10px;
+    right: 10px;
+  }
+  /* right */
+  .con-imgc{
+    max-height: 150px;
+    max-width: 150px;
+  }
+  .curso-persona{
+    display: block;
+    font-size: 10px;
+    padding-bottom: 30px;
+  }
+  .cont-infcur{
+    margin: 15px;
+  }
+  .cont-infcur h1{
+    font-size: 15px;
+  }
+  .cont-infcur h2{
+    font-size: 15px;
+  }
 }
-@media (min-width: 769px) {
-
-}
-@media (min-width: 1200px) {
-
+@media (max-width: 1200px) {
+  
 }

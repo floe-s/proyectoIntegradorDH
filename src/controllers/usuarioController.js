@@ -138,16 +138,6 @@ const controller = {
     
     editar:(req,res) => {
     
-    let idus = req.params.id;
-    let objUsuario;
-
-    for(let o of usuarios) {
-      if(idus == o.id) {
-        objUsuario = o;
-        break;
-      }
-    }
-    
     let usu=false
     let admi = false;
     if(req.session.profile){
@@ -156,7 +146,7 @@ const controller = {
             admi=true
           }
     }
-        res.render('./users/editar-usuario',{us: objUsuario,usu:usu,admi:admi});
+        res.render('./users/editar-usuario',{i:req.session.profile,usu:usu,admi:admi});
     },
 
     update: (req,res) => {
@@ -164,18 +154,11 @@ const controller = {
 
         for(let o of usuarios) {
             if(idus == o.id) {
-                o.titulo = req.body.titulo;
-                o.estudiantes = req.body.estudiantes;
-                o.profesor = req.body.profesor;
-                o.precio = req.body.precio;
-                o.nivel = req.body.nivel;
-                o.lecciones = req.body.lecciones;
-                o.horas = req.body.horas;
-                o.puntuacion = req.body.puntuacion;
-                o.img = nombreImg;
-                o.imgNivel = icon;
-                o.des = req.body.descripcion;
-                o.idinput = nombreImg;
+                o.nombre = req.body.nombres;
+                o.apellido = req.body.estudiantes;
+                o.email = req.body.profesor;
+                o.telefono = req.body.precio;
+                o.img = req.body.img
                 break;
             }
         }

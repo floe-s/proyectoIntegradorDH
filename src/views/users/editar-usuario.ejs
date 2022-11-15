@@ -12,7 +12,7 @@
 
   <div class="marco">
     <form class="form-perfil" action="/usuario/perfil" method="GET" >
-        <a href="/usuario/perfil" class="volv">Volver</a>
+        <a href="/usuario/vista-perfil" class="volv">Volver</a>
     </form>
   <div class="titulo">
     <p>Informacion de la cuenta</p>
@@ -20,22 +20,23 @@
     <form class="form-cargar" action="/usuario/editar-usuario" method="POST" enctype="multipart/form-data"> <!-- action="/usuario/editar-usuario/< %= us.id %>?_method=PUT" method="POST" enctype="multipart/form-data"  -->
         <section>
             <div class="file">
-              <div class="cont-imgperfil">
-                <img src="/img/Web Developer_Flatline.svg">
+              <div class="cont-imgp">
+                <img src="/img/perfil/166812825746520210706_225050.jpg" class="imgpf">
               </div>
               <input name="profileimg" type="file" >
             </div>
             <div class="inputs">
               <!-- <label><i class="fa-solid fa-circle-user"></i></label> -->
-              <input class="" type="text" name="nombres" >
-              <input class="" type="text" name="apellidos" >
-              <input class="" type="text" name="email" >
+              <input class="" type="text" name="nombres" placeholder="<%- i.nombre %>">
+              <input class="" type="text" name="apellidos" placeholder="<%- i.apellido %>">
+              <input class="" type="text" name="email" placeholder="<%- i.email%>">
+              <input class="" type="text" name="telefono" placeholder="<%- i.telefono%>">
             </div>
             <div class="inputs">
               <div class="pasw-tit"><p>Cambio de contraseña</p></div>
               <input class="" type="text" name="oldpassword" placeholder="Password actual">
             </div>
-            <a> <button type="submit" id="boton-enviar">Enviar</button> </a>
+            <a> <button type="submit" id="boton-enviar">Confirmar</button> </a>
         </section>
     </form>
   </div>
