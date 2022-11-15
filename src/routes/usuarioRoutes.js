@@ -24,12 +24,17 @@ const validacionLogin = require('../middleware/validacionLogin');
 
 // Validation
 let validacionReg = [
-    body('nombre').notEmpty().withMessage('Campo vacio').bail(),
+    body('nombre').notEmpty().withMessage('Campo vacio'),
+    body('apellido').notEmpty().withMessage('Campo vacio'),
+    body('telefono').notEmpty().withMessage('Campo vacio'),
+    body('email').isEmail(),
+    body('contrasena').isLength({ min: 5, max:10 }).withMessage('Debe contener entre 5 y 10 caracteres')
+
 ];
 
 /* let validacionLog = [
     body('email').isEmail,
-    body('password').isLength({ min: 5, max:10 }).withMessage('Debe contener entre 5 y 10 caracteres').bail()
+    body('password').isLength({ min: 5, max:10 }).withMessage('Debe contener entre 5 y 10 caracteres')
 ]; */
 
 router.get('/registro',usuarioController.registro);

@@ -34,53 +34,53 @@ const controller = {
         }
 
         let errors = validationResult(req);
+    
         if( errors.isEmpty() ) {
 
-        let idNuevo = 0;
+            let idNuevo = 0;
 
-        for(let s of usuarios){
-            if(idNuevo < s.id){
-                idNuevo = s.id
+            for(let s of usuarios){
+                if(idNuevo < s.id){
+                    idNuevo = s.id
+                }
             }
-        }
 
-        idNuevo++;
+            idNuevo++;
 
-        
-        let imgName = req.file.filename;
-        let password = req.body.contrasena;
-        let nuevaPasword = bcryptjs.hashSync(password, 10)
+            
+            let imgName = req.file.filename;
+            let password = req.body.contrasena;
+            let nuevaPasword = bcryptjs.hashSync(password, 10)
 
-        let usuarioNuevo ={
-            id:idNuevo,
-            nombre: req.body.nombre,
-            apellido: req.body.apellido,
-            telefono: req.body.telefono,
-            email: req.body.email,
-            contrasena: nuevaPasword,
-            img: imgName,
-            tipoUsuario: "usuario"
-        }
+            let usuarioNuevo ={
+                id:idNuevo,
+                nombre: req.body.nombre,
+                apellido: req.body.apellido,
+                telefono: req.body.telefono,
+                email: req.body.email,
+                contrasena: nuevaPasword,
+                img: imgName,
+                tipoUsuario: "usuario"
+            }
 
-        usuarios.push(usuarioNuevo);
+            usuarios.push(usuarioNuevo);
 
-        fs.writeFileSync(usuarioPath,JSON.stringify(usuarios,null," "));
-  
-        res.redirect('/usuario/login');
+            fs.writeFileSync(usuarioPath,JSON.stringify(usuarios,null," "));
+    
+            res.redirect('/usuario/login');
 
         } else {
-            res.render('./users/login', {errors: errors.array(), error:false, email: false,usu:usu, admi:admi } ); 
+        console.log(errors.array())
+            res.render('./users/registro', {errors: errors.array(), error:false, email: false,usu:usu, admi:admi } ); 
         }
     },
 
     login:(req,res) => {
 
-    res.cookie('email','req.body.email', {expire: 360000 + Date.now()});
-    res.cookie('contrasena','nuevaPasword', {expire: 360000 + Date.now()});
+     /* res.cookie('email','req.body.email', {expire: 360000 + Date.now()});
+    res.cookie('contrasena','nuevaPasword', {expire: 360000 + Date.now()}); */
 
-
-    let errors = validationResult(req);
-    if( errors.isEmpty() ) {
+    
 
         let usu=false
         let admi = false;
@@ -92,27 +92,28 @@ const controller = {
         }
         res.render('./users/login',{ error:false,usu:usu,admi:admi});
 
-    } else {
-        res.render('./users/login', {errors: errors.array() } ); 
-    }
+    
 
     },
 
 
     perfil:(req,res) => {
+        let errors = validationResult(req);
+        if( errors.isEmpty() ) {
 
+            let email=req.body.email
+            
+            let usuarioInicio = usuarios.find(usuario =>{
+                return usuario.email == email 
+            });
 
-        let email=req.body.email
+            req.session.profile = usuarioInicio;
+                
         
-        let usuarioInicio = usuarios.find(usuario =>{
-            return usuario.email == email 
-        });
-
-        req.session.profile = usuarioInicio;
-        
-       
-        res.redirect('/usuario/vista-perfil')
-        
+          return res.redirect('/usuario/vista-perfil')
+    } else {
+        res.render('./users/login', {errors: errors.array() } ); 
+    }
     },
 
     vistaPerfil:(req,res)=>{
