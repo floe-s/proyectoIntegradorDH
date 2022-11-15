@@ -45,7 +45,8 @@ router.post('/perfil',validacionLogin, /* validacionLog, */ usuarioController.pe
 router.get('/vista-perfil',usuarioController.vistaPerfil )
 
 router.get('/editar-usuario', usuarioController.editar);
-router.put('/editar-usuario/:id', usuarioController.update);
+router.put('/editar-usuario', uploadfile.single('img'), usuarioController.update);
+
 
 router.post('/salir/:id', usuarioController.salir);
 
