@@ -38,5 +38,25 @@
   "contrasena": "$2a$10$pYOxiDblG6UT.JmqVB/DmOxiy1WmW/qDbc.vaGmy8mfOg8gJ7kXte",
   "img": "166812825746520210706_225050.jpg",
   "tipoUsuario": "usuario"
+ },
+ {
+  "id": 5,
+  "nombre": "",
+  "apellido": "",
+  "telefono": "",
+  "email": "",
+  "contrasena": "$2a$10$QQF615e/PbmC5QCQqTAOLOKcqAY5wonOx0qL1dBfXp.u2KwfbCP3S",
+  "img": "1668446587314Eye.jpg",
+  "tipoUsuario": "usuario"
+ },
+ {
+  "id": 6,
+  "nombre": "Florencia",
+  "apellido": "Schettini",
+  "telefono": "01159610003",
+  "email": "he@gmail.com",
+  "contrasena": "$2a$10$o2A0XlBYRoXrVVQaL41DkukbgF1BW7hkMvtVDsdExx0uU47cC9KGi",
+  "img": "1668446647069Eye.jpg",
+  "tipoUsuario": "usuario"
  }
 ]

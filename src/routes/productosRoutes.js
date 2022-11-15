@@ -26,9 +26,9 @@ const configuracionImg = multer.diskStorage({
 const uploadFile = multer({storage: configuracionImg});
 
 // Validation
-/* let validaciones = [
+let validaciones = [
   body('titulo').notEmpty().withMessage('Campo vacio').bail(),
-]; */
+];
 
 //rutas especificas
 router.get('/cursos', productosController.cursos); // Se dirige a ese controlador
@@ -40,7 +40,7 @@ router.get('/suscripciones', productosController.suscripciones);
 router.get('/carrito-compras', productosController.carrito);
 
 router.get('/cargar', productosController.cargar);
-router.post('/cargar', uploadFile.single('imgProduct'), /* validaciones, */ productosController.registrar);
+router.post('/cargar', uploadFile.single('imgProduct'), validaciones, productosController.registrar);
 
 router.get('/editar/:id', productosController.edit);
 router.put('/editar/:id', uploadFile.single('img'), productosController.update);

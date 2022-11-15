@@ -6,6 +6,7 @@ const router = express.Router();
 const path = require('path')
 const { body } = require('express-validator');
 
+
 const configuracionImg = multer.diskStorage({
 
     destination:function(req, file, cb){
@@ -22,9 +23,9 @@ const validacionRegitro = require('../middleware/validacionRegistro');
 const validacionLogin = require('../middleware/validacionLogin');
 
 // Validation
-/* let validacionReg = [
+let validacionReg = [
     body('nombre').notEmpty().withMessage('Campo vacio').bail(),
-]; */
+];
 
 /* let validacionLog = [
     body('email').isEmail,
@@ -32,7 +33,7 @@ const validacionLogin = require('../middleware/validacionLogin');
 ]; */
 
 router.get('/registro',usuarioController.registro);
-router.post('/regitro', uploadfile.single('img'), validacionRegitro, /* validacionReg, */ usuarioController.registrar);
+router.post('/regitro', uploadfile.single('img'), validacionRegitro, validacionReg, usuarioController.registrar);
 
 router.get('/login', usuarioController.login);
 router.post('/perfil',validacionLogin, /* validacionLog, */ usuarioController.perfil);
@@ -43,5 +44,6 @@ router.put('/editar-usuario', uploadfile.single('img'), usuarioController.update
 
 
 router.post('/salir/:id', usuarioController.salir);
+
 
 module.exports = router;

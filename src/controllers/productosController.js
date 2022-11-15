@@ -34,6 +34,15 @@ const controlador = {
 
   registrar: (req, res) => {
 
+    let usu=false
+    let admi = false
+    if(req.session.profile){
+      usu =true;
+      if(req.session.profile.tipoUsuario == "admin"){
+        admi=true
+      }
+    }
+
     let errors = validationResult(req);
         if( errors.isEmpty() ) {
 
@@ -81,7 +90,7 @@ const controlador = {
     res.redirect('/producto/cursos'); // Redirecciona a la vista cursos (productosRoutes)
 
     } else {
-            res.render('./products/cargar', {errors: errors.array() } ); 
+            res.render('./products/cargar', {errors: errors.array(), usu:usu , admi:admi} ); 
         }
   },
 

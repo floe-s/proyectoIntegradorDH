@@ -5,6 +5,7 @@ const usuarioPath = path.join(__dirname, '../data/usuarioData.json');
 let usuarios = JSON.parse(fs.readFileSync(usuarioPath, 'utf-8'));
 const { validationResult } = require('express-validator');
 
+
 const controller = {
 
     registro: (req,res) => {
@@ -22,6 +23,15 @@ const controller = {
     // para crear registro
     registrar:(req, res)=>{
         //console.log(req.body)
+
+        let usu=false
+        let admi =false;
+        if(req.session.profile){
+               usu =true;
+               if(req.session.profile.tipoUsuario == "admin"){
+                admi=true
+              }
+        }
 
         let errors = validationResult(req);
         if( errors.isEmpty() ) {
@@ -59,12 +69,19 @@ const controller = {
         res.redirect('/usuario/login');
 
         } else {
-            res.render('./users/registro', {errors: errors.array() } ); 
+            res.render('./users/login', {errors: errors.array(), error:false, email: false,usu:usu, admi:admi } ); 
         }
     },
 
     login:(req,res) => {
 
+    res.cookie('email','req.body.email', {expire: 360000 + Date.now()});
+    res.cookie('contrasena','nuevaPasword', {expire: 360000 + Date.now()});
+
+
+    let errors = validationResult(req);
+    if( errors.isEmpty() ) {
+
         let usu=false
         let admi = false;
         if(req.session.profile){
@@ -74,32 +91,16 @@ const controller = {
               }
         }
         res.render('./users/login',{ error:false,usu:usu,admi:admi});
+
+    } else {
+        res.render('./users/login', {errors: errors.array() } ); 
+    }
 
     },
-
-    /* logueado: (req,res) => {
-
-        
-
-        let usu=false
-        let admi = false;
-        if(req.session.profile){
-               usu =true;
-               if(req.session.profile.tipoUsuario == "admin"){
-                admi=true
-              }
-        }
-        res.render('./users/login',{ error:false,usu:usu,admi:admi});
-
-    
-
-    }, */
 
 
     perfil:(req,res) => {
 
-        let errors = validationResult(req);
-        if( errors.isEmpty() ) {
 
         let email=req.body.email
         
@@ -110,11 +111,7 @@ const controller = {
         req.session.profile = usuarioInicio;
         
        
-        res.redirect('/usuario/vista-perfil');
-
-    } else {
-        res.render('./users/login', {errors: errors.array() } ); 
-    }
+        res.redirect('/usuario/vista-perfil')
         
     },
 
