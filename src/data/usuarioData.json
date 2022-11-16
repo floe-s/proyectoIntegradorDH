@@ -88,5 +88,15 @@
   "contrasena": "$2a$10$A5GwplwAWypDTl6sTZpaKu21oCDhCmviZ3RFXYihP4jN1dH2jsdhy",
   "img": "1668541101871Eye.jpg",
   "tipoUsuario": "usuario"
+ },
+ {
+  "id": 10,
+  "nombre": "camilo ",
+  "apellido": "andrade",
+  "telefono": "3167408977",
+  "email": "hola@gmail.com",
+  "contrasena": "$2a$10$/WaiDmp3Ovlvn3P6rpq0jOsqoLUP0S.O7Y8OyqNp9AalqrwYHUZWO",
+  "img": "166856307262101kgv4.jpg",
+  "tipoUsuario": "usuario"
  }
 ]

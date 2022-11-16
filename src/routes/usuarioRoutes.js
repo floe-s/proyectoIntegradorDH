@@ -50,7 +50,12 @@ router.post('/regitro', uploadfile.single('img'), validacionRegitro, validacionR
 
 router.get('/login', usuarioController.login);
 router.post('/perfil', validacionLogin, validacionLog, usuarioController.perfil);
-router.get('/vista-perfil',usuarioController.vistaPerfil )
+router.get('/vista-perfil',usuarioController.vistaPerfil );
+router.get('/datosUsuario', usuarioController.vistaDatos);
+router.get('/ayuda', usuarioController.visataAyuda);
+
+
+
 
 router.get('/editar-usuario', usuarioController.editar);
 router.put('/editar-usuario', uploadfile.single('img'), /* validacionUsu, */ usuarioController.update);

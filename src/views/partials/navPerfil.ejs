@@ -1,0 +1,16 @@
+<figure class="left">
+    <section class="const-img">
+        <img src="/img/perfil/<%= i.img %> " >
+        <h2> <%= i.nombre %> <%= i.apellido %> </h2>
+    </section>
+    <section class="btn-info">
+        <div class="botones">
+            <a href="/usuario/vista-perfil"><i class="fa-solid fa-book"></i>Mis cursos</a>
+            <a href="/usuario/datosUsuario"><i class="fa-solid fa-circle-user"></i>Mi informacion</a>
+            <a href="/usuario/ayuda"><i class="fa-solid fa-circle-question"></i>Ayuda</a>
+        </div>
+        <form class="cs" action="/usuario/salir/delete" method="POST">
+            <button type="submit"><i class="fa-solid fa-right-from-bracket"></i>Cerrar sesion</button>
+          </form>
+    </section>
+</figure>

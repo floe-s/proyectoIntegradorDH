@@ -2,6 +2,8 @@ const fs = require('fs');
 const path = require('path');
 const bcryptjs = require('bcryptjs');
 const usuarioPath = path.join(__dirname, '../data/usuarioData.json');
+const cursosPath = path.join(__dirname, '../data/cursosData.json');
+let cursos = JSON.parse(fs.readFileSync(cursosPath, 'utf-8'));
 let usuarios = JSON.parse(fs.readFileSync(usuarioPath, 'utf-8'));
 const { validationResult } = require('express-validator');
 
@@ -125,14 +127,44 @@ const controller = {
             if(req.session.profile.tipoUsuario == "admin"){
                 admi=true
             }
-            res.render('users/perfil',{i:req.session.profile, usu:usu, admi:admi});
+            res.render('users/perfil',{i:req.session.profile, usu:usu, admi:admi, cursos:cursos});
         }else {
             delete req.session.profile;
             
             res.redirect('/')
         }
     },
-    
+    vistaDatos:(req,res) =>{
+        let usu =false
+        let admi = false;
+        if(req.session.profile){
+            usu = true
+            if(req.session.profile.tipoUsuario == "admin"){
+                admi=true
+            }
+            res.render('users/perfiles/mi-datos',{i:req.session.profile, usu:usu, admi:admi, cursos:cursos});
+        }else {
+            delete req.session.profile;
+            
+            res.redirect('/')
+        }
+    },
+
+    visataAyuda:(req,res)=>{
+        let usu =false
+        let admi = false;
+        if(req.session.profile){
+            usu = true
+            if(req.session.profile.tipoUsuario == "admin"){
+                admi=true
+            }
+            res.render('users/perfiles/ayuda',{i:req.session.profile, usu:usu, admi:admi, cursos:cursos});
+        }else {
+            delete req.session.profile;
+            
+            res.redirect('/')
+        }
+    },
     editar:(req,res) => {
     
     let usu=false

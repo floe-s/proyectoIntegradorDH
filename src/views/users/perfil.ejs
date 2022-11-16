@@ -2,6 +2,7 @@
 <html lang="es">
   <head>
     <%-include('../partials/head') %> 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
     <link rel="stylesheet" href="/css/perfil.css">
     <title>Perfil</title>
   </head>
@@ -9,48 +10,95 @@
 <body class="body">
   
   <%-include('../partials/header') %>
+
 <main>
   <div class="marco">
-    <div class="left">
-      <div class="edit">
-        <a href="/usuario/editar-usuario"><img src="../img/iconcurso/perfil/editar.png" alt=""> </a>
-      </div>
-      <div class="cont-imgp">
-        <img src="/img/perfil/<%= i.img %>" class="imgpf">
-      </div>
-      <div class="tit-per">
-        <h1>Bienvenido</h1>
-        <h2><%= i.nombre %></h2>
-            </div>
-            <div class="inf-p">
-              <p>Email: <%= i.email%></p>
-              <p>ID:  <%= i.id %></p>
-              <button type="submit"><a href="/producto/cursos">Programacion</a></button>
-              <button type="submit"><a href="/producto/cursos">Atencion al usuario</a></button>
-              <button type="submit"><a href="/producto/cursos">Financiero</a></button>
-      </div>
-        <form class="cs" action="/usuario/salir/delete" method="POST">
-          <button type="submit">Cerrar sesion</button>
-        </form>
-    </div>
+    <%- include('../partials/navPerfil.ejs') %> 
     <div class="right">
-      <div class="prox-cla">
-        <p>Proximas clases:</p>
-      </div>
-          <div class="curso-persona">
-            <div class="con-imgc"><img src="/img/Personal data _Monochromatic.svg" class="img-cur"></div>
-            <div class="cont-infcur">
-            <h1>Fecha:</h1>
-            <h2>Curso:</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas necessitatibus, sit exercitationem itaque fugiat est quisquam, architecto sunt tenetur hic maxime libero deserunt fuga ut reiciendis repellat. Possimus, veniam beatae.</p>
+      <label>Cursos virtual grabados</label>
+      <section class="cursos-agre">
+        <!-- Slider main container -->
+        <div class="swiper swiper-hero">
+          <!-- Additional required wrapper -->
+          <div class="swiper-wrapper">
+            <!-- Slides -->
+            <% for(let c of cursos) {%> 
+            <div class="swiper-slide">
+              <div class="cursos-contenido">
+                <div class="img-curso">
+                  <img src="/img/paises/<%= c.img %> ">
+                </div>
+                <div class="cont-curso">
+                  <label ><%= c.titulo %> </label>
+                  <label ><%= c.profesor %> </label>
+                  <label ><%= c.nivel %> </label>
+                </div>
+              </div>
             </div>
-            <button class="add-cur" type="submit"><a href="/producto/cursos">Agregar curso</a></button>
+            <% } %> 
           </div>
+          <!-- If we need pagination -->
+          <div class="swiper-pagination"></div>
+
+          <!-- If we need navigation buttons -->
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+
+          
+        </div>
+      </section>
+      <label>Cursos virtual presencial</label>
+      <section class="cursos-agre">
+        <!-- Slider main container -->
+        <div  class="swiper swiper-hero2">
+          <!-- Additional required wrapper -->
+          <div class="swiper-wrapper">
+            <!-- Slides -->
+            <div class="swiper-slide">
+              <div class="cursos-contenido">
+                <img src="/img/paises/alemania-figuras.jpg ">
+                <div>
+                  <label>curso de aleman</label>
+                  <div>
+                    <label>fecha de inicio:25/5/2022</label>
+                    <label>fecha de final:2/2/2023</label>
+                    <label>link de la clase: http:www/zoom/clasePortugues</label>
+                    <label>codigo:moidi</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="cursos-contenido">
+                <img src="/img/paises/brasil-figuras2.jpg ">
+                <div>
+                  <label>Cursa de portugues</label>
+                  <div>
+                    <label>fecha de inicio:25/5/2022</label>
+                    <label>fecha de final:2/2/2023</label>
+                    <label>link de la clase: http:www/zoom/clasePortugues</label>
+                    <label>codigo:moidi</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- If we need pagination -->
+          <div class="swiper-pagination"></div>
+
+          <!-- If we need navigation buttons -->
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+
+          
+        </div>
+      </section>
     </div>
   </div>
 </main>
   <%-include('../partials/footer') %>
-
+  <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
-</body>
+  <script src="/js/swper.js"></script>
 </html>
