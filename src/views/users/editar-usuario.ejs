@@ -15,37 +15,37 @@
         <a href="/usuario/vista-perfil" class="volv">Volver</a>
     </form>
   <div class="titulo">
-    <p>Informacion de la cuenta</p>
+    <p>Información de la cuenta</p>
   </div>
     <form class="form-cargar" action="/usuario/editar-usuario" method="POST" enctype="multipart/form-data"> <!-- action="/usuario/editar-usuario/< %= us.id %>?_method=PUT" method="POST" enctype="multipart/form-data"  -->
         <section>
             <div class="file">
               <div class="cont-imgp">
-                <img src="/img/perfil/166812825746520210706_225050.jpg" class="imgpf">
+                <img src="/img/perfil/avatar.jpg" class="imgpf">
               </div>
               <input name="profileimg" type="file" required>
             </div>
             <div class="inputs">
               <!-- <label><i class="fa-solid fa-circle-user"></i></label> -->
-              <input class="" type="text" name="nombres" placeholder="<%- i.nombre %>">
+              <input class="" type="text" name="nombres" placeholder="Nombre: <%- i.nombre %>">
               <% if (locals && locals.errors) { %>
                 <% if (locals.errors[0].param == "nombres") { %>
                   <h3 class="errors-validation"> <%= locals.errors[0].msg %> </h3>
                 <% } %>
               <% } %>
-              <input class="" type="text" name="apellidos" placeholder="<%- i.apellido %>">
+              <input class="" type="text" name="apellidos" placeholder="Apellido: <%- i.apellido %>">
               <% if (locals && locals.errors) { %>
                 <% if (locals.errors[0].param == "apellidos") { %>
                   <h3 class="errors-validation"> <%= locals.errors[0].msg %> </h3>
                 <% } %>
               <% } %>
-              <input class="" type="text" name="email" placeholder="<%- i.email%>">
+              <input class="" type="text" name="email" placeholder="Email: <%- i.email%>">
               <% if (locals && locals.errors) { %>
                 <% if (locals.errors[0].param == "email") { %>
                   <h3 class="errors-validation"> <%= locals.errors[0].msg %> </h3>
                 <% } %>
               <% } %>
-              <input class="" type="text" name="telefono" placeholder="<%- i.telefono%>">
+              <input class="" type="text" name="telefono" placeholder="Teléfono: <%- i.telefono%>">
               <% if (locals && locals.errors) { %>
                 <% if (locals.errors[0].param == "telefono") { %>
                   <h3 class="errors-validation"> <%= locals.errors[0].msg %> </h3>
@@ -54,7 +54,7 @@
             </div>
             <div class="inputs">
               <div class="pasw-tit"><p>Cambio de contraseña</p></div>
-              <input class="" type="text" name="oldpassword" placeholder="Password actual">
+              <input class="" type="text" name="oldpassword" placeholder="Contraseña actual">
             </div>
             <a> <button type="submit" id="boton-enviar">Confirmar</button> </a>
         </section>
