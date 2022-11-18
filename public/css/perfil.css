@@ -16,8 +16,8 @@ main{
 /* -------------------------------------------- */
 
 .left{
-  /* height:100%; */
-  width: 120%;
+  height:100%;
+  width: 30%;
   display: flex;
   flex-direction: column;
   background-color: rgba(255, 255, 255, 0.805);
@@ -121,7 +121,7 @@ main{
 /* -------------------------------------------------- */
 
 .right{
-  width: 80%;
+  width: 70%;
   height: 100%;
   background-color: rgba(255, 255, 255, 0.507);
   backdrop-filter: blur(10px);
@@ -307,7 +307,7 @@ main{
   display: flex;
   flex-direction: column;
   margin: auto;
-  width: 380px;
+  width: 480px;
   height: 450px;
   background-color: rgba(255, 255, 255, 0.9);
   backdrop-filter: blur(10px);
@@ -387,7 +387,7 @@ main{
   display: flex;
 }
 .input-circle{
-  width: 110px;
+  width: 150px;
   height: 30px;
   padding: 3px;
   text-align: center;
@@ -410,7 +410,7 @@ main{
 .input-circle > input:checked + .fa-circle{
   transition: all 500ms ease;
   color: #4481eb;
-  right: -70px;
+  right: -110px;
 }
 
 .input-circle > i{
@@ -423,6 +423,10 @@ main{
 
 #label2 > label{
   margin-left: 2px;
+}
+
+#label1 {
+  margin-left: 4px;
 }
 
 .comentariooo{
