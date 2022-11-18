@@ -13,4 +13,19 @@
             <button type="submit"> <i class="fa-solid fa-right-from-bracket"></i> Cerrar Sesión</button>
           </form>
     </section>
+
+    <!-- menu -->
+    <section  class="const-img2">
+        <img src="/img/perfil/<%= i.img %> " >
+    </section>
+    <section class="btn-info2">
+        <div class="botones">
+            <a href="/usuario/vista-perfil"><i class="fa-solid fa-book"></i></a>
+            <a href="/usuario/datosUsuario"><i class="fa-solid fa-circle-user"></i></a>
+            <a href="/usuario/ayuda"><i class="fa-solid fa-circle-question"></i></a>
+        </div>
+        <form class="cs" action="/usuario/salir/delete" method="POST">
+            <button type="submit"> <i class="fa-solid fa-right-from-bracket"></i></button>
+        </form>
+    </section>
 </figure>

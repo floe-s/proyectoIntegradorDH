@@ -1,4 +1,5 @@
 main{
+  margin-top: 50px;
   display: flex;
   align-content: center;
   justify-content: center;
@@ -7,23 +8,25 @@ main{
 .marco {
   display: flex;
   height: 650px;
-  width: 80%;
+  width: 60%;
   margin-top: 50px;
   border-radius: 20px;
   box-shadow: 0px 0px 20px rgba(0,0,0,0.3);
   margin: auto;
+  transition: all 500ms ease;
 }
 /* -------------------------------------------- */
 
 .left{
   height:100%;
-  width: 30%;
+  width: 20%;
   display: flex;
   flex-direction: column;
   background-color: rgba(255, 255, 255, 0.805);
   backdrop-filter: blur(25px);
   border-radius: 20px 0px 0px 20px;
   border-right: 1px solid #ff867a;
+  transition: all 500ms ease;
 }
 
 .const-img{
@@ -118,10 +121,12 @@ main{
   top: 8px;
 }
 
+
+
 /* -------------------------------------------------- */
 
 .right{
-  width: 70%;
+  width: 80%;
   height: 100%;
   background-color: rgba(255, 255, 255, 0.507);
   backdrop-filter: blur(10px);
@@ -130,6 +135,7 @@ main{
   flex-direction: column;
   justify-content: center;
   position: relative;
+  transition: all 500ms ease;
 }
 
 .right > label{
@@ -182,6 +188,21 @@ main{
 
 .cursos-contenido{
   display: flex;
+  justify-content: center;
+  width: 80%;
+  height: 70%;
+  background-color: rgba(255, 255, 255, 0.805);
+  backdrop-filter: blur(25px);
+  box-shadow: 0px 0px 20px rgba(0,0,0,0.3);
+  margin: auto;
+  margin-top: 20px;
+  border-radius: 20px;
+  padding-left: 10px;
+}
+
+.cursos-contenidoGrande{
+  display: flex;
+  justify-content: center;
   width: 80%;
   height: 70%;
   background-color: rgba(255, 255, 255, 0.805);
@@ -314,6 +335,7 @@ main{
   box-shadow: 0px 0px 20px rgba(0,0,0,0.3);
   border-radius: 20px;
   align-self: center;
+  transition: all 500ms ease;
 }
 
 .arriba-form{
@@ -478,4 +500,161 @@ main{
   height: 30px;
   color: white;
   background-image: linear-gradient(to right, #ff8177 0%, #ff867a 0%, #ff8c7f 21%, #f99185 52%, #cf556c 78%, #b12a5b 100%);
+}
+
+.const-img2{
+  display: none;
+}
+
+.btn-info2{
+  display: none;
+}
+
+.select{
+  display: none;
+}
+
+/* media queris responsive */
+
+@media (max-width: 1790px ){
+  .marco{
+    width: 80%;
+  }
+}
+
+@media (max-width: 1400px){
+  .marco{
+    width: 90%;
+  }
+}
+
+@media (max-width: 1140px){
+  .marco{
+    width: 90%;
+  }
+
+  .right{
+    width: 70%;
+  }
+  .left{
+    width: 30%;
+  }
+}
+
+
+@media (max-width: 890px){
+  .marco{
+    width: 95%;
+  }
+}
+
+
+@media (max-width: 800px){
+  .marco{
+    width: 95%;
+  }
+  .right{
+    width: 90%;
+  }
+
+  .const-img{
+    display: none;
+  }
+
+  .btn-info{
+    display: none;
+  }
+
+  .btn-info2{
+    height: 70%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .botones > a {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .botones > a > i{
+    top: 17px;
+    left: 17px;
+  }
+
+  .const-img2{
+    display: flex;
+    height: 40%;
+    justify-content: center;
+  }
+
+  .const-img2 > img {
+    margin-top: 20px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+  }
+
+  .left {
+    width: 10%;
+  }
+
+  .cs > button {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+  }
+
+  .cs > button > i {
+    top: 17px;
+    left: 17px;
+  }
+}
+
+
+@media (max-width: 650px){
+  .vis-ayuda{
+    width: 400px;
+  }
+  .tag  {
+    display: none;
+  }
+
+  .select {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+  }
+
+  .select > select{
+    width: 250px;
+    height: 30px;
+    border: none;
+    background-color: #4481eb;
+    color: white;
+    outline: none;
+    text-align: center;
+  }
+  
+  .left{
+    width: 15%;
+  }
+
+
+  .right{
+    width: 85%;
+  }
+}
+
+@media (max-width: 650px){
+  .vis-ayuda{
+    width: 360px;
+  }
 }

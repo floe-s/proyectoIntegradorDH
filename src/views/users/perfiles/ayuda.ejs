@@ -25,7 +25,7 @@
 
             <div class="mensajeUSU">
               <label>Usuario</label>
-              <input type="text" name="usuario" value="<%= i.email %>">
+              <input type="text" name="usuario" value="<%= i.email %>" readonly>
             </div>
             <div class="mensajeUSU">
               <label>Fecha</label>
@@ -33,10 +33,10 @@
             </div>
             <div class="tag">
               <label>Tipo de problema</label>
-              <section>
+              <section class="radio23">
                 <div id="label1" class="input-circle">
                   <label id="label1" for="Grave" class="radio">Administrativo</label>
-                  <input class="radiou" id="Grave" type="radio" name="tag" value="grave">
+                  <input class="radiou" id="Grave" type="radio" name="tag" value="administrativo">
                   <i class="fa-sharp fa-solid fa-circle"></i>
                 </div>
                 <div id="label2" class="input-circle">
@@ -46,11 +46,19 @@
                 </div>                
                 <div id="label3"class="input-circle">
                   <label  for="dudas" class="radio">General</label>
-                  <input class="radiou" id="dudas" type="radio" name="tag" value="dudas">
+                  <input class="radiou" id="dudas" type="radio" name="tag" value="general">
                   <i class="fa-sharp fa-solid fa-circle"></i>
                 </div>
               </section>
             </div>
+            <section class="select">
+              <label>Tipo de problema</label>
+              <select name="tag" id="">
+                <option value="administrativo">Administrativo</option>
+                <option value="sistema">Sistemas</option>
+                <option value="general">General</option>
+              </select>
+            </section>
           </figure>
         </div>
         <div class="comentariooo">
