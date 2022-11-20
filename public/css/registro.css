@@ -109,11 +109,17 @@ main{
   border-radius: 20px;
   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.426);
   font-size: 18px;
+  text-align: center;
+  cursor: pointer;
 }
 
 #btn-crear:hover{
   transform: scale(1.05);
 }
+
+
+
+
 
 .o{
   font-size: 17px;

@@ -122,12 +122,20 @@ const controller = {
     vistaPerfil:(req,res)=>{
         let usu =false
         let admi = false;
+        let cursoPresencal = cursos.filter(elemento =>{
+            return elemento.curso == 'precencial';
+        });
+
+        let cursoVirtual = cursos.filter(elemento =>{
+            return elemento.curso !== 'precencial';
+        });
+
         if(req.session.profile){
             usu = true
             if(req.session.profile.tipoUsuario == "admin"){
                 admi=true
             }
-            res.render('users/perfil',{i:req.session.profile, usu:usu, admi:admi, cursos:cursos});
+            res.render('users/perfil',{i:req.session.profile, usu:usu, admi:admi, cursosPre: cursoPresencal, cursoVirtual: cursoVirtual});
         }else {
             delete req.session.profile;
             

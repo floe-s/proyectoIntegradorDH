@@ -12,7 +12,9 @@
   "imgNivel": "fire3.svg",
   "des": "Curso intensivo de alemán de vocabulario y gramática con un profesor experto en la metaria con mas de 10 años de experiencia.  ",
   "idinput": "1666229320049alemania-figuras.jpg",
-  "estudiantes": "200  "
+  "estudiantes": "200  ",
+  "curso":"precencial"
+
  },
  {
   "id": 2,
@@ -27,7 +29,8 @@
   "imgNivel": "fire2.svg",
   "des": "Curso intensivo de alemán de vocabulario y gramática con un profesor experto en la metaria con mas de 10 años de experiencia.",
   "idinput": "idcontenido2",
-  "estudiantes": 150
+  "estudiantes": 150,
+  "curso":"precencial"
  },
  {
   "id": 3,
@@ -42,7 +45,8 @@
   "imgNivel": "fire.svg",
   "des": "Curso intensivo de alemán de vocabulario y gramática con un profesor experto en la metaria con mas de 10 años de experiencia.",
   "idinput": "idcontenido3",
-  "estudiantes": 100
+  "estudiantes": 100,
+  "curso":"virtual"
  },
  {
   "id": 4,
@@ -57,7 +61,8 @@
   "imgNivel": "fire3.svg",
   "des": "Curso intensivo de inglés de vocabulario y gramática con un profesor experto en la metaria con mas de 15 años de experiencia.",
   "idinput": "idcontenido4",
-  "estudiantes": 100
+  "estudiantes": 100,
+  "curso":"precencial"
  },
  {
   "id": 5,
@@ -72,7 +77,8 @@
   "imgNivel": "fire2.svg",
   "des": "Curso intensivo de inglés de vocabulario y gramática con un profesor experto en la metaria con mas de 15 años de experiencia.",
   "idinput": "idcontenido5",
-  "estudiantes": 150
+  "estudiantes": 150,
+  "curso":"virtual"
  },
  {
   "id": 6,
@@ -87,7 +93,8 @@
   "imgNivel": "fire.svg",
   "des": "Curso intensivo de inglés de vocabulario y gramática con un profesor experto en la metaria con mas de 15 años de experiencia.",
   "idinput": "idcontenido6",
-  "estudiantes": 200
+  "estudiantes": 200,
+  "curso":"precencial"
  },
  {
   "id": 7,
@@ -102,7 +109,8 @@
   "imgNivel": "fire3.svg",
   "des": "Curso intensivo de español de vocabulario y gramática con un profesor experto en la metaria con mas de 8 años de experiencia.",
   "idinput": "idcontenido7",
-  "estudiantes": 200
+  "estudiantes": 200,
+  "curos":"virtual"
  },
  {
   "id": 8,
@@ -117,7 +125,8 @@
   "imgNivel": "fire2.svg",
   "des": "Curso intensivo de español de vocabulario y gramática con un profesor experto en la metaria con mas de 8 años de experiencia.",
   "idinput": "idcontenido8",
-  "estudiantes": 150
+  "estudiantes": 150,
+  "curso":"virtual"
  },
  {
   "id": 9,
@@ -132,7 +141,8 @@
   "imgNivel": "fire.svg",
   "des": "Curso intensivo de español de vocabulario y gramática con un profesor experto en la metaria con mas de 8 años de experiencia.",
   "idinput": "idcontenido9",
-  "estudiantes": 100
+  "estudiantes": 100,
+  "curos":"precencial"
  },
  {
   "id": 10,
@@ -147,7 +157,8 @@
   "imgNivel": "fire3.svg",
   "des": "Curso intensivo de portugués de vocabulario y gramática con un profesor experto en la metaria con mas de 12 años de experiencia.",
   "idinput": "idcontenido10",
-  "estudiantes": 100
+  "estudiantes": 100,
+  "curso":"virtual"
  },
  {
   "id": 11,
@@ -162,7 +173,8 @@
   "imgNivel": "fire2.svg",
   "des": "Curso intensivo de portugués de vocabulario y gramática con un profesor experto en la metaria con mas de 12 años de experiencia.",
   "idinput": "idcontenido11",
-  "estudiantes": 150
+  "estudiantes": 150,
+  "curso":"precencial"
  },
  {
   "id": 12,
@@ -177,6 +189,7 @@
   "imgNivel": "fire.svg",
   "des": "Curso intensivo de portugués de vocabulario y gramática con un profesor experto en la metaria con mas de 12 años de experiencia. ",
   "idinput": "idcontenido12",
-  "estudiantes": "200 "
+  "estudiantes": "200 ",
+  "curso":"virtual"
  }
 ]

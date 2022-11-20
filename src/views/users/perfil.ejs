@@ -15,88 +15,42 @@
   <div class="marco">
     <%- include('../partials/navPerfil.ejs') %> 
     <div class="right">
-      <label>Cursos Virtuales</label>
-      <section class="cursos-agre">
-        <!-- Slider main container -->
-        <div class="swiper swiper-hero">
-          <!-- Additional required wrapper -->
-          <div class="swiper-wrapper">
-            <!-- Slides -->
-            <% for(let c of cursos) {%> 
-            <div class="swiper-slide">
-              <div class="cursos-contenido">
-                <div class="img-curso">
-                  <img src="/img/paises/<%= c.img %> ">
-                </div>
-                <div class="cont-curso">
-                  <label ><%= c.titulo %> </label>
-                  <label ><%= c.profesor %> </label>
-                  <label ><%= c.nivel %> </label>
-                </div>
-              </div>
-            </div>
-            <% } %> 
-          </div>
-          <!-- If we need pagination -->
-          <div class="swiper-pagination"></div>
-
-          <!-- If we need navigation buttons -->
-          <div class="swiper-button-prev"></div>
-          <div class="swiper-button-next"></div>
-
-          
+      <section class="cont-clases">
+        <div class="clases-btn">
+          <label for="virtual" class="virtual">Cursos Virtual</label>
+          <label for="presencial" class="precencial">Cursos Precensial</label>
         </div>
-      </section>
-      <label>Cursos Presenciales</label>
-      <section class="cursos-agre">
-        <!-- Slider main container -->
-        <div  class="swiper swiper-hero2">
-          <!-- Additional required wrapper -->
-          <div class="swiper-wrapper">
-            <!-- Slides -->
-            <div class="swiper-slide">
-              <div class="cursos-contenidoGrande">
-                <img src="/img/paises/alemania-figuras1.jpg ">
-                <div>
-                  <label>Curso de Alemán</label>
-                  <div>
-                    <label>Fecha de Inicio: 25/05/2022</label>
-                    <label>Fecha de Finalización: 02/02/2023</label>
-                    <!-- <label>link de la clase: http:www/zoom/clasePortugues</label> -->
-                   <!--  <p>codigo:moidi</p> -->
-                  </div>
-                </div>
+        <input id="virtual" name="clases" type="radio" checked>
+        <div class="cont-virtual">
+          <% for(let c of cursoVirtual) { %> 
+            <div class="clases-virtuales"> 
+              <img src="/img/paises/<%=c.img %> ">
+              <div class="info-virtual">
+                <h3><%= c.titulo %> </h3>
+                <label > <%= c.profesor %> </label>
+                <span> <%= c.nivel %> </span>
+                <a href="#">Ver curso</a>
               </div>
             </div>
-            <div class="swiper-slide">
-              <div class="cursos-contenido">
-                <img src="/img/paises/brasil-figuras2.jpg ">
-                <div>
-                  <label>Curso de Portugués</label>
-                  <div>
-                    <label>Fecha de Inicio: 25/5/2022</label>
-                    <label>Fecha de Finalización: 02/02/2023</label>
-                    <!-- <label>link de la clase: http:www/zoom/clasePortugues</label> -->
-                    <!-- <p>codigo:moidi</p> -->
-                  </div>
-                </div>
+          <% } %> 
+        </div>
+        <input id="presencial" type="radio" name="clases">
+        <div class="cont-presencial"> 
+          <% for(let b of cursosPre) { %> 
+            <div id="cls-pre" class="clases-virtuales">
+              <img src="/img/paises/<%=b.img %> ">
+              <div class="info-virtual">
+                <h3><%= b.titulo %> </h3>
+                <label > <%= b.profesor %> </label>
+                <span>   <%= b.nivel %> </span>
+                <a href="#">Ver curso</a>
               </div>
             </div>
-          </div>
-
-          <!-- If we need pagination -->
-          <div class="swiper-pagination"></div>
-
-          <!-- If we need navigation buttons -->
-          <div class="swiper-button-prev"></div>
-          <div class="swiper-button-next"></div>
-
-          
+          <% } %> 
         </div>
       </section>
     </div>
   </div>
-  <img src="/img/Personal data _Monochromatic" alt="">
 </main>
   <%-include('../partials/footer') %>
   <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>

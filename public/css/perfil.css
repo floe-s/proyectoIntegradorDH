@@ -138,100 +138,197 @@ main{
   transition: all 500ms ease;
 }
 
-.right > label{
-  background-image: linear-gradient(to right, #ff8177 0%, #ff867a 0%, #ff8c7f 21%, #f99185 52%, #cf556c 78%, #b12a5b 100%);
-  box-shadow: 0px 0px 20px rgba(0,0,0,0.3);
-  color: white;
-  border-radius: 10px;
-  align-self: center;
-  text-align: center;
-  width: 60%;
-  height: 30px;
-  padding-top: 3px;
-}
+/*----------- css de perfil cursos  ----------------*/
 
-.cursos-agre{
-  width: 95%;
-  height: 40%;
-  align-self: center;
-  margin-top: 20px;
-}
-
-
-
-.swiper {
-  width: 100%;
+.cont-clases{
   height: 100%;
+  width: 100%;
+  overflow-y: scroll;
+  position: relative;
 }
 
-.swiper-button-prev, .swiper-button-next{
-  --swiper-theme-color: white;
-  --swiper-navigation-size: 20px;
-  background-image: linear-gradient(to right, #ff8177 0%, #ff867a 0%, #ff8c7f 21%, #f99185 52%, #cf556c 78%, #b12a5b 100%);
-  width: 40px;
-  height: 40px;
-  margin-top: -30px;
-  border-radius: 50px;
+.cont-clases::-webkit-scrollbar{
+  background-color: rgba(255, 255, 255, 0.616);
+  border-radius: 10px;
+  width: 20px;
+  color: #f99185;
   
 }
-.swiper-button-next{
-  right: 0px;
-}
-.swiper-button-prev{
-  left:0px;
-}
-.swiper-pagination{
-  --swiper-theme-color:#ff8177;
-}
 
-
-
-.cursos-contenido{
-  display: flex;
-  justify-content: center;
-  width: 80%;
-  height: 70%;
-  background-color: rgba(255, 255, 255, 0.805);
-  backdrop-filter: blur(25px);
-  box-shadow: 0px 0px 20px rgba(0,0,0,0.3);
-  margin: auto;
-  margin-top: 20px;
+.cont-clases::-webkit-scrollbar-thumb{
+  background-image: linear-gradient(to right, #ff8177 0%, #ff867a 0%, #ff8c7f 21%, #f99185 52%, #cf556c 78%, #b12a5b 100%);
   border-radius: 20px;
-  padding-left: 10px;
+  height: 100px;
 }
 
-.cursos-contenidoGrande{
+.clases-btn{
+  width: 100%;
   display: flex;
-  justify-content: center;
-  width: 80%;
-  height: 70%;
-  background-color: rgba(255, 255, 255, 0.805);
-  backdrop-filter: blur(25px);
-  box-shadow: 0px 0px 20px rgba(0,0,0,0.3);
-  margin: auto;
-  margin-top: 20px;
-  border-radius: 20px;
-  padding-left: 10px;
+  justify-content: space-around;
+  margin-bottom: 30px;
 }
 
-.img-curso{
-  width: 50%;
+.clases-btn > label{
+  width: 40%;
+  height: 30px;
+  background-image: linear-gradient(to right, #ff8177 0%, #ff867a 0%, #ff8c7f 21%, #f99185 52%, #cf556c 78%, #b12a5b 100%);
+  color:white ;
+  margin-top: 20px;
+  text-align: center;
+  border-radius: 20px;
+  padding-top: 3px;
+  cursor: pointer;
+}
+
+.clases-btn > label:hover{
+  border-left:  5px solid white;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.555);
+}
+.cont-virtual{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  position: absolute;
+  transform: translateX(-800px);
+  opacity: 0;
+}
+
+.clases-virtuales{  
+  width: 250px;
+  height: 200px;
+  margin: 20px;
+  display: flex;
+  transition: all 500ms ease;
+}
+
+#virtual{
+  display: none;
+}
+
+#virtual:checked + .cont-virtual{
+  transition: all 2500ms ease;
+  opacity: 1;
+  width: 100%;
+  transform: translateX(0px);
+}
+
+.cont-presencial{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  position: absolute;
+  transform: translateX(-800px);
+  z-index: -10;
+  opacity: 0;
+}
+
+
+
+#cls-pre{
+  width: 250px;
+  height: 200px;
+  margin: 20px;
+  display: flex;
+  transition: all 500ms ease;
+}
+#presencial {
+  display: none;
+}
+#presencial:checked + .cont-presencial{
+  transition: all 2500ms ease;
+  transform: translateX(0px);
+  opacity: 1;
+  z-index: 10;
+}
+
+.info-virtual{
+  z-index: -10;
+  background-color: white;
+  box-shadow: 0px 0px 20px rgba(0,0,0,0.3);
+  border-radius: 2px 20px 20px 2px;
+  transform: translateX(-150px);
+  width: 0%;
+  opacity: 0;
+}
+
+.clases-virtuales > img{
+  width: 100%;
   height: 100%;
-  display: flex;
+  border-radius: 20px;
+  box-shadow: 0px 0px 20px rgba(0,0,0,0.3) ;
 }
 
-.img-curso > img{
-  width: 70%;
-  height: 70%;
-  border-radius: 5px;
-  box-shadow: 0px 0px 20px rgba(0,0,0,0.3);
+.clases-virtuales:hover{
+  transition: all 500ms ease;
+  width: 250px;
+  transform: scale(1.1);
+  z-index: 20;
+}
+
+.clases-virtuales:hover > .info-virtual{
+  transition: all 600ms ease;
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  transform:  translateX(-10px);
+  opacity: 1;
+}
+
+.clases-virtuales:hover > img{
+  transition: all 500ms ease;
+  width: 60%;
+  transform: translateX(-10px);
+  border-radius: 20px 0px 0px 20px;
+}
+
+.info-virtual > h3 {
+  font-size: 18px;
+  text-align: center;
+  position: absolute;
+  top: 5px;
+  left: 3px;
+}
+
+.info-virtual > label{
+  width: 100%;
+  font-size: 14px;
+  text-align: center;
+  margin-bottom: 10px;
+  position: absolute;
+  top: 60px;
+  left: 3px;
+}
+
+
+.info-virtual > span{
+  margin-top: 10px;
+  text-align: center;
+  width: 90%;
+  border: 1px solid rgba(0, 0, 0, 0.555);
+  border-radius: 30px;
   align-self: center;
-  justify-content: center;
+  position: absolute;
+  top: 100px;
+  left: 3px;
 }
-.cont-curso{
-  width: 50%;
-  height: 100%;
+
+.info-virtual > a{
+  text-decoration: none;
+  width: 90%;
+  height: 30px;
+  color: white;
+  background-image: linear-gradient(to right, #ff8177 0%, #ff867a 0%, #ff8c7f 21%, #f99185 52%, #cf556c 78%, #b12a5b 100%);
+  border-radius: 10px;
+  padding-top: 3px;
+  margin-top: 10px;
+  position: absolute;
+  text-align: center;
+  bottom: 10px;
+  left: 5px;
 }
+
+
+
 
 /* ---------------css de ejs mis datos ----------------*/
 
@@ -516,9 +613,10 @@ main{
 
 /* media queris responsive */
 
+
 @media (max-width: 1790px ){
   .marco{
-    width: 80%;
+    width: 70%;
   }
 }
 
@@ -529,6 +627,9 @@ main{
 }
 
 @media (max-width: 1140px){
+  #virtual:checked + .cont-virtual, #presencial:checked + .cont-presencial{
+    transition: all 1000ms ease;
+  }
   .marco{
     width: 90%;
   }
@@ -543,6 +644,10 @@ main{
 
 
 @media (max-width: 890px){
+  #virtual:checked + .cont-virtual, #presencial:checked + .cont-presencial{
+    transition: all 800ms ease;
+  }
+
   .marco{
     width: 95%;
   }
@@ -613,6 +718,9 @@ main{
   .cs > button > i {
     top: 17px;
     left: 17px;
+  }
+  .swiper-slide{
+    width: 100%;
   }
 }
 
