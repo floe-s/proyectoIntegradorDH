@@ -178,6 +178,13 @@ main{
   border-radius: 20px;
   padding-top: 3px;
   cursor: pointer;
+  position: relative;
+}
+
+.clases-btn > label > i{
+  position: absolute;
+  left: 20px ;
+  top: 6px;
 }
 
 .clases-btn > label:hover{
@@ -651,6 +658,10 @@ main{
   .marco{
     width: 95%;
   }
+
+  .clases-btn > label{
+    width: 40%;
+  }
 }
 
 
@@ -722,6 +733,11 @@ main{
   .swiper-slide{
     width: 100%;
   }
+
+  .clases-btn > label{
+    text-rendering: none;
+    width: 48%;
+  }
 }
 
 
@@ -764,5 +780,13 @@ main{
 @media (max-width: 650px){
   .vis-ayuda{
     width: 360px;
+  }
+  .clases-btn > label {
+    border-radius: 10px;
+    padding-left: 4px;
+  }
+
+  .clases-btn > label>i{
+    left: 5px;
   }
 }
