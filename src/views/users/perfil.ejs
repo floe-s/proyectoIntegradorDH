@@ -20,7 +20,7 @@
           <label for="virtual" class="virtual"><i class="fa-solid fa-video"></i>Cursos Virtual</label>
           <label for="presencial" class="precencial"><i class="fa-solid fa-school"></i>Cursos Precensial</label>
         </div>
-        <input id="virtual" name="clases" type="radio" checked>
+        <input id="virtual" name="clases" type="radio" >
         <div class="cont-virtual">
           <% for(let c of cursoVirtual) { %> 
             <div class="clases-virtuales"> 
@@ -34,7 +34,7 @@
             </div>
           <% } %> 
         </div>
-        <input id="presencial" type="radio" name="clases">
+        <input id="presencial" type="radio" name="clases" checked>
         <div class="cont-presencial"> 
           <% for(let b of cursosPre) { %> 
             <div id="cls-pre" class="clases-virtuales">
