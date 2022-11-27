@@ -17,35 +17,35 @@
   <div class="titulo">
     <p>Información de la cuenta</p>
   </div>
-    <form class="form-cargar" action="/usuario/editar-usuario" method="POST" enctype="multipart/form-data"> <!-- action="/usuario/editar-usuario/< %= us.id %>?_method=PUT" method="POST" enctype="multipart/form-data"  -->
+    <form class="form-cargar" action="/usuario/editar-usuarios" method="POST" > <!-- action="/usuario/editar-usuario/< %= us.id %>?_method=PUT" method="POST" enctype="multipart/form-data"  -->
         <section>
             <div class="file">
               <div class="cont-imgp">
-                <img src="/img/perfil/avatar.jpg" class="imgpf">
+                <img src="/img/perfil/<%= i.imagen %> " class="imgpf">
               </div>
-              <input name="profileimg" type="file" required>
+              <!-- <input name="img" type="file" required> -->
             </div>
             <div class="inputs">
               <!-- <label><i class="fa-solid fa-circle-user"></i></label> -->
-              <input class="" type="text" name="nombres" placeholder="Nombre: <%- i.nombre %>">
+              <input class="" type="text" name="nombre" placeholder="Nombre: <%= i.nombre %>" value="<%= i.nombre %>">
               <% if (locals && locals.errors) { %>
-                <% if (locals.errors[0].param == "nombres") { %>
+                <% if (locals.errors[0].param == "nombre") { %>
                   <h3 class="errors-validation"> <%= locals.errors[0].msg %> </h3>
                 <% } %>
               <% } %>
-              <input class="" type="text" name="apellidos" placeholder="Apellido: <%- i.apellido %>">
+              <input class="" type="text" name="apellido" placeholder="Apellido: <%= i.apellido %>" value="<%= i.apellido %>">
               <% if (locals && locals.errors) { %>
-                <% if (locals.errors[0].param == "apellidos") { %>
+                <% if (locals.errors[0].param == "apellido") { %>
                   <h3 class="errors-validation"> <%= locals.errors[0].msg %> </h3>
                 <% } %>
               <% } %>
-              <input class="" type="text" name="email" placeholder="Email: <%- i.email%>">
+              <input class="" type="text" name="email" placeholder="Email: <%= i.email%>" value="<%= i.email%>">
               <% if (locals && locals.errors) { %>
                 <% if (locals.errors[0].param == "email") { %>
                   <h3 class="errors-validation"> <%= locals.errors[0].msg %> </h3>
                 <% } %>
               <% } %>
-              <input class="" type="text" name="telefono" placeholder="Teléfono: <%- i.telefono%>">
+              <input class="" type="text" name="telefono" placeholder="Teléfono: <%= i.telefono%>" value="<%= i.telefono%>">
               <% if (locals && locals.errors) { %>
                 <% if (locals.errors[0].param == "telefono") { %>
                   <h3 class="errors-validation"> <%= locals.errors[0].msg %> </h3>

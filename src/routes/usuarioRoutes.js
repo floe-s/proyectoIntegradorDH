@@ -58,7 +58,7 @@ router.get('/ayuda', usuarioController.visataAyuda);
 
 
 router.get('/editar-usuario', usuarioController.editar);
-router.put('/editar-usuario', uploadfile.single('img'), /* validacionUsu, */ usuarioController.update);
+router.post('/editar-usuarios',/* uploadfile.single('img'),  validacionUsu, */ usuarioController.update);
 
 
 router.post('/salir/:id', usuarioController.salir);

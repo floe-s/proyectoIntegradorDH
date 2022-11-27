@@ -1,10 +1,8 @@
 const fs = require('fs');
 const path = require('path');
 const bcryptjs = require('bcryptjs');
-const usuarioPath = path.join(__dirname, '../data/usuarioData.json');
 const cursosPath = path.join(__dirname, '../data/cursosData.json');
 let cursos = JSON.parse(fs.readFileSync(cursosPath, 'utf-8'));
-let usuarios = JSON.parse(fs.readFileSync(usuarioPath, 'utf-8'));
 const { validationResult } = require('express-validator');
 const db = require('../database/models');
 
@@ -178,35 +176,31 @@ const controller = {
     let admi = false;
     if(req.session.profile){
            usu =true;
-           if(req.session.profile.tipoUsuario == "admin"){
+           if(req.session.profile.Rol_id = 1){
             admi=true
           }
     }
-        res.render('./users/editar-usuario',{i:req.session.profile,usu:usu,admi:admi});
+        res.render('users/editar-usuario',{i:req.session.profile, usu:usu,admi:admi});
     },
 
     update: (req,res) => {
-
-        /* let errors = validationResult(req);
-        if( errors.isEmpty() ) { */
-
-        let idus = req.params.id;
-
-        for(let o of usuarios) {
-            if(idus == o.id) {
-                o.nombre = req.body.nombres;
-                o.apellido = req.body.estudiantes;
-                o.email = req.body.profesor;
-                o.telefono = req.body.precio;
-                o.img = req.body.img
-                break;
+        let id = req.session.profile.id;
+        console.log(id)
+        console.log(req.body)
+        db.Usuario_dbs.update(
+            {
+                nombre: req.body.nombre,
+                apellido: req.body.apellido,
+                email: req.body.email,
+                telefono: req.body.telefono
+            },
+            {
+                where:{id}
             }
-        }
-        fs.writeFileSync(usuarioPath,JSON.stringify(usuarios,null," ")); // Se guarda los datos al JSON 
-    
-        /* } else {
-            res.render('./users/editar-usuario', {errors: errors.array(), error:false, usu:usu, admi:admi } ); 
-        } */
+        ).then(()=>{
+            res.redirect('/usuario/vista-perfil');
+        })
+
     },
 
     salir:(req,res)=>{
