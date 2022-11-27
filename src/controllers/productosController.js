@@ -5,9 +5,23 @@ const cursoPath = path.join(__dirname, '../data/cursosData.json'); // ruta del J
 let curso = JSON.parse(fs.readFileSync(cursoPath, 'utf-8')); 
 const { validationResult } = require('express-validator');
 
+//const db = require('../database/models');
+
 const controlador = {
   
   cursos: (req, res) => {
+
+    /* db.curso_db.findAll().then((poker) => {
+      let listaCursos = [];
+
+      for (curso_db of poker) {
+        listaCursos.push(curso_db.nombre);
+      }
+
+      res.render('./products/cursos', {Allcursos: listaCursos});
+    }); */
+
+
     let usu=false
     let admi = false
     if(req.session.profile){
