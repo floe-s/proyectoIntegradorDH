@@ -276,10 +276,11 @@ main{
   transition: all 600ms ease;
   display: flex;
   flex-direction: column;
-  width: 40%;
+  width: 100%;
   transform:  translateX(-10px);
   opacity: 1;
 }
+
 
 .clases-virtuales:hover > img{
   transition: all 500ms ease;

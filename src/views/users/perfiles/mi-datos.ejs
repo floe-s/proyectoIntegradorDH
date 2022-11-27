@@ -18,13 +18,13 @@
       <section class="mis-datos">
         <div class="cabecera">
           <div class="figura"></div>
-          <img src="/img/perfil/<%= i.img %> "  >
+          <img src="/img/perfil/<%= i.imagen %> "  >
         </div>
         <div class="cuerpo">
           <section class="info-cards">
             <label><%= i.nombre %> <%= i.apellido %> </label>
             <% if(admi) {%> 
-            <label><%= i.tipoUsuario %> </label>
+            <label>Administrador </label>
             <% } else { %> 
               <label>estudiante </label>
             <% } %> 

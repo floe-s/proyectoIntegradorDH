@@ -110,7 +110,7 @@
   "des": "Curso intensivo de español de vocabulario y gramática con un profesor experto en la metaria con mas de 8 años de experiencia.",
   "idinput": "idcontenido7",
   "estudiantes": 200,
-  "curos":"virtual"
+  "curso":"virtual"
  },
  {
   "id": 8,
@@ -142,7 +142,7 @@
   "des": "Curso intensivo de español de vocabulario y gramática con un profesor experto en la metaria con mas de 8 años de experiencia.",
   "idinput": "idcontenido9",
   "estudiantes": 100,
-  "curos":"precencial"
+  "curso":"precencial"
  },
  {
   "id": 10,

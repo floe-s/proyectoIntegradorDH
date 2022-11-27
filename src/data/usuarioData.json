@@ -1,22 +1,3 @@
 [
- {
-  "id": 1,
-  "nombre": "Administrador",
-  "apellido": "Moidi",
-  "telefono": "31347890",
-  "email": "admin@gmail.com",
-  "contrasena": "$2a$10$9eF0o2VfITXDgNfA7R.pke8O8K8hvaL07v9MdNt6PR/8Vkj2TM60K",
-  "img": "fogg-918.png",
-  "tipoUsuario": "admin"
- },
- {
-  "id": 2,
-  "nombre": "camilo ",
-  "apellido": "andrade",
-  "telefono": "3167408977",
-  "email": "camilo@gmail.com",
-  "contrasena": "$2a$10$dVfROyAlFmqZuuRxKXAdRuWu3ZkTTuN2AudefqJkKeStrse0uIFO2",
-  "img": "1667973306414trabajo.png",
-  "tipoUsuario": "usuario"
- }
+
 ]

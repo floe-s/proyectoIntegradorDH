@@ -6,6 +6,7 @@ const cursosPath = path.join(__dirname, '../data/cursosData.json');
 let cursos = JSON.parse(fs.readFileSync(cursosPath, 'utf-8'));
 let usuarios = JSON.parse(fs.readFileSync(usuarioPath, 'utf-8'));
 const { validationResult } = require('express-validator');
+const db = require('../database/models');
 
 
 const controller = {
@@ -29,47 +30,36 @@ const controller = {
         let usu=false
         let admi =false;
         if(req.session.profile){
-               usu =true;
-               if(req.session.profile.tipoUsuario == "admin"){
+            usu =true;
+            if(req.session.profile.Rol_id == 1){
                 admi=true
-              }
+            }
         }
 
         let errors = validationResult(req);
     
         if( errors.isEmpty() ) {
 
-            let idNuevo = 0;
-
-            for(let s of usuarios){
-                if(idNuevo < s.id){
-                    idNuevo = s.id
-                }
-            }
-
-            idNuevo++;
-
-            
             let imgName = req.file.filename;
             let password = req.body.contrasena;
             let nuevaPasword = bcryptjs.hashSync(password, 10)
+            const fecha = new Date();
 
-            let usuarioNuevo ={
-                id:idNuevo,
+            db.Usuario_dbs.create({
                 nombre: req.body.nombre,
                 apellido: req.body.apellido,
-                telefono: req.body.telefono,
                 email: req.body.email,
-                contrasena: nuevaPasword,
-                img: imgName,
-                tipoUsuario: "usuario"
-            }
-
-            usuarios.push(usuarioNuevo);
-
-            fs.writeFileSync(usuarioPath,JSON.stringify(usuarios,null," "));
-    
-            res.redirect('/usuario/login');
+                clave: nuevaPasword,
+                telefono: req.body.telefono,
+                fecha_creacion: fecha.toDateString(),
+                fecha_eliminacion: fecha.toDateString(),
+                imagen: imgName,
+                Rol_id: 3,
+                Tematica_id: 1,
+                Administrador_id: 1
+            }).then((resul)=>{
+                res.redirect('/usuario/login');
+            })
 
         } else {
         console.log(errors.array())
@@ -83,7 +73,7 @@ const controller = {
             let admi = false;
             if(req.session.profile){
                 usu =true;
-                if(req.session.profile.tipoUsuario == "admin"){
+                if(req.session.profile.Rol_id == 1){
                     admi=true
                 }
             }
@@ -95,24 +85,33 @@ const controller = {
         let usu=false
         let admi =false;
         if(req.session.profile){
-               usu =true;
-               if(req.session.profile.tipoUsuario == "admin"){
+            usu =true;
+            if(req.session.profile.Rol_id == 1){
                 admi=true
-              }
+            }
         }
 
         let errors = validationResult(req);
         if( errors.isEmpty() ) {
 
             let email=req.body.email
-            
-            let usuarioInicio = usuarios.find(usuario =>{
-                return usuario.email == email 
+
+            db.Usuario_dbs.findAll().then((usuario)=>{
+                let listaUsuarios=[];
+                for(g of usuario){
+                    listaUsuarios.push(g);
+                }
+    
+                let usuarioInicio = listaUsuarios.find(usuario =>{
+                    return usuario.email == email 
+                    
+                });
+                
+
+                req.session.profile = usuarioInicio;
+
+                return res.redirect('/usuario/vista-perfil')
             });
-
-            req.session.profile = usuarioInicio;
-
-          return res.redirect('/usuario/vista-perfil')
 
         } else {
             res.render('./users/login', {errors: errors.array(), error:false, usu:usu, admi:admi } ); 
@@ -132,7 +131,7 @@ const controller = {
 
         if(req.session.profile){
             usu = true
-            if(req.session.profile.tipoUsuario == "admin"){
+            if(req.session.profile.Rol_id == 1){
                 admi=true
             }
             res.render('users/perfil',{i:req.session.profile, usu:usu, admi:admi, cursosPre: cursoPresencal, cursoVirtual: cursoVirtual});
@@ -146,8 +145,8 @@ const controller = {
         let usu =false
         let admi = false;
         if(req.session.profile){
-            usu = true
-            if(req.session.profile.tipoUsuario == "admin"){
+            usu =true;
+            if(req.session.profile.Rol_id == 1){
                 admi=true
             }
             res.render('users/perfiles/mi-datos',{i:req.session.profile, usu:usu, admi:admi, cursos:cursos});
@@ -162,8 +161,8 @@ const controller = {
         let usu =false
         let admi = false;
         if(req.session.profile){
-            usu = true
-            if(req.session.profile.tipoUsuario == "admin"){
+            usu =true;
+            if(req.session.profile.Rol_id == 1){
                 admi=true
             }
             res.render('users/perfiles/ayuda',{i:req.session.profile, usu:usu, admi:admi, cursos:cursos});

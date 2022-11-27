@@ -1,26 +1,31 @@
-const fs = require('fs');
-const path = require('path');
+
 const bcryptjs = require('bcryptjs');
+const db = require('../database/models')
 
 function validacionLogin (req,res,next){
-    const pathUsuario = path.join(__dirname, '../data/usuarioData.json');
-    const usuario = JSON.parse(fs.readFileSync(pathUsuario,'utf-8'));
+   
 
     let email = req.body.email;
     let password = req.body.password;
 
-    let usuarioEncontrado = usuario.find(elemento =>{
-        return (elemento.email == email && bcryptjs.compareSync(password,elemento.contrasena) == true);
-    });
-    
+    db.Usuario_dbs.findAll().then((usuario)=>{
+        let usuarios = [];
+        for(g of usuario){
+            usuarios.push(g);
+        }
 
-    if(usuarioEncontrado == undefined){
+        let usuarioEncontrado = usuarios.find(elemento =>{
+             return (elemento.email == email && bcryptjs.compareSync(password,elemento.clave) == true);
+        });
+
+        if(usuarioEncontrado == undefined){
         
-        res.render('users/login',{error: true, usu:false, admi:false});
-        
-    }else {
-        next();
-    }
+            res.render('users/login',{error: true, usu:false, admi:false});
+            
+        }else {
+            next();
+        }
+    });
 }
 
 
