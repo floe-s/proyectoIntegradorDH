@@ -11,11 +11,11 @@ const controlador = {
   
   cursos: (req, res) => {
 
-    /* db.curso_db.findAll().then((poker) => {
+    /* db.curso_dbs.findAll().then((poker) => {
       let listaCursos = [];
 
-      for (curso_db of poker) {
-        listaCursos.push(curso_db.nombre);
+      for (curso_dbs of poker) {
+        listaCursos.push(curso_dbs.nombre);
       }
 
       res.render('./products/cursos', {Allcursos: listaCursos});

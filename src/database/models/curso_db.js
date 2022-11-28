@@ -1,6 +1,6 @@
 function cursoData(sequelize, Datatypes){
 
-    let alias = 'curso_db';
+    let alias = 'curso_dbs';
     
     let cols = {
       id: {type: Datatypes.INTEGER, primaryKey: true, autoIncrement: true},
@@ -22,8 +22,8 @@ function cursoData(sequelize, Datatypes){
     
     let config = {camelCase: false, timestamps: false};
 
-    const cursos_db = sequelize.define(alias,cols,config)
-    return cursos_db;
+    const curso_dbs = sequelize.define(alias,cols,config)
+    return curso_dbs;
   }
 
     module.exports = cursoData;
