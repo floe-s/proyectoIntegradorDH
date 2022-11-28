@@ -1,4 +1,4 @@
-function ModuloData(sequelize, Datatypes){
+function moduloData(sequelize, Datatypes){
 
   let alias = 'modulos';
   
@@ -17,4 +17,4 @@ function ModuloData(sequelize, Datatypes){
   return modulos;
 }
 
-  module.exports = ModuloData;
+  module.exports = moduloData;
