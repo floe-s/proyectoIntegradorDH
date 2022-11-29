@@ -4,7 +4,7 @@ const controller = {
                 let admi = false;
                 if(req.session.profile){
                        usu =true;
-                       if(req.session.profile.tipoUsuario == "admin"){
+                       if(req.session.profile.Rol_id == 1){
                         admi=true
                       }
                 }
@@ -18,7 +18,7 @@ const controller = {
                 let admi = false;
                 if(req.session.profile){
                        usu =true;
-                       if(req.session.profile.tipoUsuario == "admin"){
+                       if(req.session.profile.Rol_id == 1){
                         admi=true
                       }
                 }
@@ -30,7 +30,7 @@ const controller = {
                 let admi = false;
                 if(req.session.profile){
                        usu =true;
-                       if(req.session.profile.tipoUsuario == "admin"){
+                       if(req.session.profile.Rol_id == 1){
                         admi=true
                       }
                 }

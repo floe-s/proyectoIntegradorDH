@@ -42,7 +42,7 @@ const controller = {
             let password = req.body.contrasena;
             let nuevaPasword = bcryptjs.hashSync(password, 10)
             const fecha = new Date();
-
+            
             db.Usuario_dbs.create({
                 nombre: req.body.nombre,
                 apellido: req.body.apellido,
@@ -131,8 +131,21 @@ const controller = {
             usu = true
             if(req.session.profile.Rol_id == 1){
                 admi=true
+                db.Usuario_dbs.findAll().then((usuario)=>{
+                    let list = [];
+                    for(g of usuario){
+                        list.push(g);
+                    }
+                    let listPro = list.filter(ele =>{
+                        return ele.Rol_id == 2
+                    });
+
+                    res.render('users/vista-admin',{i:req.session.profile, usu:usu, admi:admi, list:listPro});
+                })
+            
+            }else if(req.session.profile.Rol_id == 3){
+                res.render('users/perfil',{i:req.session.profile, usu:usu, admi:admi, cursosPre: cursoPresencal, cursoVirtual: cursoVirtual});
             }
-            res.render('users/perfil',{i:req.session.profile, usu:usu, admi:admi, cursosPre: cursoPresencal, cursoVirtual: cursoVirtual});
         }else {
             delete req.session.profile;
             
@@ -209,6 +222,48 @@ const controller = {
             delete req.session.profile
             res.redirect('/')
         }
+    },
+
+
+
+    cargarProf:(req,res)=>{
+        let usu =false
+        let admi = false;
+        if(req.session.profile){
+            usu =true;
+            if(req.session.profile.Rol_id == 1){
+                admi=true
+            }
+            res.render('users/perfiles/cargarProfesor',{i:req.session.profile, usu:usu, admi:admi});
+        }else {
+            delete req.session.profile;
+            
+            res.redirect('/')
+        }
+    },
+
+    registrarPro:(req,res)=>{
+
+            let imgName = req.file.filename;
+            let password = req.body.clave;
+            let nuevaPasword = bcryptjs.hashSync(password, 10)
+            const fecha = new Date();
+            
+            db.Usuario_dbs.create({
+                nombre: req.body.nombre,
+                apellido: req.body.apellido,
+                email: req.body.email,
+                clave: nuevaPasword,
+                telefono: req.body.telefono,
+                fecha_creacion: fecha.toDateString(),
+                fecha_eliminacion: fecha.toDateString(),
+                imagen: imgName,
+                Rol_id: 2,
+                Tematica_id: 1,
+                Administrador_id: 1
+            }).then((resul)=>{
+                res.redirect('/usuario/vista-perfil');
+            })
     }
 }
 
