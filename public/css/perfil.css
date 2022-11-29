@@ -628,13 +628,13 @@ main{
   }
 }
 
-@media (max-width: 1400px){
+@media (max-width: 1500px){
   .marco{
     width: 90%;
   }
 }
 
-@media (max-width: 1140px){
+@media (max-width: 1200px){
   #virtual:checked + .cont-virtual, #presencial:checked + .cont-presencial{
     transition: all 1000ms ease;
   }
@@ -683,7 +683,7 @@ main{
   }
 
   .btn-info2{
-    height: 70%;
+    height: 100%;
     width: 100%;
     display: flex;
     flex-direction: column;

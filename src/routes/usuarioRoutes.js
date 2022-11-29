@@ -62,6 +62,7 @@ router.post('/editar-usuarios',/* uploadfile.single('img'),  validacionUsu, */ u
 
 
 router.post('/salir/:id', usuarioController.salir);
-
+router.get('/cargarProfesro', usuarioController.cargarProf);
+router.post('/ragiProfe',uploadfile.single('img'), usuarioController.registrarPro);
 
 module.exports = router;

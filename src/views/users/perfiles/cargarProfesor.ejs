@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <%-include('../../partials/head') %> 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="/css/perfil.css">
+    <link rel="stylesheet" href="/css/perfilAdmin.css">
+    <title>Perfil</title>
+  </head>
+
+<body class="body">
+  
+  <%-include('../../partials/header') %>
+
+<main>
+  <div class="marco">
+    <%- include('../../partials/navPerfil.ejs') %> 
+    <section class="admin-right">
+        <section class="img-pro">
+            <img src="">
+        </section>
+        <form action="/usuario/ragiProfe" method="POST" enctype="multipart/form-data" class="cargar-prof">
+            <h2>Nuevo Profesor</h2>
+            <figure class="pro-img">
+                <label id="btn-file" for="file"><i class="fa-solid fa-circle-plus"></i>Img</label>
+                <input name="img" type="file" id="file" required>
+                <label  id="file-preview">
+                    <img src="/img/perfil/urban-user.png">
+                </label>
+            </figure>
+            <span>
+                <label for="">nombre</label>
+                <input name="nombre" type="text">
+            </span>
+            <span>
+                <label for="">Apellido</label>
+                <input name="apellido" type="text">
+            </span>
+            <span>
+                <label for="">Email</label>
+                <input name="email" type="text">
+            </span>
+            <span>
+                <label for="">Clave</label>
+                <input name="clave" type="text">
+            </span>
+            <span>
+                <label for="">Telefono</label>
+                <input name="telefono" type="text">
+            </span>
+            <input style="display: none" name="rol" type="text" value="2">
+            <button type="submit">Crear</button>
+        </form>
+    </section>
+</main>
+  <%-include('../../partials/footer') %>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="/js/swper.js"></script>
+  <script>
+    function preview(id){
+        document.getElementById('file').addEventListener("change",(e)=>{
+            let file = e.target.files[0];
+            let url = URL.createObjectURL(file);
+            document.querySelector("#" + id + "-preview img").src = url;
+        })
+    } 
+    preview("file");  
+  </script>
+</html>
