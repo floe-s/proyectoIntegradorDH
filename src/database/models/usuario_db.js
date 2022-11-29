@@ -19,7 +19,21 @@ function usuarioData(sequelize, Datatypes){
     
     let config = {camelCase: false, timestamps: false};
 
-    const users= sequelize.define(alias,cols,config)
+    const users = sequelize.define(alias,cols,config);
+      users.associate = function (modelos){
+        users.hasMany(modelos.curso_db, {
+          as: "curso_db",
+          foreignKey: "Administrador_id"
+        });
+      }
+
+        users.associate = function (modelos){
+          users.hasMany(modelos.curso_db, {
+            as: "curso_db",
+            foreignKey: "Profesor_id"
+          });
+      }
+      
     return users;
 }
 

@@ -1,6 +1,6 @@
 function cursoData(sequelize, Datatypes){
 
-    let alias = 'curso_dbs';
+    let alias = 'curso_db';
     
     let cols = {
       id: {type: Datatypes.INTEGER, primaryKey: true, autoIncrement: true},
@@ -16,14 +16,27 @@ function cursoData(sequelize, Datatypes){
       Profesor_id: {type: Datatypes.INTEGER},
       Tematica_id: {type: Datatypes.INTEGER},
       Nivel_curso_id: {type: Datatypes.INTEGER},
-      Tipo_curso_id: {type: Datatypes.INTEGER},
-    
+      Tipo_curso_id: {type: Datatypes.INTEGER}
     }
     
     let config = {camelCase: false, timestamps: false};
 
-    const curso_dbs = sequelize.define(alias,cols,config)
-    return curso_dbs;
+    const courses = sequelize.define(alias,cols,config);
+   /*  courses.associate = function (modelos){
+      courses.belongsTo(modelos.usuario_db, {
+        as: "usuario_db",
+        foreignKey: "Administrador_id"
+      });
+    }
+
+    courses.associate = function (modelos){
+      courses.belongsTo(modelos.usuario_db, {
+        as: "usuario_db",
+        foreignKey: "Profesor_id"
+      });
+    } */
+
+    return courses;
   }
 
     module.exports = cursoData;

@@ -11,11 +11,12 @@ const controlador = {
   
   cursos: (req, res) => {
 
-    /* db.curso_dbs.findAll().then((poker) => {
+// De los modelos que tengo, elegir curso. Traer todos los datos e incluir en la consulta la relacion con usuario (lo saca del alias)
+    /* db.curso_db.findAll({include: [{association: 'Usuario_dbs'}]}).then((courses) => { 
       let listaCursos = [];
 
-      for (curso_dbs of poker) {
-        listaCursos.push(curso_dbs.nombre);
+      for (course of courses) {
+        listaCursos.push(course.nombre);
       }
 
       res.render('./products/cursos', {Allcursos: listaCursos});
@@ -71,6 +72,7 @@ const controlador = {
     
     // llamamos el dato de la img de file que queremos 
     let nombreImg = req.file.filename;
+    //const fecha = new Date();
 
     let icon;
     if(req.body.nivel == "basico"){
@@ -80,6 +82,25 @@ const controlador = {
     }else{
       icon = "fire.svg"
     }
+
+   /*  db.Curso_dbs.create({
+      nombre: req.body.nombre,
+      descripcion: req.body.descripcion,
+      cantidad_horas: req.body.horas,
+      precio: req.body.precio,
+      fecha_creacion: fecha.toDateString(),
+      fecha_modificacion: fecha.toDateString(),
+      fecha_eliminacion: fecha.toDateString(),
+      imagen: imgName,
+      Tematica_id: 1,
+      Administrador_id: 1,
+      Profesor_id: 2,
+      Nivel_curso_id: 3,
+      Tipo_curso_id: 2,
+
+  }).then((resul)=>{
+      res.redirect('/producto/cursos');
+  }) */
 
     let productoNuevo ={
       id:idNuevo,
