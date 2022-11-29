@@ -9,7 +9,13 @@ function nivelCursoData(sequelize, Datatypes){
   
   let config = {camelCase: false, timestamps: false};
 
-  const niveles = sequelize.define(alias,cols,config)
+  const niveles = sequelize.define(alias,cols,config);
+  niveles.associate = function (modelos){
+    niveles.hasMany(modelos.curso_dbs, {
+      as: "curso_dbs",
+      foreignKey: "Nivel_curso_id"
+    });
+  }
   return niveles;
 }
 

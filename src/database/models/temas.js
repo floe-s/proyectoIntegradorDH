@@ -11,7 +11,13 @@ function temaData(sequelize, Datatypes){
   
   let config = {camelCase: false, timestamps: false};
 
-  const temas = sequelize.define(alias,cols,config)
+  const temas = sequelize.define(alias,cols,config);
+  temas.associate = function (modelos){
+    temas.belongsTo(modelos.modulos, {
+      as: "modulos",
+      foreignKey: "Modulo_id"
+    });
+  }
   return temas;
 }
 

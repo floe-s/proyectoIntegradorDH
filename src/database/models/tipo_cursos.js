@@ -9,7 +9,13 @@ function tipoCursoData(sequelize, Datatypes){
   
   let config = {camelCase: false, timestamps: false};
 
-  const tipos = sequelize.define(alias,cols,config)
+  const tipos = sequelize.define(alias,cols,config);
+  tipos.associate = function (modelos){
+    tipos.hasMany(modelos.curso_dbs, {
+      as: "curso_dbs",
+      foreignKey: "Tipo_curso_id"
+    });
+  }
   return tipos;
 }
 

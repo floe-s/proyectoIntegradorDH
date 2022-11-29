@@ -9,7 +9,13 @@ function turnoHorarioData(sequelize, Datatypes){
   
   let config = {camelCase: false, timestamps: false};
 
-  const horarios = sequelize.define(alias,cols,config)
+  const horarios = sequelize.define(alias,cols,config);
+  horarios.associate = function (modelos){
+    horarios.hasMany(modelos.comisions, {
+      as: "comisions",
+      foreignKey: "Turno_horario_id"
+    });
+  }
   return horarios;
 }
 

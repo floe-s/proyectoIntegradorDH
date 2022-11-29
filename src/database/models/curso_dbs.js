@@ -1,6 +1,6 @@
 function cursoData(sequelize, Datatypes){
 
-    let alias = 'curso_db';
+    let alias = 'curso_dbs';
     
     let cols = {
       id: {type: Datatypes.INTEGER, primaryKey: true, autoIncrement: true},
@@ -22,19 +22,54 @@ function cursoData(sequelize, Datatypes){
     let config = {camelCase: false, timestamps: false};
 
     const courses = sequelize.define(alias,cols,config);
-   /*  courses.associate = function (modelos){
-      courses.belongsTo(modelos.usuario_db, {
-        as: "usuario_db",
+    courses.associate = function (modelos){
+      courses.belongsTo(modelos.Usuario_dbs, {
+        as: "usuario_dbs",
         foreignKey: "Administrador_id"
       });
     }
 
     courses.associate = function (modelos){
-      courses.belongsTo(modelos.usuario_db, {
-        as: "usuario_db",
+      courses.belongsTo(modelos.Usuario_dbs, {
+        as: "usuario_dbs",
         foreignKey: "Profesor_id"
       });
-    } */
+    }
+
+    courses.associate = function (modelos){
+      courses.belongsTo(modelos.nivel_cursos, {
+        as: "nivel_cursos",
+        foreignKey: "Nivel_curso_id"
+      });
+    }
+
+    courses.associate = function (modelos){
+      courses.belongsTo(modelos.tipo_cursos, {
+        as: "tipo_cursos",
+        foreignKey: "Tipo_curso_id"
+      });
+    }
+
+    courses.associate = function (modelos){
+      courses.belongsTo(modelos.tematicas, {
+        as: "tematicas",
+        foreignKey: "Tematica_id"
+      });
+    }
+
+    courses.associate = function (modelos){
+      courses.hasMany(modelos.modulos, {
+        as: "modulos",
+        foreignKey: "Curso_db_id"
+      });
+    }
+
+    courses.associate = function (modelos){
+      courses.hasMany(modelos.cursars, {
+        as: "cursars",
+        foreignKey: "Curso_db_id"
+      });
+    }
 
     return courses;
   }
