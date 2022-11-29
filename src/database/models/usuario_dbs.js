@@ -22,14 +22,14 @@ function usuarioData(sequelize, Datatypes){
     const users = sequelize.define(alias,cols,config);
       users.associate = function (modelos){
         users.hasMany(modelos.curso_db, {
-          as: "curso_db",
+          as: "curso_dbs",
           foreignKey: "Administrador_id"
         });
       }
 
         users.associate = function (modelos){
           users.hasMany(modelos.curso_db, {
-            as: "curso_db",
+            as: "curso_dbs",
             foreignKey: "Profesor_id"
           });
       }

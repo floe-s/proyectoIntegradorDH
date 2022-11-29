@@ -120,11 +120,11 @@ const controller = {
         let usu =false
         let admi = false;
         let cursoPresencal = cursos.filter(elemento =>{
-            return elemento.curso == 'precencial';
+            return elemento.curso == 'presencial';
         });
 
         let cursoVirtual = cursos.filter(elemento =>{
-            return elemento.curso !== 'precencial';
+            return elemento.curso !== 'presencial';
         });
 
         if(req.session.profile){

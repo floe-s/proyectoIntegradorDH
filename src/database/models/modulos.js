@@ -7,8 +7,7 @@ function moduloData(sequelize, Datatypes){
     numero_modulo: {type: Datatypes.INTEGER},
     nombre: {type: Datatypes.STRING(45)},
     descripcion: {type: Datatypes.TEXT(500)},
-    Curso_db_id: {type: Datatypes.INTEGER},
-  
+    Curso_db_id: {type: Datatypes.INTEGER}
   }
   
   let config = {camelCase: false, timestamps: false};
