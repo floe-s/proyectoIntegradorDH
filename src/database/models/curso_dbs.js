@@ -4,9 +4,13 @@ function cursoData(sequelize, Datatypes){
     
     let cols = {
       id: {type: Datatypes.INTEGER, primaryKey: true, autoIncrement: true},
-      nombre: {type: Datatypes.STRING(45)},
+      nombre: {type: Datatypes.STRING(50)},
       descripcion: {type: Datatypes.TEXT(500)},
-      imagen: {type: Datatypes.STRING(45)},
+      estudiantes: {type: Datatypes.INTEGER},
+      lecciones: {type: Datatypes.INTEGER},
+      puntuacion: {type: Datatypes.INTEGER},
+      imagen: {type: Datatypes.STRING(255)},
+      img_nivel: {type: Datatypes.STRING(255)},
       cantidad_horas: {type: Datatypes.INTEGER},
       precio: { type: Datatypes.FLOAT},
       fecha_creacion: { type: Datatypes.DATE},

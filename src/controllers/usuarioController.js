@@ -55,7 +55,7 @@ const controller = {
                 Rol_id: 3,
                 Tematica_id: 1,
                 Administrador_id: 1
-            }).then((resul)=>{
+            }).then(()=>{
                 res.redirect('/usuario/login');
             })
 

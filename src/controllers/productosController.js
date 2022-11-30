@@ -5,21 +5,29 @@ const cursoPath = path.join(__dirname, '../data/cursosData.json'); // ruta del J
 let curso = JSON.parse(fs.readFileSync(cursoPath, 'utf-8')); 
 const { validationResult } = require('express-validator');
 
-//const db = require('../database/models');
+const db = require('../database/models');
 
 const controlador = {
   
   cursos: (req, res) => {
-
+    /* let usu=false
+    let admi = false
+    if(req.session.profile){
+      usu =true;
+      if(req.session.profile.Rol_id == 1){
+        admi=true
+      }
+    } */
 // De los modelos que tengo, elegir curso. Traer todos los datos e incluir en la consulta la relacion con usuario (lo saca del alias)
-    /* db.curso_db.findAll({include: [{association: 'Usuario_dbs'}]}).then((courses) => { 
+    /* db.curso_dbs.findAll({include: [{association: 'Usuario_dbs'}]}).then((courses) => { 
+
       let listaCursos = [];
 
-      for (course of courses) {
-        listaCursos.push(course.nombre);
+      for (let course of courses) {
+        listaCursos.push(course);
       }
-
-      res.render('./products/cursos', {Allcursos: listaCursos});
+      console.log(course);
+      res.render('./products/cursos', {Allcursos: listaCursos, ps:course, usu:usu, admi:admi});
     }); */
 
 
@@ -61,18 +69,18 @@ const controlador = {
     let errors = validationResult(req);
         if( errors.isEmpty() ) {
 
-    let idNuevo = 1;
+ /*    let idNuevo = 1;
 
     for(let s of curso){
         if(idNuevo < s.id){
             idNuevo = s.id
         }
     }
-    idNuevo++
+    idNuevo++ */
     
     // llamamos el dato de la img de file que queremos 
     let nombreImg = req.file.filename;
-    //const fecha = new Date();
+    const fecha = new Date();
 
     let icon;
     if(req.body.nivel == "basico"){
@@ -82,27 +90,32 @@ const controlador = {
     }else{
       icon = "fire.svg"
     }
+    console.log(req.body);
 
-   /*  db.Curso_dbs.create({
-      nombre: req.body.nombre,
+    db.curso_dbs.create({
+      nombre: req.body.titulo,
       descripcion: req.body.descripcion,
+      estudiantes: req.body.estudiantes,
+      lecciones: req.body.lecciones,
+      puntuacion: req.body.puntuacion,
       cantidad_horas: req.body.horas,
       precio: req.body.precio,
       fecha_creacion: fecha.toDateString(),
       fecha_modificacion: fecha.toDateString(),
       fecha_eliminacion: fecha.toDateString(),
-      imagen: imgName,
-      Tematica_id: 1,
-      Administrador_id: 1,
-      Profesor_id: 2,
-      Nivel_curso_id: 3,
-      Tipo_curso_id: 2,
+      imagen: nombreImg,
+      img_nivel: icon,
+      Tematica_id: null,
+      Administrador_id: null,
+      Profesor_id: null,
+      Nivel_curso_id: null,
+      Tipo_curso_id: null
 
-  }).then((resul)=>{
+  }).then(()=>{
       res.redirect('/producto/cursos');
-  }) */
+  })
 
-    let productoNuevo ={
+    /* let productoNuevo ={
       id:idNuevo,
       titulo: req.body.titulo,
       estudiantes: req.body.estudiantes,
@@ -116,13 +129,13 @@ const controlador = {
       imgNivel: icon,
       des: req.body.descripcion,
       idinput: nombreImg
-    }
+    } */
 
-    curso.push(productoNuevo); // Se guardan los datos logicamente
+   // curso.push(productoNuevo); // Se guardan los datos logicamente
 
-    fs.writeFileSync(cursoPath,JSON.stringify(curso,null," ")); // Se guarda los datos al JSON 
+   // fs.writeFileSync(cursoPath,JSON.stringify(curso,null," ")); // Se guarda los datos al JSON 
   
-    res.redirect('/producto/cursos'); // Redirecciona a la vista cursos (productosRoutes)
+   // res.redirect('/producto/cursos'); // Redirecciona a la vista cursos (productosRoutes)
 
     } else {
             res.render('./products/cargar', {errors: errors.array(), usu:usu , admi:admi} ); 
