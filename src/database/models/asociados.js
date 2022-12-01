@@ -1,6 +1,6 @@
 function asociadoData(sequelize, Datatypes){
 
-  let alias = 'asociados';
+  let alias = 'Asociados';
   
   let cols = {
     id: {type: Datatypes.INTEGER, primaryKey: true, autoIncrement: true},
@@ -12,7 +12,7 @@ function asociadoData(sequelize, Datatypes){
 
   const asociados = sequelize.define(alias,cols,config);
   asociados.associate = function (modelos){
-    asociados.belongsTo(modelos.academias, {
+    asociados.belongsTo(modelos.Academias, {
       as: "academias",
       foreignKey: "Academia_id"
     });

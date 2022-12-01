@@ -1,6 +1,6 @@
 function academiaData(sequelize, Datatypes){
 
-  let alias = 'academias';
+  let alias = 'Academias';
   
   let cols = {
     id: {type: Datatypes.INTEGER, primaryKey: true, autoIncrement: true},
@@ -12,7 +12,7 @@ function academiaData(sequelize, Datatypes){
 
   const academias = sequelize.define(alias,cols,config);
   academias.associate = function (modelos){
-    academias.hasMany(modelos.asociados, {
+    academias.hasMany(modelos.Asociados, {
       as: "asociados",
       foreignKey: "Academia_id"
     });

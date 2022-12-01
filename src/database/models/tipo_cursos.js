@@ -1,6 +1,6 @@
 function tipoCursoData(sequelize, Datatypes){
 
-  let alias = 'tipo_cursos';
+  let alias = 'Tipo_cursos';
   
   let cols = {
     id: {type: Datatypes.INTEGER, primaryKey: true, autoIncrement: true},
@@ -11,7 +11,7 @@ function tipoCursoData(sequelize, Datatypes){
 
   const tipos = sequelize.define(alias,cols,config);
   tipos.associate = function (modelos){
-    tipos.hasMany(modelos.curso_dbs, {
+    tipos.hasMany(modelos.Curso_dbs, {
       as: "curso_dbs",
       foreignKey: "Tipo_curso_id"
     });

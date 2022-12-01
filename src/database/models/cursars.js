@@ -1,6 +1,6 @@
 function cursarData(sequelize, Datatypes){
 
-  let alias = 'cursars';
+  let alias = 'Cursars';
   
   let cols = {
     id: {type: Datatypes.INTEGER, primaryKey: true, autoIncrement: true},
@@ -22,14 +22,14 @@ function cursarData(sequelize, Datatypes){
   }
 
   cursars.associate = function (modelos){
-    cursars.belongsTo(modelos.curso_dbs, {
+    cursars.belongsTo(modelos.Curso_dbs, {
       as: "curso_dbs",
       foreignKey: "Curso_db_id"
     });
   }
 
   cursars.associate = function (modelos){
-    cursars.belongsTo(modelos.comisions, {
+    cursars.belongsTo(modelos.Comisions, {
       as: "comisions",
       foreignKey: "Comision_id"
     });

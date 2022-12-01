@@ -1,6 +1,6 @@
 function comisionData(sequelize, Datatypes){
 
-  let alias = 'comisions';
+  let alias = 'Comisions';
   
   let cols = {
     id: {type: Datatypes.INTEGER, primaryKey: true, autoIncrement: true},
@@ -22,7 +22,7 @@ function comisionData(sequelize, Datatypes){
 
   const comisions = sequelize.define(alias,cols,config);
   comisions.associate = function (modelos){
-    comisions.belongsTo(modelos.turno_horarios, {
+    comisions.belongsTo(modelos.Turno_horarios, {
       as: "turno_horarios",
       foreignKey: "Turno_horario_id"
     });
@@ -42,14 +42,14 @@ function comisionData(sequelize, Datatypes){
     });
   }
   comisions.associate = function (modelos){
-    comisions.belongsTo(modelos.curso_dbs, {
+    comisions.belongsTo(modelos.Curso_dbs, {
       as: "curso_dbs",
       foreignKey: "Curso_db_id"
     });
   }
 
   comisions.associate = function (modelos){
-    comisions.hasMany(modelos.cursars, {
+    comisions.hasMany(modelos.Cursars, {
       as: "cursars",
       foreignKey: "Comision_id"
     });

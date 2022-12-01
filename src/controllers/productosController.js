@@ -10,27 +10,6 @@ const db = require('../database/models');
 const controlador = {
   
   cursos: (req, res) => {
-    /* let usu=false
-    let admi = false
-    if(req.session.profile){
-      usu =true;
-      if(req.session.profile.Rol_id == 1){
-        admi=true
-      }
-    } */
-// De los modelos que tengo, elegir curso. Traer todos los datos e incluir en la consulta la relacion con usuario (lo saca del alias)
-    /* db.curso_dbs.findAll({include: [{association: 'Usuario_dbs'}]}).then((courses) => { 
-
-      let listaCursos = [];
-
-      for (let course of courses) {
-        listaCursos.push(course);
-      }
-      console.log(course);
-      res.render('./products/cursos', {Allcursos: listaCursos, ps:course, usu:usu, admi:admi});
-    }); */
-
-
     let usu=false
     let admi = false
     if(req.session.profile){
@@ -38,9 +17,30 @@ const controlador = {
       if(req.session.profile.Rol_id == 1){
         admi=true
       }
-    }
-    curso = JSON.parse(fs.readFileSync(cursoPath, 'utf-8')); // El JSON vuelve a leer los datos
-    res.render('./products/cursos', { ps: curso, usu:usu, admi:admi}); // Se cargan los nuevos datos en la vista
+    } 
+// De los modelos que tengo, elegir curso. Traer todos los datos e incluir en la consulta la relacion con usuario (lo saca del alias)
+    db.Curso_dbs.findAll().then((courses)=>{
+
+      let listaCursos = [];
+      
+      for (g of courses) {
+        listaCursos.push(g);
+      }
+      console.log(listaCursos);
+      res.render('./products/cursos', {ps:listaCursos,Allcursos: listaCursos, usu:usu, admi:admi});
+    }); 
+
+    //
+    // let usu=false
+    // let admi = false
+    // if(req.session.profile){
+    //   usu =true;
+    //   if(req.session.profile.Rol_id == 1){
+    //     admi=true
+    //   }
+    // }
+    // curso = JSON.parse(fs.readFileSync(cursoPath, 'utf-8')); // El JSON vuelve a leer los datos
+    // res.render('./products/cursos', { ps: curso, usu:usu, admi:admi}); // Se cargan los nuevos datos en la vista
   },
 
   cargar: (req, res) => {
@@ -50,9 +50,9 @@ const controlador = {
            usu =true;
            if(req.session.profile.Rol_id == 1){
             admi=true
+            res.render('./products/cargar',{usu:usu , admi:admi});
           }
     }
-    res.render('./products/cargar',{usu:usu , admi:admi});
   },
 
   registrar: (req, res) => {
@@ -83,6 +83,7 @@ const controlador = {
     const fecha = new Date();
 
     let icon;
+    let nivel;
     if(req.body.nivel == "basico"){
       icon = "fire3.svg";
     }else if(req.body.nivel == "intermedio"){
@@ -92,7 +93,7 @@ const controlador = {
     }
     console.log(req.body);
 
-    db.curso_dbs.create({
+    db.Curso_dbs.create({
       nombre: req.body.titulo,
       descripcion: req.body.descripcion,
       estudiantes: req.body.estudiantes,

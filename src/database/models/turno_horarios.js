@@ -1,6 +1,6 @@
 function turnoHorarioData(sequelize, Datatypes){
 
-  let alias = 'turno_horarios';
+  let alias = 'Turno_horarios';
   
   let cols = {
     id: {type: Datatypes.INTEGER, primaryKey: true, autoIncrement: true},
@@ -11,7 +11,7 @@ function turnoHorarioData(sequelize, Datatypes){
 
   const horarios = sequelize.define(alias,cols,config);
   horarios.associate = function (modelos){
-    horarios.hasMany(modelos.comisions, {
+    horarios.hasMany(modelos.Comisions, {
       as: "comisions",
       foreignKey: "Turno_horario_id"
     });

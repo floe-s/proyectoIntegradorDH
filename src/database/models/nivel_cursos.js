@@ -1,6 +1,6 @@
 function nivelCursoData(sequelize, Datatypes){
 
-  let alias = 'nivel_cursos';
+  let alias = 'Nivel_cursos';
   
   let cols = {
     id: {type: Datatypes.INTEGER, primaryKey: true, autoIncrement: true},
@@ -11,7 +11,7 @@ function nivelCursoData(sequelize, Datatypes){
 
   const niveles = sequelize.define(alias,cols,config);
   niveles.associate = function (modelos){
-    niveles.hasMany(modelos.curso_dbs, {
+    niveles.hasMany(modelos.Curso_dbs,{
       as: "curso_dbs",
       foreignKey: "Nivel_curso_id"
     });

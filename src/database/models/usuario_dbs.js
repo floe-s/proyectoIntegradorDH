@@ -35,43 +35,43 @@ function usuarioData(sequelize, Datatypes){
     }
 
       users.associate = function (modelos){
-        users.hasMany(modelos.curso_dbs, {
+        users.hasMany(modelos.Curso_dbs, {
           as: "curso_dbs",
           foreignKey: "Administrador_id"
         });
       }
 
         users.associate = function (modelos){
-          users.hasMany(modelos.curso_dbs, {
+          users.hasMany(modelos.Curso_dbs, {
             as: "curso_dbs",
             foreignKey: "Profesor_id"
           });
       }
 
       users.associate = function (modelos){
-        users.hasMany(modelos.asociados, {
+        users.hasMany(modelos.Asociados, {
           as: "asociados",
           foreignKey: "Usuario_db_id"
         });
     }
 
     users.associate = function (modelos){
-      users.belongsTo(modelos.rols, {
+      users.belongsTo(modelos.Rols, {
         as: "rols",
         foreignKey: "Rol_id"
       });
     }
 
     users.associate = function (modelos){
-      users.belongsTo(modelos.tematicas, {
-        as: "tematicas",
+      users.belongsTo(modelos.Tematicas, {
+        as: "Tematicas",
         foreignKey: "Tematica_id"
       });
     }
 
     users.associate = function (modelos){
-      users.hasMany(modelos.cursars, {
-        as: "cursars",
+      users.hasMany(modelos.Cursars, {
+        as: "Cursars",
         foreignKey: "Alumno_id"
       });
   }

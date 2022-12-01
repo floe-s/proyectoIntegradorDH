@@ -1,6 +1,6 @@
 function moduloData(sequelize, Datatypes){
 
-  let alias = 'modulos';
+  let alias = 'Modulos';
   
   let cols = {
     id: {type: Datatypes.INTEGER, primaryKey: true, autoIncrement: true},
@@ -14,14 +14,14 @@ function moduloData(sequelize, Datatypes){
 
   const modulos = sequelize.define(alias,cols,config);
   modulos.associate = function (modelos){
-    modulos.belongsTo(modelos.curso_dbs, {
+    modulos.belongsTo(modelos.Curso_dbs, {
       as: "curso_dbs",
       foreignKey: "Curso_db_id"
     });
   }
 
   modulos.associate = function (modelos){
-    modulos.hasMany(modelos.temas, {
+    modulos.hasMany(modelos.Temas, {
       as: "temas",
       foreignKey: "Modulo_id"
     });

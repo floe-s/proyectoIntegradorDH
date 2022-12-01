@@ -1,6 +1,6 @@
 function cursoData(sequelize, Datatypes){
 
-    let alias = 'curso_dbs';
+    let alias = 'Curso_dbs';
     
     let cols = {
       id: {type: Datatypes.INTEGER, primaryKey: true, autoIncrement: true},
@@ -17,7 +17,7 @@ function cursoData(sequelize, Datatypes){
       fecha_modificacion: {type: Datatypes.DATE},
       fecha_eliminacion: {type: Datatypes.DATE},
       Administrador_id: {type: Datatypes.INTEGER},
-      Profesor_id: {type: Datatypes.INTEGER},
+      Profesor_id: {type: Datatypes.STRING},
       Tematica_id: {type: Datatypes.INTEGER},
       Nivel_curso_id: {type: Datatypes.INTEGER},
       Tipo_curso_id: {type: Datatypes.INTEGER}
@@ -41,35 +41,35 @@ function cursoData(sequelize, Datatypes){
     }
 
     courses.associate = function (modelos){
-      courses.belongsTo(modelos.nivel_cursos, {
+      courses.belongsTo(modelos.Nivel_cursos, {
         as: "nivel_cursos",
         foreignKey: "Nivel_curso_id"
       });
     }
 
     courses.associate = function (modelos){
-      courses.belongsTo(modelos.tipo_cursos, {
+      courses.belongsTo(modelos.Tipo_cursos, {
         as: "tipo_cursos",
         foreignKey: "Tipo_curso_id"
       });
     }
 
     courses.associate = function (modelos){
-      courses.belongsTo(modelos.tematicas, {
+      courses.belongsTo(modelos.Tematicas, {
         as: "tematicas",
         foreignKey: "Tematica_id"
       });
     }
 
     courses.associate = function (modelos){
-      courses.hasMany(modelos.modulos, {
+      courses.hasMany(modelos.Modulos, {
         as: "modulos",
         foreignKey: "Curso_db_id"
       });
     }
 
     courses.associate = function (modelos){
-      courses.hasMany(modelos.cursars, {
+      courses.hasMany(modelos.Cursars, {
         as: "cursars",
         foreignKey: "Curso_db_id"
       });

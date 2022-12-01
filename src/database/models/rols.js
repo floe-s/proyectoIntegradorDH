@@ -1,6 +1,6 @@
 function rolData(sequelize, Datatypes){
 
-  let alias = 'rols';
+  let alias = 'Rols';
   
   let cols = {
     id: {type: Datatypes.INTEGER, primaryKey: true, autoIncrement: true},

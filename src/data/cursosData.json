@@ -13,24 +13,7 @@
   "des": "Curso intensivo de alemán de vocabulario y gramática con un profesor experto en la metaria con mas de 10 años de experiencia.  ",
   "idinput": "1666229320049alemania-figuras.jpg",
   "estudiantes": "200  ",
-  "curso":"precencial"
-
- },
- {
-  "id": 2,
-  "titulo": "Curso de Alemán",
-  "profesor": "Georgina Weisman",
-  "precio": 8500,
-  "nivel": "Intermedio",
-  "lecciones": 40,
-  "horas": 50,
-  "puntuacion": 4.2,
-  "img": "alemania-figuras2.jpg",
-  "imgNivel": "fire2.svg",
-  "des": "Curso intensivo de alemán de vocabulario y gramática con un profesor experto en la metaria con mas de 10 años de experiencia.",
-  "idinput": "idcontenido2",
-  "estudiantes": 150,
-  "curso":"precencial"
+  "curso": "precencial"
  },
  {
   "id": 3,
@@ -46,7 +29,7 @@
   "des": "Curso intensivo de alemán de vocabulario y gramática con un profesor experto en la metaria con mas de 10 años de experiencia.",
   "idinput": "idcontenido3",
   "estudiantes": 100,
-  "curso":"virtual"
+  "curso": "virtual"
  },
  {
   "id": 4,
@@ -62,7 +45,7 @@
   "des": "Curso intensivo de inglés de vocabulario y gramática con un profesor experto en la metaria con mas de 15 años de experiencia.",
   "idinput": "idcontenido4",
   "estudiantes": 100,
-  "curso":"precencial"
+  "curso": "precencial"
  },
  {
   "id": 5,
@@ -78,7 +61,7 @@
   "des": "Curso intensivo de inglés de vocabulario y gramática con un profesor experto en la metaria con mas de 15 años de experiencia.",
   "idinput": "idcontenido5",
   "estudiantes": 150,
-  "curso":"virtual"
+  "curso": "virtual"
  },
  {
   "id": 6,
@@ -94,7 +77,7 @@
   "des": "Curso intensivo de inglés de vocabulario y gramática con un profesor experto en la metaria con mas de 15 años de experiencia.",
   "idinput": "idcontenido6",
   "estudiantes": 200,
-  "curso":"precencial"
+  "curso": "precencial"
  },
  {
   "id": 7,
@@ -110,7 +93,7 @@
   "des": "Curso intensivo de español de vocabulario y gramática con un profesor experto en la metaria con mas de 8 años de experiencia.",
   "idinput": "idcontenido7",
   "estudiantes": 200,
-  "curso":"virtual"
+  "curso": "virtual"
  },
  {
   "id": 8,
@@ -126,7 +109,7 @@
   "des": "Curso intensivo de español de vocabulario y gramática con un profesor experto en la metaria con mas de 8 años de experiencia.",
   "idinput": "idcontenido8",
   "estudiantes": 150,
-  "curso":"virtual"
+  "curso": "virtual"
  },
  {
   "id": 9,
@@ -142,7 +125,7 @@
   "des": "Curso intensivo de español de vocabulario y gramática con un profesor experto en la metaria con mas de 8 años de experiencia.",
   "idinput": "idcontenido9",
   "estudiantes": 100,
-  "curso":"precencial"
+  "curso": "precencial"
  },
  {
   "id": 10,
@@ -158,7 +141,7 @@
   "des": "Curso intensivo de portugués de vocabulario y gramática con un profesor experto en la metaria con mas de 12 años de experiencia.",
   "idinput": "idcontenido10",
   "estudiantes": 100,
-  "curso":"virtual"
+  "curso": "virtual"
  },
  {
   "id": 11,
@@ -174,7 +157,7 @@
   "des": "Curso intensivo de portugués de vocabulario y gramática con un profesor experto en la metaria con mas de 12 años de experiencia.",
   "idinput": "idcontenido11",
   "estudiantes": 150,
-  "curso":"precencial"
+  "curso": "precencial"
  },
  {
   "id": 12,
@@ -190,6 +173,6 @@
   "des": "Curso intensivo de portugués de vocabulario y gramática con un profesor experto en la metaria con mas de 12 años de experiencia. ",
   "idinput": "idcontenido12",
   "estudiantes": "200 ",
-  "curso":"virtual"
+  "curso": "virtual"
  }
 ]

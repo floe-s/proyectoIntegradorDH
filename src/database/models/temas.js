@@ -1,6 +1,6 @@
 function temaData(sequelize, Datatypes){
 
-  let alias = 'temas';
+  let alias = 'Temas';
   
   let cols = {
     id: {type: Datatypes.INTEGER, primaryKey: true, autoIncrement: true},
@@ -13,7 +13,7 @@ function temaData(sequelize, Datatypes){
 
   const temas = sequelize.define(alias,cols,config);
   temas.associate = function (modelos){
-    temas.belongsTo(modelos.modulos, {
+    temas.belongsTo(modelos.Modulos, {
       as: "modulos",
       foreignKey: "Modulo_id"
     });

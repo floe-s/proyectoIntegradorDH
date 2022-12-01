@@ -1,6 +1,6 @@
 function tematicaData(sequelize, Datatypes){
 
-  let alias = 'tematicas';
+  let alias = 'Tematicas';
   
   let cols = {
     id: {type: Datatypes.INTEGER, primaryKey: true, autoIncrement: true},
@@ -18,7 +18,7 @@ function tematicaData(sequelize, Datatypes){
   }
 
   tematicas.associate = function (modelos){
-    tematicas.hasMany(modelos.curso_dbs, {
+    tematicas.hasMany(modelos.Curso_dbs, {
       as: "curso_dbs",
       foreignKey: "Tematica_id"
     });
