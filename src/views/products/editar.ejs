@@ -24,10 +24,10 @@
             <!-- < % for(let curso of ps) {%> Sacar de adentro del form xq repite los campos -->
             <form class="form-cargar" action="/producto/editar/<%= ps.id %>?_method=PUT" method="POST" enctype="multipart/form-data"> <!-- action="producto/editar/:id < %= curso.id %>?_method=PUT"-->
                 
-                <input type="text" name="titulo" placeholder="Nombre del curso:" value="<%= ps.titulo %> "> <!-- < %= curso.titule%> -->
+                <input type="text" name="titulo" placeholder="Nombre del curso:" value="<%= ps.nombre %> "> <!-- < %= curso.titule%> -->
                 <section class="inpu">
                     <div class="tex-ifo"> 
-                        <input class="pro" type="text" name="profesor" placeholder="Profesor/ra:" value="<%= ps.profesor %> ">
+                        <input class="pro" type="text" name="profesor" placeholder="ID del; Profesor/ra:" value="<%= ps.Profesor_id %> ">
                         <input class="precio" type="text" name="precio" placeholder="Precio:" value="<%= ps.precio %> ">
                     </div>
                     <div class="inf-basica">
@@ -41,7 +41,7 @@
                         </div>
                         <div class="div">
                             <label><i class="fa-regular fa-clock"></i> Horas</label>
-                            <input type="text" name="horas" value="<%= ps.horas %> ">
+                            <input type="text" name="horas" value="<%= ps.cantidad_horas %> ">
                         </div>
                         <div class="div">
                             <label><i class="fa-solid fa-star"></i> Punt.</label>
@@ -62,7 +62,7 @@
                         </select>
                     </div>
                     <div class="form-descrip">
-                        <textarea placeholder="Descripción..." class="descripcion" maxlength="125" name="descripcion" id="" cols="2" rows="5"><%= ps.des %> </textarea>
+                        <textarea placeholder="Descripción..." class="descripcion" maxlength="125" name="descripcion" id="" cols="2" rows="5"><%= ps.descripcion %> </textarea>
                     </div>
                     <div class="btn-form">
                         <div class="btn">

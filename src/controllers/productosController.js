@@ -1,8 +1,5 @@
 const fs = require('fs');
 const path = require('path');
-
-const cursoPath = path.join(__dirname, '../data/cursosData.json'); // ruta del JSON
-let curso = JSON.parse(fs.readFileSync(cursoPath, 'utf-8')); 
 const { validationResult } = require('express-validator');
 
 const db = require('../database/models');
@@ -28,6 +25,7 @@ const controlador = {
         listaCursos.push(g);
         let profesor = g.usuario_Profe.nombre + ' ' + g.usuario_Profe.apellido;
         let obj = {
+          id:g.id,
           nombre: g.nombre,
           descripcion: g.descripcion,
           estudiantes: g.estudiantes,
@@ -160,14 +158,6 @@ const controlador = {
   edit: (req, res) => {
 
     let idCurso = req.params.id;
-    let objCurso;
-
-    for(let o of curso) {
-      if(idCurso == o.id) {
-        objCurso = o;
-        break;
-      }
-    }
     let usu=false
     let admi = false;
     if(req.session.profile){
@@ -176,47 +166,53 @@ const controlador = {
             admi=true
           }
     }
-    res.render('./products/editar', {ps: objCurso,usu:usu, admi:admi});
+
+    db.Curso_dbs.findByPk(idCurso).then((curso)=>{
+      res.render('./products/editar', {ps: curso,usu:usu, admi:admi});
+    });
+
+    
   },
 
   update: (req, res) => {
 
-    let idCurso = req.params.id;
+    let id = req.params.id;
     let nombreImg = req.file.filename;
-     
     // para elegir que icono usar;
     let icon;
+    let nivel;
     if(req.body.nivel == "basico"){
       icon = "fire3.svg";
+      nivel = 1
     }else if(req.body.nivel == "intermedio"){
       icon = "fire2.svg"
+      nivel = 2
     }else{
       icon = "fire.svg"
-  
+      nivel = 3
     }
-  
-
-
-    for(let o of curso) {
-      if(idCurso == o.id) {
-        o.titulo = req.body.titulo;
-        o.estudiantes = req.body.estudiantes;
-        o.profesor = req.body.profesor;
-        o.precio = req.body.precio;
-        o.nivel = req.body.nivel;
-        o.lecciones = req.body.lecciones;
-        o.horas = req.body.horas;
-        o.puntuacion = req.body.puntuacion;
-        o.img = nombreImg;
-        o.imgNivel = icon;
-        o.des = req.body.descripcion;
-        o.idinput = nombreImg;
-        break;
-      }
+    db.Curso_dbs.update({
+      nombre: req.body.titulo,
+      Profesor_id: req.body.profesor,
+      precio: req.body.precio,
+      descripcion: req.body.descripcion,
+      cantidad_horas: req.body.horas,
+      estudiantes: req.body.estudiantes,
+      lecciones: req.body.lecciones,
+      puntuacion: req.body.puntuacion,
+      img_nivel: icon,
+      nivel: nivel,
+      imagen: nombreImg
+    },
+    {
+      where:{id}
     }
-    fs.writeFileSync(cursoPath,JSON.stringify(curso,null," ")); // Se guarda los datos al JSON 
-  
-    res.redirect('/producto/cursos');
+    ).then(()=>{
+      res.redirect('/producto/cursos')
+    })
+      
+    
+    
   },
 
   destroy: (req, res) => {

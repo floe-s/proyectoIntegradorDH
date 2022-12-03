@@ -1,8 +1,6 @@
 const fs = require('fs');
 const path = require('path');
 const bcryptjs = require('bcryptjs');
-const cursosPath = path.join(__dirname, '../data/cursosData.json');
-let cursos = JSON.parse(fs.readFileSync(cursosPath, 'utf-8'));
 const { validationResult } = require('express-validator');
 const db = require('../database/models');
 
@@ -119,13 +117,7 @@ const controller = {
     vistaPerfil:(req,res)=>{
         let usu =false
         let admi = false;
-        let cursoPresencal = cursos.filter(elemento =>{
-            return elemento.curso == 'presencial';
-        });
-
-        let cursoVirtual = cursos.filter(elemento =>{
-            return elemento.curso !== 'presencial';
-        });
+   
 
         if(req.session.profile){
             usu = true
@@ -144,7 +136,7 @@ const controller = {
                 })
             
             }else if(req.session.profile.Rol_id == 3){
-                res.render('users/perfil',{i:req.session.profile, usu:usu, admi:admi, cursosPre: cursoPresencal, cursoVirtual: cursoVirtual});
+                res.render('users/perfil',{i:req.session.profile, usu:usu, admi:admi});
             }
         }else {
             delete req.session.profile;
@@ -160,7 +152,7 @@ const controller = {
             if(req.session.profile.Rol_id == 1){
                 admi=true
             }
-            res.render('users/perfiles/mi-datos',{i:req.session.profile, usu:usu, admi:admi, cursos:cursos});
+            res.render('users/perfiles/mi-datos',{i:req.session.profile, usu:usu, admi:admi,});
         }else {
             delete req.session.profile;
             
@@ -176,7 +168,7 @@ const controller = {
             if(req.session.profile.Rol_id == 1){
                 admi=true
             }
-            res.render('users/perfiles/ayuda',{i:req.session.profile, usu:usu, admi:admi, cursos:cursos});
+            res.render('users/perfiles/ayuda',{i:req.session.profile, usu:usu, admi:admi});
         }else {
             delete req.session.profile;
             
@@ -198,8 +190,6 @@ const controller = {
 
     update: (req,res) => {
         let id = req.session.profile.id;
-        console.log(id)
-        console.log(req.body)
         db.Usuario_dbs.update(
             {
                 nombre: req.body.nombre,

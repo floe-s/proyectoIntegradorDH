@@ -38,22 +38,9 @@ const controller = {
                       }
                 }
 
-                db.Usuario_dbs.findAll({include:[{association: 'rol'}]}).then(usuarios =>{
-                        let usuario= [];
-                        let lista = [];
-                        for(g of usuarios){
-                           
-                                let obj={
-                                        nombre: g.nombre,
-                                        email: g.email,
-                                        rol: g.rol.nombre
-                                }
-
-                                usuario.push(obj);
-                        }       
-                        console.log(usuario);
-                        res.render('./contacto',{usu:usu,admi:admi});
-                });
+               
+                res.render('./contacto',{usu:usu,admi:admi});
+               
        
 
         },
