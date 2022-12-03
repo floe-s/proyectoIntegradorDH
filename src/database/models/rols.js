@@ -10,12 +10,16 @@ function rolData(sequelize, Datatypes){
   let config = {camelCase: false, timestamps: false};
 
   const rols = sequelize.define(alias,cols,config);
-  rols.associate = function (modelos){
-    rols.hasMany(modelos.Usuario_dbs, {
-      as: "usuario_dbs",
+
+  rols.associate = function(modelos){
+
+    rols.hasMany(modelos.Usuario_dbs,{
+      as: "usuarios",
       foreignKey: "Rol_id"
     });
+
   }
+
   return rols;
 }
 

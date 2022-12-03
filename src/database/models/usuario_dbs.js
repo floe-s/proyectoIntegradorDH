@@ -20,61 +20,19 @@ function usuarioData(sequelize, Datatypes){
     let config = {camelCase: false, timestamps: false};
 
     const users = sequelize.define(alias,cols,config);
-    users.associate = function (modelos){
-      users.belongsTo(modelos.Usuario_dbs, {
-        as: "usuario_dbs",
-        foreignKey: "Administrador_id"
-      });
-    }
 
-    users.associate = function (modelos){
-      users.hasMany(modelos.Usuario_dbs, {
-        as: "usuario_dbs",
-        foreignKey: "Administrador_id"
-      });
-    }
+    users.associate = function(modelos){
 
-      users.associate = function (modelos){
-        users.hasMany(modelos.Curso_dbs, {
-          as: "curso_dbs",
-          foreignKey: "Administrador_id"
-        });
-      }
-
-        users.associate = function (modelos){
-          users.hasMany(modelos.Curso_dbs, {
-            as: "curso_dbs",
-            foreignKey: "Profesor_id"
-          });
-      }
-
-      users.associate = function (modelos){
-        users.hasMany(modelos.Asociados, {
-          as: "asociados",
-          foreignKey: "Usuario_db_id"
-        });
-    }
-
-    users.associate = function (modelos){
-      users.belongsTo(modelos.Rols, {
-        as: "rols",
+      users.belongsTo(modelos.Rols,{
+        as: 'rol',
         foreignKey: "Rol_id"
       });
-    }
 
-    users.associate = function (modelos){
-      users.belongsTo(modelos.Tematicas, {
-        as: "Tematicas",
-        foreignKey: "Tematica_id"
+      users.hasMany(modelos.Curso_dbs,{
+        as:'curso',
+        foreignKey: 'Profesor_id'
       });
     }
-
-    users.associate = function (modelos){
-      users.hasMany(modelos.Cursars, {
-        as: "Cursars",
-        foreignKey: "Alumno_id"
-      });
-  }
       
     return users;
 }

@@ -14,26 +14,7 @@ function cursarData(sequelize, Datatypes){
   let config = {camelCase: false, timestamps: false};
 
   const cursars = sequelize.define(alias,cols,config);
-  cursars.associate = function (modelos){
-    cursars.belongsTo(modelos.Usuario_dbs, {
-      as: "usuario_dbs",
-      foreignKey: "Alumno_id"
-    });
-  }
 
-  cursars.associate = function (modelos){
-    cursars.belongsTo(modelos.Curso_dbs, {
-      as: "curso_dbs",
-      foreignKey: "Curso_db_id"
-    });
-  }
-
-  cursars.associate = function (modelos){
-    cursars.belongsTo(modelos.Comisions, {
-      as: "comisions",
-      foreignKey: "Comision_id"
-    });
-  }
 
 
   return cursars;

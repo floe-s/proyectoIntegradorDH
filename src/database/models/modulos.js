@@ -13,19 +13,7 @@ function moduloData(sequelize, Datatypes){
   let config = {camelCase: false, timestamps: false};
 
   const modulos = sequelize.define(alias,cols,config);
-  modulos.associate = function (modelos){
-    modulos.belongsTo(modelos.Curso_dbs, {
-      as: "curso_dbs",
-      foreignKey: "Curso_db_id"
-    });
-  }
 
-  modulos.associate = function (modelos){
-    modulos.hasMany(modelos.Temas, {
-      as: "temas",
-      foreignKey: "Modulo_id"
-    });
-  }
 
   return modulos;
 }

@@ -18,29 +18,34 @@ const controlador = {
         admi=true
       }
     } 
-// De los modelos que tengo, elegir curso. Traer todos los datos e incluir en la consulta la relacion con usuario (lo saca del alias)
-    db.Curso_dbs.findAll().then((courses)=>{
+
+  db.Curso_dbs.findAll({include:[{association: 'usuario_Profe'},{association: 'nivel_curso'}]}).then((courses)=>{
 
       let listaCursos = [];
+      let curso = [];
       
-      for (g of courses) {
+      for(g of courses){
         listaCursos.push(g);
+        let profesor = g.usuario_Profe.nombre + ' ' + g.usuario_Profe.apellido;
+        let obj = {
+          nombre: g.nombre,
+          descripcion: g.descripcion,
+          estudiantes: g.estudiantes,
+          lecciones: g.lecciones,
+          puntuacion: g.puntuacion,
+          cantidad_horas: g.cantidad_horas,
+          precio: g.precio,
+          imagen: g.imagen,
+          img_nivel: g.img_nivel,
+          Profesor_id: profesor,
+          Nivel_curso_id: g.nivel_curso.nombre,
+        }
+        curso.push(obj)
       }
-      console.log(listaCursos);
-      res.render('./products/cursos', {ps:listaCursos,Allcursos: listaCursos, usu:usu, admi:admi});
+
+      res.render('./products/cursos', {ps:curso, usu:usu, admi:admi});
     }); 
 
-    //
-    // let usu=false
-    // let admi = false
-    // if(req.session.profile){
-    //   usu =true;
-    //   if(req.session.profile.Rol_id == 1){
-    //     admi=true
-    //   }
-    // }
-    // curso = JSON.parse(fs.readFileSync(cursoPath, 'utf-8')); // El JSON vuelve a leer los datos
-    // res.render('./products/cursos', { ps: curso, usu:usu, admi:admi}); // Se cargan los nuevos datos en la vista
   },
 
   cargar: (req, res) => {
@@ -69,29 +74,24 @@ const controlador = {
     let errors = validationResult(req);
         if( errors.isEmpty() ) {
 
- /*    let idNuevo = 1;
-
-    for(let s of curso){
-        if(idNuevo < s.id){
-            idNuevo = s.id
-        }
-    }
-    idNuevo++ */
     
     // llamamos el dato de la img de file que queremos 
     let nombreImg = req.file.filename;
     const fecha = new Date();
 
     let icon;
-    let nivel;
+    let nivel
     if(req.body.nivel == "basico"){
       icon = "fire3.svg";
+      nivel = 1;
     }else if(req.body.nivel == "intermedio"){
-      icon = "fire2.svg"
+      icon = "fire2.svg";
+      nivel = 2;
     }else{
       icon = "fire.svg"
+      nivel = 3;
     }
-    console.log(req.body);
+    
 
     db.Curso_dbs.create({
       nombre: req.body.titulo,
@@ -107,40 +107,18 @@ const controlador = {
       imagen: nombreImg,
       img_nivel: icon,
       Tematica_id: null,
-      Administrador_id: null,
-      Profesor_id: null,
-      Nivel_curso_id: null,
+      Administrador_id: 1,
+      Profesor_id: req.body.profesor,
+      Nivel_curso_id: nivel,
       Tipo_curso_id: null
 
-  }).then(()=>{
-      res.redirect('/producto/cursos');
-  })
+    }).then(()=>{
+        res.redirect('/producto/cursos');
+    })
 
-    /* let productoNuevo ={
-      id:idNuevo,
-      titulo: req.body.titulo,
-      estudiantes: req.body.estudiantes,
-      profesor: req.body.profesor,
-      precio: req.body.precio,
-      nivel: req.body.nivel,
-      lecciones: req.body.lecciones,
-      horas: req.body.horas,
-      puntuacion: req.body.puntuacion,
-      img: nombreImg,
-      imgNivel: icon,
-      des: req.body.descripcion,
-      idinput: nombreImg
-    } */
-
-   // curso.push(productoNuevo); // Se guardan los datos logicamente
-
-   // fs.writeFileSync(cursoPath,JSON.stringify(curso,null," ")); // Se guarda los datos al JSON 
-  
-   // res.redirect('/producto/cursos'); // Redirecciona a la vista cursos (productosRoutes)
-
-    } else {
-            res.render('./products/cargar', {errors: errors.array(), usu:usu , admi:admi} ); 
-        }
+  } else {
+      res.render('./products/cargar', {errors: errors.array(), usu:usu , admi:admi} ); 
+  }
   },
 
   descargables: (req, res) => {

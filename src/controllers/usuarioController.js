@@ -264,7 +264,8 @@ const controller = {
             }).then((resul)=>{
                 res.redirect('/usuario/vista-perfil');
             })
-    }
+    },
+
 }
 
 

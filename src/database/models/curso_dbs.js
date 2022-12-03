@@ -26,57 +26,24 @@ function cursoData(sequelize, Datatypes){
     let config = {camelCase: false, timestamps: false};
 
     const courses = sequelize.define(alias,cols,config);
-    courses.associate = function (modelos){
+    
+
+    courses.associate = function(modelos){
+      // todas la relaciones 
       courses.belongsTo(modelos.Usuario_dbs, {
-        as: "usuario_dbs",
-        foreignKey: "Administrador_id"
+        as:"usuario_Profe",
+        foreignKey: 'Profesor_id'
       });
-    }
 
-    courses.associate = function (modelos){
-      courses.belongsTo(modelos.Usuario_dbs, {
-        as: "usuario_dbs",
-        foreignKey: "Profesor_id"
+      courses.belongsTo(modelos.Nivel_cursos,{
+        as:'nivel_curso',
+        foreignKey: 'Nivel_curso_id'
       });
-    }
 
-    courses.associate = function (modelos){
-      courses.belongsTo(modelos.Nivel_cursos, {
-        as: "nivel_cursos",
-        foreignKey: "Nivel_curso_id"
-      });
-    }
-
-    courses.associate = function (modelos){
-      courses.belongsTo(modelos.Tipo_cursos, {
-        as: "tipo_cursos",
-        foreignKey: "Tipo_curso_id"
-      });
-    }
-
-    courses.associate = function (modelos){
-      courses.belongsTo(modelos.Tematicas, {
-        as: "tematicas",
-        foreignKey: "Tematica_id"
-      });
-    }
-
-    courses.associate = function (modelos){
-      courses.hasMany(modelos.Modulos, {
-        as: "modulos",
-        foreignKey: "Curso_db_id"
-      });
-    }
-
-    courses.associate = function (modelos){
-      courses.hasMany(modelos.Cursars, {
-        as: "cursars",
-        foreignKey: "Curso_db_id"
-      });
-    }
+    };
 
     return courses;
   }
 
-    module.exports = cursoData;
+module.exports = cursoData;
     

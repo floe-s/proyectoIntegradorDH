@@ -11,13 +11,7 @@ function academiaData(sequelize, Datatypes){
   let config = {camelCase: false, timestamps: false};
 
   const academias = sequelize.define(alias,cols,config);
-  academias.associate = function (modelos){
-    academias.hasMany(modelos.Asociados, {
-      as: "asociados",
-      foreignKey: "Academia_id"
-    });
-  }
-
+  
   return academias;
 }
 

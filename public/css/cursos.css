@@ -136,6 +136,7 @@ main{
 
 .profesor > label{
   font-weight: 300;
+  text-transform: capitalize;
 }
 
 .horas-curso{

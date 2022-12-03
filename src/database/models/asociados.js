@@ -11,19 +11,7 @@ function asociadoData(sequelize, Datatypes){
   let config = {camelCase: false, timestamps: false};
 
   const asociados = sequelize.define(alias,cols,config);
-  asociados.associate = function (modelos){
-    asociados.belongsTo(modelos.Academias, {
-      as: "academias",
-      foreignKey: "Academia_id"
-    });
-  }
 
-  asociados.associate = function (modelos){
-    asociados.belongsTo(modelos.Usuario_dbs, {
-      as: "usuario_dbs",
-      foreignKey: "Usuario_db_id"
-    });
-  }
   return asociados;
 }
 
