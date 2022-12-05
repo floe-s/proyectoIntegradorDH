@@ -6,7 +6,6 @@ Listado del grupo:
 - Andrade Bahamon, Camilo
 - Barrera Peña, Kevin Andres
 - Schettini, Florencia Esmeralda
-- Vivas, Nicolas Alfredo
 
 Listado de 5 páginas referentes en las que se basa el proyecto:
 - https://www.soficontreras.com/academia-sc
@@ -25,4 +24,4 @@ Por otro lado, vamos a generar un perfil administrador que permita cargar, modif
 
 Por último, se contará con la posibilidad de poder cambiar el idioma base del sitio, entre las opciones de español, inglés, y portugués, para que sea más entendible la navegación en el sitio por parte del usuario.
 
-Link del proyecto en Heroku: https://moidi-grupo6.herokuapp.com/
+Link del proyecto en Render: https://moidi-grupo6.onrender.com
