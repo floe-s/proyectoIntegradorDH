@@ -46,7 +46,7 @@ let validacionLog = [
 ]; */
 
 router.get('/registro',usuarioController.registro);
-router.post('/regitro', uploadfile.single('img'), validacionRegitro, validacionReg, usuarioController.registrar);
+router.post('/regitro', uploadfile.single('img'), /* validacionRegitro */ validacionReg, usuarioController.registrar);
 
 router.get('/login', usuarioController.login);
 router.post('/perfil', validacionLogin, validacionLog, usuarioController.perfil);

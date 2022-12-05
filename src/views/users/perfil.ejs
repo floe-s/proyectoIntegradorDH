@@ -22,31 +22,31 @@
         </div>
         <input id="virtual" name="clases" type="radio" >
         <div class="cont-virtual">
-          <% for(let c of cursoVirtual) { %> 
+          <!-- < % for(let c of cursoVirtual) { %>  -->
             <div class="clases-virtuales"> 
-              <img src="/img/paises/<%=c.img %> ">
+              <img src="/img/paises/ "> <!-- < %= c.img % >  -->
               <div class="info-virtual">
-                <h3><%= c.titulo %> </h3>
-                <label > <%= c.profesor %> </label>
-                <span> <%= c.nivel %> </span>
+                <h3><!-- < %= c.titulo %>  --></h3>
+                <label><!--  < %= c.profesor %> --> </label>
+                <span> <!-- < %= c.nivel %> --> </span>
                 <a href="#">Ver curso</a>
               </div>
             </div>
-          <% } %> 
+          <!-- < % } %>  -->
         </div>
         <input id="presencial" type="radio" name="clases" checked>
         <div class="cont-presencial"> 
-          <% for(let b of cursosPre) { %> 
+          <!-- < % for(let b of cursosPre) { %>  -->
             <div id="cls-pre" class="clases-virtuales">
-              <img src="/img/paises/<%=b.img %> ">
+              <img src="/img/paises/"> <!-- < %=b.img %>  -->
               <div class="info-virtual">
-                <h3><%= b.titulo %> </h3>
-                <label > <%= b.profesor %> </label>
-                <span>   <%= b.nivel %> </span>
+                <h3><!-- < %= b.titulo %> --> </h3>
+                <label> <!-- < %= b.profesor %> --> </label>
+                <span>   <!-- < %= b.nivel %>  --></span>
                 <a href="#">Ver curso</a>
               </div>
             </div>
-          <% } %> 
+          <!-- < % } %>  -->
         </div>
       </section>
     </div>
