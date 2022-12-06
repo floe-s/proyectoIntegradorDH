@@ -13,7 +13,7 @@ const configuracionImg = multer.diskStorage({
         cb(null, path.join(__dirname, '../../public/img/perfil'));
     },
     filename:function(req,file,cb){
-        let imgName =  file.originalname + Date.now() ;
+        let imgName =  "moidih" + Date.now() + file.originalname;
         cb(null, imgName);
     }
 })
