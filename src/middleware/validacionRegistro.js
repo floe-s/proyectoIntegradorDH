@@ -1,22 +1,24 @@
-const fs = require('fs');
-const path = require('path');
+const db = require('../database/models');
 
 
 function validacionRegitro(req, res, next){
-    const pathUsuario = path.join(__dirname, '../data/usuarioData.json');
-    const usuariosRegistrados = JSON.parse(fs.readFileSync(pathUsuario, 'utf-8'));
 
-    let email = req.body.email;
+    db.Usuario_dbs.findAll().then((usuario)=>{
+        let email = req.body.email;
+        let listaUsuario = [];
+        for(f of usuario){
+            listaUsuario.push(f.email);
+        }
 
-    let registro = usuariosRegistrados.find(usuario =>{
-        return usuario.email == email;
-    });
-    
-    if(registro != undefined){   
-        res.render('users/registro',{email: true,usu:false,admi:false});
-    }else{
-       next();
-    }
+        let registro = listaUsuario.find(usuarios =>{
+            return usuarios == email;
+        });
+        if(registro != undefined){   
+            res.render('users/registro',{email: true,usu:false,admi:false});
+        }else{
+           next();
+        }
+    })
 }
 
 module.exports = validacionRegitro;
