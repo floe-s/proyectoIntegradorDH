@@ -11,7 +11,12 @@ function tematicaData(sequelize, Datatypes){
 
   const tematicas = sequelize.define(alias,cols,config);
 
-
+  tematicas.associate = function(modelos){
+    tematicas.hasMany(modelos.Usuario_dbs,{
+      as:'usurios_temas',
+      foreignKey: 'Tematica_id'
+    })
+  }
   return tematicas;
 }
 

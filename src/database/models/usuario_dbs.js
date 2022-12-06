@@ -32,6 +32,11 @@ function usuarioData(sequelize, Datatypes){
         as:'curso',
         foreignKey: 'Profesor_id'
       });
+
+      users.belongsTo(modelos.Tematicas,{
+        as: 'tematicas',
+        foreignKey: 'Tematica_id'
+      })
     }
       
     return users;

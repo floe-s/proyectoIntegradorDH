@@ -229,6 +229,32 @@ const controlador = {
       });
     });
   },
+
+
+  tematica: (req,res)=>{
+    db.Tematicas.findAll().then((el)=>{
+      let list = [];
+      let n = false;
+      for(g of el){
+        list.push(g.nombre)
+      }
+      for(p of list){
+        if(req.body.tema == p){
+          n = true
+          break;
+        }
+      }
+      if(n == false){
+        db.Tematicas.create({
+          nombre:req.body.tema
+        }).then(()=>{
+          res.redirect('/usuario/cargarProfesro');
+        });
+      }else{
+        res.redirect('/usuario/cargarProfesro');
+      }
+    })
+  }
 };
 
 module.exports = controlador;

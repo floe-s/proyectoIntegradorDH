@@ -123,14 +123,30 @@ const controller = {
             usu = true
             if(req.session.profile.Rol_id == 1){
                 admi=true
-                db.Usuario_dbs.findAll().then((usuario)=>{
+                db.Usuario_dbs.findAll({include:[{association: 'tematicas'}]}).then((usuario)=>{
                     let list = [];
+                    let listaUSU = [];
                     for(g of usuario){
                         list.push(g);
+                       
+                        let obj = {
+                            id: g.id,
+                            nombre: g.nombre,
+                            apellido: g.apellido,
+                            rol: g.Rol_id,
+                            email: g.email,
+                            imagen: g.imagen,
+                            tematica: g.tematicas.nombre
+                        }
+                        
+                        listaUSU.push(obj);
+                        
                     }
-                    let listPro = list.filter(ele =>{
-                        return ele.Rol_id == 2
+                    let listPro = listaUSU.filter(ele =>{
+                        return ele.rol == 2
                     });
+                    
+
                     res.render('users/vista-admin',{i:req.session.profile, usu:usu, admi:admi, list:listPro});
                 })
             
@@ -218,17 +234,25 @@ const controller = {
     cargarProf:(req,res)=>{
         let usu =false
         let admi = false;
-        if(req.session.profile){
-            usu =true;
-            if(req.session.profile.Rol_id == 1){
-                admi=true
+        db.Tematicas.findAll().then((Tematicas)=>{
+            let listTema = []
+            for(g of Tematicas){
+                listTema.push(g);
             }
-            res.render('users/perfiles/cargarProfesor',{i:req.session.profile, usu:usu, admi:admi});
-        }else {
-            delete req.session.profile;
+            if(req.session.profile){
+                usu =true;
+                if(req.session.profile.Rol_id == 1){
+                    admi=true
+                }
+                res.render('users/perfiles/cargarProfesor',{i:req.session.profile, usu:usu, admi:admi, tematicas: listTema});
+            }else {
+                delete req.session.profile;
+                
+                res.redirect('/')
+            }
             
-            res.redirect('/')
-        }
+        })
+
     },
 
     registrarPro:(req,res)=>{
@@ -237,22 +261,26 @@ const controller = {
             let password = req.body.clave;
             let nuevaPasword = bcryptjs.hashSync(password, 10)
             const fecha = new Date();
-            
-            db.Usuario_dbs.create({
-                nombre: req.body.nombre,
-                apellido: req.body.apellido,
-                email: req.body.email,
-                clave: nuevaPasword,
-                telefono: req.body.telefono,
-                fecha_creacion: fecha.toDateString(),
-                fecha_eliminacion: fecha.toDateString(),
-                imagen: imgName,
-                Rol_id: 2,
-                Tematica_id: 1,
-                Administrador_id: 1
-            }).then((resul)=>{
-                res.redirect('/usuario/vista-perfil');
-            })
+
+            db.Tematicas.findOne({where:{nombre: req.body.tematica}}).then((tematica)=>{
+               
+                db.Usuario_dbs.create({
+                    nombre: req.body.nombre,
+                    apellido: req.body.apellido,
+                    email: req.body.email,
+                    clave: nuevaPasword,
+                    telefono: req.body.telefono,
+                    fecha_creacion: fecha.toDateString(),
+                    fecha_eliminacion: fecha.toDateString(),
+                    imagen: imgName,
+                    Rol_id: 2,
+                    Tematica_id: tematica.id,
+                    Administrador_id: 1
+                }).then((resul)=>{
+                    res.redirect('/usuario/vista-perfil');
+                })
+            });
+    
     },
 
     eliminar:(req,res)=>{

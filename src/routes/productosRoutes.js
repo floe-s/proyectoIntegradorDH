@@ -53,6 +53,7 @@ router.get('/editar/:id', productosController.edit);
 router.put('/editar/:id', uploadFile.single('img'), productosController.update);
 
 router.delete('/eliminar/:id', productosController.destroy)
+router.post('/agregarTema', productosController.tematica);
 
 
 module.exports = router;

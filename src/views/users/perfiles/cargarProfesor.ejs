@@ -16,8 +16,16 @@
   <div class="marco">
     <%- include('../../partials/navPerfil.ejs') %> 
     <section class="admin-right">
+        <div class="car-tem">
+            <label for="car">Agregar tema</label>
+            <input style="display: none;" id="car" type="checkbox" >
+            <form action="/producto/agregarTema" method="POST" class="for-tematica">
+                <label>Agregar idioma</label>
+                <input name="tema" type="text">
+                <button type="submit">Agregar</button>
+            </form>
+        </div>
         <section class="img-pro">
-            <img src="">
         </section>
         <form action="/usuario/ragiProfe" method="POST" enctype="multipart/form-data" class="cargar-prof">
             <h2>Nuevo Profesor</h2>
@@ -28,6 +36,11 @@
                     <img src="/img/perfil/urban-user.png">
                 </label>
             </figure>
+            <select class="op-tematica" name="tematica">
+                <% for(g of tematicas) { %> 
+                <option value="<%= g.nombre %>"><%= g.nombre %> </option>
+                <% } %> 
+            </select>
             <span>
                 <label for="">nombre</label>
                 <input name="nombre" type="text">
