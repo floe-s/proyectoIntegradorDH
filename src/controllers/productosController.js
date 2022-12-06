@@ -217,23 +217,17 @@ const controlador = {
 
   destroy: (req, res) => {
 
-    let idCurso = req.params.id;
-    let cursoEncontrado;
+    let id = req.params.id;
 
-    let arrayCursos = curso.filter(function(elemento) {
-      return elemento.id != idCurso;
-    })
-
-    for(let cursoss of curso){
-      if(cursoss.id == idCurso){
-        cursoEncontrado = cursoss;
-      }
-    }
-    fs.unlinkSync(path.join(__dirname, '../../public/img/paises', cursoEncontrado.img));
-
-    fs.writeFileSync(cursoPath,JSON.stringify(arrayCursos,null," ")); 
-
-    res.redirect('/producto/cursos');
+    db.Curso_dbs.findByPk(id).then((resul)=>{
+      let name = resul.imagen;
+      fs.unlinkSync(path.join(__dirname, '../../public/img/paises', name));
+      db.Curso_dbs.destroy({
+        where:{id}
+      }).then(()=>{
+        res.redirect('/producto/cursos')
+      });
+    });
   },
 };
 

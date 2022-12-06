@@ -31,7 +31,7 @@
                 </div>
                 <label class="tematica">Ingles</label>
                 <label class="correo"><%= f.email %> </label>
-                <label class="eliminar"><i class="fa-solid fa-trash"></i></label>
+                <form action="/usuario/eliminar/<%=f.id%>?_method=DELETE" method="POST"  class="eliminar"><button type="submit" class="eliminar"><i class="fa-solid fa-trash"></i></button></form>
             </section>
           </div>
           <% } %> 

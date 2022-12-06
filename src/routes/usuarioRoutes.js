@@ -13,7 +13,7 @@ const configuracionImg = multer.diskStorage({
         cb(null, path.join(__dirname, '../../public/img/perfil'));
     },
     filename:function(req,file,cb){
-        let imgName = Date.now() + file.originalname;
+        let imgName =  file.originalname + Date.now() ;
         cb(null, imgName);
     }
 })
@@ -64,5 +64,5 @@ router.post('/editar-usuarios',/* uploadfile.single('img'),  validacionUsu, */ u
 router.post('/salir/:id', usuarioController.salir);
 router.get('/cargarProfesro', usuarioController.cargarProf);
 router.post('/ragiProfe',uploadfile.single('img'), usuarioController.registrarPro);
-
+router.delete('/eliminar/:id', usuarioController.eliminar);
 module.exports = router;

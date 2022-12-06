@@ -17,7 +17,7 @@ const configuracionImg = multer.diskStorage({
 
    // con que nombre se va gurdar la img que guardamos
   filename: function(req, file, cb){
-    let imgName = Date.now() + file.originalname;
+    let imgName =  file.originalname + Date.now() ;
     cb(null, imgName);
   }
 });

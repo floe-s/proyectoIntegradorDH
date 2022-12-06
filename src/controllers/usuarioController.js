@@ -131,7 +131,6 @@ const controller = {
                     let listPro = list.filter(ele =>{
                         return ele.Rol_id == 2
                     });
-
                     res.render('users/vista-admin',{i:req.session.profile, usu:usu, admi:admi, list:listPro});
                 })
             
@@ -255,6 +254,21 @@ const controller = {
                 res.redirect('/usuario/vista-perfil');
             })
     },
+
+    eliminar:(req,res)=>{
+        let id = req.params.id;
+        db.Usuario_dbs.findByPk(id).then((resultado)=>{
+            let name = resultado.imagen;
+            console.log(name);
+            fs.unlinkSync(path.join(__dirname, '../../public/img/perfil', name));
+            db.Usuario_dbs.destroy({
+                where:{id}
+            }).then((re)=>{
+                res.redirect('/usuario/vista-perfil');
+    
+            });
+        })
+    }
 
 }
 
