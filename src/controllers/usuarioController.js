@@ -5,6 +5,7 @@ const { validationResult } = require('express-validator');
 const db = require('../database/models');
 
 
+
 const controller = {
 
     registro: (req,res) => {
@@ -67,9 +68,10 @@ const controller = {
 
             let usu=false
             let admi = false;
+
             if(req.session.profile){
                 usu =true;
-                if(req.session.profile.Rol_id == 1){
+                if(req.session.profile.Rol_id == 1 || req.session.profile.Rol_id == 4){
                     admi=true
                 }
             }
@@ -82,7 +84,7 @@ const controller = {
         let admi =false;
         if(req.session.profile){
             usu =true;
-            if(req.session.profile.Rol_id == 1){
+            if(req.session.profile.Rol_id == 1|| req.session.profile.Rol_id == 4){
                 admi=true
             }
         }
@@ -121,7 +123,7 @@ const controller = {
 
         if(req.session.profile){
             usu = true
-            if(req.session.profile.Rol_id == 1){
+            if(req.session.profile.Rol_id == 1 || req.session.profile.Rol_id == 4){
                 admi=true
                 db.Usuario_dbs.findAll({include:[{association: 'tematicas'}]}).then((usuario)=>{
                     let list = [];
@@ -146,8 +148,36 @@ const controller = {
                         return ele.rol == 2
                     });
                     
+                    if(req.session.profile.Rol_id == 1){
+                        db.Usuario_dbs.findAll().then((usu)=>{
+                            
+                            
+                            let enviar = [];
+                            console.log()
+                            let listAdmi = usu.filter(ele =>{
+                                return ele.Rol_id == 4;
+                            });
+                            for(g of listAdmi){
+                                let obj = {
+                                    id: g.id,
+                                    nombre: g.nombre,
+                                    apellido: g.apellido,
+                                    rol: g.Rol_id,
+                                    email: g.email,
+                                    imagen: g.imagen,
+                                }
+                                
+                                enviar.push(obj);
+                            }
 
-                    res.render('users/vista-admin',{i:req.session.profile, usu:usu, admi:admi, list:listPro});
+                            res.render('users/vista-admin',{i:req.session.profile, usu:usu, admi:admi, list: enviar});
+                        })
+                        
+                    }else if(req.session.profile.Rol_id == 4){
+                        res.render('users/administradores',{i:req.session.profile, usu:usu, admi:admi, list:listPro});
+                    }
+                   
+
                 })
             
             }else if(req.session.profile.Rol_id == 3){
@@ -164,7 +194,7 @@ const controller = {
         let admi = false;
         if(req.session.profile){
             usu =true;
-            if(req.session.profile.Rol_id == 1){
+            if(req.session.profile.Rol_id == 1 || req.session.profile.Rol_id == 4){
                 admi=true
             }
             res.render('users/perfiles/mi-datos',{i:req.session.profile, usu:usu, admi:admi,});
@@ -241,7 +271,7 @@ const controller = {
             }
             if(req.session.profile){
                 usu =true;
-                if(req.session.profile.Rol_id == 1){
+                if(req.session.profile.Rol_id == 1 || req.session.profile.Rol_id == 4){
                     admi=true
                 }
                 res.render('users/perfiles/cargarProfesor',{i:req.session.profile, usu:usu, admi:admi, tematicas: listTema});
@@ -287,7 +317,6 @@ const controller = {
         let id = req.params.id;
         db.Usuario_dbs.findByPk(id).then((resultado)=>{
             let name = resultado.imagen;
-            console.log(name);
             fs.unlinkSync(path.join(__dirname, '../../public/img/perfil', name));
             db.Usuario_dbs.destroy({
                 where:{id}
@@ -296,7 +325,72 @@ const controller = {
     
             });
         })
+    },
+
+    registrarAdministradores:(req,res)=>{
+        let usu =false
+        let admi = false;
+        if(req.session.profile.Rol_id == 1){
+            usu = true
+            admi =true;
+
+            db.Rols.findAll().then((Tematicas)=>{
+                let listTema = []
+                for(g of Tematicas){
+                    listTema.push(g);
+                }
+                    res.render('users/perfiles/cargarAdministrador',{i:req.session.profile, usu:usu, admi:admi, rol: listTema})
+            })
+            
+        }
+    },
+
+    cargarAdmin:(req,res)=>{
+        
+        let imgName = req.file.filename;
+        let password = req.body.clave;
+        let nuevaPasword = bcryptjs.hashSync(password, 10)
+        const fecha = new Date();
+
+                       
+        db.Usuario_dbs.create({
+            nombre: req.body.nombre,
+            apellido: req.body.apellido,
+            email: req.body.email,
+            clave: nuevaPasword,
+            telefono: req.body.telefono,
+            fecha_creacion: fecha.toDateString(),
+            fecha_eliminacion: fecha.toDateString(),
+            imagen: imgName,
+            Rol_id: 4,
+            Tematica_id: 1,
+            Administrador_id: 1
+        }).then((el)=>{
+            res.redirect('/usuario/vista-perfil')
+        });
+    },
+    eliminarAdmin:(req,res)=>{
+        let id = req.params.id;
+        db.Usuario_dbs.findByPk(id).then((resultado)=>{
+            let name = resultado.imagen;
+            fs.unlinkSync(path.join(__dirname, '../../public/img/perfil', name));
+            db.Usuario_dbs.destroy({
+                where:{id}
+            }).then((re)=>{
+                res.redirect('/usuario/vista-perfil');
+    
+            });
+        })
+    },
+
+    agreRol:(req,res)=>{
+        db.Rols.create({
+            nombre: req.body.nombre
+        }).then(()=>{
+            res.redirect('/usuario/registrar-administradores');
+        })
     }
+
 
 }
 

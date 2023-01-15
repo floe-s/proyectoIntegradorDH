@@ -4,7 +4,7 @@
     <%-include('../partials/head') %> 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
     <link rel="stylesheet" href="/css/perfil.css">
-    <link rel="stylesheet" href="/css/perfilAdmin.css">
+    <link rel="stylesheet" href="/css/superAdmin.css">
     <title>Perfil</title>
   </head>
 
@@ -16,26 +16,26 @@
   <div class="marco">
     <%- include('../partials/navPerfil.ejs') %> 
     <section class="admin-right">
-        <section class="list-profe">
-          <label>Lista de profesores</label>
-          <% for(let f of list) {%> 
-          <div class="list">
-            <label class="id"><%= f.id %> </label>
-            <figure class="profesor-img">
-              <img src="/img/perfil/<%= f.imagen %> ">
-            </figure>
-            <section class="info-profe"> 
-                <div>
-                  <label><%= f.nombre %> </label>
-                  <label><%= f.apellido %> </label>
-                </div>
-                <label class="tematica"><%= f.tematica %> </label>
-                <label class="correo"><%= f.email %> </label>
-                <form action="/usuario/eliminar/<%=f.id%>?_method=DELETE" method="POST"  class="eliminar"><button type="submit" class="eliminar"><i class="fa-solid fa-trash"></i></button></form>
+      <div class="list-admin">
+        <section class="cabecera-admin">
+          <label class="ti">Lista de Administradores</label>
+        </section>
+        <section class="contenido-admin">
+
+          <% for(g of list) {%> 
+          <div class="tabla-info">
+            <label class="id"><%= g.id %> </label>
+            <img  class="imagen-ad" src="/img/perfil/<%= g.imagen %> " >
+            <section class="nombres">
+              <label><%= g.nombre %> </label>
+              <label><%= g.apellido %> </label>
             </section>
+            <label class="gmail"><%= g.email %> </label>
+            <form action="/usuario/eliminarAdmin/<%=g.id%>?_method=DELETE" method="POST"  class="eliminar"><button type="submit" class="eliminar"><i class="fa-solid fa-trash"></i>Eliminar</button></form>
           </div>
           <% } %> 
         </section>
+      </div>
     </section>
 </main>
   <%-include('../partials/footer') %>

@@ -11,7 +11,7 @@ const controlador = {
     let admi = false
     if(req.session.profile){
       usu =true;
-      if(req.session.profile.Rol_id == 1){
+      if(req.session.profile.Rol_id == 1 || req.session.profile.Rol_id == 4){
         admi=true
       }
     } 
@@ -51,7 +51,7 @@ const controlador = {
     let admi=false;
     if(req.session.profile){
            usu =true;
-           if(req.session.profile.Rol_id == 1){
+           if(req.session.profile.Rol_id == 1 || req.session.profile.Rol_id == 4){
             admi=true
             res.render('./products/cargar',{usu:usu , admi:admi});
           }
@@ -64,7 +64,7 @@ const controlador = {
     let admi = false
     if(req.session.profile){
       usu =true;
-      if(req.session.profile.Rol_id == 1){
+      if(req.session.profile.Rol_id == 1 || req.session.profile.Rol_id == 4){
         admi=true
       }
     }
@@ -124,7 +124,7 @@ const controlador = {
     let admi = false;
     if(req.session.profile){
            usu =true;
-           if(req.session.profile.Rol_id == 1){
+           if(req.session.profile.Rol_id == 1 || req.session.profile.Rol_id == 4){
             admi=true
           }
     }
@@ -148,7 +148,7 @@ const controlador = {
     let admi = false;
     if(req.session.profile){
            usu =true;
-           if(req.session.profile.Rol_id == 1){
+           if(req.session.profile.Rol_id == 1 || req.session.profile.Rol_id == 4){
             admi=true
           }
     }
@@ -162,7 +162,7 @@ const controlador = {
     let admi = false;
     if(req.session.profile){
            usu =true;
-           if(req.session.profile.Rol_id == 1){
+           if(req.session.profile.Rol_id == 1 || req.session.profile.Rol_id == 4){
             admi=true
           }
     }

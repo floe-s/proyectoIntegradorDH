@@ -1,0 +1,336 @@
+.admin-right{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.548);
+    backdrop-filter: blur(15px);
+}
+
+.list-admin{
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+}
+
+.cabecera-admin{
+    display: flex;
+    width: 100%;
+    height: 30px;
+    margin-top: 20px;
+}
+
+.cabecera-admin >  label{
+    margin: auto;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    width: 80%;
+    background-image: linear-gradient(to right, #ff8177 0%, #ff867a 0%, #ff8c7f 21%, #f99185 52%, #cf556c 78%, #b12a5b 100%);
+    color: white;
+    height: 100%;
+    text-align: center;
+    padding-top: 3px;
+}
+
+.contenido-admin{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin: auto;
+}
+
+.tabla-info{
+    display: flex;
+    width: 100%;
+    height: 60px;
+    border-radius: 10px;
+    margin-top: 20px;
+    background-color: aliceblue;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.266);
+}
+
+.id{
+    display: flex;
+    width: 60px;
+    justify-content: center;
+    align-items: center;
+}
+
+.imagen-ad{
+    display: flex;
+    width: 50px;
+    height: 50px;
+    margin-left: 20px;
+    border-radius: 50px;
+    align-self:center;
+}
+
+.nombres{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 120px;
+    height: 100%;
+    margin-left: 30px;
+}
+
+.nombres > label{
+    text-transform: capitalize;
+    margin-right: 10px;
+}
+
+.gmail{
+    display: flex;
+    align-items: center;
+    width: 300px;
+    height: 100%;
+    margin-left: 20px;
+}
+
+.eliminar{
+    width: 100px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.eliminar > button{
+    border: none;
+    width: 100%;
+    height: 60%;
+    background-image: linear-gradient(to right, #ff8177 0%, #ff867a 0%, #ff8c7f 21%, #f99185 52%, #cf556c 78%, #b12a5b 100%);
+    color: white;
+    border-radius: 20px;
+    transition: all 500ms ease;
+}
+
+.eliminar > button > i{
+    margin-right: 3px;
+}
+
+.eliminar > button:hover{
+    transform: scale(1.04);
+}
+
+@media (max-width: 1300px){
+
+    .list-admin{
+        overflow-x: scroll;
+    }
+    .cabecera-admin > label{
+        
+        margin-left: 70px;
+        width: 718px;
+        
+    }
+
+    .tabla-info {
+        width: 718px;
+    }
+}
+
+
+
+
+
+/* css del  agregar adminstrador*/
+
+.administrador-rig{
+    width: 100% ;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: -10;
+}
+
+.agre-admin{
+    position: absolute;
+    z-index: 10;
+    width: 100% ;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.agre-admin > label{
+    width: 40%;
+    height: 30px;
+    background-image: linear-gradient(to right, #ff8177 0%, #ff867a 0%, #ff8c7f 21%, #f99185 52%, #cf556c 78%, #b12a5b 100%);
+    color: white;
+    margin-top: 20px;
+    text-align: center;
+    border-radius: 5px;
+    padding-top: 3px;
+}
+
+.foto-amdin{
+    display: flex;
+    margin-top: 20px;
+    justify-content: center;
+    width: 90%;
+    height: 150px;
+}
+
+#agre {
+    width: 120px;
+    height: 30px;
+    text-align: center;
+    padding-top: 3px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+    align-self: center;
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+
+#agre >  i {
+    margin-right: 5px;
+}
+
+#file-preview > img{
+    align-self: center;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}
+
+
+.info-admin {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    background-color: rgba(255, 255, 255, 0.623);
+    border-radius: 20px;
+}
+
+.info-admin > input {
+    width: 90%;
+    border: none;
+    background-color: #eee;
+    padding: 4px;
+    outline: none;
+    border-radius: 4px;
+    align-self: center;
+    padding-left: 10px;
+}
+
+.info-admin > input:focus{
+    border: 1px solid #ff8177;
+}
+
+.info-admin > label{
+    margin-left: 20px;
+    margin-top: 10px;
+    
+}
+
+.info-admin > button {
+    width: 90%;
+    margin-top: 20px;
+    border: none;
+    align-self: center;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    padding: 5px;
+    background-image: linear-gradient(to right, #ff8177 0%, #ff867a 0%, #ff8c7f 21%, #f99185 52%, #cf556c 78%, #b12a5b 100%);
+    color: white;
+    transition: all 500ms ease;
+}
+
+.info-admin > button:hover{
+
+    transform: scale(1.03);
+}
+
+.list-roles{
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
+.btn-roles {
+    position: relative;
+    z-index: 100;
+    width: 100px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(to top, #4481eb 0%, #04befe 100%);
+    color: white;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+.btn-roles:hover{
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.329);
+}
+
+#roles:checked + .form-roles{
+    display: flex;
+}
+
+.form-roles{
+    margin-top: 5px;
+    border-radius: 0px 10px 10px 10px;
+    background-color: white;
+    display: none;
+    position: relative;
+    z-index: 100;
+    padding: 10px;
+    flex-direction: column;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.212);
+}
+
+.form-roles > input {
+    margin-top: 5px;
+    margin-bottom: 10px;
+    border: none;
+    padding: 5;
+    background-color: #eee;
+}
+
+.form-roles > button{
+    background-image: linear-gradient(to right, #ff8177 0%, #ff867a 0%, #ff8c7f 21%, #f99185 52%, #cf556c 78%, #b12a5b 100%);
+    color: white;
+    border-radius: 10px;
+    border: none;
+}
+
+.form-roles > label{
+    text-align: center;
+}
+.selec-roles{
+    position: absolute;
+    top: 200px;
+    left: 250px;
+    z-index: 100;
+    width: 140px;
+    height: 30px;
+    background-color: white;
+    border-radius: 10px;
+}
+@media (max-width: 950px){
+    .info-admin{
+        width: 80%;
+    }
+
+    .selec-roles{
+        left: 100px;
+        top: 220px;
+    }
+
+    .list-roles{
+        top: 70px;
+        left: 50px;
+
+    }
+    .agre-admin > label{
+        width: 80%;
+    }
+}

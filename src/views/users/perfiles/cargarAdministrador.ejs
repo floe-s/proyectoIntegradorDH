@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <%-include('../../partials/head') %> 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="/css/perfil.css">
+    <link rel="stylesheet" href="/css/superAdmin.css">
+    <title>Perfil</title>
+  </head>
+
+<body class="body">
+  
+  <%-include('../../partials/header') %>
+
+<main>
+  <div class="marco">
+    <%- include('../../partials/navPerfil.ejs') %> 
+    <div   class="right">
+        
+        <section id="particles-js" class="administrador-rig">
+            <div class="list-roles">
+              <label class="btn-roles"  for="roles">Agregar rol</label>
+              <input style="display: none;"  type="checkbox" id="roles">
+              <form class="form-roles" action="/usuario/agregar-rol" method="POST" >
+                <label>Nombre</label>
+                <input name="nombre" type="text" name="rol">
+                <button type="submit">Enviar</button>
+              </form>
+            </div>
+            <select class="selec-roles" id="">
+              <% for(p of rol) {%> 
+              <option><%= p.nombre %> </option>
+              <% } %> 
+            </select>
+            <form class="agre-admin" action="/usuario/cargar-admin" method="POST" enctype="multipart/form-data">
+                <label>Agregar Administrador</label>
+                <div class="foto-amdin">
+                    <label id="agre"  for="file"><i class="fa-solid fa-circle-plus"></i>Agregar foto</label>
+                    <input name="img" style="display: none;" type="file" id="file" required>
+                    <label  id="file-preview">
+                        <img src="/img/perfil/urban-user.png">
+                    </label>
+                </div>
+                <div class="info-admin">
+                    <label >Nombre</label>
+                    <input name="nombre" type="text" required>
+                    <label >Apellido</label>
+                    <input name="apellido" type="text" required>
+                    <label >Telefono</label>
+                    <input name="telefono" type="text" required>
+                    <label >Email</label>
+                    <input name="email" type="email"  required>
+                    <label >Contraseña</label>
+                    <input type="text" name="clave" required>
+                    <button type="submit">Agregar</button>
+                </div>
+            </form>
+        </section>
+    </div>
+  </div>
+</main>
+  <%-include('../../partials/footer') %>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <Script src="/js/pariculas.js"></Script>
+  <script>
+    function preview(id){
+        document.getElementById('file').addEventListener("change",(e)=>{
+            let file = e.target.files[0];
+            let url = URL.createObjectURL(file);
+            document.querySelector("#" + id + "-preview img").src = url;
+        })
+    } 
+    preview("file");  
+  </script>
+</html>

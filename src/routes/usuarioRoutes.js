@@ -21,6 +21,7 @@ const configuracionImg = multer.diskStorage({
 const uploadfile = multer({storage:configuracionImg});
 const validacionRegitro = require('../middleware/validacionRegistro');
 const validacionLogin = require('../middleware/validacionLogin');
+const { randomBytes } = require('crypto');
 
 // Validation
 let validacionReg = [
@@ -65,4 +66,8 @@ router.post('/salir/:id', usuarioController.salir);
 router.get('/cargarProfesro', usuarioController.cargarProf);
 router.post('/ragiProfe',uploadfile.single('img'), usuarioController.registrarPro);
 router.delete('/eliminar/:id', usuarioController.eliminar);
+router.get('/registrar-administradores', usuarioController.registrarAdministradores);
+router.post('/cargar-admin', uploadfile.single('img'),usuarioController.cargarAdmin);
+router.delete('/eliminarAdmin/:id', usuarioController.eliminarAdmin);
+router.post('/agregar-rol', usuarioController.agreRol);
 module.exports = router;
