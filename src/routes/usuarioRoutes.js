@@ -1,9 +1,10 @@
+const express = require('express');
+const router = express.Router();
 
 const usuarioController = require('../controllers/usuarioController')
-const express = require('express');
-const multer = require('multer');
-const router = express.Router();
+
 const path = require('path')
+const multer = require('multer');
 const { body } = require('express-validator');
 
 
@@ -19,7 +20,7 @@ const configuracionImg = multer.diskStorage({
 })
 
 const uploadfile = multer({storage:configuracionImg});
-const validacionRegitro = require('../middleware/validacionRegistro');
+const validacionRegistro = require('../middleware/validacionRegistro');
 const validacionLogin = require('../middleware/validacionLogin');
 const { randomBytes } = require('crypto');
 
@@ -47,15 +48,13 @@ let validacionLog = [
 ]; */
 
 router.get('/registro',usuarioController.registro);
-router.post('/regitro', uploadfile.single('img'), validacionRegitro, validacionReg, usuarioController.registrar);
+router.post('/registro', uploadfile.single('img'), validacionRegistro, validacionReg, usuarioController.registrar);
 
 router.get('/login', usuarioController.login);
 router.post('/perfil', validacionLogin, validacionLog, usuarioController.perfil);
 router.get('/vista-perfil',usuarioController.vistaPerfil );
 router.get('/datosUsuario', usuarioController.vistaDatos);
 router.get('/ayuda', usuarioController.visataAyuda);
-
-
 
 
 router.get('/editar-usuario', usuarioController.editar);

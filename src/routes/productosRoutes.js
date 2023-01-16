@@ -50,7 +50,7 @@ router.get('/cargar', productosController.cargar);
 router.post('/cargar', uploadFile.single('imgProduct'), validaciones, productosController.registrar);
 
 router.get('/editar/:id', productosController.edit);
-router.put('/editar/:id', uploadFile.single('img'), productosController.update);
+router.put('/editar/:id', uploadFile.single('img'), validaciones, productosController.update);
 
 router.delete('/eliminar/:id', productosController.destroy)
 router.post('/agregarTema', productosController.tematica);

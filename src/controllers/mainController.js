@@ -11,11 +11,9 @@ const controller = {
                         admi=true
                       }
                 }
-                res.render('index',{usu:usu, admi: admi});
-                        
-                
-                
+                res.render('index', {usu: usu, admi: admi, title: 'MOIDI HOUSE'});       
         },
+
         traductor: (req, res) => {
                 let usu=false;
                 let admi = false;
@@ -25,7 +23,7 @@ const controller = {
                         admi=true
                       }
                 }
-                res.render('./traductor',{usu:usu,admi:admi});
+                res.render('./traductor',{usu: usu,admi: admi, title: 'Traductor'});
         },
 
         contacto: (req, res) => {
@@ -39,13 +37,8 @@ const controller = {
                 }
 
                
-                res.render('./contacto',{usu:usu,admi:admi});
-               
-       
-
+                res.render('./contacto',{usu: usu,admi: admi, title: 'Contacto'});
         },
-
-
 }
 
 module.exports = controller;

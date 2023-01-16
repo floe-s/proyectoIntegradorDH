@@ -4,32 +4,30 @@ const bcryptjs = require('bcryptjs');
 const { validationResult } = require('express-validator');
 const db = require('../database/models');
 
-
-
 const controller = {
 
     registro: (req,res) => {
-        let usu=false
-        let admi =false;
+        let usu = false
+        let admi = false;
         if(req.session.profile){
-               usu =true;
+               usu = true;
                if(req.session.profile.tipoUsuario == "admin"){
-                admi=true
+                admi = true
               }
         }
-        res.render('./users/registro',{email: false,usu:usu, admi:admi});
+        res.render('./users/registro',{email: false,usu: usu, admi: admi, title: 'Registrarse'});
     },
 
     // para crear registro
     registrar:(req, res)=>{
         //console.log(req.body)
 
-        let usu=false
-        let admi =false;
+        let usu = false
+        let admi = false;
         if(req.session.profile){
-            usu =true;
+            usu = true;
             if(req.session.profile.Rol_id == 1){
-                admi=true
+                admi = true
             }
         }
 
@@ -54,53 +52,53 @@ const controller = {
                 Rol_id: 3,
                 Tematica_id: 1,
                 Administrador_id: 1
-            }).then(()=>{
+            }).then(() => {
                 res.redirect('/usuario/login');
             })
 
         } else {
         console.log(errors.array())
-            res.render('./users/registro', {errors: errors.array(), error:false, email: false, usu:usu, admi:admi } ); 
+            res.render('./users/registro', {errors: errors.array(), error: false, email: false, usu: usu, admi: admi, title: 'Registrarse'}); 
         }
     },
 
     login:(req,res) => {
 
-            let usu=false
+            let usu = false
             let admi = false;
 
             if(req.session.profile){
-                usu =true;
+                usu = true;
                 if(req.session.profile.Rol_id == 1 || req.session.profile.Rol_id == 4){
-                    admi=true
+                    admi = true
                 }
             }
-            res.render('./users/login',{ error:false,usu:usu,admi:admi});
+            res.render('./users/login',{ error:false,usu: usu, admi: admi, title: 'Iniciar Sesión'});
     },
 
     perfil:(req,res) => {
 
-        let usu=false
-        let admi =false;
+        let usu = false
+        let admi = false;
         if(req.session.profile){
-            usu =true;
+            usu = true;
             if(req.session.profile.Rol_id == 1|| req.session.profile.Rol_id == 4){
-                admi=true
+                admi = true
             }
         }
 
         let errors = validationResult(req);
         if( errors.isEmpty() ) {
 
-            let email=req.body.email
+            let email = req.body.email
 
-            db.Usuario_dbs.findAll().then((usuario)=>{
-                let listaUsuarios=[];
+            db.Usuario_dbs.findAll().then((usuario) => {
+                let listaUsuarios = [];
                 for(g of usuario){
                     listaUsuarios.push(g);
                 }
     
-                let usuarioInicio = listaUsuarios.find(usuario =>{
+                let usuarioInicio = listaUsuarios.find(usuario => {
                     return usuario.email == email 
                     
                 });
@@ -112,20 +110,20 @@ const controller = {
             });
 
         } else {
-            res.render('./users/login', {errors: errors.array(), error:false, usu:usu, admi:admi } ); 
+            res.render('./users/login', {errors: errors.array(), error: false, usu: usu, admi: admi, title: 'Iniciar Sesión'}); 
         }
     },
 
     vistaPerfil:(req,res)=>{
-        let usu =false
+        let usu = false
         let admi = false;
    
 
         if(req.session.profile){
             usu = true
             if(req.session.profile.Rol_id == 1 || req.session.profile.Rol_id == 4){
-                admi=true
-                db.Usuario_dbs.findAll({include:[{association: 'tematicas'}]}).then((usuario)=>{
+                admi = true
+                db.Usuario_dbs.findAll({include:[{association: 'tematicas'}]}).then((usuario) => {
                     let list = [];
                     let listaUSU = [];
                     for(g of usuario){
@@ -144,17 +142,17 @@ const controller = {
                         listaUSU.push(obj);
                         
                     }
-                    let listPro = listaUSU.filter(ele =>{
+                    let listPro = listaUSU.filter(ele => {
                         return ele.rol == 2
                     });
                     
                     if(req.session.profile.Rol_id == 1){
-                        db.Usuario_dbs.findAll().then((usu)=>{
+                        db.Usuario_dbs.findAll().then((usu) => {
                             
                             
                             let enviar = [];
                             console.log()
-                            let listAdmi = usu.filter(ele =>{
+                            let listAdmi = usu.filter(ele => {
                                 return ele.Rol_id == 4;
                             });
                             for(g of listAdmi){
@@ -170,19 +168,18 @@ const controller = {
                                 enviar.push(obj);
                             }
 
-                            res.render('users/vista-admin',{i:req.session.profile, usu:usu, admi:admi, list: enviar});
+                            res.render('users/vista-admin',{i:req.session.profile, usu: usu, admi: admi, list: enviar, title: 'Perfil Administrador'});
                         })
                         
                     }else if(req.session.profile.Rol_id == 4){
-                        res.render('users/administradores',{i:req.session.profile, usu:usu, admi:admi, list:listPro});
+                        res.render('users/administradores',{i: req.session.profile, usu: usu, admi: admi, list: listPro, title: 'Perfil Administrador'});
                     }
                    
 
                 })
             
             }else if(req.session.profile.Rol_id == 3){
-                
-                res.render('users/perfil',{i:req.session.profile, usu:usu, admi:admi});
+                res.render('users/perfil',{i: req.session.profile, usu: usu, admi: admi, title: 'Perfil'});
             }else if(req.session.profile.Rol_id == 2){
                 db.Curso_dbs.findAll().then(cursos =>{
                     
@@ -218,21 +215,22 @@ const controller = {
                     res.render('users/vistaProfesores',{i:req.session.profile, usu:usu, admi:admi, cursos:misCursos});
                 })
             }
-        }else {
+
+        } else {
             delete req.session.profile;
             
             res.redirect('/')
         }
     },
-    vistaDatos:(req,res) =>{
-        let usu =false
+    vistaDatos:(req,res) => {
+        let usu = false
         let admi = false;
         if(req.session.profile){
-            usu =true;
+            usu = true;
             if(req.session.profile.Rol_id == 1 || req.session.profile.Rol_id == 4){
-                admi=true
+                admi = true
             }
-            res.render('users/perfiles/mi-datos',{i:req.session.profile, usu:usu, admi:admi,});
+            res.render('users/perfiles/mi-datos',{i: req.session.profile, usu: usu, admi: admi, title: 'Perfil - Mis Datos'});
         }else {
             delete req.session.profile;
             
@@ -241,14 +239,14 @@ const controller = {
     },
 
     visataAyuda:(req,res)=>{
-        let usu =false
+        let usu = false
         let admi = false;
         if(req.session.profile){
-            usu =true;
+            usu = true;
             if(req.session.profile.Rol_id == 1){
-                admi=true
+                admi = true
             }
-            res.render('users/perfiles/ayuda',{i:req.session.profile, usu:usu, admi:admi});
+            res.render('users/perfiles/ayuda',{i: req.session.profile, usu: usu, admi: admi, title:'Perfil - Ayuda'});
         }else {
             delete req.session.profile;
             
@@ -257,15 +255,15 @@ const controller = {
     },
     editar:(req,res) => {
     
-    let usu=false
+    let usu = false
     let admi = false;
     if(req.session.profile){
-           usu =true;
+           usu = true;
            if(req.session.profile.Rol_id = 1){
-            admi=true
+            admi = true
           }
     }
-        res.render('users/editar-usuario',{i:req.session.profile, usu:usu,admi:admi});
+        res.render('users/editar-usuario',{i: req.session.profile, usu: usu,admi: admi, title:'Editar Perfil'});
     },
 
     update: (req,res) => {
@@ -280,7 +278,7 @@ const controller = {
             {
                 where:{id}
             }
-        ).then(()=>{
+        ).then(()=> {
             res.redirect('/usuario/vista-perfil');
         })
 
@@ -294,40 +292,36 @@ const controller = {
         }
     },
 
-
-
-    cargarProf:(req,res)=>{
-        let usu =false
+    cargarProf:(req,res) => {
+        let usu = false
         let admi = false;
-        db.Tematicas.findAll().then((Tematicas)=>{
+        db.Tematicas.findAll().then((Tematicas) => {
             let listTema = []
             for(g of Tematicas){
                 listTema.push(g);
             }
             if(req.session.profile){
-                usu =true;
+                usu = true;
                 if(req.session.profile.Rol_id == 1 || req.session.profile.Rol_id == 4){
-                    admi=true
+                    admi = true
                 }
-                res.render('users/perfiles/cargarProfesor',{i:req.session.profile, usu:usu, admi:admi, tematicas: listTema});
+                res.render('users/perfiles/cargarProfesor',{i: req.session.profile, usu: usu, admi: admi, tematicas: listTema, title:'Cargar Profesor'});
             }else {
                 delete req.session.profile;
                 
                 res.redirect('/')
-            }
-            
+            }  
         })
-
     },
 
-    registrarPro:(req,res)=>{
+    registrarPro:(req,res) => {
 
             let imgName = req.file.filename;
             let password = req.body.clave;
             let nuevaPasword = bcryptjs.hashSync(password, 10)
             const fecha = new Date();
 
-            db.Tematicas.findOne({where:{nombre: req.body.tematica}}).then((tematica)=>{
+            db.Tematicas.findOne({where:{nombre: req.body.tematica}}).then((tematica) => {
                
                 db.Usuario_dbs.create({
                     nombre: req.body.nombre,
@@ -341,53 +335,51 @@ const controller = {
                     Rol_id: 2,
                     Tematica_id: tematica.id,
                     Administrador_id: 1
-                }).then((resul)=>{
+                }).then((resul) => {
                     res.redirect('/usuario/vista-perfil');
                 })
             });
-    
     },
 
-    eliminar:(req,res)=>{
+    eliminar:(req, res) => {
         let id = req.params.id;
-        db.Usuario_dbs.findByPk(id).then((resultado)=>{
+        db.Usuario_dbs.findByPk(id).then((resultado) => {
             let name = resultado.imagen;
             fs.unlinkSync(path.join(__dirname, '../../public/img/perfil', name));
             db.Usuario_dbs.destroy({
                 where:{id}
-            }).then((re)=>{
+            }).then((re) => {
                 res.redirect('/usuario/vista-perfil');
     
             });
         })
     },
 
-    registrarAdministradores:(req,res)=>{
-        let usu =false
+    registrarAdministradores:(req,res) => {
+        let usu = false
         let admi = false;
         if(req.session.profile.Rol_id == 1){
             usu = true
-            admi =true;
+            admi = true;
 
-            db.Rols.findAll().then((Tematicas)=>{
+            db.Rols.findAll().then((Tematicas) => {
                 let listTema = []
                 for(g of Tematicas){
                     listTema.push(g);
                 }
-                    res.render('users/perfiles/cargarAdministrador',{i:req.session.profile, usu:usu, admi:admi, rol: listTema})
+                    res.render('users/perfiles/cargarAdministrador', {i: req.session.profile, usu: usu, admi: admi, rol: listTema, title:'Cargar Administrador'})
             })
             
         }
     },
 
-    cargarAdmin:(req,res)=>{
+    cargarAdmin:(req,res) => {
         
         let imgName = req.file.filename;
         let password = req.body.clave;
         let nuevaPasword = bcryptjs.hashSync(password, 10)
         const fecha = new Date();
-
-                       
+           
         db.Usuario_dbs.create({
             nombre: req.body.nombre,
             apellido: req.body.apellido,
@@ -404,16 +396,16 @@ const controller = {
             res.redirect('/usuario/vista-perfil')
         });
     },
-    eliminarAdmin:(req,res)=>{
+
+    eliminarAdmin:(req,res) => {
         let id = req.params.id;
-        db.Usuario_dbs.findByPk(id).then((resultado)=>{
+        db.Usuario_dbs.findByPk(id).then((resultado) => {
             let name = resultado.imagen;
             fs.unlinkSync(path.join(__dirname, '../../public/img/perfil', name));
             db.Usuario_dbs.destroy({
                 where:{id}
-            }).then((re)=>{
+            }).then((re) => {
                 res.redirect('/usuario/vista-perfil');
-    
             });
         })
     },
@@ -425,8 +417,6 @@ const controller = {
             res.redirect('/usuario/registrar-administradores');
         })
     }
-
-
 }
 
 

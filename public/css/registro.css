@@ -180,6 +180,7 @@ main{
   text-align: center;
 }
 
+
 /*diseño adaptativo */
 @media (max-width: 1600px){
     .form-cont{

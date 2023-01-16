@@ -20,7 +20,7 @@ function validacionLogin (req,res,next){
 
         if(usuarioEncontrado == undefined){
         
-            res.render('users/login',{error: true, usu:false, admi:false});
+            res.render('users/login', {error: true, usu: false, admi: false, title: 'Iniciar Sesión'});
             
         }else {
             next();

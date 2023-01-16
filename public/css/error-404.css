@@ -1,0 +1,21 @@
+.sitio-error {
+  text-align: center;
+}
+
+.img-sitio {
+  width: 100vw;
+}
+
+
+@media (min-width: 769px) {
+
+.img-sitio {
+  width: 60vw;
+}
+}
+
+@media (min-width: 1200px) {
+.img-sitio {
+  width: 45vw;
+}
+}

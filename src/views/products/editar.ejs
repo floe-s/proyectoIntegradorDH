@@ -2,9 +2,7 @@
 <html lang="es">
 <head>
     <%-include('../partials/head', ) %>
-    <!-- {title: 'Editando: ' +  producto.titule } -->
     <link rel="stylesheet" href="/css/editar.css">
-    <title>Editar Curso</title>
 </head>
 
 <body class="body">
@@ -17,41 +15,40 @@
         </figure>
         <div class="cont">
             <div class="img-curso">
-                <h2 id="titulo">Editar Curso</h2>
+                <h2 id="titulo"><%= title %></h2>
                 <a href="/producto/cursos">Volver</a>
-                <!-- <h3 class="products-title">Estás editando: <i>< %=curso.titulo %></i></h3> -->
             </div>
             <!-- < % for(let curso of ps) {%> Sacar de adentro del form xq repite los campos -->
-            <form class="form-cargar" action="/producto/editar/<%= ps.id %>?_method=PUT" method="POST" enctype="multipart/form-data"> <!-- action="producto/editar/:id < %= curso.id %>?_method=PUT"-->
+            <form id="formEdit" class="form-cargar" action="/producto/editar/<%= ps.id %>?_method=PUT" method="POST" enctype="multipart/form-data"> <!-- action="producto/editar/:id < %= curso.id %>?_method=PUT"-->
                 
-                <input type="text" name="titulo" placeholder="Nombre del curso:" value="<%= ps.nombre %> "> <!-- < %= curso.titule%> -->
+                <input id="tituloE" type="text" name="titulo" placeholder="Nombre del curso:" value="<%= ps.nombre %> "> <!-- < %= curso.titule%> -->
                 <section class="inpu">
                     <div class="tex-ifo"> 
-                        <input class="pro" type="text" name="profesor" placeholder="ID del; Profesor/ra:" value="<%= ps.Profesor_id %> ">
-                        <input class="precio" type="text" name="precio" placeholder="Precio:" value="<%= ps.precio %> ">
+                        <input id="profesorE" class="pro" type="text" name="profesor" placeholder="ID del; Profesor/ra:" value="<%= ps.Profesor_id %> ">
+                        <input id="precioE" class="precio" type="text" name="precio" placeholder="Precio:" value="<%= ps.precio %> ">
                     </div>
                     <div class="inf-basica">
                         <div class="div">
                             <label><i class="fa-solid fa-circle-user"></i> Est.</label>
-                            <input type="text" name="estudiantes" value="<%= ps.estudiantes %> ">
+                            <input id="estudiantesE" type="text" name="estudiantes" value="<%= ps.estudiantes %> ">
                         </div>
                         <div class="div">
                             <label>Lecciones</label>
-                            <input type="text" name="lecciones" value="<%= ps.lecciones %> ">
+                            <input id="leccionesE" type="text" name="lecciones" value="<%= ps.lecciones %> ">
                         </div>
                         <div class="div">
                             <label><i class="fa-regular fa-clock"></i> Horas</label>
-                            <input type="text" name="horas" value="<%= ps.cantidad_horas %> ">
+                            <input id="horasE" type="text" name="horas" value="<%= ps.cantidad_horas %> ">
                         </div>
                         <div class="div">
                             <label><i class="fa-solid fa-star"></i> Punt.</label>
-                            <input type="text" name="puntuacion" value="<%= ps.puntuacion %> ">
+                            <input id="puntuacionE" type="text" name="puntuacion" value="<%= ps.puntuacion %> ">
                         <div>
                     </div>
                 </section>
                 <div class="final">
                     <div class="file">
-                        <input name="img" type="file" required>
+                        <input id="imgE" name="img" type="file">
                     </div>
                     <div class="check-form">
                         <label>Nivel de dificultad:</label>
@@ -62,7 +59,7 @@
                         </select>
                     </div>
                     <div class="form-descrip">
-                        <textarea placeholder="Descripción..." class="descripcion" maxlength="125" name="descripcion" id="" cols="2" rows="5"><%= ps.descripcion %> </textarea>
+                        <textarea id="descripcionE" placeholder="Descripción..." class="descripcion" maxlength="125" name="descripcion" id="" cols="2" rows="5"><%= ps.descripcion %> </textarea>
                     </div>
                     <div class="btn-form">
                         <div class="btn">
@@ -78,5 +75,7 @@
     <%-include('../partials/footer') %>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+        <script src="/js/editar.js"></script>
 </body>
 </html>

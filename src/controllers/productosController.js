@@ -41,7 +41,7 @@ const controlador = {
         curso.push(obj)
       }
 
-      res.render('./products/cursos', {ps:curso, usu:usu, admi:admi});
+      res.render('./products/cursos', {ps:curso, usu:usu, admi:admi, title: 'Cursos'});
     }); 
 
   },
@@ -53,7 +53,7 @@ const controlador = {
            usu =true;
            if(req.session.profile.Rol_id == 1 || req.session.profile.Rol_id == 4){
             admi=true
-            res.render('./products/cargar',{usu:usu , admi:admi});
+            res.render('./products/cargar',{usu:usu , admi:admi, title: 'Cargar Curso'}); 
           }
     }
   },
@@ -115,7 +115,7 @@ const controlador = {
     })
 
   } else {
-      res.render('./products/cargar', {errors: errors.array(), usu:usu , admi:admi} ); 
+      res.render('./products/cargar', {errors: errors.array(), usu :usu , admi :admi, title: 'Cargar Curso'} ); 
   }
   },
 
@@ -128,7 +128,7 @@ const controlador = {
             admi=true
           }
     }
-    res.render('./descargables',{usu:usu, admi:admi});
+    res.render('./descargables',{usu:usu, admi:admi, title: 'Descargables'});
   },
 
   suscripciones: (req, res) => {
@@ -140,7 +140,7 @@ const controlador = {
             admi=true
           }
     }
-    res.render('./suscripciones',{usu:usu, admi:admi});
+    res.render('./suscripciones',{usu:usu, admi:admi, title: 'Suscripciones'});
   },
 
   carrito: (req, res) => {
@@ -152,7 +152,7 @@ const controlador = {
             admi=true
           }
     }
-    res.render('./carrito-compras',{usu:usu, admi:admi});
+    res.render('./carrito-compras',{usu:usu, admi:admi, title: 'Carrito de Compras'});
   },
 
   edit: (req, res) => {
@@ -168,7 +168,7 @@ const controlador = {
     }
 
     db.Curso_dbs.findByPk(idCurso).then((curso)=>{
-      res.render('./products/editar', {ps: curso,usu:usu, admi:admi});
+      res.render('./products/editar', {ps: curso,usu:usu, admi:admi, title: 'Editar Curso'});
     });
 
     
