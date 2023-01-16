@@ -70,4 +70,5 @@ router.get('/registrar-administradores', usuarioController.registrarAdministrado
 router.post('/cargar-admin', uploadfile.single('img'),usuarioController.cargarAdmin);
 router.delete('/eliminarAdmin/:id', usuarioController.eliminarAdmin);
 router.post('/agregar-rol', usuarioController.agreRol);
+
 module.exports = router;

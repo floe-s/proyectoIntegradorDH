@@ -23,11 +23,15 @@
         <div class="cuerpo">
           <section class="info-cards">
             <label><%= i.nombre %> <%= i.apellido %> </label>
-            <% if(admi) {%> 
-            <label>Administrador </label>
-            <% } else { %> 
-              <label>estudiante </label>
-            <% } %> 
+            <% if(i.Rol_id == 1) {%> 
+            <label>Super Administrador</label>
+            <% } else if(i.Rol_id == 2) { %> 
+              <label>Profesor </label>
+            <% } else if(i.Rol_id == 3)  {%> 
+              <label>Estudiante </label>
+              <% } else if(i.Rol_id == 4)  {%> 
+                <label>Administrador </label>
+              <% } %> 
             <p>Email: <%= i.email %> </p>
             <label>Teléfono: <%=   i.telefono%></label>
           </section>

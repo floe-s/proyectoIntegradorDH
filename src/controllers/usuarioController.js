@@ -181,7 +181,42 @@ const controller = {
                 })
             
             }else if(req.session.profile.Rol_id == 3){
+                
                 res.render('users/perfil',{i:req.session.profile, usu:usu, admi:admi});
+            }else if(req.session.profile.Rol_id == 2){
+                db.Curso_dbs.findAll().then(cursos =>{
+                    
+                    let lisCurso = []
+                    for(n of cursos){
+                        let nivel ;
+                        if(n.Nivel_curso_id == 1){
+                            nivel = 'Basico';
+                        }else if(n.Nivel_curso_id == 2){
+                            nivel = 'Intermedio'
+                        }else {
+                            nivel = 'Avanzado'
+                        }
+                        let jet ={
+                            titulo: n.nombre,
+                            imagen: n.imagen,
+                            profesor: n.Profesor_id,
+                            nivel: nivel,
+                            lecciones: n.lecciones,
+                            horas: n.cantidad_horas,
+                            puntuacion: n.puntuacion,
+                            estudiantes: n.estudiantes
+                        }
+
+                        lisCurso.push(jet)
+                    }
+                    
+                    let misCursos = lisCurso.filter(ele =>{
+                        return req.session.profile.id == ele.profesor;
+                    });
+
+                    
+                    res.render('users/vistaProfesores',{i:req.session.profile, usu:usu, admi:admi, cursos:misCursos});
+                })
             }
         }else {
             delete req.session.profile;

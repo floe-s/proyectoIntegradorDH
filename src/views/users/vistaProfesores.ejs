@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <%-include('../partials/head') %> 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="/css/perfil.css">
+    <link rel="stylesheet" href="/css/vistaProfesor.css">
+    <title>Perfil</title>
+  </head>
+
+<body class="body">
+  
+  <%-include('../partials/header') %>
+
+<main>
+  <div class="marco">
+    <%- include('../partials/navPerfil.ejs') %> 
+    <div class="right">
+     <section class="contenido ">
+      <div class="cabecera-profe">
+        <label>Lista de cursos</label>
+      </div>
+      <div class="contenido-cursos">
+        <% for(n of cursos) {%> 
+        <section class="vista-curso">
+          <div class="img-curso">
+            <img src="/img/paises/<%= n.imagen %> ">
+            <label><%= n.titulo %> </label>
+          </div>
+          <div class="cursos">
+            <label>Nivel: <%= n.nivel %> </label>
+            <label>Estudiantes: <%= n.estudiantes %> </label>
+            <label>lecciones: <%= n.lecciones %> </label>
+            <label>Horas: <%= n.horas%> </label>
+            <label>Puntuacion: <%= n.puntuacion%> </label>
+            <button>Ver</button>
+          </div>
+        </section>
+        <% } %> 
+      </div>
+     </section>
+    </div>
+  </div>
+</main>
+  <%-include('../partials/footer') %>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="/js/swper.js"></script>

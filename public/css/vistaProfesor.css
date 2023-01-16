@@ -1,0 +1,94 @@
+.contenido{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: scroll;
+}
+
+.cabecera-profe{
+    width: 80%;
+    height: 30px;
+    text-align: center;
+    margin-top: 20px;
+    background-image: linear-gradient(to right, #ff8177 0%, #ff867a 0%, #ff8c7f 21%, #f99185 52%, #cf556c 78%, #b12a5b 100%);
+    color: white;
+    padding-top: 3px;
+    border-radius: 4px;
+}
+
+.contenido-cursos{
+    margin-top: 30px;
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.vista-curso{
+    width: 210PX;
+    margin-right: 20px;
+    height: 189px;
+    box-shadow: 0PX 0PX 10PX rgba(0, 0, 0, 0.329);
+    margin-bottom: 40px;
+    border-radius: 20px;
+    transition: all 800ms ease-out;
+}
+
+.img-curso {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+} 
+
+.img-curso > img {
+    width: 100%;
+    height: 150px;
+    border-radius: 20px 20px 0px 0px;
+}
+
+.img-curso > label{
+    align-self: center;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    text-transform: capitalize;
+    font-size: 20px;
+}
+
+.cursos{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    opacity: 0;
+}
+
+.cursos > label{
+    margin-bottom: 5px;
+    text-transform: capitalize;
+}
+
+.cursos > button{
+    width: 80%;
+    border: none;
+    background-image: linear-gradient(to right, #ff8177 0%, #ff867a 0%, #ff8c7f 21%, #f99185 52%, #cf556c 78%, #b12a5b 100%);
+    color: white;
+    align-self: center;
+    border-radius: 5px;
+}
+
+.vista-curso:hover {
+    transition: all 500ms ease;
+    background-color: rgba(255, 255, 255, 0.822);
+    height: 370px;
+}
+
+.vista-curso:hover  .cursos {
+    transition: all 2000ms ease;
+    opacity: 1;
+}
+
+.vista-curso:hover  .cursos > label{
+    transition: all 2000ms ease;
+    margin-left: 50px;
+}
