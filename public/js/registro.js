@@ -12,6 +12,12 @@ fReg.addEventListener("submit", function(event) {
 
   if(n == "" || a == "" || t == "" || e == "" || c == "") {
 
+      let i = document.getElementById("file").value;
+      if(i == "") {
+        alert("Recorda adjuntar tu imagen de perfil");
+        return;
+      }
+
     alert("Completar los campos vacios");
     return;
   } else {
@@ -29,19 +35,6 @@ fReg.addEventListener("submit", function(event) {
 
 });
 
-//Validacion para carga de imagen de perfil
-fReg.addEventListener("submit", function(event) {
-  event.preventDefault();
-
-  let i = document.getElementById("file").value;
-  if(i == "") {
-    alert("Recorda adjuntar tu imagen de perfil");
-    return;
-  }
-
-  fReg.submit();
-
-});
 
 
 
