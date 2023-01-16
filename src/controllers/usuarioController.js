@@ -212,7 +212,7 @@ const controller = {
                     });
 
                     
-                    res.render('users/vistaProfesores',{i:req.session.profile, usu:usu, admi:admi, cursos:misCursos});
+                    res.render('users/vistaProfesores',{i:req.session.profile, usu:usu, admi:admi, cursos:misCursos, title: 'Perfil - Profesor'});
                 })
             }
 
