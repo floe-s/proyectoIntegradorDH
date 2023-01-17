@@ -27,26 +27,30 @@
           <section class="setion">
             <div class="contenido-cursos">
               <figure class="img-cursos">
-                <img src="/img/paises/<%= curso.imagen%> ">
+                <img  id="imagenCurso" src="/img/paises/<%= curso.imagen%> ">
               </figure>
 
               <section class="descripcion-cursos">
                 <div class="titulo-curso">
-                  <h2><%= curso.nombre %> </h2>
+                  <label style="display: none;" class="id"><%= curso.id %> </label>
+                  <h2 class="nombreProducto"><%= curso.nombre %> </h2>
                 </div>
                 <div class="estudiantes">
                   <label><i class="fa-solid fa-circle-user"></i> <%= curso.estudiantes%> Estudiantes</label>
                 </div>
                 <div class="info-precios">
                   <div>
-                    <img src="/img/iconCurso/<%= curso.img_nivel%>">
-                    <label><%= curso.Nivel_curso_id  %></label>
+                    <img  src="/img/iconCurso/<%= curso.img_nivel%>">
+                    <label class="nivelCurso"><%= curso.Nivel_curso_id  %></label>
                   </div>
-                    <label>$<%= curso.precio %></label>
+                    <label>
+                      $
+                      <label class="precioCurso"><%= curso.precio %></label>
+                    </label>
                 </div>
                 <div class="profesor">
                   <label>Profesor/a:</label>
-                  <label><%= curso.Profesor_id %></label>
+                  <label class="profeCurso"><%= curso.Profesor_id %></label>
                 </div> 
                 <section class="horas-curso">
                   <div class="horas">
@@ -71,7 +75,7 @@
                     <button id="eliminar" class="buttom" type="submit"><i class="fa-solid fa-trash"></i></button>
                   </form>
                   <% } %> 
-                  <a  id="btn-curso" href="#">Agregar</a>
+                  <a href="/producto/carrito-compras" style="cursor: pointer;" id="btn-curso"   class="agreBtn  <%= curso.id %>">Agregar</a>
                   <div class="small-des">
                     <label for="<%= curso.imagen %>" class="plus"><i class="fa-solid fa-plus"></i></label>
                   </div>
@@ -89,7 +93,7 @@
     </main>
 
     <%-include('../partials/footer') %>
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/carrito.js"></script>
 </body>
 </html>

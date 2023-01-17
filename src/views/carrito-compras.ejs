@@ -15,8 +15,8 @@
       <h1 class="title"><%= title %></h1>
     <div href="/" class="carrito-img" href=""></div>
     </div>
-      <div class="container-products">
-          <div class="object1">
+      <div id="principal" class="container-products">
+          <!-- <div class="object1">
               <div class="trash-obj1"></div>
               <div class="logo-obj1"></div>
               <div class="info">
@@ -25,60 +25,32 @@
                 <div class="p">Profesor/a: Jon Snow</div>
                 <div class="price">$2.400.00</div>
               </div>  
-            </div>
-
-          <div class="object2">
-              <div class="trash-obj2"></div>
-              <div class="logo-obj2"></div>
-              <div class="info2">
-                <div class="c2">Curso de Portugués</div>
-                <div class="n2">Nivel Avanzado</div>
-                <div class="p2">Profesor/a: Ruy Da Silva</div>
-                <div class="price2">$6.800.00</div>
-              </div>
-          </div>
-          <div class="object3">
-            <div class="trash-obj3"></div>
-            <div class="logo-obj3"></div>
-            <div class="info">
-              <div class="c3">Curso de Alemán</div>
-              <div class="n3">Nivel Intermedio</div>
-              <div class="p3">Profesor/a: Georgina Weisman</div>
-              <div class="price3">$8.500.00</div>
-            </div>  
-          </div>
-          <div class="object4">
-            <div class="trash-obj4"></div>
-            <div class="logo-obj4"></div>
-            <div class="info">
-              <div class="c4">Curso de Español</div>
-              <div class="n4">Nivel Básico</div>
-              <div class="p4">Profesor/a: Letizia Villegas</div>
-              <div class="price4">$6.500.00</div>
-            </div>  
-          </div>
+            </div> -->
       </div>
     <div class="cont-tot">
       <div class="totals">
     <ul class="totals-list">
       <li>Subtotal </li>
-      <li>$24.200,00</li>
+      <li id="sub">$24.200,00</li>
       <li>Total</li>
-      <li>$24.200,00</li>
+      <li id="total">$24.200,00</li>
     </ul>
     </div>
     </div>
 
     <div class="cont-butt">
       <a class="cuotas">O hasta 6 cuotas de $4.033,33</a>
-    <button class="comprar" type="button" placeholder="Comprar">Comprar</button>
+      <div>
+        <button class="comprar" type="button" placeholder="Comprar">Comprar</button>
+        <a href="/producto/carrito-compras" id="vaciar" class="comprar">Vaciar</a>
+      </div>
     </div>
   </div>
 </div>
 </main>
 
 <%- include('partials/footer') %> 
-
+<script src="/js/carrito.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
