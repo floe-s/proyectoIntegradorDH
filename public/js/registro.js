@@ -10,9 +10,10 @@ fReg.addEventListener("submit", function(event) {
   let c = document.getElementById("contrasena").value;
 
 
-  if(n == "" || a == "" || t == "" || e == "" || c == "") {
+  if((n == "") || (a == "") || (t == "") || (e == "") || (c == "")) {
 
       let i = document.getElementById("file").value;
+      
       if(i == "") {
         alert("Recorda adjuntar tu imagen de perfil");
         return;
@@ -35,8 +36,11 @@ fReg.addEventListener("submit", function(event) {
 
 });
 
-
-
-
-
+/* n.addEventListener('click' , function () {
+  let n = document.getElementById("nombre").value;
+  if ((n = "") && (!n.match(/^[A-Za-z]+$/)) ){
+    alert("Completar los campos de forma correcta");
+    return;
+  }
+}); */
 

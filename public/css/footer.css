@@ -10,7 +10,7 @@
 #floating-button:hover {
   box-shadow: 0 2px 3px 0 rgb(60 64 67 / 16%), 0 1px 5px 2px rgb(60 64 67 / 32%);
 }
-#floating-button.right {
+#floating-button.rights {
   left: 20px;
 }
 #floating-button {

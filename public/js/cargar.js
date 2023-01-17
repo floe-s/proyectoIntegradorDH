@@ -13,7 +13,7 @@ fCar.addEventListener("submit", function(event) {
   let d = document.getElementById("descripcion").value;
 
 
-  if(t == "" || prof == "" || p == "" || e == "" || l == "" || h == "" || punt == "" || d == "") {
+  if((t == "") || (prof == "") || (p == "") || (e == "") || (l == "") || (h == "") || (punt == "") || (d == "")) {
 
       let i = document.getElementById("imgProduct").value;
       if(i == "") {

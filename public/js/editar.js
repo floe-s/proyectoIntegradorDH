@@ -13,7 +13,7 @@ fEdit.addEventListener("submit", function(event) {
   let d = document.getElementById("descripcionE").value;
 
 
-  if(t == "" || prof == "" || p == "" || e == "" || l == "" || h == "" || punt == "" || d == "") {
+  if((t == "") || (prof == "") || (p == "") || (e == "") || (l == "") || (h == "") || (punt == "") || (d == "")) {
       let i = document.getElementById("imgE").value;
       if(i == "") {
         alert("Recorda adjuntar una imagen");

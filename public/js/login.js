@@ -6,9 +6,9 @@ fLog.addEventListener("submit", function(event) {
   let e = document.getElementById("email").value;
   let p = document.getElementById("password").value;
 
-  if(e == "" || p == "") {
+  if((e == "") || (p == "") || (!e.includes("@"))) {
 
-    alert("Completar los campos vacios");
+    alert("Completar los campos correctamente");
     return;
   } 
 
