@@ -20,11 +20,22 @@ for(let i = 0; i < nombre.length; i++){
     list.push(productos);
 }
 
+
+
 let botones = document.querySelectorAll('.agreBtn');
 botones.forEach(boton =>{
     boton.addEventListener("click", function(){
         let carritoN = [];
-        if(carritoN == false){
+        
+        if(carritoN ==  1){
+            let ides = parseInt(boton.classList[1]);
+            let agregarProduct = list.filter(element =>{
+                return element.id == ides;
+            })
+            carritoN.push(agregarProduct)
+            localStorage.setItem('carrito', JSON.stringify(carritoN));
+        }else {
+            carritoN = JSON.parse(localStorage.getItem('carrito'));
             let ides = parseInt(boton.classList[1]);
             let agregarProduct = list.find(element =>{
                 return element.id == ides;
@@ -38,33 +49,15 @@ botones.forEach(boton =>{
             }else if (ex.id == ides){
                 alert('ya esta el curso en el carrito');
             }
-         
-            localStorage.setItem('carrito', JSON.stringify(carritoN));
-        }else {
-            carritoN = JSON.parse(localStorage.getItem('carrito'));
-            let ides = parseInt(boton.classList[1]);
-            let agregarProduct = list.find(element =>{
-                return element.id == ides;
-            })
-
-            let ex = carritoN.find(element =>{
-                return element.id == ides;
-            })
-            if( ex == undefined){
-                carritoN.push(agregarProduct);
-            }else if (ex.id == ides){
-                alert('ya esta el curso en el carrito');
-            }
-        
-        
-
             localStorage.setItem('carrito', JSON.stringify(carritoN));
         }
+ 
+        
+    
+        
     })
 });
 // carrito ;
-carritoN = JSON.parse(localStorage.getItem('carrito'));
-console.log(carritoN.length);
 
 for(let i = 0; i < carritoN.length; i++){
     let divCont = document.createElement("div");
@@ -104,6 +97,4 @@ vacirCarrito.addEventListener("click", function(){
     carritoN = JSON.parse(localStorage.getItem('carrito'));
     localStorage.clear()
 });
-
-// suma  de los cursos
 
