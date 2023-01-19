@@ -253,6 +253,7 @@ const controller = {
             res.redirect('/')
         }
     },
+
     editar:(req,res) => {
     
     let usu = false

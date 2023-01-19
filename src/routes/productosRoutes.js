@@ -40,6 +40,8 @@ let validaciones = [
 //rutas especificas
 router.get('/cursos', productosController.cursos); // Se dirige a ese controlador
 
+router.get('/buscar',productosController.buscar); // Buscador del navbar
+
 router.get('/descargables', productosController.descargables);
 
 router.get('/suscripciones', productosController.suscripciones);

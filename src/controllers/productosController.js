@@ -119,6 +119,13 @@ const controlador = {
   }
   },
 
+  buscar: (req, res) => {
+    let buscador = req.query.search;
+    res.send(buscador);
+
+    /* res.render('./products/resultados', {title: 'Busqueda'}); */
+  },
+
   descargables: (req, res) => {
     let usu=false;
     let admi = false;

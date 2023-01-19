@@ -56,10 +56,8 @@ router.get('/vista-perfil',usuarioController.vistaPerfil );
 router.get('/datosUsuario', usuarioController.vistaDatos);
 router.get('/ayuda', usuarioController.visataAyuda);
 
-
 router.get('/editar-usuario', usuarioController.editar);
 router.post('/editar-usuarios',/* uploadfile.single('img'),  validacionUsu, */ usuarioController.update);
-
 
 router.post('/salir/:id', usuarioController.salir);
 router.get('/cargarProfesro', usuarioController.cargarProf);
