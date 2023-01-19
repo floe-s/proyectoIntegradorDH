@@ -84,10 +84,10 @@ botones.forEach(boton =>{
             text: "Se agrego  a tu carrito de compras",
             showConfirmButton: false,
             icon: 'info',
-            width: '300px',
+            width: '400px',
             padding: "1rem",
-            backdrop: true,
-            timer:1500,
+            backdrop: false,
+            timer:2000,
             toast: true,
             position: "bottom-end",
         })
@@ -99,7 +99,7 @@ botones.forEach(boton =>{
 
         setTimeout(()=>{
             location.reload();
-        },1500)
+        },2000)
     })  
 });
 

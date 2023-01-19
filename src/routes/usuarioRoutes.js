@@ -22,7 +22,6 @@ const configuracionImg = multer.diskStorage({
 const uploadfile = multer({storage:configuracionImg});
 const validacionRegistro = require('../middleware/validacionRegistro');
 const validacionLogin = require('../middleware/validacionLogin');
-const { randomBytes } = require('crypto');
 
 // Validation
 let validacionReg = [
