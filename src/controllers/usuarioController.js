@@ -166,7 +166,8 @@ const controller = {
                                 enviar.push(obj);
                             }
                             let roli;
-                            res.render('users/vista-admin',{i:req.session.profile, usu: usu, admi: admi, list: enviar, title: 'Perfil Administrador', titulo: roli});
+                            let cant = enviar.length
+                            res.render('users/vista-admin',{i:req.session.profile, usu: usu, admi: admi, list: enviar, title: 'Perfil Administrador', titulo: roli,cantidad:cant});
                         })
                         
                     }else if(req.session.profile.Rol_id == 4){
@@ -492,8 +493,9 @@ const controller = {
             }else{
                 roli = "Administrador"
             }
-     
-            res.render('users/vista-admin',{i:req.session.profile, usu: usu, admi: admi, list: listFiltRol, title: 'Perfil Administrador', titulo: roli});
+            let cant = listFiltRol.length
+            
+            res.render('users/vista-admin',{i:req.session.profile, usu: usu, admi: admi, list: listFiltRol, title: 'Perfil Administrador', titulo: roli, cantidad: cant});
         })
     }
     
