@@ -14,8 +14,9 @@
 <main>
   <div class="marco">
     <%- include('../partials/navPerfil.ejs') %> 
-    <section class="admin-right">
+    <section class="admin-right c">
       <div class="list-admin">
+        <a class="btn-todos" href="/usuario/vista-perfil"><i class="fa-solid fa-filter-circle-xmark"></i></a>
         <label class="cantidad">Cantida: <%= cantidad %> </label>
         <input style="display: none;" id="menuFiltro" type="checkbox">
         <section class="cabecera-admin">
@@ -33,7 +34,7 @@
             <label class="boton-fil 2"  for="profesores">Profesores</label>
             <input name="roles" value="3" id="estudiantes" type="radio">
             <label class="boton-fil 3" for="estudiantes">Estudiante</label>
-            <button type="submit" class="btn-fil">Filtrar</button>
+            <button type="submit" class="btn-fil"><i class="fa-solid fa-filter"></i>Filtrar</button>
           </form>
 
         </section>

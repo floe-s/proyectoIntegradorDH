@@ -41,6 +41,9 @@
     flex-direction: column;
     width: 80%;
     margin: auto;
+    padding-top: 50px;
+    padding-bottom: 30px;
+    
 }
 
 .tabla-info{
@@ -137,12 +140,12 @@
 
 .filtrar > label{
     cursor: pointer;
+    border-radius: 7px;
 }
 .filtrar > label:hover{
     transition: all 500ms ease !important;
-    background-image: linear-gradient(to right, #ff8177 0%, #ff867a 0%, #ff8c7f 21%, #f99185 52%, #cf556c 78%, #b12a5b 100%);
+    background: #ff867a ;
     color: white;
-    border-radius: 5px;
     transform: scale(1.05);
     padding: 5px;
 }
@@ -198,14 +201,18 @@
     background-color: #4481eb;
     right: 50px;
     color: white;
+    transition: all 500ms ease;
+}
 
+.despliegue:hover{
+    
+    transform: scale(1.1);
 }
 
 #administrador:checked + .boton-fil{
     transition: all 500ms ease !important;
-    background-image: linear-gradient(to right, #ff8177 0%, #ff867a 0%, #ff8c7f 21%, #f99185 52%, #cf556c 78%, #b12a5b 100%);
+    background: #ff867a ;
     color: white;
-    border-radius: 5px;
     transform: scale(1.05);
     padding: 5px;
     
@@ -213,9 +220,8 @@
 
 #profesores:checked + .boton-fil{
     transition: all 500ms ease !important;
-    background-image: linear-gradient(to right, #ff8177 0%, #ff867a 0%, #ff8c7f 21%, #f99185 52%, #cf556c 78%, #b12a5b 100%);
+    background: #ff867a ;
     color: white;
-    border-radius: 5px;
     transform: scale(1.05);
     padding: 5px;
     
@@ -223,13 +229,14 @@
 
 #estudiantes:checked + .boton-fil{
     transition: all 500ms ease !important;
-    background-image: linear-gradient(to right, #ff8177 0%, #ff867a 0%, #ff8c7f 21%, #f99185 52%, #cf556c 78%, #b12a5b 100%);
+    background: #ff867a ;
     color: white;
-    border-radius: 5px;
     transform: scale(1.05);
     padding: 5px;
 }
 .btn-fil{
+    display: flex;
+    justify-content: space-around;
     position: relative;
     padding: 5px;
     border: none;
@@ -237,9 +244,12 @@
     width: 80px;
     margin-right: -14px;
     border-radius: 5px;
-    background-color: aliceblue;
+    background-color: #4481eb;
+    color: white;
 }
-
+.btn-fil> i{
+    margin-top: 3px;
+}
 .btn-fil:hover{
     background-color: rgb(158, 204, 245);
     transform: scale(1.1);
@@ -251,19 +261,39 @@
     background-color: rgb(158, 204, 245);
     padding: 5px;
     border-radius: 10px;
-    top: 80px;
-    left: 3px;
+    top: 70px;
+    left: 170px;
 
 }
+.btn-todos{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    text-decoration: none;
+    width: 60px;
+    height: 35px;
+    background-color: #4481eb;
+    color: white;
+    border-radius: 10px;
+    top: 70px;
+    left: 90px;
+    transition: all 500ms ease;
+}
+
+.btn-todos:hover{
+    color: white;
+    transform: scale(1.05);
+}
+
 @media (max-width: 1300px){
 
     .list-admin{
         overflow-x: scroll;
     }
-    .cabecera-admin > label{
-        
-        margin-left: 70px;
-        width: 718px;
+    .cabecera-admin  {
+        position: relative;
+        width: 873px;
         
     }
 
@@ -271,7 +301,16 @@
         width: 718px;
     }
 }
+@media (max-width: 800px){
+    .list-admin{
+        width: 100%;
+    }
+    .c{
+        width: 90%;
+        border-radius: 0px 20px 20px 0px;
+    }
 
+}
 
 
 

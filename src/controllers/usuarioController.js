@@ -165,6 +165,10 @@ const controller = {
                                 
                                 enviar.push(obj);
                             }
+
+                            enviar = enviar.filter(ele =>{
+                                return ele.rol !=1
+                            })
                             let roli;
                             let cant = enviar.length
                             res.render('users/vista-admin',{i:req.session.profile, usu: usu, admi: admi, list: enviar, title: 'Perfil Administrador', titulo: roli,cantidad:cant});
