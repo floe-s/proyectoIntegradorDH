@@ -151,11 +151,9 @@ const controller = {
                             
                             
                             let enviar = [];
-                            console.log()
-                            let listAdmi = usu.filter(ele => {
-                                return ele.Rol_id == 4;
-                            });
-                            for(g of listAdmi){
+                            
+                          
+                            for(g of usu){
                                 let obj = {
                                     id: g.id,
                                     nombre: g.nombre,
@@ -167,8 +165,8 @@ const controller = {
                                 
                                 enviar.push(obj);
                             }
-
-                            res.render('users/vista-admin',{i:req.session.profile, usu: usu, admi: admi, list: enviar, title: 'Perfil Administrador'});
+                            let roli;
+                            res.render('users/vista-admin',{i:req.session.profile, usu: usu, admi: admi, list: enviar, title: 'Perfil Administrador', titulo: roli});
                         })
                         
                     }else if(req.session.profile.Rol_id == 4){
@@ -450,7 +448,55 @@ const controller = {
         }).then(()=>{
             res.redirect('/usuario/registrar-administradores');
         })
+    },
+
+    filtrar:(req,res)=>{
+        let usu=false;
+        let admi = false;
+        if(req.session.profile){
+               usu =true;
+               if(req.session.profile.Rol_id == 1 || req.session.profile.Rol_id == 4){
+                admi=true
+              }
+        }
+
+        db.Usuario_dbs.findAll().then((ca) => {
+                            
+                            
+            let enviar = [];
+            
+          
+            for(g of ca){
+                
+                let obj = {
+                    id: g.id,
+                    nombre: g.nombre,
+                    apellido: g.apellido,
+                    rol: g.Rol_id,
+                    email: g.email,
+                    imagen: g.imagen,
+                }
+                
+                enviar.push(obj);
+            }
+            let ides = req.body.roles;
+            let listFiltRol = enviar.filter(elemento =>{
+                return elemento.rol == parseInt(ides);
+            })
+            let roli ;
+            console.log(ides)
+            if(ides == 2){
+                roli = "Profesores"
+            }else if( ides == 3){
+                roli = "Estudiantes"
+            }else{
+                roli = "Administrador"
+            }
+     
+            res.render('users/vista-admin',{i:req.session.profile, usu: usu, admi: admi, list: listFiltRol, title: 'Perfil Administrador', titulo: roli});
+        })
     }
+    
 }
 
 

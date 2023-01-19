@@ -16,8 +16,26 @@
     <%- include('../partials/navPerfil.ejs') %> 
     <section class="admin-right">
       <div class="list-admin">
+        
+        <input style="display: none;" id="menuFiltro" type="checkbox">
         <section class="cabecera-admin">
-          <label class="ti">Lista de Administradores</label>
+          <% if(titulo) {%> 
+            <label class="ti">Lista de <%= titulo%> </label>
+          <% } else { %> 
+            <label class="ti">Lista de Usuarios </label>
+          <% } %> 
+          <label class="despliegue" for="menuFiltro"><i class="fa-solid fa-gear"></i></label>
+
+          <form class="filtrar" action="/usuario/filtrar" method="POST">
+            <input name="roles" value="4" id="administrador" type="radio">
+            <label class="boton-fil 1" for="administrador">Administradores</label>
+            <input name="roles" value="2" id="profesores" type="radio">
+            <label class="boton-fil 2"  for="profesores">Profesores</label>
+            <input name="roles" value="3" id="estudiantes" type="radio">
+            <label class="boton-fil 3" for="estudiantes">Estudiante</label>
+            <button type="submit" class="btn-fil">Filtrar</button>
+          </form>
+
         </section>
         <section class="contenido-admin">
 
@@ -41,4 +59,5 @@
   <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
   <script src="/js/swper.js"></script>
+
 </html>
