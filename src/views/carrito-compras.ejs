@@ -4,7 +4,7 @@
   <%-include('partials/head') %> 
   <link rel="stylesheet" href="/css/carrito-compras.css">
 </head>
-<body class="body">
+<body id="body" class="body">
 
   <%-include('partials/header') %>
   
@@ -31,15 +31,15 @@
       <div class="totals">
     <ul class="totals-list">
       <li>Subtotal </li>
-      <li id="sub">$24.200,00</li>
+      <li id="sub">$0</li>
       <li>Total</li>
-      <li id="total">$24.200,00</li>
+      <li id="total">$0</li>
     </ul>
     </div>
     </div>
 
     <div class="cont-butt">
-      <a class="cuotas">O hasta 6 cuotas de $4.033,33</a>
+      <a class="cuotas">O hasta 6 cuotas de <label id="cuotas">$0</label></a>
       <div>
         <button class="comprar" type="button" placeholder="Comprar">Comprar</button>
         <a href="/producto/carrito-compras" id="vaciar" class="comprar">Vaciar</a>
@@ -50,7 +50,6 @@
 </main>
 
 <%- include('partials/footer') %> 
-<script src="/js/carrito.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
