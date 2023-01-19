@@ -19,33 +19,33 @@
           <label for="virtual" class="virtual"><i class="fa-solid fa-video"></i>Cursos Virtual</label>
           <label for="presencial" class="precencial"><i class="fa-solid fa-school"></i>Cursos Presencial</label>
         </div>
-        <input id="virtual" name="clases" type="radio" >
+        <input id="virtual" name="clases" type="radio" checked>
         <div class="cont-virtual">
-          <!-- < % for(let c of cursoVirtual) { %>  -->
-            <!-- <div class="clases-virtuales">  -->
-              <img src=""> <!-- < %= c.img % >  -->
-              <!-- <div class="info-virtual"> -->
-                <h3><!-- < %= c.titulo %>  --></h3>
-                <label><!--  < %= c.profesor %> --> </label>
-                <!-- <span> < %= c.nivel %> -</span> -->
-                <!-- <a href="#">Ver curso</a> -->
+          <% for(let c of cursoVirtual) { %>   
+            <div class="clases-virtuales"> 
+              <img src="/img/paises/<%= c.img %>"> 
+              <div class="info-virtual"> 
+                <h3><%= c.titulo %></h3>
+                <label> <%= c.profesor %> </label>
+                <span> <%= c.nivel %> </span> 
+                <a href="#">Ver curso</a>
               </div>
             </div>
-          <!-- < % } %>  -->
+          <% } %> 
         </div>
-        <input id="presencial" type="radio" name="clases" checked>
+        <input id="presencial" type="radio" name="clases" >
         <div class="cont-presencial"> 
-          <!-- < % for(let b of cursosPre) { %>  -->
-            <!-- <div id="cls-pre" class="clases-virtuales">
-              <img src="">  < %=b.img %>  
+          <% for(let b of cursosPre) { %>  
+            <div id="cls-pre" class="clases-virtuales">
+              <img src="/img/paises/<%= b.img %>">
               <div class="info-virtual">
-                <h3>< %= b.titulo %>  </h3> -->
-                <label> <!-- < %= b.profesor %> --> </label>
-                <span>   <!-- < %= b.nivel %>  --></span>
-                <!-- <a href="#">Ver curso</a> -->
+                <h3><%= b.titulo %>  </h3> 
+                <label> <%= b.profesor %>  </label>
+                <span>   <%= b.nivel %>  </span>
+                <a href="#">Ver curso</a> 
               </div>
             </div>
-          <!-- < % } %>  -->
+          <% } %>  
         </div>
       </section>
     </div>

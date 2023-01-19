@@ -179,7 +179,40 @@ const controller = {
                 })
             
             }else if(req.session.profile.Rol_id == 3){
-                res.render('users/perfil',{i: req.session.profile, usu: usu, admi: admi, title: 'Perfil'});
+
+                db.Curso_dbs.findAll({include:[{association: 'usuario_Profe'},{association: 'nivel_curso'}]}).then((courses)=>{
+                    let clase;
+                    let listadoCursos = [];
+                    for(g of courses){
+                        let profesor = g.usuario_Profe.nombre + ' ' + g.usuario_Profe.apellido;
+
+                        if(g.id%2 == 0){
+                            clase = "virtual"
+                        }else {
+                            clase = "precensial"
+                        }
+                        let cur ={
+                            titulo: g.nombre,
+                            profesor: profesor,
+                            nivel: g.nivel_curso.nombre,
+                            img: g.imagen,
+                            clase: clase
+
+                        }
+
+                        listadoCursos.push(cur);
+
+                    }
+                    let virtual = listadoCursos.filter(c =>{
+                        return c.clase == "virtual"
+                    })
+
+                    let precensial = listadoCursos.filter(p =>{
+                        return p.clase == "precensial"
+                    })
+                    res.render('users/perfil',{i: req.session.profile, usu: usu, admi: admi, title: 'Perfil',cursosPre: precensial,cursoVirtual:virtual });
+                })
+    
             }else if(req.session.profile.Rol_id == 2){
                 db.Curso_dbs.findAll().then(cursos =>{
                     
