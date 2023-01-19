@@ -61,7 +61,7 @@ height: 100%;
   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.338);
   -webkit-backdrop-filter: blur(5px);
   backdrop-filter: blur(5px);
-  border-radius: 20px;
+  border-radius: 15px;
   padding: 5px;
   margin-bottom: 20px;
 
@@ -70,8 +70,8 @@ height: 100%;
 
 
 .logo-obj1{
-  width: 190px;
-  height: 160px;
+  width: 40%;
+  height: 100;
   border-radius: 5px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.555);
   background-repeat: no-repeat;
@@ -93,7 +93,6 @@ height: 100%;
   height: auto;
   width: 60%;
   padding-left: 8%;
-  font-size: 14px;
 }
 
 .c{
@@ -191,14 +190,14 @@ width: 100%;
   margin-top: 20px;
   width: 70%;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 .comprar {
-width: 100px;
+width: 45%;
 padding: 5px;
 border: solid 1px white;
-border-radius: 20px;
-background-color: #a74b61;
+border-radius: 10px;
+background-image: linear-gradient(to right, #ff8177 0%, #ff867a 0%, #ff8c7f 21%, #f99185 52%, #cf556c 78%, #b12a5b 100%);
 color: #fff;
 margin-top: 10px;
 }
