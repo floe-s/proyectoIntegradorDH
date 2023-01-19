@@ -14,22 +14,26 @@
 }
 
 .cabecera-admin{
+    margin: auto;
     display: flex;
     width: 100%;
     height: 30px;
     margin-top: 20px;
+    transition: all 1000ms ease;
 }
 
-.cabecera-admin >  label{
+.cabecera-admin >  .ti{
+    margin-left: 50px;
     margin: auto;
     margin-bottom: 20px;
     border-radius: 5px;
-    width: 80%;
+    width: 40%;
     background-image: linear-gradient(to right, #ff8177 0%, #ff867a 0%, #ff8c7f 21%, #f99185 52%, #cf556c 78%, #b12a5b 100%);
     color: white;
     height: 100%;
     text-align: center;
     padding-top: 3px;
+    transition: all 1000ms ease;
 }
 
 .contenido-admin{
@@ -112,7 +116,145 @@
 .eliminar > button:hover{
     transform: scale(1.04);
 }
+.filtrar{
+    position: relative;
+    transition: all 1000ms ease;
+    width: 30%;
+    transform: translateX(-500px);
+    opacity: 0;
+    display: flex;
+    z-index: -10;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.548);
+    backdrop-filter: blur(15px);
+    
+}
 
+
+
+
+.filtrar > label{
+    cursor: pointer;
+}
+.filtrar > label:hover{
+    transition: all 500ms ease !important;
+    background-image: linear-gradient(to right, #ff8177 0%, #ff867a 0%, #ff8c7f 21%, #f99185 52%, #cf556c 78%, #b12a5b 100%);
+    color: white;
+    border-radius: 5px;
+    transform: scale(1.05);
+    padding: 5px;
+}
+
+
+
+.filtrar > label, input,div, .btn-fil{
+    opacity: 0;
+}
+
+#menuFiltro:checked + .cabecera-admin > .filtrar > label,input,div{
+    transition: all 200ms ease;
+    opacity: 1;
+    z-index: 10;
+}
+
+#menuFiltro:checked + .cabecera-admin > .filtrar > .btn-fil{
+    transition: all 2000ms ease;
+    opacity: 1;
+}
+
+.filtrar > input{
+    display: none;
+}
+
+
+
+
+#menuFiltro:checked + .cabecera-admin > .filtrar{
+    transition: all 2000ms ease;
+    transform: translateX(-150px);
+    width: 50%;
+    opacity: 1;
+    z-index: 10;
+}
+
+#menuFiltro:checked + .cabecera-admin > .ti{
+    transition: all 2000ms ease;
+    width: 25%;
+    margin-left: 50px;
+}
+
+
+.despliegue{
+    cursor: pointer;
+    border-radius: 10px;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 30px;
+    background-color: #4481eb;
+    right: 50px;
+    color: white;
+
+}
+
+#administrador:checked + .boton-fil{
+    transition: all 500ms ease !important;
+    background-image: linear-gradient(to right, #ff8177 0%, #ff867a 0%, #ff8c7f 21%, #f99185 52%, #cf556c 78%, #b12a5b 100%);
+    color: white;
+    border-radius: 5px;
+    transform: scale(1.05);
+    padding: 5px;
+    
+}
+
+#profesores:checked + .boton-fil{
+    transition: all 500ms ease !important;
+    background-image: linear-gradient(to right, #ff8177 0%, #ff867a 0%, #ff8c7f 21%, #f99185 52%, #cf556c 78%, #b12a5b 100%);
+    color: white;
+    border-radius: 5px;
+    transform: scale(1.05);
+    padding: 5px;
+    
+}
+
+#estudiantes:checked + .boton-fil{
+    transition: all 500ms ease !important;
+    background-image: linear-gradient(to right, #ff8177 0%, #ff867a 0%, #ff8c7f 21%, #f99185 52%, #cf556c 78%, #b12a5b 100%);
+    color: white;
+    border-radius: 5px;
+    transform: scale(1.05);
+    padding: 5px;
+}
+.btn-fil{
+    position: relative;
+    padding: 5px;
+    border: none;
+    height: 100%;
+    width: 80px;
+    margin-right: -14px;
+    border-radius: 5px;
+    background-color: aliceblue;
+}
+
+.btn-fil:hover{
+    background-color: rgb(158, 204, 245);
+    transform: scale(1.1);
+
+}
+
+.cantidad{
+    position: absolute;
+    background-color: rgb(158, 204, 245);
+    padding: 5px;
+    border-radius: 10px;
+    top: 80px;
+    left: 3px;
+
+}
 @media (max-width: 1300px){
 
     .list-admin{
