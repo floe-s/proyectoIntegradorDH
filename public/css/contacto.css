@@ -234,6 +234,21 @@ main{
   }
 }
 
+@media (max-width: 1650px){
+  .contacto-form{
+    width: 70%;
+  }
+
+  .contacto-nombres{
+    width: 100%;
+  }
+
+  .contacto-email > i{
+    left: 40px;
+  }
+}
+
+
 
 @media (max-width: 1178px){
   .contacto-form{
