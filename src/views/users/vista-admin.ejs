@@ -39,7 +39,7 @@
 
         </section>
         <section class="contenido-admin">
-
+        <% if(list.length != 0) {%> 
           <% for(g of list) {%> 
           <div class="tabla-info">
             <label class="id"><%= g.id %> </label>
@@ -52,6 +52,9 @@
             <form action="/usuario/eliminarAdmin/<%=g.id%>?_method=DELETE" method="POST"  class="eliminar"><button type="submit" class="eliminar"><i class="fa-solid fa-trash"></i>Eliminar</button></form>
           </div>
           <% } %> 
+        <% } else {%> 
+          <label class="vacio-not"><i class="fa-regular fa-cactus"></i>Vacio ...</label>
+        <% } %> 
         </section>
       </div>
     </section>
