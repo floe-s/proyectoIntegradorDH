@@ -20,6 +20,8 @@
     overflow-y: scroll;
 }
 
+
+
 .list-profe > label{
     background-image: linear-gradient(to right, #ff8177 0%, #ff867a 0%, #ff8c7f 21%, #f99185 52%, #cf556c 78%, #b12a5b 100%);
     width: 90%;
@@ -124,7 +126,42 @@
 }
 
 
+.vacio-not{
+    border-bottom: 1px solid rgba(167, 166, 166, 0.575);
+    margin-left: 80px;
+    margin-top: 30px;
+    padding-top: 10px;
+    color: rgba(155, 155, 155, 0.975);
+    width: 80%;
+    text-align: center;
+    position: relative;
+}
 
+.vacio-not > i{
+    font-size: 25px;
+    position: absolute;
+    left: 0px;
+    animation-name: fantasmaMover;
+    animation-duration: 12s;
+    animation-direction: normal;
+    animation-iteration-count: infinite;
+    bottom: 3px;
+}
+
+@keyframes fantasmaMover {
+    0%{
+        left:  0%;
+    }
+
+    50%{
+        left: 100%;
+    }
+
+    100%{
+        left: 0%;
+    }
+    
+}
 
 
 

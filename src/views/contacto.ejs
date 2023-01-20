@@ -8,12 +8,54 @@
 <body class="body">
  <%-include('partials/header') %> 
   <main>
-    <div class="main-content">
-      <h1><%= title %></h1>
-    </div>
-    <div class="sitio-en-obra">
-      <img class="img-sitio" src="/img/sitio-en-obra.png" alt="Sitio en Obra">
-    </div>
+    <section class="contacto-form">
+      <div class="contacto-left">
+        <img src="/img/avionPapel.png" width="200px">
+        <svg class="nubes"  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+          <path fill="#ffffff" fill-opacity="1" d="M0,160L26.7,170.7C53.3,181,107,203,160,213.3C213.3,224,267,224,320,197.3C373.3,171,427,117,480,106.7C533.3,96,587,128,640,149.3C693.3,171,747,181,800,170.7C853.3,160,907,128,960,138.7C1013.3,149,1067,203,1120,213.3C1173.3,224,1227,192,1280,186.7C1333.3,181,1387,203,1413,213.3L1440,224L1440,320L1413.3,320C1386.7,320,1333,320,1280,320C1226.7,320,1173,320,1120,320C1066.7,320,1013,320,960,320C906.7,320,853,320,800,320C746.7,320,693,320,640,320C586.7,320,533,320,480,320C426.7,320,373,320,320,320C266.7,320,213,320,160,320C106.7,320,53,320,27,320L0,320Z"></path>
+        </svg>
+        <img id="nube1" src="/img/nubeBlanca.svg" width="150px">
+        <div>
+          <img id="nube2" src="/img/nubeBlanca.svg" width="200px">
+        </div>
+        <div class="left-info">
+          <label>MOIDI HOUSE</label>
+          <p>Tenemos soporte 24/7 para responder cualquier tipo dudas y responderte lo mas rapido posible.</p>
+        </div>
+      </div>
+      <div class="contacto-ria">
+        <div class="titulo-contacto">
+          <label>contacto</label>
+          <p>Sera un gusto recibir tu mensaje.</p>
+        </div>
+        <form class="form" action="">
+          <section class="contacto-nombres">
+            <div class="nombre-contacto">
+              <i class="fa-solid fa-user c"></i>
+              <input type="text" placeholder="Nombres">
+            </div>
+            <div class="nombre-contacto">
+              <i class="fa-solid fa-user c"></i>
+              <input type="text" placeholder="Apelliddos">
+            </div>
+          </section>
+          <div class="contacto-email">
+            <i class="fa-solid fa-envelope"></i>
+            <input type="text" placeholder="Correo">
+          </div>
+          <div class="contacto-email">
+            <i class="fa-solid fa-mobile"></i>
+            <input type="text" placeholder="Telefono">
+          </div>
+          <div class="contacto-mensaje">
+            <textarea placeholder="Mensaje.."></textarea>
+          </div>
+          <div class="contacto-btn">
+            <button ><i class="fa-sharp fa-solid fa-paper-plane"></i>Enviar</button>
+          </div>
+        </form>
+      </div>
+    </section>
 
   </main>
   

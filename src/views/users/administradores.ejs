@@ -17,6 +17,7 @@
     <section class="admin-right">
         <section class="list-profe">
           <label>Lista de profesores</label>
+        <% if(list != 0) {%> 
           <% for(let f of list) {%> 
           <div class="list">
             <label class="id"><%= f.id %> </label>
@@ -34,6 +35,9 @@
             </section>
           </div>
           <% } %> 
+        <%}else { %> 
+          <p class="vacio-not"><i id="fantasma" class="fa-solid fa-ghost"></i>Vacio ...</p>
+        <% } %> 
         </section>
     </section>
 </main>
