@@ -147,6 +147,22 @@ main{
   border: 2px solid #fd9c9f;
 }
 
+.nombre-contacto > .fa-circle-check{
+  position: absolute;
+  font-size: 20px;
+  color: #00ff40;
+  bottom: 15px;
+  right: 30px;
+  display: none;
+}
+.nombre-contacto > .fa-circle-xmark {
+  position: absolute;
+  font-size: 20px;
+  color: red;
+  bottom: 15px;
+  right: 30px;
+  display: none;
+}
 .contacto-email{
   display: flex;
   justify-content: center;
@@ -168,7 +184,7 @@ main{
   border: 2px solid #fd9c9f;
 }
 
-.contacto-email > i {
+.contacto-email > .fa-envelope, .fa-mobile  {
   position: absolute;
   z-index: 10;
   left: 30px;
@@ -176,7 +192,25 @@ main{
   top: 13px;
   color: #ccc;
 }
+.contacto-email > .fa-circle-check{
+  position: absolute;
+  color: #00ff40;
+  right: 40px;
+  top: 13px;
+  z-index: 10;
+  font-size: 20px;
+  display: none;
 
+}
+.contacto-email > .fa-circle-xmark {
+  position: absolute;
+  color: red;
+  right: 40px;
+  top: 13px;
+  z-index: 10;
+  font-size: 20px;
+  display: none;
+}
 .contacto-mensaje{
   width: 100%;
   display: flex;
@@ -227,6 +261,11 @@ main{
   font-size: 20px;
 }
 
+.opss{
+  color: red;
+
+}
+
 
 @media (max-width: 1650px){
   .contacto-form{
@@ -243,7 +282,7 @@ main{
     width: 100%;
   }
 
-  .contacto-email > i{
+  .contacto-email > .fa-envelope, .fa-mobile {
     left: 40px;
   }
 }
@@ -288,9 +327,14 @@ main{
   .nombre-contacto > .c{
     left: 25px;
   }
-  .contacto-email> i{
-    left: 45px ;
+  .nombre-contacto > .fa-circle-xmark, .fa-circle-check{
+    right: 45px;
   }
+  .contacto-email> .fa-envelope, .fa-mobile {
+    left: 50px ;
+  }
+
+
 }
 @media (max-width: 950px){
   .contacto-form{
@@ -298,6 +342,10 @@ main{
   }
   .nombre-contacto > .c{
     top: 10px;
+  }
+
+  .nombre-contacto > .fa-circle-xmark, .fa-circle-check{
+    right: 40px;
   }
 }
 
@@ -310,8 +358,12 @@ main{
     left: 20px;
   }
 
-  .contacto-email> i{
+  .contacto-email> .fa-envelope, .fa-mobile {
     left: 40px ;
+  }
+
+  .nombre-contacto > .fa-circle-xmark, .fa-circle-check{
+    right: 35px;
   }
 }
 
@@ -320,7 +372,11 @@ main{
     left: 15px;
   }
 
-  .contacto-email> i{
+  .contacto-email> .fa-envelope, .fa-mobile {
     left: 35px ;
+  }
+
+  .nombre-contacto > .fa-circle-xmark, .fa-circle-check{
+    right: 30px;
   }
 }

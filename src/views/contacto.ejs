@@ -28,39 +28,48 @@
           <label>contacto</label>
           <p>Sera un gusto recibir tu mensaje.</p>
         </div>
-        <form class="form" action="">
+        <form id="form-contacto" class="form" action="/">
           <section class="contacto-nombres">
             <div class="nombre-contacto">
               <i class="fa-solid fa-user c"></i>
-              <input type="text" placeholder="Nombres">
+              <input id="nombre" type="text" placeholder="Nombres">
+              <i id="nombreCheck"  class="fa-solid fa-circle-check "></i>
+              <i class="fa-solid fa-circle-xmark"></i>
             </div>
             <div class="nombre-contacto">
               <i class="fa-solid fa-user c"></i>
-              <input type="text" placeholder="Apelliddos">
+              <input id="apellido" type="text" placeholder="Apelliddos">
+              <i id="apellidoCheck"  class="fa-solid fa-circle-check "></i>
+              <i class="fa-solid fa-circle-xmark"></i>
             </div>
           </section>
           <div class="contacto-email">
             <i class="fa-solid fa-envelope"></i>
-            <input type="text" placeholder="Correo">
+            <input id="email" type="text" placeholder="Correo">
+            <i id="apellidoCheck"  class="fa-solid fa-circle-check "></i>
+            <i class="fa-solid fa-circle-xmark"></i>
           </div>
           <div class="contacto-email">
             <i class="fa-solid fa-mobile"></i>
-            <input type="text" placeholder="Telefono">
+            <input id="telefono" type="text" placeholder="Telefono">
+            <i id="apellidoCheck"  class="fa-solid fa-circle-check"></i>
+            <i class="fa-solid fa-circle-xmark"></i>
           </div>
           <div class="contacto-mensaje">
-            <textarea placeholder="Mensaje.."></textarea>
+            <textarea id="mensaje" placeholder="Mensaje.."></textarea>
           </div>
           <div class="contacto-btn">
-            <button ><i class="fa-sharp fa-solid fa-paper-plane"></i>Enviar</button>
+            <button type="submit"  id="boton" ><i class="fa-sharp fa-solid fa-paper-plane"></i>Enviar</button>
           </div>
+          
         </form>
       </div>
     </section>
 
   </main>
-  
+  <script src="/js/contacto.js"></script>
   <%- include('partials/footer') %> 
-
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
