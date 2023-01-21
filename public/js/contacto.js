@@ -10,7 +10,7 @@ let error = document.querySelectorAll(".fa-circle-xmark")
 
 
 
-btn.addEventListener("click", (evento)=>{
+form.addEventListener("submit", (evento)=>{
     evento.preventDefault();
     let c = []
     c.push(nombre, apellido, email, telefono, mensaje)
@@ -19,6 +19,7 @@ btn.addEventListener("click", (evento)=>{
             icon: 'error',
             title: '<label class="opss">Oops...</label>',
             text: 'Debes llenar todos los campos.',
+            width: '300px',
             backdrop: `
               rgba(0,0,123,0.4)
               url("/img/6kp.gif")
@@ -33,7 +34,6 @@ btn.addEventListener("click", (evento)=>{
                 error[i].style.display = "inline";
                 check[i].style.display = "none";
             }else if(c[i].value != ""){
-                console.log(check[i]);
                 c[i].style.border = "2px solid #00ff40";
                 check[i].style.display = "inline";
                 error[i].style.display = "none";
@@ -48,6 +48,7 @@ btn.addEventListener("click", (evento)=>{
             title: 'Confirmado',
             text: "Tu mensaje fue enviado correctamente",
             showConfirmButton: false,
+            width: '300px',
             backdrop: `
             rgba(0,0,123,0.4)
             url("/img/nRm.gif")

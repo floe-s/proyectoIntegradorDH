@@ -16,47 +16,34 @@
 
               <form id="formReg" class="form-cont" action="/usuario/registro" method="POST" enctype="multipart/form-data">
                 <h1 id="titulo"><%= title %></h1>
-
-                  <input id="nombre" class="btn-form" type="text" placeholder="Nombre" name="nombre">
-                  <i class="form-validacion-estado fas fa-time-circle"></i>
-                  <% if (locals && locals.errors) { %>
-                    <% if (locals.errors[0].param == "nombre") { %>
-                      <h3 class="errors-validation"> <%= locals.errors[0].msg %> </h3>
-                    <% } %>
-                  <% } %>
-
-                  <input id="apellido" class="btn-form" type="text" placeholder="Apellido" name="apellido">
-                  <% if (locals && locals.errors) { %>
-                    <% if (locals.errors[0].param == "apellido") { %>
-                      <h3 class="errors-validation"> <%= locals.errors[0].msg %> </h3>
-                    <% } %>
-                  <% } %>
-
-                  <input id="telefono" class="btn-form" type="text" placeholder="Teléfono" name="telefono">
-                  <% if (locals && locals.errors) { %>
-                    <% if (locals.errors[0].param == "telefono") { %>
-                      <h3 class="errors-validation"> <%= locals.errors[0].msg %> </h3>
-                    <% } %>
-                  <% } %>
-            
-                
-                  <input id="email" class="btn-form" type="email" placeholder="Email" name="email">
-                    <% if (locals && locals.errors) { %>
-                      <% if (locals.errors[0].param == "email") { %>
-                        <h3 class="errors-validation"> <%= locals.errors[0].msg %> </h3>
-                      <% } %>
-                    <% } %>
+                  <div>
+                    <i   class="fa-solid fa-circle-check f"></i>
+                    <i class="fa-solid fa-circle-xmark"></i>
+                    <input id="nombre" class="btn-form" type="text" placeholder="Nombre" name="nombre">
+                  </div>
+                  <div>
+                    <i  class="fa-solid fa-circle-check f"></i>
+                    <i class="fa-solid fa-circle-xmark"></i>
+                    <input id="apellido" class="btn-form" type="text" placeholder="Apellido" name="apellido">
+                  </div>
+                  <div>
+                    <i  class="fa-solid fa-circle-check f"></i>
+                    <i class="fa-solid fa-circle-xmark"></i>
+                    <input id="telefono" class="btn-form" type="text" placeholder="Teléfono" name="telefono">
+                  </div>
+                  <div>
+                    <i class="fa-solid fa-circle-xmark"></i>
+                    <i  class="fa-solid fa-circle-check f"></i>
+                    <input id="email" class="btn-form" type="email" placeholder="Email" name="email">
                     <% if(email){%> 
                       <label style="color: red; margin-left:80px; font-size: 14px;"><i class="fa-solid fa-circle-exclamation"></i>Error: Este Email ya existe.</label>
                     <% } %> 
-              
-                  <input id="contrasena" class="btn-form" type="password" placeholder="Contraseña" name="contrasena">
-                  <% if (locals && locals.errors) { %>
-                    <% if (locals.errors[0].param == "contrasena") { %>
-                      <h3 class="errors-validation"> <%= locals.errors[0].msg %> </h3>
-                    <% } %>
-                  <% } %>
-              
+                  </div>
+                  <div>
+                    <i class="fa-solid fa-circle-xmark"></i>
+                    <i   class="fa-solid fa-circle-check f"></i>
+                    <input id="contrasena" class="btn-form" type="password" placeholder="Contraseña" name="contrasena">
+                  </div>
                 <label for="file" class="foto">
                   <i class="fa-solid fa-file"></i>
                   <label for="file" id="foto">Agregar imagen de perfil</label>
@@ -80,7 +67,7 @@
               </form>
             </div>
           </main>
-        
+          <script src="/js/registro.js"></script>
         <%-include('../partials/footer') %>
         <script type="text/javascript">
           let archivo = document.querySelector('#file');
@@ -89,7 +76,6 @@
           })
         </script>
           <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
-          <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-          <script src="/js/registro.js"></script>
+          <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     </body>
 </html>

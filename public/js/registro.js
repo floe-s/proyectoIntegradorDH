@@ -1,46 +1,68 @@
 let fReg = document.getElementById("formReg");
-
-fReg.addEventListener("submit", function(event) {
-  event.preventDefault();
+let check =  document.querySelectorAll('.fa-circle-check');
+let botonCrear = document.getElementById("btn-crear");
+let inputImg  = document.getElementById("file");
+let error = document.querySelectorAll(".fa-circle-xmark")
   
-  let n = document.getElementById("nombre").value;
-  let a = document.getElementById("apellido").value;
-  let t = document.getElementById("telefono").value;
-  let e = document.getElementById("email").value;
-  let c = document.getElementById("contrasena").value;
+  let n = document.getElementById("nombre");
+  let a = document.getElementById("apellido");
+  let t = document.getElementById("telefono");
+  let e = document.getElementById("email");
+  let c = document.getElementById("contrasena");
+  
 
 
-  if((n == "") || (a == "") || (t == "") || (e == "") || (c == "")) {
+fReg.addEventListener("submit", (evento) =>{
 
-      let i = document.getElementById("file").value;
-      
-      if(i == "") {
-        alert("Recorda adjuntar tu imagen de perfil");
-        return;
-      }
-
-    alert("Completar los campos vacios");
-    return;
-  } else {
-        swal({
-            title: '¡Registro Exitoso!',
-            text: 'Su Email es: ' + e,
-            icon: 'success',
-            showConfirmButton: true,
-            button: 'Iniciar Sesión',
-        });
-
+  evento.preventDefault()
+  let inputs = []
+  inputs.push(n, a, t,e,c);
+  if(n.value == "" || a.value == ""|| t.value == "" || e.value == "" || c.value == "") {
+    Swal.fire({
+      icon: 'error',
+      title: 'Oop...',
+      text: 'Debes llenar todos los campos.',
+      width: '300px',
+      backdrop: `
+        rgba(0,0,123,0.4)
+        url("/img/6kp.gif")
+        center top
+        no-repeat
+      `
+  })
+ 
+  for(let i = 0 ; i < inputs.length; i++){
+    if(inputs[i].value == ""){
+      error[i].style.opacity = 1;
+      check[i].style.opacity = 0;
+      inputs[i].style.border = "2px solid red"
+    }else if(inputs[i].value != ""){
+      error[i].style.opacity = 0;
+      check[i].style.opacity = 1;
+      inputs[i].style.border = "2px solid #00ff40"
+    }
   }
-
-  fReg.submit();
-
-});
-
-/* n.addEventListener('click' , function () {
-  let n = document.getElementById("nombre").value;
-  if ((n = "") && (!n.match(/^[A-Za-z]+$/)) ){
-    alert("Completar los campos de forma correcta");
-    return;
+  }else{
+    Swal.fire({
+      position: 'center',
+      icon: 'success',
+      title: 'Confirmado',
+      text: "Te has registrao perfectamente",
+      showConfirmButton: false,
+      width: '300px',
+      backdrop: `
+      rgba(0,0,123,0.4)
+      url("/img/nRm.gif")
+      center top
+      no-repeat
+    `,
+    
+  })
+  setTimeout(()=>{
+      fReg.submit();
+  },3000)
   }
-}); */
+})
+
+
 

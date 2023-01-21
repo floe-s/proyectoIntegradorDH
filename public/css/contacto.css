@@ -71,7 +71,7 @@ main{
     transform: translateY(0px);
   }
   50%{
-    transform: translateY(10px);
+    transform: translateY(18px);
   }
   100%{
     transform: translateY(0px);
