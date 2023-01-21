@@ -40,14 +40,14 @@ fLog.addEventListener("submit", function(event) {
   }else{
     Swal.fire({
       position: 'center',
-      title: 'Iniciando Sesion',
+      title: 'Iniciando Sesión',
       showConfirmButton: false,
-      width: '300px',
+      width: '400px',
       timerProgressBar: true,
       timer:3000,
       backdrop: `
       rgba(0,0,123,0.4)
-      url("/img/nRm.gif")
+      url("/img/Pak.gif")
       center top
       no-repeat
     `,
