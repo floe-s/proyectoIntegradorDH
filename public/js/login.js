@@ -21,7 +21,8 @@ fLog.addEventListener("submit", function(event) {
         backdrop: `
           rgba(0,0,123,0.4)
           url("/img/6kp.gif")
-          center top
+          center
+          top -80px
           no-repeat
         `
       })
@@ -42,13 +43,13 @@ fLog.addEventListener("submit", function(event) {
       position: 'center',
       title: 'Iniciando Sesión',
       showConfirmButton: false,
-      width: '400px',
       timerProgressBar: true,
       timer:3000,
       backdrop: `
       rgba(0,0,123,0.4)
       url("/img/Pak.gif")
-      center top
+      center
+      top -60px
       no-repeat
     `,
     didOpen: () => {

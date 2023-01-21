@@ -26,7 +26,8 @@ fReg.addEventListener("submit", (evento) =>{
       backdrop: `
         rgba(0,0,123,0.4)
         url("/img/6kp.gif")
-        center top
+        center
+        top -80px
         no-repeat
       `
   })
@@ -53,7 +54,8 @@ fReg.addEventListener("submit", (evento) =>{
       backdrop: `
       rgba(0,0,123,0.4)
       url("/img/nRm.gif")
-      center top
+      center
+      top -80px
       no-repeat
     `,
     
