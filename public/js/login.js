@@ -6,7 +6,15 @@ let check =  document.querySelectorAll('.fa-circle-check');
 let error = document.querySelectorAll(".fa-circle-xmark")
 
 fLog.addEventListener("submit", function(event) {
-
+  let height = "-80px";
+  let posicion; "center"
+  let alto = window.innerHeight;
+  if(alto > 800 && alto <= 900){
+      height = "-100px"  
+  }else if(alto > 550 && alto <= 700){
+      // height ="-120px"
+      posicion = "bottom"
+  }
   event.preventDefault();
   console.log(e.value)
   let h = [];
@@ -17,12 +25,13 @@ fLog.addEventListener("submit", function(event) {
         icon: 'error',
         title: '<label class="opss">Oops...</label>',
         text: 'Debes llenar todos los campos.',
+        position: `${posicion}`,
         width: '300px',
         backdrop: `
           rgba(0,0,123,0.4)
           url("/img/6kp.gif")
           center
-          top -80px
+          top ${height}
           no-repeat
         `
       })
@@ -44,12 +53,13 @@ fLog.addEventListener("submit", function(event) {
       title: 'Iniciando Sesión',
       showConfirmButton: false,
       timerProgressBar: true,
+      position: `${posicion}`,
       timer:3000,
       backdrop: `
       rgba(0,0,123,0.4)
       url("/img/Pak.gif")
       center
-      top -60px
+      top ${height}
       no-repeat
     `,
     didOpen: () => {

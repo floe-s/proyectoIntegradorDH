@@ -13,7 +13,15 @@ let error = document.querySelectorAll(".fa-circle-xmark")
 
 
 fReg.addEventListener("submit", (evento) =>{
-
+  let height = "-80px";
+  let posicion; "center"
+  let alto = window.innerHeight;
+  if(alto > 800 && alto <= 900){
+      height = "-100px"  
+  }else if(alto > 550 && alto <= 700){
+      // height ="-120px"
+      posicion = "bottom"
+  }
   evento.preventDefault()
   let inputs = []
   inputs.push(n, a, t,e,c);
@@ -22,12 +30,13 @@ fReg.addEventListener("submit", (evento) =>{
       icon: 'error',
       title: 'Oop...',
       text: 'Debes llenar todos los campos.',
+      position: `${posicion}`,
       width: '300px',
       backdrop: `
         rgba(0,0,123,0.4)
         url("/img/6kp.gif")
         center
-        top -80px
+        top ${height}
         no-repeat
       `
   })
@@ -50,12 +59,13 @@ fReg.addEventListener("submit", (evento) =>{
       title: 'Confirmado',
       text: "Te has registrao perfectamente",
       showConfirmButton: false,
+      position: `${posicion}`,
       width: '300px',
       backdrop: `
       rgba(0,0,123,0.4)
       url("/img/nRm.gif")
       center
-      top -80px
+      top ${height}
       no-repeat
     `,
     

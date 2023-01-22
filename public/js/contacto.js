@@ -62,12 +62,13 @@ form.addEventListener("submit", (evento)=>{
             title: 'Confirmado',
             text: "Tu mensaje fue enviado correctamente",
             showConfirmButton: false,
+            position: `${posicion}`,
             width: '300px',
             backdrop: `
             rgba(0,0,123,0.4)
             url("/img/nRm.gif")
             center
-            top -80px
+            top ${height}
             no-repeat
           `,
           
