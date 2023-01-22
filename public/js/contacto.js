@@ -10,7 +10,19 @@ let error = document.querySelectorAll(".fa-circle-xmark")
 
 
 
+
 form.addEventListener("submit", (evento)=>{
+    let height = "-80px";
+    let posicion; "center"
+    let alto = window.innerHeight;
+    if(alto > 800 && alto <= 900){
+        height = "-100px"  
+    }else if(alto > 550 && alto <= 700){
+        // height ="-120px"
+        posicion = "bottom"
+    }
+
+
     evento.preventDefault();
     let c = []
     c.push(nombre, apellido, email, telefono, mensaje)
@@ -19,12 +31,13 @@ form.addEventListener("submit", (evento)=>{
             icon: 'error',
             title: '<label class="opss">Oops...</label>',
             text: 'Debes llenar todos los campos.',
+            position: `${posicion}`,
             width: '300px',
             backdrop: `
               rgba(0,0,123,0.4)
               url("/img/6kp.gif")
               center
-              top -80px
+              top ${height}
               no-repeat
             `
         })
