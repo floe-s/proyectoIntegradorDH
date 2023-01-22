@@ -1,9 +1,13 @@
 const express = require('express');
 const app = express();
 
+const cors = require('cors');
+
 const productosRoutes = require('./src/routes/productosRoutes')
 const mainRoutes = require('./src/routes/mainRoutes')
 const usuarioRoutes = require('./src/routes/usuarioRoutes')
+const apiUsuarios = require('./src/routes/api/usersApiRoutes')
+const apiProductos = require('./src/routes/api/productsApiRoutes')
 const session = require('express-session');
 const methodOverride = require('method-override');
 const cookieParser = require('cookie-parser');
@@ -11,6 +15,8 @@ const cookieParser = require('cookie-parser');
 const path = require('path');
 const publicPath = path.resolve(__dirname, './public');
 app.use(express.static(publicPath));
+
+app.use(cors());
 
 //para indicar que vamos a usar POST
 app.use(express.urlencoded({extended: false}));
@@ -28,6 +34,9 @@ app.use('/', mainRoutes);
 app.use('/usuario', usuarioRoutes);
 
 app.use('/producto', productosRoutes);
+
+app.use('/api', apiUsuarios);
+app.use('/api', apiProductos);
 
 // para usar ejs
 app.set('view engine', 'ejs');
