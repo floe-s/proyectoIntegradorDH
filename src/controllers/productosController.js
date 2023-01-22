@@ -120,10 +120,18 @@ const controlador = {
   },
 
   buscar: (req, res) => {
-    let buscador = req.query.search;
-    res.send(buscador);
+    /* let buscador = req.query.search; */
+    let usu=false
+    let admi = false
+    if(req.session.profile){
+      usu =true;
+      if(req.session.profile.Rol_id == 1 || req.session.profile.Rol_id == 4){
+        admi=true
+      }
+    }
+    /* res.send(buscador); */
 
-    /* res.render('./products/resultados', {title: 'Busqueda'}); */
+    res.render('./products/resultados', {usu :usu , admi :admi, title: 'Busqueda'});
   },
 
   descargables: (req, res) => {

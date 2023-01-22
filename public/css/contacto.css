@@ -41,7 +41,7 @@ main{
 
 .left-info > label{
   font-size: 25px;
-  font-weight: 800;
+  font-weight: 600;
 }
 
 .left-info > p{
@@ -101,7 +101,7 @@ main{
 .titulo-contacto > label{
 
   font-size: 40px;
-  font-weight: 700;
+  font-weight: 600;
   margin-left: 30px;
 }
 .titulo-contacto > p{
