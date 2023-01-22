@@ -9,16 +9,35 @@
   <%- include('partials/header') %> 
   
   <main>
-    <div class="main-content">
-      <h1><%= title %></h1>
-    </div>
-    <div class="sitio-en-obra">
-      <img class="img-sitio" src="/img/sitio-en-obra.png" alt="Sitio en Obra">
-    </div>
+    <section class="continer-translator">
+      <div class="trans-left">
+        <div class="rollo">
+          
+        </div>
+      </div>
+      <div class="trans-riaght">
+            <h2><img src="/img/icons8-translator-48.png"> MOIDI TRADUCTOR</h2>
+            <div class="select">
+              <select class="from" id="from">
+                <option value="es">Español</option>
+              </select>
+              <select id="al">
+                <option value="en">English</option>
+              </select>
+            </div>
+            <div class="f">
+                <textarea  id="traslateTo"  placeholder="Texto a traducir"></textarea>
+            </div>
+            <button id="traducit"><i class="fa-solid fa-arrow-down"></i>Traducir</button>
+            <div class="f">
+                <textarea  id="traslateFo" placeholder="Texto traducido"></textarea>
+            </div> 
+      </div>
+    </section>
   </main>
 
   <%- include('partials/footer') %> 
-
+  <script src="/js/traductot.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
