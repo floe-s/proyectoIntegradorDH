@@ -131,7 +131,7 @@ const controlador = {
     }
     /* res.send(buscador); */
 
-    res.render('./products/resultados', {usu :usu , admi :admi, title: 'Busqueda'});
+    res.render('./products/resultados', {usu :usu , admi :admi, title: 'Búsqueda'});
   },
 
   descargables: (req, res) => {
