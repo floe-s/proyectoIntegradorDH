@@ -3,7 +3,7 @@ const db = require('../database/models');
 let products = {
   getAllProducts: async (req, res) => {
     try {
-      let productos = await db.Curso_dbs.findAll();
+      let productos = await db.Curso_dbs.findAll({include: [{association: 'usuario_Profe'}]});
 
       let data = {
         "total": productos.length, 
