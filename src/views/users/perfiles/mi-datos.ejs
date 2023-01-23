@@ -10,10 +10,10 @@
   
   <%-include('../../partials/header') %>
 
-<main>
+<main >
   <div class="marco">
     <%- include('../../partials/navPerfil.ejs') %> 
-    <div id="particles-js" class="right">
+    <div id="particles-js" class="right  v" >
       <section class="mis-datos">
         <div class="cabecera">
           <div class="figura"></div>
@@ -35,17 +35,59 @@
             <p>Email: <%= i.email %> </p>
             <label>Teléfono: <%=   i.telefono%></label>
           </section>
-          <a class="btn-editCard" href="/usuario/editar-usuario">Editar</a>
+          <label class="btn-editCard" id="btn-editCard" for="editarPerfils">Editar</label>
         </div>
+        <input style="display: none;" type="checkbox" id="editarPerfils">
+        <form class="editar-perfil" action="/usuario/editar-Usuarios/<%= i.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+          <div class="arriba-edit">
+            <label  id="file-preview">
+              <img class="img-edit" src="/img/perfil/<%= i.imagen %> ">
+            </label>
+            <label class="camara" for="file"><i class="fa-solid fa-camera-rotate"></i></label>
+            <input name="img" style="display: none;" type="file"  id="file" value="<%= i.imagen %> ">
+            <label class="titu-edi" >Editar perfil</label>
+          </div>
+          <label class="NombreCompleto">Datos Personales:</label>
+          <div class="nameC">
+            <section>
+              <i class="fa-solid fa-user c"></i>
+              <input name="nombre" type="text"  placeholder="Nombre">
+            </section>
+            <section>
+              <i class="fa-solid fa-user c"></i>
+              <input class="f" name="apellido" type="text" placeholder="Apellido">
+            </section>
+          </div>
+          <div class="tele-email">
+            <i class="fa-solid fa-envelope"></i>
+            <input class="f" name="email" type="text" placeholder="Emial">
+          </div>
+          <div class="tele-email">
+            <i class="fa-solid fa-mobile"></i>
+            <input class="f" name="telefono" type="text"  placeholder="Telefono">
+          </div>
+          <Label id="cancelarEdit" for="editarPerfils"><i class="fa-solid fa-square-xmark"></i></Label>
+          <button type="submit" id="btn-guardar">Guardar</button>
+        </form>
       </section>
-
+      
     </div>
   </div>
 </main>
   <%-include('../../partials/footer') %>
+  <script src="/js/midatos.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
   <Script src="/js/pariculas.js"></Script>
-  <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
   <script src="/js/swper.js"></script>
+  <script>
+    function preview(id){
+        document.getElementById('file').addEventListener("change",(e)=>{
+            let file = e.target.files[0];
+            let url = URL.createObjectURL(file);
+            document.querySelector("#" + id + "-preview img").src = url;
+        })
+    } 
+    preview("file");  
+  </script>
 </html>
