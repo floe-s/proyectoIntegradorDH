@@ -25,4 +25,5 @@ Por otro lado, vamos a generar un perfil administrador que permita cargar, modif
 Por último, se contará con la posibilidad de poder cambiar el idioma base del sitio, entre las opciones de español, inglés, y portugués, para que sea más entendible la navegación en el sitio por parte del usuario.
 
 Link del proyecto en Render: https://moidi-grupo6.onrender.com
+
 Link del dashboard en Render: https://dashboard-moidi-grupo6.onrender.com/
