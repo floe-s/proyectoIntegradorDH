@@ -92,7 +92,7 @@ const controlador = {
     
 
     db.Curso_dbs.create({
-      nombre: req.body.titulo,
+      nombre: req.body.titulo.charAt(0).toUpperCase() + req.body.titulo.slice(1) ,
       descripcion: req.body.descripcion,
       estudiantes: req.body.estudiantes,
       lecciones: req.body.lecciones,
@@ -119,20 +119,6 @@ const controlador = {
   }
   },
 
-  buscar: (req, res) => {
-    /* let buscador = req.query.search; */
-    let usu=false
-    let admi = false
-    if(req.session.profile){
-      usu =true;
-      if(req.session.profile.Rol_id == 1 || req.session.profile.Rol_id == 4){
-        admi=true
-      }
-    }
-    /* res.send(buscador); */
-
-    res.render('./products/resultados', {usu :usu , admi :admi, title: 'Búsqueda'});
-  },
 
   descargables: (req, res) => {
     let usu=false;
@@ -269,7 +255,69 @@ const controlador = {
         res.redirect('/usuario/cargarProfesro');
       }
     })
+  },
+
+  filtro:(req,res)=>{
+    let buscar = req.body.search;
+
+    let usu=false
+    let admi = false;
+    if(req.session.profile){
+           usu =true;
+           if(req.session.profile.Rol_id == 1 || req.session.profile.Rol_id == 4){
+            admi=true
+          }
+    }
+    db.Curso_dbs.findAll({include:[{association: 'usuario_Profe'},{association: 'nivel_curso'}]}).then((courses)=>{
+
+      let listaCursos = [];
+      let curso = [];
+      
+      for(g of courses){
+        listaCursos.push(g);
+        let profesor = g.usuario_Profe.nombre + ' ' + g.usuario_Profe.apellido;
+        let obj = {
+          id:g.id,
+          nombre: g.nombre,
+          descripcion: g.descripcion,
+          estudiantes: g.estudiantes,
+          lecciones: g.lecciones,
+          puntuacion: g.puntuacion,
+          cantidad_horas: g.cantidad_horas,
+          precio: g.precio,
+          imagen: g.imagen,
+          img_nivel: g.img_nivel,
+          Profesor_id: profesor,
+          Nivel_curso_id: g.nivel_curso.nombre,
+        }
+        curso.push(obj)
+        
+      }
+      let lista = [];
+      curso.forEach(el =>{
+
+        if(buscar.charAt(0) != buscar.charAt(0).toUpperCase()){
+          buscar = buscar.charAt(0).toUpperCase() + buscar.slice(1);
+        }
+   
+        let encotrado = el.nombre.indexOf(buscar)
+        let nivel = el.Nivel_curso_id.indexOf(buscar);
+        let profesro = el.Profesor_id.indexOf(buscar);
+        // console.log(buscar == buscar.letra.toLowerCase())
+        if(encotrado > -1){
+          lista.push(el)
+        }else if( nivel > -1){
+          lista.push(el)
+        }else if(profesro > -1){
+          lista.push(el)
+        }
+        
+      })
+      // console.log(lista);
+      res.render('products/filtroCurso', {ps:lista, usu:usu, admi:admi, title: 'Cursos'});
+    }); 
   }
+
 };
 
 module.exports = controlador;

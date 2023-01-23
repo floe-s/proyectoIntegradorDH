@@ -1,9 +1,8 @@
-const express = require('express');
-const router = express.Router();
 
 const productosController = require('../controllers/productosController');
 const { body } = require('express-validator');
-
+const express = require('express');
+const router = express.Router();
 //llamar la libreria multer
 const multer = require('multer');
 const path = require('path');
@@ -40,8 +39,6 @@ let validaciones = [
 //rutas especificas
 router.get('/cursos', productosController.cursos); // Se dirige a ese controlador
 
-router.get('/buscar',productosController.buscar); // Buscador del navbar
-
 router.get('/descargables', productosController.descargables);
 
 router.get('/suscripciones', productosController.suscripciones);
@@ -56,6 +53,6 @@ router.put('/editar/:id', uploadFile.single('img'), validaciones, productosContr
 
 router.delete('/eliminar/:id', productosController.destroy)
 router.post('/agregarTema', productosController.tematica);
-
+router.post('/filtroCursos', productosController.filtro)
 
 module.exports = router;
