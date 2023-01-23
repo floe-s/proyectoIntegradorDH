@@ -3,7 +3,19 @@ let check =  document.querySelectorAll('.fa-circle-check');
 let botonCrear = document.getElementById("btn-crear");
 let inputImg  = document.getElementById("file");
 let error = document.querySelectorAll(".fa-circle-xmark")
-  
+let file = document.getElementById('file');
+let foto = document.getElementById('btn-foto2');
+let errorEmail = document.getElementById("erroEmail");
+
+
+
+
+foto.addEventListener("click", ()=>{
+  foto.style.background = "#186cc3";
+})
+
+
+
   let n = document.getElementById("nombre");
   let a = document.getElementById("apellido");
   let t = document.getElementById("telefono");
@@ -52,12 +64,16 @@ fReg.addEventListener("submit", (evento) =>{
       inputs[i].style.border = "2px solid #00ff40"
     }
   }
+  }else if(file.value == ""){
+    let foto3 = document.getElementById("foto");
+    foto.style.background = "red";
+    foto3.innerText = "Falta agregar imagen"
   }else{
     Swal.fire({
       position: 'center',
       icon: 'success',
-      title: 'Confirmado',
-      text: "Te has registrao perfectamente",
+      title: 'Confirmando',
+      text: "Terminando de registrar",
       showConfirmButton: false,
       position: `${posicion}`,
       width: '300px',
@@ -69,10 +85,10 @@ fReg.addEventListener("submit", (evento) =>{
       no-repeat
     `,
     
-  })
-  setTimeout(()=>{
-      fReg.submit();
-  },3000)
+    })
+    setTimeout(()=>{
+        fReg.submit();
+    },3000)
   }
 })
 

@@ -16,6 +16,9 @@
 
               <form id="formReg" class="form-cont" action="/usuario/registro" method="POST" enctype="multipart/form-data">
                 <h1 id="titulo"><%= title %></h1>
+                <% if(email){%> 
+                  <label id="erroEmail" style="color: red; margin-left:80px; font-size: 14px;"><i class="fa-solid fa-circle-exclamation"></i>Error: Este Email ya existe.</label>
+                <% } %> 
                   <div>
                     <i   class="fa-solid fa-circle-check f"></i>
                     <i class="fa-solid fa-circle-xmark"></i>
@@ -35,16 +38,14 @@
                     <i class="fa-solid fa-circle-xmark"></i>
                     <i  class="fa-solid fa-circle-check f"></i>
                     <input id="email" class="btn-form" type="email" placeholder="Email" name="email">
-                    <% if(email){%> 
-                      <label style="color: red; margin-left:80px; font-size: 14px;"><i class="fa-solid fa-circle-exclamation"></i>Error: Este Email ya existe.</label>
-                    <% } %> 
+
                   </div>
                   <div>
                     <i class="fa-solid fa-circle-xmark"></i>
                     <i   class="fa-solid fa-circle-check f"></i>
                     <input id="contrasena" class="btn-form" type="password" placeholder="Contraseña" name="contrasena">
                   </div>
-                <label for="file" class="foto">
+                <label for="file" class="foto" id="btn-foto2">
                   <i class="fa-solid fa-file"></i>
                   <label for="file" id="foto">Agregar imagen de perfil</label>
                 </label>
