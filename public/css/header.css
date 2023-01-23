@@ -344,6 +344,7 @@ nav{
 
   .navbar-right{
     width: 90%;
+   
   }
 
   .inises, .registrarse{
@@ -388,13 +389,13 @@ nav{
     }
   
     .contend{
-      width: 45%;
+      width: 40%;
       margin-left: 50px;
     }
     
     #item2{
       display: flex;
-      width: 34%;
+      width: 40%;
       justify-content: space-around;
     }
 
@@ -410,9 +411,18 @@ nav{
     .mundo{
       padding-top: 4px;
     }
+    
   }
 
+  @media (min-width: 1600px){
+    #item2{
+      width: 35%;
+    }
 
+    .contend{
+      width: 40%;
+    }
+  }
 
 
 

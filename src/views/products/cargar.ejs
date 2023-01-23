@@ -21,7 +21,7 @@
 
                 <form id="formCar" class="form-cargar" action="/producto/cargar" method="POST" enctype="multipart/form-data">
                    
-                  <input id="titulo" type="text" name="titulo" placeholder="Nombre del curso:" >
+                  <input id="titulo" type="text" name="titulo" placeholder="Nombre del curso:" style="text-transform: capitalize;">
                     <% if (locals && locals.errors) { %>
                         <% if (locals.errors[0].param == "titulo") { %>
                           <h3 class="errors-validation"> <%= locals.errors[0].msg %> </h3>

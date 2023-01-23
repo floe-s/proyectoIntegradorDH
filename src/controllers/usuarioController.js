@@ -361,8 +361,8 @@ const controller = {
             db.Tematicas.findOne({where:{nombre: req.body.tematica}}).then((tematica) => {
                
                 db.Usuario_dbs.create({
-                    nombre: req.body.nombre,
-                    apellido: req.body.apellido,
+                    nombre: req.body.nombre.charAt(0).toUpperCase() + req.body.nombre.slice(1),
+                    apellido: req.body.apellido.charAt(0).toUpperCase() + req.body.nombre.slice(1),
                     email: req.body.email,
                     clave: nuevaPasword,
                     telefono: req.body.telefono,

@@ -11,7 +11,7 @@
   <!-- --------------------------------------------------------------- -->
   <div class="navbar-right" id="item">
     <div class="btn-buscar">
-      <form action="/producto/buscar" method="GET">
+      <form action="/producto/filtroCursos" method="POST">
         <input name="search" type="search" class="buscar" placeholder="Buscar"></button>
         <button type="submit" class="magnifying-glass-icon"><i class="fa-solid fa-magnifying-glass"></i></button>
       </form>
@@ -78,10 +78,10 @@
 
   <!-- para 1300 en adelante -->
   <div class="navbar-right" id="item2">
-    <div class="btn-buscar">
-      <input type="search" id="buscar2" class="buscar" placeholder="Buscar"></button>
-      <button class="magnifying-glass-icon"><i class="fa-solid fa-magnifying-glass"></i></button>
-    </div>
+    <form action="/producto/filtroCursos" method="POST"  class="btn-buscar">
+      <input type="search" name="search" id="buscar2" class="buscar" placeholder="Buscar"></button>
+      <button type="submit" class="magnifying-glass-icon"><i class="fa-solid fa-magnifying-glass"></i></button>
+    </form>
     <% if(usu) { %>
       <div class="registrarse"><a href="/usuario/vista-perfil"><i class="fa-solid fa-user"></i>Perfil</a></div>
     <% } else {%> 
