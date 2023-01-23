@@ -180,7 +180,7 @@ let totalPrecio = precios.reduce((total, numeros)=> {return total + numeros});
 let cuotasMese = totalPrecio/6;
 total.innerText = "$" + totalPrecio;
 sub.innerText = "$" + totalPrecio;
-cuotas.innerText ="$" +  cuotasMese;
+cuotas.innerText ="$" +  (cuotasMese).toFixed(2);
 
 
 

@@ -87,17 +87,10 @@ main{
     border: 1px solid #cf556c;
 }
 
-/* Para poner iconos dentro del form -ver como evitar que cambie la letra (btn-info es una clase de BS)- */
-/* .btn-info::placeholder {
-    font-family: "Font Awesome 5 Free";
-    font-weight: 400;
-} */
-
 #titulo{
     margin-left: 16%;
     text-align: left;
     font-weight: 600;
-    /* text-shadow: 2px 0px rgba(0, 0, 0, 0.726); */
 }
 
 #boton-enviar{

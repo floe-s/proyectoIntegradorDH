@@ -83,13 +83,6 @@ height: 100%;
 
 
 .info {
-  /* display: grid;
-  grid-template-columns: repeat(3,1fr);
-  grid-template-rows: repeat(3,1fr);
-  grid-template-areas: 
-  "a a c"
-  "d e f"
-  "g g i"; */
   height: auto;
   width: 60%;
   padding-left: 8%;

@@ -62,7 +62,6 @@ main{
   height: 45%;
   justify-content: center;
   border-radius: 20px 20px 3px 3px;
-  /* background-image: linear-gradient(to top, #accbee 0%, #e7f0fd 100%);background-image: linear-gradient(to top, #accbee 0%, #e7f0fd 100%); */
 }
 
 .img-cursos > img{
@@ -136,8 +135,12 @@ main{
 
 .profesor > label{
   font-weight: 300;
+}
+
+.profeCurso{
   text-transform: capitalize;
 }
+
 
 .horas-curso{
   display: flex;
