@@ -333,7 +333,7 @@ const controller = {
             let apellido = req.session.profile.apellido
             let  email = req.session.profile.email
             let  telefono =  req.session.profile.telefono
-            fs.unlinkSync(path.join(__dirname, '../../public/img/perfil', req.session.profile.imagen ));
+            fs.unlinkSync(path.join(__dirname, './../../public/img/perfil', req.session.profile.imagen ));
             if(req.body.nombre != ""){
                 nombre.req.body.nombre;
             }else if(req.body.apellido != ""){

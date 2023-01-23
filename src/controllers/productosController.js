@@ -178,7 +178,8 @@ const controlador = {
   update: (req, res) => {
 
     let id = req.params.id;
-    let nombreImg = req.file.filename;
+    let nombreImg = req.file;
+    let nombreImgagenes = req.body.imgenes
     // para elegir que icono usar;
     let icon;
     let nivel;
@@ -192,25 +193,48 @@ const controlador = {
       icon = "fire.svg"
       nivel = 3
     }
-    db.Curso_dbs.update({
-      nombre: req.body.titulo,
-      Profesor_id: req.body.profesor,
-      precio: req.body.precio,
-      descripcion: req.body.descripcion,
-      cantidad_horas: req.body.horas,
-      estudiantes: req.body.estudiantes,
-      lecciones: req.body.lecciones,
-      puntuacion: req.body.puntuacion,
-      img_nivel: icon,
-      nivel: nivel,
-      imagen: nombreImg
-    },
-    {
-      where:{id}
+    if(nombreImg == undefined){
+      db.Curso_dbs.update({
+        nombre: req.body.titulo.charAt(0).toUpperCase() + req.body.titulo.slice(1),
+        Profesor_id: req.body.profesor,
+        precio: req.body.precio,
+        descripcion: req.body.descripcion,
+        cantidad_horas: req.body.horas,
+        estudiantes: req.body.estudiantes,
+        lecciones: req.body.lecciones,
+        puntuacion: req.body.puntuacion,
+        img_nivel: icon,
+        nivel: nivel,
+        imagen: nombreImgagenes
+      },
+      {
+        where:{id}
+      }
+      ).then(()=>{
+        res.redirect('/producto/cursos')
+      })
+    }else{
+      db.Curso_dbs.update({
+        nombre: req.body.titulo,
+        Profesor_id: req.body.profesor,
+        precio: req.body.precio,
+        descripcion: req.body.descripcion,
+        cantidad_horas: req.body.horas,
+        estudiantes: req.body.estudiantes,
+        lecciones: req.body.lecciones,
+        puntuacion: req.body.puntuacion,
+        img_nivel: icon,
+        nivel: nivel,
+        imagen: nombreImg.filename
+      },
+      {
+        where:{id}
+      }
+      ).then(()=>{
+        // fs.unlinkSync(`./public/img/paises/${nombreImgagenes}`);
+        res.redirect('/producto/cursos')
+      })
     }
-    ).then(()=>{
-      res.redirect('/producto/cursos')
-    })
       
     
     

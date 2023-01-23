@@ -1,6 +1,6 @@
 main{
   width: 90%;
-  height: 850px;
+  height: 900px;
   display: flex;
   flex-direction: column;
   margin: auto;
@@ -171,33 +171,47 @@ main{
 }
 
 
-.file > input:hover{
-  border: 1px solid  #cf556c;
-  cursor: pointer;
-}
+
 
 .final{
   display: flex;
   flex-direction: column;
 }
-
-.file{
-  width: 100%;
+.imagen-curso{
   display: flex;
-  justify-content: center;
   margin-top: 20px;
+  margin-bottom: 20px;
+  justify-content: center;
+  align-items: center;
 }
 
-.file > input{
-  background-color: #eee;
-  padding: 8px;
-  border: none;
+#btn-imgE{
+  width: 180px;
+  text-align: center;
+  align-self: center;
+  margin-top: 20px;
+  background-color: #2898ee;
+  height: 30px;
+  color: #fff;
   border-radius: 10px;
-  font-weight: 200;
-  width: 80%;
+  padding-top: 3px;
+  margin-right: 20px;
+  cursor: pointer;
+  position: relative;
 }
 
+#btn-imgE > i{
+  position: absolute;
+  top: 7px;
+  left: 6px;
+}
 
+#img-previa{
+  width: 150px;
+  height: 100px;
+  border-radius: 20px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
 .check-form{
   display: flex;
   justify-content: center;
@@ -291,7 +305,7 @@ main{
   main{
       width: 95%;
       flex-direction: row;
-      height: 620px;
+      height: 700px;
   }
 
   .img-figure{
