@@ -44,7 +44,7 @@
               <img class="img-edit" src="/img/perfil/<%= i.imagen %> ">
             </label>
             <label class="camara" for="file"><i class="fa-solid fa-camera-rotate"></i></label>
-            <input name="img" style="display: none;" type="file"  id="file" value="<%= i.imagen %> ">
+            <input name="img" style="display: none;" type="file"  id="file" value="<%= i.imagen %> " accept="image/*">
             <label class="titu-edi" >Editar perfil</label>
           </div>
           <label class="NombreCompleto">Datos Personales:</label>
@@ -60,11 +60,11 @@
           </div>
           <div class="tele-email">
             <i class="fa-solid fa-envelope"></i>
-            <input class="f" name="email" type="text" placeholder="Emial">
+            <input class="f" name="email" type="text" placeholder="Email">
           </div>
           <div class="tele-email">
             <i class="fa-solid fa-mobile"></i>
-            <input class="f" name="telefono" type="text"  placeholder="Telefono">
+            <input class="f" name="telefono" type="text"  placeholder="Teléfono">
           </div>
           <Label id="cancelarEdit" for="editarPerfils"><i class="fa-solid fa-square-xmark"></i></Label>
           <button type="submit" id="btn-guardar">Guardar</button>
