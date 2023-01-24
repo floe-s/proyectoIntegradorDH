@@ -36,7 +36,7 @@
                                 <% } %>
                               <% } %>
                             
-                              <input id="profesor" class="pro" type="text" name="profesor" placeholder="ID del Profesor/a:">
+                              <input id="profesor" class="pro" type="number" name="profesor" placeholder="ID del Profesor/a:">
                             <% if (locals && locals.errors) { %>
                                 <% if (locals.errors[0].param == "precio") { %>
                                   <h3 class="errors-validation"> <%= locals.errors[0].msg %> </h3>

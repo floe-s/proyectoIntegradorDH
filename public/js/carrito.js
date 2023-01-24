@@ -12,13 +12,6 @@ let cuotas = document.getElementById('cuotas');
 
 let imagenes = [];
 
-window.addEventListener("load", function(){
-    let carritoAcu = document.getElementById("happy");
-    let ca = document.getElementById('happy2')
-    ca.innerText = carritoN.length;
-    carritoAcu.innerText = carritoN.length;
-})
-
 for(g of img){
     imagenes.push(g.classList[1]);
 }
@@ -39,8 +32,23 @@ for(let i = 0; i < nombre.length; i++){
     list.push(productos);
 }
 
+window.addEventListener("load", function(){
+    let carritoAcu = document.getElementById("happy");
+    let ca = document.getElementById('happy2')
+    ca.innerText = carritoN.length;
+    carritoAcu.innerText = carritoN.length;
 
-console.log(list)
+    if(list.length == 0){
+        carritoN = JSON.parse(localStorage.getItem('carrito'));
+        localStorage.clear()
+        setTimeout(()=>{
+            location.reload();
+        },500)
+    }
+})
+
+
+
 
 
 // funcion agregar curso y localstorage;
@@ -169,6 +177,8 @@ vacirCarrito.addEventListener("click", function(){
     carritoN = JSON.parse(localStorage.getItem('carrito'));
     localStorage.clear()
 });
+
+
 
 
 

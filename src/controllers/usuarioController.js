@@ -278,7 +278,7 @@ const controller = {
     visataAyuda:(req,res)=>{
         let usu = false
         let admi = false;
-        if(req.session.profile.Rol_id == 3){
+        if(req.session.profile.Rol_id == 3 || req.session.profile.Rol_id == 2){
             usu = true;
             if(req.session.profile.Rol_id == 1){
                 admi = true
