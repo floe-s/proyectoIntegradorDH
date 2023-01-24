@@ -25,7 +25,7 @@ let products = {
         order: [
           ["fecha_creacion", "DESC"],
         ],
-        limit: 3
+        limit: 5
       })
 
       let data = {
