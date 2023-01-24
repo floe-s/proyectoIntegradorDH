@@ -75,6 +75,7 @@ header{
   transition: all 500ms ease;
   opacity:  1;
   visibility: visible;
+  z-index: 100;
 }
 
 .input{

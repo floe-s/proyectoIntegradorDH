@@ -3,6 +3,7 @@ const path = require('path');
 const bcryptjs = require('bcryptjs');
 const { validationResult } = require('express-validator');
 const db = require('../database/models');
+const { profile } = require('console');
 
 const controller = {
 
@@ -277,7 +278,7 @@ const controller = {
     visataAyuda:(req,res)=>{
         let usu = false
         let admi = false;
-        if(req.session.profile){
+        if(req.session.profile.Rol_id == 3){
             usu = true;
             if(req.session.profile.Rol_id == 1){
                 admi = true
@@ -290,34 +291,80 @@ const controller = {
         }
     },
 
-    editar:(req,res) => {
-    
-    let usu = false
-    let admi = false;
-    if(req.session.profile){
-           usu = true;
-           if(req.session.profile.Rol_id = 1){
-            admi = true
-          }
-    }
-        res.render('users/editar-usuario',{i: req.session.profile, usu: usu,admi: admi, title:'Editar Perfil'});
-    },
-
     update: (req,res) => {
-        let id = req.session.profile.id;
-        db.Usuario_dbs.update(
-            {
-                nombre: req.body.nombre,
-                apellido: req.body.apellido,
-                email: req.body.email,
-                telefono: req.body.telefono
-            },
-            {
-                where:{id}
+        let id = req.params.id;
+        let imgName = req.file;
+        if(imgName == undefined){
+               
+            let nombre = req.session.profile.nombre
+            let apellido = req.session.profile.apellido
+            let  email = req.session.profile.email
+            let  telefono =  req.session.profile.telefono
+            
+            if(req.body.nombre != ""){
+                nombre = req.body.nombre;
+            }else if(req.body.apellido != ""){
+                apellido = req.body.apellido
+            }else if(req.body.email != ""){
+                email = req.body.email
+            }else if(req.body.telefono != ""){
+                telefono = req.body.telefono
             }
-        ).then(()=> {
-            res.redirect('/usuario/vista-perfil');
-        })
+
+            db.Usuario_dbs.update(
+                {
+                    nombre: nombre,
+                    apellido:apellido,
+                    email: email,
+                    telefono:telefono,
+                },
+                {
+                    where:{id}
+                }
+            ).then(()=> {
+                req.session.profile.nombre = nombre;
+                req.session.profile.apellido = apellido;
+                req.session.profile.email = email;
+                req.session.profile.telefono = telefono;
+                res.redirect('/usuario/datosUsuario');
+            })
+        }else{
+            let nombre = req.session.profile.nombre
+            let apellido = req.session.profile.apellido
+            let  email = req.session.profile.email
+            let  telefono =  req.session.profile.telefono
+            fs.unlinkSync(path.join(__dirname, './../../public/img/perfil', req.session.profile.imagen ));
+            if(req.body.nombre != ""){
+                nombre.req.body.nombre;
+            }else if(req.body.apellido != ""){
+                apellido = req.body.apellido
+            }else if(req.body.email != ""){
+                email = req.body.email
+            }else if(req.body.telefono != ""){
+                telefono = req.body.telefono
+            }
+
+            db.Usuario_dbs.update(
+                {
+                    nombre: nombre,
+                    apellido:apellido,
+                    email: email,
+                    telefono:telefono,
+                    imagen: imgName.filename
+                },
+                {
+                    where:{id}
+                }
+            ).then(()=> {
+                req.session.profile.nombre = nombre;
+                req.session.profile.apellido = apellido;
+                req.session.profile.email = email;
+                req.session.profile.telefono = telefono;
+                req.session.profile.imagen = imgName.filename
+                res.redirect('/usuario/datosUsuario');
+            })
+        }
+       
 
     },
 

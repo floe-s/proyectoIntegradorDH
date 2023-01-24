@@ -44,11 +44,17 @@
                             <label><i class="fa-solid fa-star"></i> Punt.</label>
                             <input id="puntuacionE" type="text" name="puntuacion" value="<%= ps.puntuacion %> ">
                         <div>
+                        <input style="display: none;" type="text" name="imgenes" value="<%= ps.imagen %> ">
                     </div>
                 </section>
                 <div class="final">
-                    <div class="file">
-                        <input id="imgE" name="img" type="file">
+                    <div class="imagen-curso">
+                        <label for="file" id="btn-imgE" ><i class="fa-sharp fa-solid fa-repeat"></i>Cambiar imagen</label>
+            
+                        <input style="display: none;" id="file" name="imgProduct" type="file">
+                        <label  id="file-preview">
+                            <img id="img-previa" src="/img/paises/<%= ps.imagen %> " >
+                        </label>
                     </div>
                     <div class="check-form">
                         <label>Nivel de dificultad:</label>
@@ -76,6 +82,16 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-        <script src="/js/editar.js"></script>
+    <script src="/js/editar.js"></script>
+    <script>
+        function preview(id){
+            document.getElementById('file').addEventListener("change",(e)=>{
+                let file = e.target.files[0];
+                let url = URL.createObjectURL(file);
+                document.querySelector("#" + id + "-preview img").src = url;
+            })
+        } 
+        preview("file");  
+      </script>
 </body>
 </html>
