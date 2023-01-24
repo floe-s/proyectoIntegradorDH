@@ -37,14 +37,6 @@ window.addEventListener("load", function(){
     let ca = document.getElementById('happy2')
     ca.innerText = carritoN.length;
     carritoAcu.innerText = carritoN.length;
-
-    if(list.length == 0){
-        carritoN = JSON.parse(localStorage.getItem('carrito'));
-        localStorage.clear()
-        setTimeout(()=>{
-            location.reload();
-        },500)
-    }
 })
 
 
